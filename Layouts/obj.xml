@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Layout 1</name>
-    <sid>383762086566382</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <name>obj</name>
+    <sid>316483122142744</sid>
+    <event-sheet></event-sheet>
     <size>
         <width>1708</width>
         <height>960</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Layer 0" sid="914113754108941">
+        <layer name="Layer 0" sid="380259551706193">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>e_game</name>
+    <events>
+        <comment></comment>
+        <event-block sid="147050877014865">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="562927521785783" type="System" />
+            </conditions>
+            <actions>
+                <action id="3" name="Set at XY" sid="975280156688654" type="Array_item">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">&quot;knife&quot;</param>
+                </action>
+                <action id="3" name="Set at XY" sid="981018993731900" type="Array_item">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">1</param>
+                </action>
+                <action id="3" name="Set at XY" sid="957526743501401" type="Array_item">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Y">0</param>
+                    <param id="2" name="Value">&quot;kettle&quot;</param>
+                </action>
+                <action id="3" name="Set at XY" sid="165477789975214" type="Array_item">
+                    <param id="0" name="X">1</param>
+                    <param id="1" name="Y">1</param>
+                    <param id="2" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

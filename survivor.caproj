@@ -9,18 +9,27 @@
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>314ocrib9g874</unique-id>
     <saved-with-version>23900</saved-with-version>
-    <used-plugins />
+    <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
     <used-behaviors />
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>854</width>
-        <height>480</height>
+        <width>1136</width>
+        <height>640</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>loading</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -28,7 +37,7 @@
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
-        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Loader style">Percentage text</prop>
         <prop name="Orientations">Any</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
@@ -37,15 +46,85 @@
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder />
-    <families />
+    <object-folder>
+        <object-type name="player" sid="986254718150074">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="643726420089173" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg" sid="852957955121816">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="826791405764201" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501377" original-source="C:\Users\totoyan\Desktop\bg.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ui_lifebar" sid="890834198526015">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="933559306150137" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txt_center" sid="945526949099204">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="txt_right" sid="275527139939712">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="txt_left" sid="272489570433251">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Function" sid="633304407584510">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Touch" sid="214129854298855">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type global="1" name="Array_item" sid="768227678235430">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="AJAX" sid="504350615604507">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type name="Browser" sid="445332485731018">
+            <plugin id="Browser" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="txts" plugin-id="Text" sid="270727115053159">
+            <members>
+                <member>txt_center</member>
+                <member>txt_left</member>
+                <member>txt_right</member>
+            </members>
+        </family>
+    </families>
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>loading.xml</layout>
+        <layout>UI.xml</layout>
+        <layout>game.xml</layout>
+        <layout>obj.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>e_game.xml</event-sheet>
+        <event-sheet>e_loading.xml</event-sheet>
     </event-folder>
-    <global-instances />
+    <global-instances>
+        <global-instance type="Function" uid="7" />
+        <global-instance type="Touch" uid="8">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="AJAX" uid="10" />
+        <global-instance type="Browser" uid="11" />
+    </global-instances>
     <sounds-folder />
     <music-folder />
     <files-folder>
