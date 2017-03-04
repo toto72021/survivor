@@ -51,6 +51,46 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="bg_1" uid="12">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>0</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <width>1136</width>
+                        <height>640</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="bg_1" uid="13">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1136</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <width>1136</width>
+                        <height>640</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -106,21 +146,68 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="player" uid="0">
+                <instance type="player_poxy" uid="0">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <hp>0</hp>
+                        <maxHp>5</maxHp>
+                        <energy>0</energy>
+                        <maxEnergy>5</maxEnergy>
+                        <hungry>0</hungry>
+                        <maxHungry>100</maxHungry>
+                        <isMoving>0</isMoving>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="FSM">
+                            <properties>
+                                <activated>Yes</activated>
+                                <initial-state>Off</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Timer">
+                            <properties>
+                                <sync-timescale>Yes</sync-timescale>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>467.5</x>
                         <y>440</y>
                         <z>0</z>
-                        <width>109</width>
-                        <height>222</height>
+                        <width>100</width>
+                        <height>200</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="player_skin" uid="22">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>484</x>
+                        <y>428</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -174,6 +261,11 @@
                 <width>5</width>
                 <height>3</height>
                 <depth>1</depth>
+            </properties>
+        </instance>
+        <instance type="TimeLine" uid="21">
+            <properties>
+                <game-time>Yes</game-time>
             </properties>
         </instance>
     </nonworld-instances>

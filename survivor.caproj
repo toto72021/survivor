@@ -14,11 +14,19 @@
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_TimeLine" version="1">TimeLine</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
-    <used-behaviors />
+    <used-behaviors>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_FSM" version="0.100000001">FSM</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_Timer" version="1">Timer</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -47,8 +55,25 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="player" sid="986254718150074">
+        <object-type name="player_poxy" sid="986254718150074">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="hp" sid="193408256225519" type="number" />
+                <instance-variable name="maxHp" sid="573734361017245" type="number" />
+                <instance-variable name="energy" sid="235345574716195" type="number" />
+                <instance-variable name="maxEnergy" sid="578292809798123" type="number" />
+                <instance-variable name="hungry" sid="419460838189181" type="number" />
+                <instance-variable name="maxHungry" sid="499485056553021" type="number" />
+                <instance-variable name="isMoving" sid="409299727916559" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="FSM" sid="153148587235937">
+                    <behavior id="Rex_FSM" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="637351069671290">
+                    <behavior id="Rex_Timer" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="643726420089173" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -63,10 +88,16 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="ui_lifebar" sid="890834198526015">
+        <object-type name="ui_display" sid="890834198526015">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="933559306150137" speed="5">
+                <animation framecount="1" loop="0" name="hp" pingpong="0" repeatcount="1" repeatto="0" sid="933559306150137" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="energy" pingpong="0" repeatcount="1" repeatto="0" sid="874184195370500" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="hungry" pingpong="0" repeatcount="1" repeatto="0" sid="399949632179869" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -95,6 +126,47 @@
         <object-type name="Browser" sid="445332485731018">
             <plugin id="Browser" />
         </object-type>
+        <object-type name="bg_1" sid="792114711608954">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Keyboard" sid="351948553808139">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="btn_pause" sid="624270193906210">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="play" pingpong="0" repeatcount="1" repeatto="0" sid="697180827613888" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="pause" pingpong="0" repeatcount="1" repeatto="0" sid="554265679689329" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SpriteFont" sid="368666003344129">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
+        <object-type global="1" name="TimeLine" sid="324923768728432">
+            <plugin id="Rex_TimeLine" />
+        </object-type>
+        <object-type name="player_skin" sid="250622074366556">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="488038710304540">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="move" pingpong="0" repeatcount="1" repeatto="0" sid="332984890256604" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="search" pingpong="0" repeatcount="1" repeatto="0" sid="499157092028607" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="txts" plugin-id="Text" sid="270727115053159">
@@ -102,6 +174,24 @@
                 <member>txt_center</member>
                 <member>txt_left</member>
                 <member>txt_right</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="groupID" sid="643345184050234" type="string" />
+                <instance-variable name="actionID" sid="837793347753041" type="string" />
+            </instance-variables>
+        </family>
+        <family name="btns" plugin-id="Sprite" sid="376680578472448">
+            <members>
+                <member>btn_pause</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="groupID" sid="702355999223260" type="string" />
+                <instance-variable name="actionID" sid="320262683896434" type="string" />
+            </instance-variables>
+        </family>
+        <family name="bgs" plugin-id="TiledBg" sid="679559079734112">
+            <members>
+                <member>bg_1</member>
             </members>
         </family>
     </families>
@@ -124,6 +214,7 @@
         </global-instance>
         <global-instance type="AJAX" uid="10" />
         <global-instance type="Browser" uid="11" />
+        <global-instance type="Keyboard" uid="14" />
     </global-instances>
     <sounds-folder />
     <music-folder />

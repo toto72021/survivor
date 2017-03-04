@@ -3,33 +3,440 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_game</name>
     <events>
-        <comment></comment>
+        <comment>初始化游戏</comment>
         <event-block sid="147050877014865">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="562927521785783" type="System" />
             </conditions>
             <actions>
-                <action id="3" name="Set at XY" sid="975280156688654" type="Array_item">
-                    <param id="0" name="X">0</param>
-                    <param id="1" name="Y">0</param>
-                    <param id="2" name="Value">&quot;knife&quot;</param>
+                <action id="0" name="Call function" sid="930044929719952" type="Function">
+                    <param id="0" name="Name">&quot;restartGame&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="3" name="Set at XY" sid="981018993731900" type="Array_item">
-                    <param id="0" name="X">0</param>
-                    <param id="1" name="Y">1</param>
-                    <param id="2" name="Value">1</param>
-                </action>
-                <action id="3" name="Set at XY" sid="957526743501401" type="Array_item">
-                    <param id="0" name="X">1</param>
-                    <param id="1" name="Y">0</param>
-                    <param id="2" name="Value">&quot;kettle&quot;</param>
-                </action>
-                <action id="3" name="Set at XY" sid="165477789975214" type="Array_item">
-                    <param id="0" name="X">1</param>
-                    <param id="1" name="Y">1</param>
-                    <param id="2" name="Value">1</param>
+                <action id="0" name="Call function" sid="168615147781695" type="Function">
+                    <param id="0" name="Name">&quot;playerMove&quot;</param>
+                    <param id="1" name="Parameter {n}">1</param>
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="991099189678799" title="restart">
+            <sub-events>
+                <event-block sid="553335279090456">
+                    <conditions>
+                        <condition id="0" name="On function" sid="388836966527081" type="Function">
+                            <param id="0" name="Name">&quot;gameOver&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="818750300855670" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="541653301534345">
+                    <conditions>
+                        <condition id="0" name="On function" sid="711168324470483" type="Function">
+                            <param id="0" name="Name">&quot;restartGame&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="501431035549846" type="Function">
+                            <param id="0" name="Name">&quot;resetPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="773354073309025" type="Function">
+                            <param id="0" name="Name">&quot;resetArray&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="529092404829717" title="array_item">
+            <sub-events>
+                <event-block sid="448889271785801">
+                    <conditions>
+                        <condition id="0" name="On function" sid="505957056812026" type="Function">
+                            <param id="0" name="Name">&quot;resetArray&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Clear" sid="975280156688654" type="Array_item" />
+                        <action id="3" name="Set at XY" sid="960033815446454" type="Array_item">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">&quot;knife&quot;</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="981018993731900" type="Array_item">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="957526743501401" type="Array_item">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">&quot;kettle&quot;</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="165477789975214" type="Array_item">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="201019932626415" title="bg">
+            <sub-events>
+                <event-block sid="685501037914123">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="322432018769349" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="560548372797937" type="player_poxy">
+                            <param id="0" name="Instance variable">isMoving</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="371126363486503">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="328596642252529" type="System">
+                                    <param id="0" name="Object">bg_1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="278349996396260" type="bg_1">
+                                    <param id="0" name="X">Self.X-60*dt </param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="193675963963449">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="995985812361873" type="bg_1">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
+                                            <param id="0" name="X">1136</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="997171153976608" title="ui">
+            <sub-events>
+                <event-block sid="166552554072793">
+                    <conditions>
+                        <condition id="0" name="On function" sid="131701217630232" type="Function">
+                            <param id="0" name="Name">&quot;displayPlayerUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="162470397434768">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="277050831261041" type="txts">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;hp&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="848214939218142" type="txts">
+                                    <param id="0" name="Text">&quot;生命:&quot;&amp;player_poxy.hp</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="772096830272074">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="453494617282917" type="txts">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;energy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="242487290139901" type="txts">
+                                    <param id="0" name="Text">&quot;体力:&quot;&amp;player_poxy.energy</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="759046677210425">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="290197506921888" type="txts">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;hungry&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="668532934650383" type="txts">
+                                    <param id="0" name="Text">&quot;饥饿:&quot;&amp;player_poxy.hungry</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="866009845253796" title="player">
+            <sub-events>
+                <event-block sid="965279376794203">
+                    <conditions>
+                        <condition id="0" name="On function" sid="548126792135748" type="Function">
+                            <param id="0" name="Name">&quot;resetPlayer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="948652252379567" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Value">Self.maxHp</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="587715090930185" type="player_poxy">
+                            <param id="0" name="Instance variable">energy</param>
+                            <param id="1" name="Value">Self.maxEnergy</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="771467588386285">
+                    <conditions>
+                        <condition id="0" name="On function" sid="215090158899003" type="Function">
+                            <param id="0" name="Name">&quot;playerMove&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="507207519629118" type="player_poxy">
+                            <param id="0" name="Instance variable">isMoving</param>
+                            <param id="1" name="Value">float(Function.Param(0))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="591038388022138">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="293213472656785" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="175038148924013" type="btn_pause">
+                                    <param id="0" name="Animation">&quot;play&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="692547905882514">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="381375171499047" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="447364479047544" type="btn_pause">
+                                    <param id="0" name="Animation">&quot;pause&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="778116613903751">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="255138566592908" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="203126700499135" type="player_poxy">
+                            <param id="0" name="Timer">&quot;movingTimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="2" name="Start" sid="830864672310714" type="player_poxy">
+                            <param id="0" name="Time">1</param>
+                            <param id="1" name="Timer">&quot;movingTimer&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="237201912381545">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="146194830690466" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">Self.maxHungry</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="152228692499685" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="249099335404425">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="879055572849168" type="player_poxy">
+                                    <param id="0" name="Instance variable">isMoving</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="759520917785178">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="999108066157020" type="player_poxy">
+                                            <param id="0" name="Instance variable">energy</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="185917243308753" type="player_poxy">
+                                            <param id="0" name="Instance variable">energy</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="564707109658846">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="245983824870915" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="120257077349128" type="player_poxy">
+                                            <param id="0" name="Instance variable">hp</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="924789334753319">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="907045461617977" type="player_poxy">
+                                    <param id="0" name="Instance variable">isMoving</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="760717184987727">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="776460990239905" type="player_poxy">
+                                            <param id="0" name="Instance variable">energy</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">Self.maxEnergy</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="212314032936897" type="player_poxy">
+                                            <param id="0" name="Instance variable">energy</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="943745210766100">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="710308927724773" type="player_poxy">
+                                                    <param id="0" name="Instance variable">energy</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">Self.maxEnergy</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="814841231923871" type="player_poxy">
+                                                    <param id="0" name="Instance variable">energy</param>
+                                                    <param id="1" name="Value">Self.maxEnergy</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="366342276778510">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="751230472144798" type="Function">
+                                    <param id="0" name="Name">&quot;displayPlayerUI&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="336931147632873">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="677700255111506" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="609249872626053" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="699589403649580" type="Function">
+                            <param id="0" name="Name">&quot;gameOver&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="930036176914099" title="pause">
+            <sub-events>
+                <event-block sid="470508083561893">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="502828752469191" type="Touch">
+                            <param id="0" name="Object">btn_pause</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="216975646761051" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="643376936815785">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="331935903287564" type="player_poxy">
+                                    <param id="0" name="Instance variable">isMoving</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="798735269371241" type="Function">
+                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                    <param id="1" name="Parameter {n}">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="785423419376527">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="261051543616371" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="856400568331397" type="Function">
+                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                    <param id="1" name="Parameter {n}">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

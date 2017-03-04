@@ -25,6 +25,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </properties>
     <families-expanded root="1">
         <family expanded="0" name="txts" />
+        <family expanded="0" name="btns" />
+        <family expanded="0" name="bgs" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
@@ -34,8 +36,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
-        <folder expanded="1" path="animation-folder/player/" />
+        <folder expanded="1" path="animation-folder/player_poxy/" />
         <folder expanded="1" path="animation-folder/bg/" />
-        <folder expanded="1" path="animation-folder/ui_lifebar/" />
+        <folder expanded="1" path="animation-folder/ui_display/" />
+        <folder expanded="1" path="animation-folder/btn_pause/" />
+        <folder expanded="1" path="animation-folder/player_skin/" />
     </folders-expanded>
 </c2uistate>
