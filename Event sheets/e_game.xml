@@ -50,85 +50,67 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="529092404829717" title="array_item">
+        <event-group description="" sid="644759312606974" title="bubble information">
             <sub-events>
-                <event-block sid="448889271785801">
+                <event-block sid="460210758486667">
                     <conditions>
-                        <condition id="0" name="On function" sid="505957056812026" type="Function">
-                            <param id="0" name="Name">&quot;resetArray&quot;</param>
+                        <condition id="0" name="On function" sid="360141642547746" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Clear" sid="975280156688654" type="Array_item" />
-                        <action id="3" name="Set at XY" sid="960033815446454" type="Array_item">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Value">&quot;knife&quot;</param>
+                        <action id="-3" name="Create object" sid="744261044496892" type="System">
+                            <param id="0" name="Object to create">tipsBg</param>
+                            <param id="1" name="Layer">&quot;tips&quot;</param>
+                            <param id="2" name="X">388</param>
+                            <param id="3" name="Y">160</param>
                         </action>
-                        <action id="3" name="Set at XY" sid="981018993731900" type="Array_item">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">1</param>
+                        <action id="-7" name="Set size" sid="227172485800817" type="tipsBg">
+                            <param id="0" name="Width">360</param>
+                            <param id="1" name="Height">120</param>
                         </action>
-                        <action id="3" name="Set at XY" sid="957526743501401" type="Array_item">
-                            <param id="0" name="X">1</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Value">&quot;kettle&quot;</param>
+                        <action behavior="Fade" id="2" name="Set fade-in time" sid="445519525207520" type="tipsBg">
+                            <param id="0" name="Fade-in time">0.3</param>
                         </action>
-                        <action id="3" name="Set at XY" sid="165477789975214" type="Array_item">
-                            <param id="0" name="X">1</param>
-                            <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">1</param>
+                        <action behavior="Fade" id="3" name="Set wait time" sid="964692776952798" type="tipsBg">
+                            <param id="0" name="Wait time">1</param>
                         </action>
+                        <action behavior="Fade" id="4" name="Set fade-out time" sid="782987243037403" type="tipsBg">
+                            <param id="0" name="Fade-out time">0.5</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="158301830384142" type="tipsBg" />
+                        <action id="-3" name="Create object" sid="287586599824644" type="System">
+                            <param id="0" name="Object to create">txt_center</param>
+                            <param id="1" name="Layer">tipsBg.LayerName</param>
+                            <param id="2" name="X">tipsBg.x+tipsBg.Width/2</param>
+                            <param id="3" name="Y">tipsBg.y+tipsBg.Height/2</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="177318529389120" type="txt_center">
+                            <param id="0" name="Width">tipsBg.Width</param>
+                            <param id="1" name="Height">tipsBg.Height</param>
+                        </action>
+                        <action id="0" name="Set text" sid="548445583776292" type="txt_center">
+                            <param id="0" name="Text">Function.Param(0)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="837712977037521" type="txt_center">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Value">&quot;tips&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="334287379518064" type="txt_center">
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Value">&quot;information&quot;</param>
+                        </action>
+                        <action behavior="Fade" id="2" name="Set fade-in time" sid="493468678609121" type="txt_center">
+                            <param id="0" name="Fade-in time">0.3</param>
+                        </action>
+                        <action behavior="Fade" id="3" name="Set wait time" sid="823783137005836" type="txt_center">
+                            <param id="0" name="Wait time">1</param>
+                        </action>
+                        <action behavior="Fade" id="4" name="Set fade-out time" sid="163578420712223" type="txt_center">
+                            <param id="0" name="Fade-out time">0.5</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="411101255478057" type="txt_center" />
                     </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="201019932626415" title="bg">
-            <sub-events>
-                <event-block sid="685501037914123">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="322432018769349" type="player_poxy">
-                            <param id="0" name="Instance variable">hp</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="560548372797937" type="player_poxy">
-                            <param id="0" name="Instance variable">isMoving</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="371126363486503">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="328596642252529" type="System">
-                                    <param id="0" name="Object">bg_1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="278349996396260" type="bg_1">
-                                    <param id="0" name="X">Self.X-60*dt </param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="193675963963449">
-                                    <conditions>
-                                        <condition id="-1" name="Compare X" sid="995985812361873" type="bg_1">
-                                            <param id="0" name="Comparison">3</param>
-                                            <param id="1" name="X co-ordinate">-Self.Width</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
-                                            <param id="0" name="X">1136</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -184,6 +166,130 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="536663957936770">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="494975927009262" type="txts">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;distance&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="647184079555248" type="txts">
+                                    <param id="0" name="Text">&quot;距离:&quot;&amp;player_poxy.moveDistance&amp;&quot;米&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="201019932626415" title="bg">
+            <sub-events>
+                <event-block sid="685501037914123">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="322432018769349" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="560548372797937" type="player_poxy">
+                            <param id="0" name="Name">&quot;move&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="533721378756048">
+                            <conditions>
+                                <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="704672140250233" type="player_poxy">
+                                    <param id="0" name="Timer">&quot;distance&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="2" name="Start" sid="860293612321778" type="player_poxy">
+                                    <param id="0" name="Time">60*dt</param>
+                                    <param id="1" name="Timer">&quot;distance&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="485948747059554" type="player_poxy">
+                                    <param id="0" name="Instance variable">moveDistance</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="371126363486503">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="328596642252529" type="System">
+                                    <param id="0" name="Object">bg_1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="278349996396260" type="bg_1">
+                                    <param id="0" name="X">Self.X-60*dt </param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="193675963963449">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="995985812361873" type="bg_1">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
+                                            <param id="0" name="X">1134</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="930036176914099" title="pause">
+            <sub-events>
+                <event-block sid="470508083561893">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="502828752469191" type="Touch">
+                            <param id="0" name="Object">btn_pause</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="216975646761051" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="643376936815785">
+                            <conditions>
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="918745299102447" type="player_poxy">
+                                    <param id="0" name="Name">&quot;move&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="798735269371241" type="Function">
+                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                    <param id="1" name="Parameter {n}">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="785423419376527">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="261051543616371" type="System" />
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="903516872410773" type="player_poxy">
+                                    <param id="0" name="Name">&quot;pause&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="856400568331397" type="Function">
+                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                    <param id="1" name="Parameter {n}">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
@@ -198,6 +304,10 @@
                     </conditions>
                     <actions>
                         <action id="-10" name="Set value" sid="948652252379567" type="player_poxy">
+                            <param id="0" name="Instance variable">moveDistance</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="876861950198660" type="player_poxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Value">Self.maxHp</param>
                         </action>
@@ -205,20 +315,24 @@
                             <param id="0" name="Instance variable">energy</param>
                             <param id="1" name="Value">Self.maxEnergy</param>
                         </action>
+                        <action id="-10" name="Set value" sid="180320905953542" type="player_poxy">
+                            <param id="0" name="Instance variable">hungry</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="884286011067479" type="player_poxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
+                <comment>(0 暂停移动&#x0D;&#x0A;1  继续移动)</comment>
                 <event-block sid="771467588386285">
                     <conditions>
                         <condition id="0" name="On function" sid="215090158899003" type="Function">
                             <param id="0" name="Name">&quot;playerMove&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="507207519629118" type="player_poxy">
-                            <param id="0" name="Instance variable">isMoving</param>
-                            <param id="1" name="Value">float(Function.Param(0))</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="591038388022138">
                             <conditions>
@@ -229,6 +343,15 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action behavior="Timer" id="3" name="Pause" sid="778438159561597" type="player_poxy">
+                                    <param id="0" name="Timer">&quot;getItem&quot;</param>
+                                </action>
+                                <action behavior="actionFSM" id="11" name="Go to state" sid="507207519629118" type="player_poxy">
+                                    <param id="0" name="Name">&quot;pause&quot;</param>
+                                </action>
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="239101873732093" type="player_poxy">
+                                    <param id="0" name="Name">&quot;idle&quot;</param>
+                                </action>
                                 <action id="4" name="Set animation" sid="175038148924013" type="btn_pause">
                                     <param id="0" name="Animation">&quot;play&quot;</param>
                                     <param id="1" name="From">1</param>
@@ -240,6 +363,15 @@
                                 <condition id="-22" name="Else" sid="381375171499047" type="System" />
                             </conditions>
                             <actions>
+                                <action behavior="Timer" id="4" name="Resume" sid="265097086736721" type="player_poxy">
+                                    <param id="0" name="Timer">&quot;getItem&quot;</param>
+                                </action>
+                                <action behavior="actionFSM" id="11" name="Go to state" sid="530069673560332" type="player_poxy">
+                                    <param id="0" name="Name">&quot;move&quot;</param>
+                                </action>
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="991235993956170" type="player_poxy">
+                                    <param id="0" name="Name">&quot;move&quot;</param>
+                                </action>
                                 <action id="4" name="Set animation" sid="447364479047544" type="btn_pause">
                                     <param id="0" name="Animation">&quot;pause&quot;</param>
                                     <param id="1" name="From">1</param>
@@ -248,6 +380,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>角色上相关数值设置</comment>
                 <event-block sid="778116613903751">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="255138566592908" type="player_poxy">
@@ -257,6 +390,9 @@
                         </condition>
                         <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="203126700499135" type="player_poxy">
                             <param id="0" name="Timer">&quot;movingTimer&quot;</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="717193957686691" type="player_poxy">
+                            <param id="0" name="Name">&quot;combat&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -278,16 +414,30 @@
                             <actions>
                                 <action id="-11" name="Add to" sid="152228692499685" type="player_poxy">
                                     <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="564707109658846">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="245983824870915" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="750384081449276" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">Self.maxHungry</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="120257077349128" type="player_poxy">
+                                    <param id="0" name="Instance variable">hp</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="249099335404425">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="879055572849168" type="player_poxy">
-                                    <param id="0" name="Instance variable">isMoving</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="696328380623685" type="player_poxy">
+                                    <param id="0" name="Name">&quot;move&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -306,26 +456,30 @@
                                             <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
-                                </event-block>
-                                <event-block sid="564707109658846">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="245983824870915" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-12" name="Subtract from" sid="120257077349128" type="player_poxy">
-                                            <param id="0" name="Instance variable">hp</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="833565716233616">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="772691379106244" type="player_poxy">
+                                                    <param id="0" name="Instance variable">energy</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="636178376846224" type="Function">
+                                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
                         <event-block sid="924789334753319">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="907045461617977" type="player_poxy">
-                                    <param id="0" name="Instance variable">isMoving</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="355964673362565" type="player_poxy">
+                                    <param id="0" name="Name">&quot;pause&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -391,50 +545,310 @@
                         </action>
                     </actions>
                 </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="930036176914099" title="pause">
-            <sub-events>
-                <event-block sid="470508083561893">
+                <event-block sid="253177111017616">
                     <conditions>
-                        <condition id="3" name="On touched object" sid="502828752469191" type="Touch">
-                            <param id="0" name="Object">btn_pause</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="216975646761051" type="player_poxy">
-                            <param id="0" name="Instance variable">hp</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">0</param>
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="213292249860959" type="player_poxy">
+                            <param id="0" name="Name">&quot;move&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="4" name="Set animation" sid="138584823435849" type="player_skin">
+                            <param id="0" name="Animation">&quot;move&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="953288925677101">
+                    <conditions>
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="761126682557555" type="player_poxy">
+                            <param id="0" name="Name">&quot;search&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="318457919256685" type="player_skin">
+                            <param id="0" name="Animation">&quot;search&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="442318569023809">
+                    <conditions>
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="426124084475598" type="player_poxy">
+                            <param id="0" name="Name">&quot;idle&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="913114145239520" type="player_skin">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="828169281532222" title="items">
+            <sub-events>
+                <event-block sid="702431015071049">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="745759963021714" type="Touch">
+                            <param id="0" name="Object">item</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="922247635323748" type="Touch">
+                            <param id="0" name="Object">btn_pause</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="361907751114613" type="Function">
+                            <param id="0" name="Name">&quot;playerMove&quot;</param>
+                            <param id="1" name="Parameter {n}">0</param>
+                        </action>
+                    </actions>
                     <sub-events>
-                        <event-block sid="643376936815785">
+                        <event-block sid="423485905297415">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="331935903287564" type="player_poxy">
-                                    <param id="0" name="Instance variable">isMoving</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
+                                <condition id="-8" name="Compare two values" sid="575753739921048" type="System">
+                                    <param id="0" name="First value">distance(player_poxy.X,player_poxy.Y,item.X,item.Y)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">300</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="798735269371241" type="Function">
-                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
-                                    <param id="1" name="Parameter {n}">0</param>
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="597240105986003" type="player_poxy">
+                                    <param id="0" name="Name">&quot;search&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="502694431442154" type="System">
+                                    <param id="0" name="Object to create">item_progressBg</param>
+                                    <param id="1" name="Layer">item.LayerName</param>
+                                    <param id="2" name="X">item.X-item.Width/2</param>
+                                    <param id="3" name="Y">item.Y-1.3*item.Height</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="409652545679276" type="item_progressBg">
+                                    <param id="0" name="Width">192</param>
+                                    <param id="1" name="Height">32</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="993530137242196" type="item_progressBg">
+                                    <param id="0" name="Instance variable">Puid</param>
+                                    <param id="1" name="Value">item.UID</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="747532856637336" type="System">
+                                    <param id="0" name="Object to create">item_progress</param>
+                                    <param id="1" name="Layer">item.LayerName</param>
+                                    <param id="2" name="X">item.X-item.Width/2</param>
+                                    <param id="3" name="Y">item.Y-1.3*item.Height</param>
+                                </action>
+                                <action behavior="Timer" id="2" name="Start" sid="510790260753939" type="item_progress">
+                                    <param id="0" name="Time">2</param>
+                                    <param id="1" name="Timer">&quot;_search&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="395756806628392" type="item_progress">
+                                    <param id="0" name="Width">192</param>
+                                    <param id="1" name="Height">32</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="812356747586140" type="item_progress">
+                                    <param id="0" name="Instance variable">Puid</param>
+                                    <param id="1" name="Value">item.UID</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="785423419376527">
+                        <event-block sid="282408008533065">
                             <conditions>
-                                <condition id="-22" name="Else" sid="261051543616371" type="System" />
+                                <condition id="-22" name="Else" sid="166605646156120" type="System" />
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="856400568331397" type="Function">
-                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
-                                    <param id="1" name="Parameter {n}">1</param>
+                                <action id="0" name="Call function" sid="671139949565997" type="Function">
+                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;我需要再靠近一些&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="643323966426988">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="965361187667005" type="System">
+                            <param id="0" name="Object">item_progress</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="148503343554043">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="Is timer running" sid="615126271606557" type="item_progress">
+                                    <param id="0" name="Timer">&quot;_search&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="559232367482699" type="item_progress">
+                                    <param id="0" name="Width">192*Self.Timer.ElapsedPercent(&quot;_search&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="205550839058595">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="489420826373977" type="item_progress">
+                            <param id="0" name="Timer">&quot;_search&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="667145515496186" type="item_progress" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="545551055699564">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="557319835276603" type="item_progressBg">
+                                    <param id="0" name="Instance variable">Puid</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">item_progress.Puid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="718798403334703" type="item_progressBg" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="502096189808208">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="865121107316906" type="item">
+                                    <param id="0" name="Unique ID">item_progress.Puid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="820305579047143" type="player_poxy">
+                                    <param id="0" name="Name">&quot;idle&quot;</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="154730213759461" type="item">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="979196013198350" type="item" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="113605935947698">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="122105833157247" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="167538691668216" type="player_poxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="212292999013885" type="player_poxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="778465336597545" type="player_poxy">
+                            <param id="0" name="Time">int(random(5,10))</param>
+                            <param id="1" name="Timer">&quot;getItem&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="134402125834962">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_poxy">
+                            <param id="0" name="Timer">&quot;getItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="533454811417940" type="player_poxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="327012752372787" type="System">
+                            <param id="0" name="Object to create">item</param>
+                            <param id="1" name="Layer">&quot;game&quot;</param>
+                            <param id="2" name="X">1200</param>
+                            <param id="3" name="Y">random(420,600)</param>
+                        </action>
+                        <action id="0" name="Sort all Objects in layer by Y" sid="824499155509265" type="ZSorter">
+                            <param id="0" name="Layer">&quot;game&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="232924656955798">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="389748494653536" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="949487008321721" type="player_poxy">
+                            <param id="0" name="Name">&quot;move&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="508755093592370">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="531408137324893" type="System">
+                                    <param id="0" name="Object">item</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="698507866076654" type="item">
+                                    <param id="0" name="X">Self.X-60*dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="529092404829717" title="array_item">
+            <sub-events>
+                <event-block sid="448889271785801">
+                    <conditions>
+                        <condition id="0" name="On function" sid="505957056812026" type="Function">
+                            <param id="0" name="Name">&quot;resetArray&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Clear" sid="975280156688654" type="Array_item" />
+                        <action id="3" name="Set at XY" sid="960033815446454" type="Array_item">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">&quot;knife&quot;</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="981018993731900" type="Array_item">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="957526743501401" type="Array_item">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">&quot;kettle&quot;</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="165477789975214" type="Array_item">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="675632926416790" title="combat">
+            <sub-events>
+                <event-block sid="439865610669677">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="230229336000061" title="enemy">
+            <sub-events>
+                <event-block sid="885764449342636">
+                    <conditions />
+                    <actions />
                 </event-block>
             </sub-events>
         </event-group>

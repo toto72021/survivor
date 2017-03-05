@@ -79,7 +79,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1136</x>
+                        <x>1135</x>
                         <y>0</y>
                         <z>0</z>
                         <width>1136</width>
@@ -148,22 +148,29 @@
             <instances>
                 <instance type="player_poxy" uid="0">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
                         <hp>0</hp>
-                        <maxHp>5</maxHp>
+                        <maxHp>10</maxHp>
                         <energy>0</energy>
-                        <maxEnergy>5</maxEnergy>
+                        <maxEnergy>10</maxEnergy>
                         <hungry>0</hungry>
                         <maxHungry>100</maxHungry>
-                        <isMoving>0</isMoving>
+                        <getItem>1</getItem>
+                        <moveDistance>0</moveDistance>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="FSM">
+                        <behavior-instance type="actionFSM">
+                            <properties>
+                                <activated>Yes</activated>
+                                <initial-state>Off</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="animationFSM">
                             <properties>
                                 <activated>Yes</activated>
                                 <initial-state>Off</initial-state>
@@ -203,8 +210,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>484</x>
-                        <y>428</y>
+                        <x>488</x>
+                        <y>440</y>
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
@@ -219,6 +226,24 @@
             <effects />
         </layer>
         <layer name="fx" sid="429325884338307">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
+        <layer name="tips" sid="133636244878832">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -266,6 +291,12 @@
         <instance type="TimeLine" uid="21">
             <properties>
                 <game-time>Yes</game-time>
+            </properties>
+        </instance>
+        <instance type="ZSorter" uid="24">
+            <properties>
+                <y-order>Increasing</y-order>
+                <x-order>Increasing</x-order>
             </properties>
         </instance>
     </nonworld-instances>

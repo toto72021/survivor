@@ -15,7 +15,9 @@
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="Rex.Rainbow" id="Rex_TimeLine" version="1">TimeLine</plugin>
+        <plugin author="Juan Pablo Tarquino" id="Rex_ZSorter" version="1">Z Sorter</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -23,9 +25,11 @@
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Rex.Rainbow" id="Rex_FSM" version="0.100000001">FSM</behavior>
         <behavior author="Rex.Rainbow" id="Rex_Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -64,10 +68,14 @@
                 <instance-variable name="maxEnergy" sid="578292809798123" type="number" />
                 <instance-variable name="hungry" sid="419460838189181" type="number" />
                 <instance-variable name="maxHungry" sid="499485056553021" type="number" />
-                <instance-variable name="isMoving" sid="409299727916559" type="number" />
+                <instance-variable name="getItem" sid="417349915171379" type="number" />
+                <instance-variable name="moveDistance" sid="152926846526472" type="number" />
             </instance-variables>
             <behaviors>
-                <behavior-type name="FSM" sid="153148587235937">
+                <behavior-type name="actionFSM" sid="153148587235937">
+                    <behavior id="Rex_FSM" />
+                </behavior-type>
+                <behavior-type name="animationFSM" sid="158727368520503">
                     <behavior id="Rex_FSM" />
                 </behavior-type>
                 <behavior-type name="Timer" sid="637351069671290">
@@ -159,13 +167,42 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="move" pingpong="0" repeatcount="1" repeatto="0" sid="332984890256604" speed="5">
+                <animation framecount="2" loop="1" name="move" pingpong="0" repeatcount="1" repeatto="0" sid="332984890256604" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
-                <animation framecount="1" loop="0" name="search" pingpong="0" repeatcount="1" repeatto="0" sid="499157092028607" speed="5">
+                <animation framecount="1" loop="1" name="search" pingpong="0" repeatcount="1" repeatto="0" sid="499157092028607" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="179162898176752" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="item" sid="633495286332799">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="box" pingpong="0" repeatcount="1" repeatto="0" sid="566895108284491" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="ZSorter" sid="992614863283896">
+            <plugin id="Rex_ZSorter" />
+        </object-type>
+        <object-type name="item_progress" sid="363383954264154">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
+        <object-type name="item_progressBg" sid="501996573890198">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
+        <object-type name="tipsBg" sid="365495253655451">
+            <plugin id="NinePatch" />
+            <texture />
         </object-type>
     </object-folder>
     <families>
@@ -179,6 +216,11 @@
                 <instance-variable name="groupID" sid="643345184050234" type="string" />
                 <instance-variable name="actionID" sid="837793347753041" type="string" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="142290252165620">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
         </family>
         <family name="btns" plugin-id="Sprite" sid="376680578472448">
             <members>
@@ -193,6 +235,43 @@
             <members>
                 <member>bg_1</member>
             </members>
+        </family>
+        <family name="items" plugin-id="Sprite" sid="945047406458917">
+            <members>
+                <member>item</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="type" sid="787612393709808" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="239338197019335">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="323427091364189">
+                    <behavior id="destroy" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="678171677288056">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="9patch" plugin-id="NinePatch" sid="397981525466132">
+            <members>
+                <member>item_progress</member>
+                <member>item_progressBg</member>
+                <member>tipsBg</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="Puid" sid="974613017851896" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="361022625225884">
+                    <behavior id="Rex_Timer" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="830092184138449">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder>
