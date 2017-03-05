@@ -70,6 +70,7 @@
                 <instance-variable name="maxHungry" sid="499485056553021" type="number" />
                 <instance-variable name="getItem" sid="417349915171379" type="number" />
                 <instance-variable name="moveDistance" sid="152926846526472" type="number" />
+                <instance-variable name="getEnemy" sid="476287779111286" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="actionFSM" sid="153148587235937">

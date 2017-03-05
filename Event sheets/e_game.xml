@@ -323,6 +323,10 @@
                             <param id="0" name="Instance variable">getItem</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-10" name="Set value" sid="243752639329425" type="player_poxy">
+                            <param id="0" name="Instance variable">getEnemy</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>(0 暂停移动&#x0D;&#x0A;1  继续移动)</comment>
@@ -346,6 +350,9 @@
                                 <action behavior="Timer" id="3" name="Pause" sid="778438159561597" type="player_poxy">
                                     <param id="0" name="Timer">&quot;getItem&quot;</param>
                                 </action>
+                                <action behavior="Timer" id="3" name="Pause" sid="239463265835882" type="player_poxy">
+                                    <param id="0" name="Timer">&quot;getEnemy&quot;</param>
+                                </action>
                                 <action behavior="actionFSM" id="11" name="Go to state" sid="507207519629118" type="player_poxy">
                                     <param id="0" name="Name">&quot;pause&quot;</param>
                                 </action>
@@ -365,6 +372,9 @@
                             <actions>
                                 <action behavior="Timer" id="4" name="Resume" sid="265097086736721" type="player_poxy">
                                     <param id="0" name="Timer">&quot;getItem&quot;</param>
+                                </action>
+                                <action behavior="Timer" id="4" name="Resume" sid="754035197824270" type="player_poxy">
+                                    <param id="0" name="Timer">&quot;getEnemy&quot;</param>
                                 </action>
                                 <action behavior="actionFSM" id="11" name="Go to state" sid="530069673560332" type="player_poxy">
                                     <param id="0" name="Name">&quot;move&quot;</param>
@@ -765,7 +775,7 @@
                         <action id="-3" name="Create object" sid="327012752372787" type="System">
                             <param id="0" name="Object to create">item</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
-                            <param id="2" name="X">1200</param>
+                            <param id="2" name="X">1300</param>
                             <param id="3" name="Y">random(420,600)</param>
                         </action>
                         <action id="0" name="Sort all Objects in layer by Y" sid="824499155509265" type="ZSorter">
@@ -846,9 +856,89 @@
         </event-group>
         <event-group description="" sid="230229336000061" title="enemy">
             <sub-events>
-                <event-block sid="885764449342636">
-                    <conditions />
+                <event-block sid="266018639757432">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="344193036219462" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="950021477764580" type="player_poxy">
+                            <param id="0" name="Instance variable">getEnemy</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="873306671204019" type="player_poxy">
+                            <param id="0" name="Instance variable">getEnemy</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="374230324941309" type="player_poxy">
+                            <param id="0" name="Time">int(random(5,10))</param>
+                            <param id="1" name="Timer">&quot;getEnemy&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="394976641308997">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="817593148181625" type="player_poxy">
+                            <param id="0" name="Timer">&quot;getEnemy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="962416467552644" type="player_poxy">
+                            <param id="0" name="Instance variable">getEnemy</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="691272744033101" type="System">
+                            <param id="0" name="Object to create">enemy</param>
+                            <param id="1" name="Layer">&quot;bg_2&quot;</param>
+                            <param id="2" name="X">1300</param>
+                            <param id="3" name="Y">280</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="311805158309637">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="455859021449078" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="520113227831705" type="player_poxy">
+                            <param id="0" name="Name">&quot;move&quot;</param>
+                        </condition>
+                    </conditions>
                     <actions />
+                    <sub-events>
+                        <event-block sid="143617145446704">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="300786570183863" type="System">
+                                    <param id="0" name="Object">enemy</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="547851034755485" type="enemy">
+                                    <param id="0" name="X">Self.X-60*dt</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="767357362808448">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="994188909239154" type="enemy">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">-800</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="108055042858300" type="enemy" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
