@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>e_fadeInOut</name>
+    <events>
+        <event-block sid="533403486659165">
+            <conditions>
+                <condition id="0" name="On function" sid="589615132157059" type="Function">
+                    <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="738946919753310" type="System">
+                    <param id="0" name="Object to create">blackBg</param>
+                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="-7" name="Set size" sid="878941784556401" type="blackBg">
+                    <param id="0" name="Width">1136</param>
+                    <param id="1" name="Height">640</param>
+                </action>
+                <action behavior="Timer" id="2" name="Start" sid="997637711397530" type="blackBg">
+                    <param id="0" name="Time">1</param>
+                    <param id="1" name="Timer">&quot;_fadein&quot;</param>
+                    <param id="2" name="Repeat">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="839236167614119">
+            <conditions>
+                <condition behavior="Timer" id="0" name="Is timer running" sid="922559010321981" type="blackBg">
+                    <param id="0" name="Timer">&quot;_fadein&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="316839732983940" type="blackBg">
+                    <param id="0" name="Opacity">100*Self.Timer.RemainderPercent(&quot;_fadein&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="906088872588969">
+            <conditions>
+                <condition behavior="Timer" id="1" name="On time-out" sid="111652858345311" type="blackBg">
+                    <param id="0" name="Timer">&quot;_fadein&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="213916320784134" type="blackBg" />
+            </actions>
+            <sub-events>
+                <event-block sid="129313046234866">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="738740658712624" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;combat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="MoveTo" id="4" name="Move to XY" sid="910718559948378" type="enemy">
+                            <param id="0" name="X">Self.X+1100</param>
+                            <param id="1" name="Y">Self.Y</param>
+                        </action>
+                        <action behavior="MoveTo" id="4" name="Move to XY" sid="776471733261296" type="player_poxy">
+                            <param id="0" name="X">Self.X-1100</param>
+                            <param id="1" name="Y">Self.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

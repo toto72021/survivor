@@ -3,22 +3,95 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_game</name>
     <events>
-        <comment>初始化游戏</comment>
-        <event-block sid="147050877014865">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="562927521785783" type="System" />
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="930044929719952" type="Function">
-                    <param id="0" name="Name">&quot;restartGame&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action id="0" name="Call function" sid="168615147781695" type="Function">
-                    <param id="0" name="Name">&quot;playerMove&quot;</param>
-                    <param id="1" name="Parameter {n}">1</param>
-                </action>
-            </actions>
-        </event-block>
+        <include>e_bubbleImformation</include>
+        <include>e_fadeInOut</include>
+        <event-group description="" sid="553412261128497" title="startGame">
+            <sub-events>
+                <event-block sid="147050877014865">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="562927521785783" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Check item exists" sid="108070380248381" type="LocalStorage">
+                            <param id="0" name="Key">&quot;aferCombat&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="522619274093198">
+                    <conditions>
+                        <condition id="10" name="On item missing" sid="819011303600688" type="LocalStorage">
+                            <param id="0" name="Key">&quot;aferCombat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="519582617336626" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;---------重新关卡&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="930044929719952" type="Function">
+                            <param id="0" name="Name">&quot;restartGame&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="168615147781695" type="Function">
+                            <param id="0" name="Name">&quot;playerMove&quot;</param>
+                            <param id="1" name="Parameter {n}">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="104599019295579" type="Function">
+                            <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="543350142634673">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="580156281870759" type="LocalStorage">
+                            <param id="0" name="Key">&quot;aferCombat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="120258385541305" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;---------继续关卡&quot;</param>
+                        </action>
+                        <action id="-37" name="Load" sid="465655554013897" type="System">
+                            <param id="0" name="Slot">&quot;beforeCombat&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="953252050131819">
+                    <conditions>
+                        <condition id="-29" name="On load complete" sid="887376906009017" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="475213340982012" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;---------加载成功&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="260021244416359" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Value">float(LocalStorage.ItemValue)</param>
+                        </action>
+                        <action id="3" name="Clear storage" sid="665767064640008" type="LocalStorage" />
+                        <action id="0" name="Call function" sid="362662875082996" type="Function">
+                            <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="400992287861651">
+                    <conditions>
+                        <condition id="-30" name="On load failed" sid="353843065158254" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="389279600422834" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;---------加载失败&quot;</param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="141507774025163" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="991099189678799" title="restart">
             <sub-events>
                 <event-block sid="553335279090456">
@@ -28,6 +101,13 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Call function" sid="457707701218032" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;游戏失败，将重新开始&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="961910084413409" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
                         <action id="-26" name="Restart layout" sid="818750300855670" type="System" />
                     </actions>
                 </event-block>
@@ -46,70 +126,6 @@
                             <param id="0" name="Name">&quot;resetArray&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="644759312606974" title="bubble information">
-            <sub-events>
-                <event-block sid="460210758486667">
-                    <conditions>
-                        <condition id="0" name="On function" sid="360141642547746" type="Function">
-                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="744261044496892" type="System">
-                            <param id="0" name="Object to create">tipsBg</param>
-                            <param id="1" name="Layer">&quot;tips&quot;</param>
-                            <param id="2" name="X">388</param>
-                            <param id="3" name="Y">160</param>
-                        </action>
-                        <action id="-7" name="Set size" sid="227172485800817" type="tipsBg">
-                            <param id="0" name="Width">360</param>
-                            <param id="1" name="Height">120</param>
-                        </action>
-                        <action behavior="Fade" id="2" name="Set fade-in time" sid="445519525207520" type="tipsBg">
-                            <param id="0" name="Fade-in time">0.3</param>
-                        </action>
-                        <action behavior="Fade" id="3" name="Set wait time" sid="964692776952798" type="tipsBg">
-                            <param id="0" name="Wait time">1</param>
-                        </action>
-                        <action behavior="Fade" id="4" name="Set fade-out time" sid="782987243037403" type="tipsBg">
-                            <param id="0" name="Fade-out time">0.5</param>
-                        </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="158301830384142" type="tipsBg" />
-                        <action id="-3" name="Create object" sid="287586599824644" type="System">
-                            <param id="0" name="Object to create">txt_center</param>
-                            <param id="1" name="Layer">tipsBg.LayerName</param>
-                            <param id="2" name="X">tipsBg.x+tipsBg.Width/2</param>
-                            <param id="3" name="Y">tipsBg.y+tipsBg.Height/2</param>
-                        </action>
-                        <action id="-7" name="Set size" sid="177318529389120" type="txt_center">
-                            <param id="0" name="Width">tipsBg.Width</param>
-                            <param id="1" name="Height">tipsBg.Height</param>
-                        </action>
-                        <action id="0" name="Set text" sid="548445583776292" type="txt_center">
-                            <param id="0" name="Text">Function.Param(0)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="837712977037521" type="txt_center">
-                            <param id="0" name="Instance variable">groupID</param>
-                            <param id="1" name="Value">&quot;tips&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="334287379518064" type="txt_center">
-                            <param id="0" name="Instance variable">actionID</param>
-                            <param id="1" name="Value">&quot;information&quot;</param>
-                        </action>
-                        <action behavior="Fade" id="2" name="Set fade-in time" sid="493468678609121" type="txt_center">
-                            <param id="0" name="Fade-in time">0.3</param>
-                        </action>
-                        <action behavior="Fade" id="3" name="Set wait time" sid="823783137005836" type="txt_center">
-                            <param id="0" name="Wait time">1</param>
-                        </action>
-                        <action behavior="Fade" id="4" name="Set fade-out time" sid="163578420712223" type="txt_center">
-                            <param id="0" name="Fade-out time">0.5</param>
-                        </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="411101255478057" type="txt_center" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -303,6 +319,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="673041741934474" type="player_skin">
+                            <param id="0" name="Pin to">player_poxy</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
                         <action id="-10" name="Set value" sid="948652252379567" type="player_poxy">
                             <param id="0" name="Instance variable">moveDistance</param>
                             <param id="1" name="Value">0</param>
@@ -314,6 +334,10 @@
                         <action id="-10" name="Set value" sid="587715090930185" type="player_poxy">
                             <param id="0" name="Instance variable">energy</param>
                             <param id="1" name="Value">Self.maxEnergy</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="524552771555080" type="player_poxy">
+                            <param id="0" name="Instance variable">atk</param>
+                            <param id="1" name="Value">Self.MaxAtk</param>
                         </action>
                         <action id="-10" name="Set value" sid="180320905953542" type="player_poxy">
                             <param id="0" name="Instance variable">hungry</param>
@@ -630,7 +654,7 @@
                                     <param id="0" name="Object to create">item_progressBg</param>
                                     <param id="1" name="Layer">item.LayerName</param>
                                     <param id="2" name="X">item.X-item.Width/2</param>
-                                    <param id="3" name="Y">item.Y-1.3*item.Height</param>
+                                    <param id="3" name="Y">item.Y-item.Height/1.8</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="409652545679276" type="item_progressBg">
                                     <param id="0" name="Width">192</param>
@@ -643,17 +667,17 @@
                                 <action id="-3" name="Create object" sid="747532856637336" type="System">
                                     <param id="0" name="Object to create">item_progress</param>
                                     <param id="1" name="Layer">item.LayerName</param>
-                                    <param id="2" name="X">item.X-item.Width/2</param>
-                                    <param id="3" name="Y">item.Y-1.3*item.Height</param>
+                                    <param id="2" name="X">item_progressBg.X</param>
+                                    <param id="3" name="Y">item_progressBg.Y</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="395756806628392" type="item_progress">
+                                    <param id="0" name="Width">item_progressBg.Width</param>
+                                    <param id="1" name="Height">item_progressBg.Height</param>
                                 </action>
                                 <action behavior="Timer" id="2" name="Start" sid="510790260753939" type="item_progress">
                                     <param id="0" name="Time">2</param>
                                     <param id="1" name="Timer">&quot;_search&quot;</param>
                                     <param id="2" name="Repeat">1</param>
-                                </action>
-                                <action id="-7" name="Set size" sid="395756806628392" type="item_progress">
-                                    <param id="0" name="Width">192</param>
-                                    <param id="1" name="Height">32</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="812356747586140" type="item_progress">
                                     <param id="0" name="Instance variable">Puid</param>
@@ -704,6 +728,14 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="667145515496186" type="item_progress" />
+                        <action id="0" name="Call function" sid="909135676166994" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;获得物资XXX&quot;</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="556384479616986" type="player_poxy">
+                            <param id="0" name="Instance variable">hungry</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="545551055699564">
@@ -755,7 +787,7 @@
                             <param id="1" name="Value">0</param>
                         </action>
                         <action behavior="Timer" id="2" name="Start" sid="778465336597545" type="player_poxy">
-                            <param id="0" name="Time">int(random(5,10))</param>
+                            <param id="0" name="Time">int(random(3,8))</param>
                             <param id="1" name="Timer">&quot;getItem&quot;</param>
                             <param id="2" name="Repeat">1</param>
                         </action>
@@ -846,14 +878,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="675632926416790" title="combat">
-            <sub-events>
-                <event-block sid="439865610669677">
-                    <conditions />
-                    <actions />
-                </event-block>
-            </sub-events>
-        </event-group>
         <event-group description="" sid="230229336000061" title="enemy">
             <sub-events>
                 <event-block sid="266018639757432">
@@ -875,7 +899,7 @@
                             <param id="1" name="Value">0</param>
                         </action>
                         <action behavior="Timer" id="2" name="Start" sid="374230324941309" type="player_poxy">
-                            <param id="0" name="Time">int(random(5,10))</param>
+                            <param id="0" name="Time">int(random(8,15))</param>
                             <param id="1" name="Timer">&quot;getEnemy&quot;</param>
                             <param id="2" name="Repeat">1</param>
                         </action>
@@ -897,6 +921,9 @@
                             <param id="1" name="Layer">&quot;bg_2&quot;</param>
                             <param id="2" name="X">1300</param>
                             <param id="3" name="Y">280</param>
+                        </action>
+                        <action behavior="FSM" id="11" name="Go to state" sid="751094805425462" type="enemy">
+                            <param id="0" name="Name">&quot;idle&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -925,6 +952,35 @@
                                 </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="336667580685557">
+                                    <conditions>
+                                        <condition behavior="FSM" id="7" name="Compare current state" sid="958482282745264" type="enemy">
+                                            <param id="0" name="Name">&quot;idle&quot;</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="211116869145287" type="System">
+                                            <param id="0" name="First value">distance(enemy.X,enemy.Y,player_poxy.X,player_poxy.Y)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">400</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="959444387093747" type="Function">
+                                            <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                            <param id="1" name="Parameter {n}">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="226830126313021" type="Function">
+                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;小心！！！&quot;</param>
+                                        </action>
+                                        <action behavior="FSM" id="11" name="Go to state" sid="955757048427578" type="enemy">
+                                            <param id="0" name="Name">&quot;appear&quot;</param>
+                                        </action>
+                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="980104205557413" type="enemy">
+                                            <param id="0" name="X">Self.X</param>
+                                            <param id="1" name="Y">Self.Y-500</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="767357362808448">
                                     <conditions>
                                         <condition id="-1" name="Compare X" sid="994188909239154" type="enemy">
@@ -939,6 +995,119 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="882510827404602">
+                    <conditions>
+                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="572352291410122" type="enemy" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="790317781003821">
+                            <conditions>
+                                <condition behavior="FSM" id="7" name="Compare current state" sid="871766649592010" type="enemy">
+                                    <param id="0" name="Name">&quot;appear&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="FSM" id="11" name="Go to state" sid="371661489509909" type="enemy">
+                                    <param id="0" name="Name">&quot;land&quot;</param>
+                                </action>
+                                <action id="-26" name="Move to layer" sid="671606311025510" type="enemy">
+                                    <param id="0" name="Layer">&quot;game&quot;</param>
+                                </action>
+                                <action behavior="MoveTo" id="4" name="Move to XY" sid="600720886835826" type="enemy">
+                                    <param id="0" name="X">Self.X</param>
+                                    <param id="1" name="Y">Self.Y+600</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="526439260382820">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="881628242930415" type="System" />
+                                <condition behavior="FSM" id="7" name="Compare current state" sid="392198281234998" type="enemy">
+                                    <param id="0" name="Name">&quot;land&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="FSM" id="11" name="Go to state" sid="326842087367026" type="enemy">
+                                    <param id="0" name="Name">&quot;attack&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="190771790001431" type="Function">
+                                    <param id="0" name="Name">&quot;inCombat&quot;</param>
+                                    <param id="1" name="Parameter {n}">enemy.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="241968830640250">
+                    <conditions>
+                        <condition id="0" name="On function" sid="267013654151806" type="Function">
+                            <param id="0" name="Name">&quot;inCombat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="191188028247913" type="System">
+                            <param id="0" name="Object to create">blackBg</param>
+                            <param id="1" name="Layer">&quot;topUI&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="490240839061521" type="blackBg">
+                            <param id="0" name="Width">1136</param>
+                            <param id="1" name="Height">640</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="107688104430692" type="blackBg">
+                            <param id="0" name="&apos;On&apos; time">0.15</param>
+                            <param id="1" name="&apos;Off&apos; time">0.15</param>
+                            <param id="2" name="Duration">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="498299924886004" type="blackBg">
+                            <param id="0" name="Instance variable">Puid</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="606357790174844">
+                    <conditions>
+                        <condition behavior="Flash" id="1" name="On flash ended" sid="690680220784397" type="blackBg" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="419691930515414">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="967830415418274" type="enemy">
+                                    <param id="0" name="Unique ID">blackBg.Puid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="987689730626112" type="enemy" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="883700691675577">
+                            <conditions />
+                            <actions>
+                                <action id="-36" name="Save" sid="891759523490461" type="System">
+                                    <param id="0" name="Slot">&quot;beforeCombat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="675423884130752">
+                    <conditions>
+                        <condition id="-28" name="On save complete" sid="106953898791235" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="550044123324104" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;------保存进度成功&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="725322339411717" type="blackBg" />
+                        <action id="-2" name="Go to layout" sid="800333462270274" type="System">
+                            <param id="0" name="Layout">combat</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

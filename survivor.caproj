@@ -15,6 +15,7 @@
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="Rex.Rainbow" id="Rex_TimeLine" version="1">TimeLine</plugin>
         <plugin author="Juan Pablo Tarquino" id="Rex_ZSorter" version="1">Z Sorter</plugin>
@@ -26,10 +27,14 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Rex.Rainbow" id="Rex_FSM" version="0.100000001">FSM</behavior>
+        <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
         <behavior author="Rex.Rainbow" id="Rex_Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -71,6 +76,8 @@
                 <instance-variable name="getItem" sid="417349915171379" type="number" />
                 <instance-variable name="moveDistance" sid="152926846526472" type="number" />
                 <instance-variable name="getEnemy" sid="476287779111286" type="number" />
+                <instance-variable name="atk" sid="603813039919440" type="number" />
+                <instance-variable name="MaxAtk" sid="997877670633882" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="actionFSM" sid="153148587235937">
@@ -81,6 +88,12 @@
                 </behavior-type>
                 <behavior-type name="Timer" sid="637351069671290">
                     <behavior id="Rex_Timer" />
+                </behavior-type>
+                <behavior-type name="MoveTo" sid="587921431479623">
+                    <behavior id="Rex_MoveTo" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="312247113693082">
+                    <behavior id="Sin" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -208,8 +221,55 @@
         <object-type name="enemy" sid="758094540637594">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="649247560765272" speed="5">
+                <animation framecount="1" loop="0" name="hide" pingpong="0" repeatcount="1" repeatto="0" sid="649247560765272" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="enemy_1" pingpong="0" repeatcount="1" repeatto="0" sid="647950284889834" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="blackBg" sid="339884170853431">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
+        <object-type name="LocalStorage" sid="802704590918275">
+            <plugin id="LocalStorage" />
+        </object-type>
+        <object-type name="btn_attack" sid="613231254965877">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="attack" pingpong="0" repeatcount="1" repeatto="0" sid="249154985300112" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="attack" sid="501248009678392">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="atk" sid="837042996279665" type="number" />
+                <instance-variable name="target" sid="388404983164761" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Fade" sid="610996330080926">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="672137592640741">
+                    <behavior id="Rex_Timer" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="camera" sid="876612425711811">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="345650819514765">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="992059919827916" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.533333" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -233,6 +293,7 @@
         </family>
         <family name="btns" plugin-id="Sprite" sid="376680578472448">
             <members>
+                <member>btn_attack</member>
                 <member>btn_pause</member>
             </members>
             <instance-variables>
@@ -266,6 +327,7 @@
         </family>
         <family name="9patch" plugin-id="NinePatch" sid="397981525466132">
             <members>
+                <member>blackBg</member>
                 <member>item_progress</member>
                 <member>item_progressBg</member>
                 <member>tipsBg</member>
@@ -280,12 +342,38 @@
                 <behavior-type name="Fade" sid="830092184138449">
                     <behavior id="Fade" />
                 </behavior-type>
+                <behavior-type name="Flash" sid="267890611999669">
+                    <behavior id="Flash" />
+                </behavior-type>
             </behaviors>
         </family>
         <family name="enemys" plugin-id="Sprite" sid="767532677273048">
             <members>
                 <member>enemy</member>
             </members>
+            <instance-variables>
+                <instance-variable name="hp" sid="997979716513459" type="number" />
+                <instance-variable name="maxHp" sid="681147668022997" type="number" />
+                <instance-variable name="atk" sid="743560507304885" type="number" />
+                <instance-variable name="MaxAtk" sid="578902262247195" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="FSM" sid="856670421644751">
+                    <behavior id="Rex_FSM" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="784916141101266">
+                    <behavior id="Rex_Timer" />
+                </behavior-type>
+                <behavior-type name="MoveTo" sid="118277357731002">
+                    <behavior id="Rex_MoveTo" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="132218616555941">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="597767423758643">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder>
@@ -293,10 +381,15 @@
         <layout>UI.xml</layout>
         <layout>game.xml</layout>
         <layout>obj.xml</layout>
+        <layout>combat.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>e_game.xml</event-sheet>
         <event-sheet>e_loading.xml</event-sheet>
+        <event-sheet>e_combat.xml</event-sheet>
+        <event-sheet>e_player.xml</event-sheet>
+        <event-sheet>e_fadeInOut.xml</event-sheet>
+        <event-sheet>e_bubbleImformation.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="7" />
@@ -308,6 +401,7 @@
         <global-instance type="AJAX" uid="10" />
         <global-instance type="Browser" uid="11" />
         <global-instance type="Keyboard" uid="14" />
+        <global-instance type="LocalStorage" uid="32" />
     </global-instances>
     <sounds-folder />
     <music-folder />

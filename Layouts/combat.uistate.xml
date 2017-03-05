@@ -4,11 +4,11 @@
 It is entirely optional and the project will load without it.  If you are placing the project under source control,
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
-        <position-x>589.146</position-x>
-        <position-y>328.983</position-y>
-        <position-z>145.2</position-z>
-        <lookat-x>589.146</lookat-x>
-        <lookat-y>328.983</lookat-y>
+        <position-x>807.897</position-x>
+        <position-y>405.765</position-y>
+        <position-z>194.872</position-z>
+        <lookat-x>807.897</lookat-x>
+        <lookat-y>405.765</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>0</snap-to-grid>
@@ -23,9 +23,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="UI" />
+    <active-layer name="tips" />
     <layers>
         <layer locked="0" name="bg" parallax-in-editor="0" visible="1" />
-        <layer locked="0" name="UI" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="game" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="fx" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="tips" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="ui2" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="topUI" parallax-in-editor="0" visible="1" />
     </layers>
 </c2uistate>

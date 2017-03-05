@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>e_bubbleImformation</name>
+    <events>
+        <event-group description="" sid="672327062322576" title="bubble information">
+            <sub-events>
+                <event-block sid="284428936540522">
+                    <conditions>
+                        <condition id="0" name="On function" sid="909372891396797" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="912295781372076" type="System">
+                            <param id="0" name="Object to create">tipsBg</param>
+                            <param id="1" name="Layer">&quot;tips&quot;</param>
+                            <param id="2" name="X">388</param>
+                            <param id="3" name="Y">160</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="725524600942017" type="tipsBg">
+                            <param id="0" name="Width">360</param>
+                            <param id="1" name="Height">120</param>
+                        </action>
+                        <action behavior="Fade" id="2" name="Set fade-in time" sid="145771318033274" type="tipsBg">
+                            <param id="0" name="Fade-in time">0.3</param>
+                        </action>
+                        <action behavior="Fade" id="3" name="Set wait time" sid="732440201300795" type="tipsBg">
+                            <param id="0" name="Wait time">1</param>
+                        </action>
+                        <action behavior="Fade" id="4" name="Set fade-out time" sid="361475749517569" type="tipsBg">
+                            <param id="0" name="Fade-out time">0.5</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="535521328202585" type="tipsBg" />
+                        <action id="-3" name="Create object" sid="858382281666041" type="System">
+                            <param id="0" name="Object to create">txt_center</param>
+                            <param id="1" name="Layer">tipsBg.LayerName</param>
+                            <param id="2" name="X">tipsBg.x+tipsBg.Width/2</param>
+                            <param id="3" name="Y">tipsBg.y+tipsBg.Height/2</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="606582487942008" type="txt_center">
+                            <param id="0" name="Width">tipsBg.Width</param>
+                            <param id="1" name="Height">tipsBg.Height</param>
+                        </action>
+                        <action id="0" name="Set text" sid="533671850562393" type="txt_center">
+                            <param id="0" name="Text">Function.Param(0)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="802438536859140" type="txt_center">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Value">&quot;tips&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="531808317792005" type="txt_center">
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Value">&quot;information&quot;</param>
+                        </action>
+                        <action behavior="Fade" id="2" name="Set fade-in time" sid="627147026157384" type="txt_center">
+                            <param id="0" name="Fade-in time">0.3</param>
+                        </action>
+                        <action behavior="Fade" id="3" name="Set wait time" sid="401566671388292" type="txt_center">
+                            <param id="0" name="Wait time">1</param>
+                        </action>
+                        <action behavior="Fade" id="4" name="Set fade-out time" sid="632980292637578" type="txt_center">
+                            <param id="0" name="Fade-out time">0.5</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="807186694244162" type="txt_center" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
