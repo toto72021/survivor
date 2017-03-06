@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0</version>
+    <version>1.0.0.01</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -13,10 +13,12 @@
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_LayoutFreezer" version="0.100000001">Layout freezer</plugin>
         <plugin author="Rex.Rainbow" id="Rex_TimeLine" version="1">TimeLine</plugin>
         <plugin author="Juan Pablo Tarquino" id="Rex_ZSorter" version="1">Z Sorter</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -28,6 +30,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Rex.Rainbow" id="Rex_FSM" version="0.100000001">FSM</behavior>
         <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
@@ -94,6 +97,9 @@
                 </behavior-type>
                 <behavior-type name="Sine" sid="312247113693082">
                     <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Persist" sid="221582319375064">
+                    <behavior id="Persist" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -273,6 +279,54 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type global="1" name="LayoutFreezer" sid="708496518735527">
+            <plugin id="Rex_LayoutFreezer" />
+        </object-type>
+        <object-type global="1" name="Dictionary" sid="226633845302224">
+            <plugin id="Dictionary" />
+        </object-type>
+        <object-type name="ui_itembg" sid="903030099753650">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="default" pingpong="0" repeatcount="1" repeatto="0" sid="348961624809026" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ui_item" sid="454277742104767">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="itemName" sid="592777860765638" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="knife" pingpong="0" repeatcount="1" repeatto="0" sid="462963690497642" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="0" name="kettle" pingpong="0" repeatcount="1" repeatto="0" sid="393019595602774" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="fruits" pingpong="0" repeatcount="1" repeatto="0" sid="700352310851996" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="coconut" pingpong="0" repeatcount="1" repeatto="0" sid="217712069512791" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="egg" pingpong="0" repeatcount="1" repeatto="0" sid="393943300714414" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="meat" pingpong="0" repeatcount="1" repeatto="0" sid="843337833992914" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="null" pingpong="0" repeatcount="1" repeatto="0" sid="491574143853236" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="itemBg" sid="963413894141379">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
     </object-folder>
     <families>
         <family name="txts" plugin-id="Text" sid="270727115053159">
@@ -300,11 +354,21 @@
                 <instance-variable name="groupID" sid="702355999223260" type="string" />
                 <instance-variable name="actionID" sid="320262683896434" type="string" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Persist" sid="682585978973577">
+                    <behavior id="Persist" />
+                </behavior-type>
+            </behaviors>
         </family>
         <family name="bgs" plugin-id="TiledBg" sid="679559079734112">
             <members>
                 <member>bg_1</member>
             </members>
+            <behaviors>
+                <behavior-type name="Persist" sid="613756113369411">
+                    <behavior id="Persist" />
+                </behavior-type>
+            </behaviors>
         </family>
         <family name="items" plugin-id="Sprite" sid="945047406458917">
             <members>
@@ -312,6 +376,7 @@
             </members>
             <instance-variables>
                 <instance-variable name="type" sid="787612393709808" type="string" />
+                <instance-variable name="state" sid="558751647465705" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pin" sid="239338197019335">
@@ -323,6 +388,9 @@
                 <behavior-type name="Fade" sid="678171677288056">
                     <behavior id="Fade" />
                 </behavior-type>
+                <behavior-type name="Persist" sid="719610936715799">
+                    <behavior id="Persist" />
+                </behavior-type>
             </behaviors>
         </family>
         <family name="9patch" plugin-id="NinePatch" sid="397981525466132">
@@ -330,6 +398,7 @@
                 <member>blackBg</member>
                 <member>item_progress</member>
                 <member>item_progressBg</member>
+                <member>itemBg</member>
                 <member>tipsBg</member>
             </members>
             <instance-variables>
@@ -372,6 +441,26 @@
                 </behavior-type>
                 <behavior-type name="Fade" sid="597767423758643">
                     <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Persist" sid="847137425996197">
+                    <behavior id="Persist" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="UI" plugin-id="Sprite" sid="715501199202748">
+            <members>
+                <member>ui_display</member>
+                <member>ui_item</member>
+                <member>ui_itembg</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="groupID" sid="967684320197508" type="string" />
+                <instance-variable name="actionID" sid="608902795589421" type="string" />
+                <instance-variable name="diyFloatValue" sid="154170270801460" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Persist" sid="631801224018450">
+                    <behavior id="Persist" />
                 </behavior-type>
             </behaviors>
         </family>

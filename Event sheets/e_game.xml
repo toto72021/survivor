@@ -5,90 +5,80 @@
     <events>
         <include>e_bubbleImformation</include>
         <include>e_fadeInOut</include>
-        <event-group description="" sid="553412261128497" title="startGame">
+        <event-group description="" sid="512011241026526" title="startGame">
             <sub-events>
-                <event-block sid="147050877014865">
+                <event-block sid="540826238320770">
                     <conditions>
-                        <condition id="-2" name="On start of layout" sid="562927521785783" type="System" />
+                        <condition id="-2" name="On start of layout" sid="410969989642070" type="System" />
                     </conditions>
-                    <actions>
-                        <action id="5" name="Check item exists" sid="108070380248381" type="LocalStorage">
-                            <param id="0" name="Key">&quot;aferCombat&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="522619274093198">
-                    <conditions>
-                        <condition id="10" name="On item missing" sid="819011303600688" type="LocalStorage">
-                            <param id="0" name="Key">&quot;aferCombat&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="14" name="Log" sid="519582617336626" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;---------重新关卡&quot;</param>
-                        </action>
-                        <action id="0" name="Call function" sid="930044929719952" type="Function">
-                            <param id="0" name="Name">&quot;restartGame&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="0" name="Call function" sid="168615147781695" type="Function">
-                            <param id="0" name="Name">&quot;playerMove&quot;</param>
-                            <param id="1" name="Parameter {n}">1</param>
-                        </action>
-                        <action id="0" name="Call function" sid="104599019295579" type="Function">
-                            <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="543350142634673">
-                    <conditions>
-                        <condition id="9" name="On item exists" sid="580156281870759" type="LocalStorage">
-                            <param id="0" name="Key">&quot;aferCombat&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="14" name="Log" sid="120258385541305" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;---------继续关卡&quot;</param>
-                        </action>
-                        <action id="-37" name="Load" sid="465655554013897" type="System">
-                            <param id="0" name="Slot">&quot;beforeCombat&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="953252050131819">
-                    <conditions>
-                        <condition id="-29" name="On load complete" sid="887376906009017" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="14" name="Log" sid="475213340982012" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;---------加载成功&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="260021244416359" type="player_poxy">
-                            <param id="0" name="Instance variable">hp</param>
-                            <param id="1" name="Value">float(LocalStorage.ItemValue)</param>
-                        </action>
-                        <action id="3" name="Clear storage" sid="665767064640008" type="LocalStorage" />
-                        <action id="0" name="Call function" sid="362662875082996" type="Function">
-                            <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="400992287861651">
-                    <conditions>
-                        <condition id="-30" name="On load failed" sid="353843065158254" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="14" name="Log" sid="389279600422834" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;---------加载失败&quot;</param>
-                        </action>
-                        <action id="-26" name="Restart layout" sid="141507774025163" type="System" />
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="558595140408808">
+                            <conditions>
+                                <condition id="3" name="Has key" sid="803792020903754" type="Dictionary">
+                                    <param id="0" name="Key">&quot;beforeCombat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="557325238452667" type="player_poxy">
+                                    <param id="0" name="Instance variable">hp</param>
+                                    <param id="1" name="Value">Dictionary.Get(&quot;playerHp&quot;)</param>
+                                </action>
+                                <action behavior="Timer" id="2" name="Start" sid="516528377802295" type="player_poxy">
+                                    <param id="0" name="Time">Dictionary.Get(&quot;itemTimer&quot;)</param>
+                                    <param id="1" name="Timer">&quot;getItem&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action behavior="Timer" id="2" name="Start" sid="690358459586670" type="player_poxy">
+                                    <param id="0" name="Time">Dictionary.Get(&quot;enemyTimer&quot;)</param>
+                                    <param id="1" name="Timer">&quot;getEnemy&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="2" name="Delete key" sid="195522224514212" type="Dictionary">
+                                    <param id="0" name="Key">&quot;beforeCombat&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="887340121346956" type="Function">
+                                    <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="670549663731797" type="Function">
+                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="14" name="Log" sid="925449031289323" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;---------继续关卡&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="336213358331126">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="510694307328524" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="875277697532691" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;---------重新关卡&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="966273524258812" type="Function">
+                                    <param id="0" name="Name">&quot;restartGame&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="155339708088285" type="Function">
+                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                    <param id="1" name="Parameter {n}">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="596293567632364" type="Function">
+                                    <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="241607012853871" type="Function">
+                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -620,15 +610,22 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="828169281532222" title="items">
+        <event-group description="" sid="828169281532222" title="search">
             <sub-events>
                 <event-block sid="702431015071049">
                     <conditions>
                         <condition id="3" name="On touched object" sid="745759963021714" type="Touch">
                             <param id="0" name="Object">item</param>
                         </condition>
+                        <condition id="3" name="Compare frame" sid="683561995008160" type="item">
+                            <param id="0" name="Comparison">1</param>
+                            <param id="1" name="Number">1</param>
+                        </condition>
                         <condition id="4" inverted="1" name="Is touching object" sid="922247635323748" type="Touch">
                             <param id="0" name="Object">btn_pause</param>
+                        </condition>
+                        <condition behavior="animationFSM" id="7" inverted="1" name="Compare current state" sid="622473132646195" type="player_poxy">
+                            <param id="0" name="Name">&quot;search&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -844,8 +841,91 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="529092404829717" title="array_item">
+        <event-group description="" sid="529092404829717" title="item">
             <sub-events>
+                <event-block sid="791786929149424">
+                    <conditions>
+                        <condition id="0" name="On function" sid="278842562554340" type="Function">
+                            <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="465575867338278">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="939451058926358" type="System">
+                                    <param id="0" name="Object">ui_item</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="128367153404328">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="404747327843347" type="System">
+                                            <param id="0" name="First value">Array_item.At(ui_item.diyFloatValue,1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="867026122179347" type="ui_item">
+                                            <param id="0" name="Animation">&quot;null&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="193826040928706">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="812594527462151" type="txts">
+                                                    <param id="0" name="Instance variable">actionID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">ui_item.actionID</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="313328264450188" type="txts">
+                                                    <param id="0" name="Text">&quot;&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="816602461438507">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="315181216106859" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="240448382437993" type="ui_item">
+                                            <param id="0" name="Animation">str(Array_item.At(ui_item.diyFloatValue,0))</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="847837712336825" type="ui_item">
+                                            <param id="0" name="Instance variable">itemName</param>
+                                            <param id="1" name="Value">Array_item.At(Self.diyFloatValue,0)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="689197451315509">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="644380898078462" type="txts">
+                                                    <param id="0" name="Instance variable">actionID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">ui_item.actionID</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="236437333850665" type="txts">
+                                                    <param id="0" name="Text">Array_item.At(ui_item.diyFloatValue,1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>( y 0 name;  1 count; 2  )</comment>
                 <event-block sid="448889271785801">
                     <conditions>
                         <condition id="0" name="On function" sid="505957056812026" type="Function">
@@ -872,9 +952,46 @@
                         <action id="3" name="Set at XY" sid="165477789975214" type="Array_item">
                             <param id="0" name="X">1</param>
                             <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">1</param>
+                            <param id="2" name="Value">2</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="294283573764751">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="391435740507851" type="Touch">
+                            <param id="0" name="Object">ui_item</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="681232960878228" type="ui_item">
+                            <param id="0" name="Instance variable">itemName</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="788616497717325" type="Function">
+                            <param id="0" name="Name">&quot;itemInstruction&quot;</param>
+                            <param id="1" name="Parameter {n}">ui_item.itemName</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="597106131450283">
+                    <conditions>
+                        <condition id="0" name="On function" sid="916889329278322" type="Function">
+                            <param id="0" name="Name">&quot;itemInstruction&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="655690680416917" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;使用&quot;&amp;Function.Param(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="364449578060215">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -1053,18 +1170,18 @@
                             <param id="2" name="X">0</param>
                             <param id="3" name="Y">0</param>
                         </action>
+                        <action id="-10" name="Set value" sid="498299924886004" type="blackBg">
+                            <param id="0" name="Instance variable">Puid</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
                         <action id="-7" name="Set size" sid="490240839061521" type="blackBg">
                             <param id="0" name="Width">1136</param>
                             <param id="1" name="Height">640</param>
                         </action>
                         <action behavior="Flash" id="0" name="Flash" sid="107688104430692" type="blackBg">
-                            <param id="0" name="&apos;On&apos; time">0.15</param>
-                            <param id="1" name="&apos;Off&apos; time">0.15</param>
-                            <param id="2" name="Duration">1</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="498299924886004" type="blackBg">
-                            <param id="0" name="Instance variable">Puid</param>
-                            <param id="1" name="Value">Function.Param(0)</param>
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.8</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1072,7 +1189,9 @@
                     <conditions>
                         <condition behavior="Flash" id="1" name="On flash ended" sid="690680220784397" type="blackBg" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-9" name="Destroy" sid="798194252144188" type="blackBg" />
+                    </actions>
                     <sub-events>
                         <event-block sid="419691930515414">
                             <conditions>
@@ -1087,27 +1206,31 @@
                         <event-block sid="883700691675577">
                             <conditions />
                             <actions>
-                                <action id="-36" name="Save" sid="891759523490461" type="System">
-                                    <param id="0" name="Slot">&quot;beforeCombat&quot;</param>
+                                <action id="0" name="Add key" sid="770878503459510" type="Dictionary">
+                                    <param id="0" name="Key">&quot;playerHp&quot;</param>
+                                    <param id="1" name="Value">player_poxy.hp</param>
+                                </action>
+                                <action id="0" name="Add key" sid="140097088793777" type="Dictionary">
+                                    <param id="0" name="Key">&quot;itemTimer&quot;</param>
+                                    <param id="1" name="Value">player_poxy.Timer.Remainder(&quot;getItem&quot;)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="365625039427871" type="Dictionary">
+                                    <param id="0" name="Key">&quot;enemyTimer&quot;</param>
+                                    <param id="1" name="Value">player_poxy.Timer.Remainder(&quot;getEnemy&quot;)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="961272318348517" type="Dictionary">
+                                    <param id="0" name="Key">&quot;beforeCombat&quot;</param>
+                                    <param id="1" name="Value">2333</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="186123412103183" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="188962376800383" type="System">
+                                    <param id="0" name="Layout">combat</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="675423884130752">
-                    <conditions>
-                        <condition id="-28" name="On save complete" sid="106953898791235" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="14" name="Log" sid="550044123324104" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;------保存进度成功&quot;</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="725322339411717" type="blackBg" />
-                        <action id="-2" name="Go to layout" sid="800333462270274" type="System">
-                            <param id="0" name="Layout">combat</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
