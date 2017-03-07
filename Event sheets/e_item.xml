@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>e_item</name>
+    <events>
+        <event-group description="" sid="515236415056461" title="item">
+            <sub-events>
+                <comment>初始化物资数组</comment>
+                <event-block sid="137136509477020">
+                    <conditions>
+                        <condition id="0" name="On function" sid="720099741371613" type="Function">
+                            <param id="0" name="Name">&quot;resetArray&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Clear" sid="687084164078279" type="Array_item" />
+                        <action id="1" name="Set size" sid="118669340529880" type="Array_item">
+                            <param id="0" name="Width">2</param>
+                            <param id="1" name="Height">3</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="920240154777151" type="Array_item">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">&quot;knife&quot;</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="482719823901183" type="Array_item">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="109050271954744" type="Array_item">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">1</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="990472982677764" type="Array_item">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">&quot;water&quot;</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="445317110321221" type="Array_item">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">2</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="476004168194602" type="Array_item">
+                            <param id="0" name="X">1</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>几率获得物资&#x0D;&#x0A;( 0 item; 1 randRate; 2 count)</comment>
+                <event-block sid="564909952035494">
+                    <conditions>
+                        <condition id="0" name="On function" sid="487018617158150" type="Function">
+                            <param id="0" name="Name">&quot;randItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="getItem" sid="176279179602630" static="0" type="number">0</variable>
+                        <event-block sid="394452818750132">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="187021992067930" type="System">
+                                    <param id="0" name="Variable">getItem</param>
+                                    <param id="1" name="Value">int(random(1)+Function.Param(1)/100)</param>
+                                </action>
+                                <action id="14" name="Log" sid="605487995956837" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">getItem&amp;&quot;&lt;&gt;获得几率&quot;&amp;random(1)&amp;&quot;+&quot;&amp;Function.Param(1)/100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="774528931193385">
+                            <conditions>
+                                <condition disabled="1" id="-8" name="Compare two values" sid="801136596800851" type="System">
+                                    <param id="0" name="First value">int(random(1)+Function.Param(1)/100)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="104000351674513" type="System">
+                                    <param id="0" name="Variable">getItem</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="597862969739359" type="Function">
+                                    <param id="0" name="Name">&quot;getItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">Function.Param(0){###}Function.Param(2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="862284430826036">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="493506561133561" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="311092846541908" type="Function">
+                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;搜索物资失败 &quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>( 0 itemName; 1 count)</comment>
+                <event-block sid="848969000261555">
+                    <conditions>
+                        <condition id="0" name="On function" sid="603126293142694" type="Function">
+                            <param id="0" name="Name">&quot;getItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="400673033642129" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;获得物资 &quot;&amp;Function.Param(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable constant="0" name="findItem" sid="602574618039731" static="0" type="number">0</variable>
+                        <event-block sid="684277109410731">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="766417486325094" type="Array_item">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="618315605784960" type="System">
+                                    <param id="0" name="First value">Array_item.At(Array_item.CurX,0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set at XY" sid="486669725793585" type="Array_item">
+                                    <param id="0" name="X">Array_item.CurX</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Array_item.At(Array_item.CurX,1)+Function.Param(1)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="334838412480128" type="System">
+                                    <param id="0" name="Variable">findItem</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="597915662356479">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="146862077866122" type="Array_item">
+                                            <param id="0" name="X">Array_item.CurX</param>
+                                            <param id="1" name="Y">1</param>
+                                            <param id="2" name="Comparison">5</param>
+                                            <param id="3" name="Value">Array_item.At(Array_item.CurX,2)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="3" name="Set at XY" sid="241797180209182" type="Array_item">
+                                            <param id="0" name="X">Array_item.CurX</param>
+                                            <param id="1" name="Y">1</param>
+                                            <param id="2" name="Value">Array_item.At(Array_item.CurX,2)</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="365095620617605" type="Function">
+                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;超出物资叠加最大值&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="603577534418250">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="505762490536361" type="System">
+                                    <param id="0" name="Variable">findItem</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="619133113713732" type="Array_item">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">0</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="675734767186741" type="Array_item">
+                                    <param id="0" name="X">Array_item.Width-1</param>
+                                    <param id="1" name="Y">0</param>
+                                    <param id="2" name="Value">Function.Param(0)</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="580268453391168" type="Array_item">
+                                    <param id="0" name="X">Array_item.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="702701744942261" type="Array_item">
+                                    <param id="0" name="X">Array_item.Width-1</param>
+                                    <param id="1" name="Y">2</param>
+                                    <param id="2" name="Value">9</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="887882959044495">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="473259778603959" type="Function">
+                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>使用物资</comment>
+                <event-block sid="550234066129367">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="153459123009836" type="Touch">
+                            <param id="0" name="Object">ui_item</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="371169702841298" type="ui_item">
+                            <param id="0" name="Instance variable">itemName</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="872473252695738" type="ui_item">
+                            <param id="0" name="Instance variable">itemName</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;knife&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="692449379161331" type="Function">
+                            <param id="0" name="Name">&quot;useItem&quot;</param>
+                            <param id="1" name="Parameter {n}">ui_item.itemName{###}1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>( 0 itemName; 1 count)</comment>
+                <event-block sid="146123588382721">
+                    <conditions>
+                        <condition id="0" name="On function" sid="666035148453605" type="Function">
+                            <param id="0" name="Name">&quot;useItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="857717357688822">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="515613319698739" type="Array_item">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="655749875556149" type="System">
+                                    <param id="0" name="First value">Array_item.At(Array_item.CurX,0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="123921609709405">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="750506851672912" type="System">
+                                            <param id="0" name="First value">Array_item.At(Array_item.CurX,1)</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">Function.Param(1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="3" name="Set at XY" sid="629724153785971" type="Array_item">
+                                            <param id="0" name="X">Array_item.CurX</param>
+                                            <param id="1" name="Y">1</param>
+                                            <param id="2" name="Value">Array_item.At(Array_item.CurX,1)-Function.Param(1)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="281919177427237">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="560325287813482" type="System">
+                                                    <param id="0" name="First value">Array_item.At(Array_item.CurX,0)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">&quot;water&quot;</param>
+                                                </condition>
+                                                <condition id="1" name="Compare at XY" sid="230194464569191" type="Array_item">
+                                                    <param id="0" name="X">Array_item.CurX</param>
+                                                    <param id="1" name="Y">1</param>
+                                                    <param id="2" name="Comparison">3</param>
+                                                    <param id="3" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="9" name="Delete" sid="122996961692094" type="Array_item">
+                                                    <param id="0" name="Index">Array_item.CurX</param>
+                                                    <param id="1" name="Axis">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="811413521224521">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="278874631007192" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;water&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Add to" sid="529950099770863" type="player_poxy">
+                                                    <param id="0" name="Instance variable">energy</param>
+                                                    <param id="1" name="Value">5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="421408157977396">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="328821390772705" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;fruits&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-12" name="Subtract from" sid="143784593995499" type="player_poxy">
+                                                    <param id="0" name="Instance variable">hungry</param>
+                                                    <param id="1" name="Value">5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="988373618330623">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="892875453287837" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;coconut&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-11" name="Add to" sid="501915497106141" type="player_poxy">
+                                                    <param id="0" name="Instance variable">energy</param>
+                                                    <param id="1" name="Value">8</param>
+                                                </action>
+                                                <action id="-12" name="Subtract from" sid="652805084048425" type="player_poxy">
+                                                    <param id="0" name="Instance variable">hungry</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="530133616235946">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="644887903806899" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;egg&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-12" name="Subtract from" sid="150009889127138" type="player_poxy">
+                                                    <param id="0" name="Instance variable">hungry</param>
+                                                    <param id="1" name="Value">10</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="439417515613112" type="player_poxy">
+                                                    <param id="0" name="Instance variable">hp</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="316153772095795">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="945955749119815" type="System">
+                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;meat&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-12" name="Subtract from" sid="136005572071135" type="player_poxy">
+                                                    <param id="0" name="Instance variable">hungry</param>
+                                                    <param id="1" name="Value">20</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="772228308419952" type="player_poxy">
+                                                    <param id="0" name="Instance variable">hp</param>
+                                                    <param id="1" name="Value">5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="100926183116056">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="948287261594667" type="Function">
+                                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="484449967632506" type="Function">
+                                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;使用物资 &quot;&amp;Function.Param(0)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="501011441418980">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="512153600647307" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="934617191853908" type="Function">
+                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;物资数量不足 &quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="593224659128992">
+                    <conditions>
+                        <condition id="0" name="On function" sid="697523337707721" type="Function">
+                            <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="443641130209213">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="592575504710822" type="ui_item">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;item&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="182312632222646" type="ui_item" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="791989147363364">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="529062891640861" type="txts">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;item&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="981182865514259" type="txts" />
+                            </actions>
+                        </event-block>
+                        <variable constant="0" name="ArrayIndex" sid="157108146355839" static="0" type="number">0</variable>
+                        <event-block sid="213827758872603">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="298553482991745" type="Array_item">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="727413319473275" type="System">
+                                    <param id="0" name="Object to create">ui_item</param>
+                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                    <param id="2" name="X">1064</param>
+                                    <param id="3" name="Y">140+ArrayIndex*72</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="414665548483909" type="ui_item">
+                                    <param id="0" name="Animation">str(Array_item.At(Array_item.CurX,0))</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="140438411989880" type="ui_item">
+                                    <param id="0" name="Instance variable">itemName</param>
+                                    <param id="1" name="Value">str(Array_item.At(Array_item.CurX,0))</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="128640341393550" type="System">
+                                    <param id="0" name="Object to create">txt_center</param>
+                                    <param id="1" name="Layer">ui_item.LayerName</param>
+                                    <param id="2" name="X">ui_item.X+16</param>
+                                    <param id="3" name="Y">ui_item.Y+32</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="610945084350031" type="txt_center">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;item&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="436443026864875" type="txt_center">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">str(Array_item.At(Array_item.CurX,0))</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="702752662195699" type="txt_center">
+                                    <param id="0" name="Width">64</param>
+                                    <param id="1" name="Height">32</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="547983149501914" type="txt_center">
+                                    <param id="0" name="Size (pt)">12</param>
+                                </action>
+                                <action id="0" name="Set text" sid="480272037930791" type="txt_center">
+                                    <param id="0" name="Text">str(Array_item.At(Array_item.CurX,1))</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="159395167923635" type="System">
+                                    <param id="0" name="Variable">ArrayIndex</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="422169651579433">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="554021715316336" type="System">
+                                            <param id="0" name="First value">Array_item.At(Array_item.CurX,0)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;water&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="976120346278301" type="ui_item">
+                                            <param id="0" name="Frame number">Array_item.At(Array_item.CurX,1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

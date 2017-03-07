@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_combat</name>
     <events>
+        <include>e_item</include>
         <include>e_bubbleImformation</include>
         <include>e_fadeInOut</include>
         <event-group description="" sid="225877727883310" title="combat">
@@ -394,6 +395,7 @@
                                             <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
                                             <param id="1" name="Parameter {n}">&quot;游戏失败，将重新开始&quot;</param>
                                         </action>
+                                        <action id="3" name="Clear" sid="241878872752806" type="Dictionary" />
                                         <action id="-16" name="Wait" sid="545478332253588" type="System">
                                             <param id="0" name="Seconds">2</param>
                                         </action>

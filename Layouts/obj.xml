@@ -67,8 +67,10 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <type></type>
+                        <item>fruits</item>
                         <state>full</state>
+                        <randRate>100</randRate>
+                        <itemCount>3</itemCount>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />

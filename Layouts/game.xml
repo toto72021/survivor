@@ -164,7 +164,7 @@
                         <hp>10</hp>
                         <maxHp>10</maxHp>
                         <energy>0</energy>
-                        <maxEnergy>10</maxEnergy>
+                        <maxEnergy>15</maxEnergy>
                         <hungry>0</hungry>
                         <maxHungry>100</maxHungry>
                         <getItem>1</getItem>
@@ -351,7 +351,6 @@
                 <x-order>Increasing</x-order>
             </properties>
         </instance>
-        <instance type="LayoutFreezer" uid="38" />
         <instance type="Dictionary" uid="39" />
     </nonworld-instances>
     <effects />

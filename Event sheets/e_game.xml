@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_game</name>
     <events>
+        <include>e_item</include>
         <include>e_bubbleImformation</include>
         <include>e_fadeInOut</include>
         <event-group description="" sid="512011241026526" title="startGame">
@@ -725,14 +726,6 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="667145515496186" type="item_progress" />
-                        <action id="0" name="Call function" sid="909135676166994" type="Function">
-                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;获得物资XXX&quot;</param>
-                        </action>
-                        <action id="-12" name="Subtract from" sid="556384479616986" type="player_poxy">
-                            <param id="0" name="Instance variable">hungry</param>
-                            <param id="1" name="Value">3</param>
-                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="545551055699564">
@@ -754,6 +747,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="0" name="Call function" sid="259712271711381" type="Function">
+                                    <param id="0" name="Name">&quot;randItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">item.item{###}item.randRate{###}item.itemCount</param>
+                                </action>
                                 <action behavior="animationFSM" id="11" name="Go to state" sid="820305579047143" type="player_poxy">
                                     <param id="0" name="Name">&quot;idle&quot;</param>
                                 </action>
@@ -836,160 +833,6 @@
                                     <param id="0" name="X">Self.X-60*dt</param>
                                 </action>
                             </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="529092404829717" title="item">
-            <sub-events>
-                <event-block sid="791786929149424">
-                    <conditions>
-                        <condition id="0" name="On function" sid="278842562554340" type="Function">
-                            <param id="0" name="Name">&quot;refreshArray&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="465575867338278">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="939451058926358" type="System">
-                                    <param id="0" name="Object">ui_item</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="128367153404328">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="404747327843347" type="System">
-                                            <param id="0" name="First value">Array_item.At(ui_item.diyFloatValue,1)</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="867026122179347" type="ui_item">
-                                            <param id="0" name="Animation">&quot;null&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                    </actions>
-                                    <sub-events>
-                                        <event-block sid="193826040928706">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="812594527462151" type="txts">
-                                                    <param id="0" name="Instance variable">actionID</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">ui_item.actionID</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Set text" sid="313328264450188" type="txts">
-                                                    <param id="0" name="Text">&quot;&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="816602461438507">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="315181216106859" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="240448382437993" type="ui_item">
-                                            <param id="0" name="Animation">str(Array_item.At(ui_item.diyFloatValue,0))</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="847837712336825" type="ui_item">
-                                            <param id="0" name="Instance variable">itemName</param>
-                                            <param id="1" name="Value">Array_item.At(Self.diyFloatValue,0)</param>
-                                        </action>
-                                    </actions>
-                                    <sub-events>
-                                        <event-block sid="689197451315509">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="644380898078462" type="txts">
-                                                    <param id="0" name="Instance variable">actionID</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">ui_item.actionID</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Set text" sid="236437333850665" type="txts">
-                                                    <param id="0" name="Text">Array_item.At(ui_item.diyFloatValue,1)</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <comment>( y 0 name;  1 count; 2  )</comment>
-                <event-block sid="448889271785801">
-                    <conditions>
-                        <condition id="0" name="On function" sid="505957056812026" type="Function">
-                            <param id="0" name="Name">&quot;resetArray&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Clear" sid="975280156688654" type="Array_item" />
-                        <action id="3" name="Set at XY" sid="960033815446454" type="Array_item">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Value">&quot;knife&quot;</param>
-                        </action>
-                        <action id="3" name="Set at XY" sid="981018993731900" type="Array_item">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">1</param>
-                        </action>
-                        <action id="3" name="Set at XY" sid="957526743501401" type="Array_item">
-                            <param id="0" name="X">1</param>
-                            <param id="1" name="Y">0</param>
-                            <param id="2" name="Value">&quot;kettle&quot;</param>
-                        </action>
-                        <action id="3" name="Set at XY" sid="165477789975214" type="Array_item">
-                            <param id="0" name="X">1</param>
-                            <param id="1" name="Y">1</param>
-                            <param id="2" name="Value">2</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="294283573764751">
-                    <conditions>
-                        <condition id="3" name="On touched object" sid="391435740507851" type="Touch">
-                            <param id="0" name="Object">ui_item</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="681232960878228" type="ui_item">
-                            <param id="0" name="Instance variable">itemName</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">&quot;&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="788616497717325" type="Function">
-                            <param id="0" name="Name">&quot;itemInstruction&quot;</param>
-                            <param id="1" name="Parameter {n}">ui_item.itemName</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="597106131450283">
-                    <conditions>
-                        <condition id="0" name="On function" sid="916889329278322" type="Function">
-                            <param id="0" name="Name">&quot;itemInstruction&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="655690680416917" type="Function">
-                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;使用&quot;&amp;Function.Param(0)</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="364449578060215">
-                            <conditions />
-                            <actions />
                         </event-block>
                     </sub-events>
                 </event-block>

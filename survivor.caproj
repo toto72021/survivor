@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.01</version>
+    <version>1.0.0.011</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -18,7 +18,6 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
-        <plugin author="Rex.Rainbow" id="Rex_LayoutFreezer" version="0.100000001">Layout freezer</plugin>
         <plugin author="Rex.Rainbow" id="Rex_TimeLine" version="1">TimeLine</plugin>
         <plugin author="Juan Pablo Tarquino" id="Rex_ZSorter" version="1">Z Sorter</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -279,9 +278,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type global="1" name="LayoutFreezer" sid="708496518735527">
-            <plugin id="Rex_LayoutFreezer" />
-        </object-type>
         <object-type global="1" name="Dictionary" sid="226633845302224">
             <plugin id="Dictionary" />
         </object-type>
@@ -302,7 +298,8 @@
                 <animation framecount="1" loop="0" name="knife" pingpong="0" repeatcount="1" repeatto="0" sid="462963690497642" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
-                <animation framecount="2" loop="0" name="kettle" pingpong="0" repeatcount="1" repeatto="0" sid="393019595602774" speed="0">
+                <animation framecount="3" loop="0" name="water" pingpong="0" repeatcount="1" repeatto="0" sid="393019595602774" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
@@ -316,9 +313,6 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
                 <animation framecount="1" loop="0" name="meat" pingpong="0" repeatcount="1" repeatto="0" sid="843337833992914" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-                <animation framecount="1" loop="0" name="null" pingpong="0" repeatcount="1" repeatto="0" sid="491574143853236" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -375,8 +369,10 @@
                 <member>item</member>
             </members>
             <instance-variables>
-                <instance-variable name="type" sid="787612393709808" type="string" />
+                <instance-variable name="item" sid="787612393709808" type="string" />
                 <instance-variable name="state" sid="558751647465705" type="string" />
+                <instance-variable name="randRate" sid="944224676844105" type="number" />
+                <instance-variable name="itemCount" sid="255848340475352" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pin" sid="239338197019335">
@@ -479,6 +475,7 @@
         <event-sheet>e_player.xml</event-sheet>
         <event-sheet>e_fadeInOut.xml</event-sheet>
         <event-sheet>e_bubbleImformation.xml</event-sheet>
+        <event-sheet>e_item.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="7" />
