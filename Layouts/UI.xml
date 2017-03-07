@@ -173,7 +173,7 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <groupID>UI</groupID>
+                        <groupID>player</groupID>
                         <actionID>hp</actionID>
                     </instance-variables>
                     <behavior-instances>
@@ -186,14 +186,24 @@
                                 <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>100</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>84</x>
+                        <x>85.229354858</x>
                         <y>111</y>
                         <z>0</z>
-                        <width>101</width>
+                        <width>116.573440552</width>
                         <height>55</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -215,7 +225,7 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <groupID>UI</groupID>
+                        <groupID>player</groupID>
                         <actionID>energy</actionID>
                     </instance-variables>
                     <behavior-instances>
@@ -228,14 +238,24 @@
                                 <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>100</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>156.878753662</x>
-                        <y>63.667545319</y>
+                        <x>156.87878418</x>
+                        <y>63.667541504</y>
                         <z>0</z>
-                        <width>70.946517944</width>
+                        <width>80.781311035</width>
                         <height>39.97354126</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -257,7 +277,7 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <groupID>UI</groupID>
+                        <groupID>player</groupID>
                         <actionID>hungry</actionID>
                     </instance-variables>
                     <behavior-instances>
@@ -270,14 +290,24 @@
                                 <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>100</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>156.128250122</x>
+                        <x>159.816314697</x>
                         <y>144.80960083</y>
                         <z>0</z>
-                        <width>70.946517944</width>
+                        <width>86.517440796</width>
                         <height>39.97354126</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -328,7 +358,7 @@
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
-                        <groupID>UI</groupID>
+                        <groupID>player</groupID>
                         <actionID>distance</actionID>
                     </instance-variables>
                     <behavior-instances>
@@ -339,6 +369,16 @@
                                 <wait-time>0</wait-time>
                                 <fade-out-time>1</fade-out-time>
                                 <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>100</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -380,79 +420,6 @@
                         <z>0</z>
                         <width>80</width>
                         <height>480</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="ui_item" uid="41">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <groupID>item</groupID>
-                        <actionID>item0</actionID>
-                        <diyFloatValue>0</diyFloatValue>
-                        <itemName></itemName>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Persist" />
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1065</x>
-                        <y>139</y>
-                        <z>0</z>
-                        <width>64</width>
-                        <height>64</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="txt_center" uid="46">
-                    <properties>
-                        <text>Text</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Arial,-16,400,0</font>
-                        <color>0,0,0</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Center</vertical-alignment>
-                        <hotspot>Center</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <instance-variables>
-                        <groupID>item</groupID>
-                        <actionID>item0</actionID>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>No</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>0</wait-time>
-                                <fade-out-time>1</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1077.372070313</x>
-                        <y>158.261703491</y>
-                        <z>0</z>
-                        <width>64</width>
-                        <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

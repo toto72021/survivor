@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.011</version>
+    <version>1.0.0.0307</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -18,6 +18,7 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Rex.Rainbow" id="Rex_TimeLine" version="1">TimeLine</plugin>
         <plugin author="Juan Pablo Tarquino" id="Rex_ZSorter" version="1">Z Sorter</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -27,6 +28,7 @@
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
@@ -321,6 +323,18 @@
             <plugin id="NinePatch" />
             <texture />
         </object-type>
+        <object-type name="P_hp" sid="772234680666354">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="P_energy" sid="360192560883541">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="P_hungry" sid="896744285486892">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
     </object-folder>
     <families>
         <family name="txts" plugin-id="Text" sid="270727115053159">
@@ -336,6 +350,9 @@
             <behaviors>
                 <behavior-type name="Fade" sid="142290252165620">
                     <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="210149233690707">
+                    <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
         </family>
@@ -460,6 +477,16 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="particle" plugin-id="Particles" sid="670281765117357">
+            <members>
+                <member>P_energy</member>
+                <member>P_hp</member>
+                <member>P_hungry</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="actionID" sid="872824750397700" type="string" />
+            </instance-variables>
+        </family>
     </families>
     <layout-folder>
         <layout>loading.xml</layout>
@@ -476,6 +503,8 @@
         <event-sheet>e_fadeInOut.xml</event-sheet>
         <event-sheet>e_bubbleImformation.xml</event-sheet>
         <event-sheet>e_item.xml</event-sheet>
+        <event-sheet>e_ui.xml</event-sheet>
+        <event-sheet>e_start&amp;end.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="7" />

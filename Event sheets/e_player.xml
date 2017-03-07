@@ -2,5 +2,747 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_player</name>
-    <events />
+    <events>
+        <event-group description="" sid="436671320337797" title="player">
+            <sub-events>
+                <event-block sid="388755745639879">
+                    <conditions>
+                        <condition id="0" name="On function" sid="334792523263715" type="Function">
+                            <param id="0" name="Name">&quot;savePlayer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Add key" sid="939625013770849" type="Dictionary">
+                            <param id="0" name="Key">&quot;playerHp&quot;</param>
+                            <param id="1" name="Value">player_poxy.hp</param>
+                        </action>
+                        <action id="0" name="Add key" sid="339086378919073" type="Dictionary">
+                            <param id="0" name="Key">&quot;playerEnergy&quot;</param>
+                            <param id="1" name="Value">player_poxy.energy</param>
+                        </action>
+                        <action id="0" name="Add key" sid="323637737061899" type="Dictionary">
+                            <param id="0" name="Key">&quot;playerHungry&quot;</param>
+                            <param id="1" name="Value">player_poxy.hungry</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="750316543644580">
+                    <conditions>
+                        <condition id="0" name="On function" sid="500516109218172" type="Function">
+                            <param id="0" name="Name">&quot;resetPlayer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="459810147244731" type="player_skin">
+                            <param id="0" name="Pin to">player_poxy</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="458793353960623">
+                            <conditions>
+                                <condition id="3" name="Has key" sid="189641359173628" type="Dictionary">
+                                    <param id="0" name="Key">&quot;beforeCombat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="339049394915973" type="player_poxy">
+                                    <param id="0" name="Instance variable">hp</param>
+                                    <param id="1" name="Value">Dictionary.Get(&quot;playerHp&quot;)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="658783333934083" type="player_poxy">
+                                    <param id="0" name="Instance variable">energy</param>
+                                    <param id="1" name="Value">Dictionary.Get(&quot;playerEnergy&quot;)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="558181890548466" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Value">Dictionary.Get(&quot;playerHungry&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="677059454515533">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="320304734714180" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="546947577613232" type="player_poxy">
+                                    <param id="0" name="Instance variable">moveDistance</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="433912586595168" type="player_poxy">
+                                    <param id="0" name="Instance variable">hp</param>
+                                    <param id="1" name="Value">Self.maxHp</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="783374745642505" type="player_poxy">
+                                    <param id="0" name="Instance variable">energy</param>
+                                    <param id="1" name="Value">Self.maxEnergy</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="942971455680461" type="player_poxy">
+                                    <param id="0" name="Instance variable">atk</param>
+                                    <param id="1" name="Value">Self.MaxAtk</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="406508347677372" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="547144334169139" type="player_poxy">
+                                    <param id="0" name="Instance variable">getItem</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="897714852514906" type="player_poxy">
+                                    <param id="0" name="Instance variable">getEnemy</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>(0 暂停移动&#x0D;&#x0A;1  继续移动)</comment>
+                <event-block sid="943971642708408">
+                    <conditions>
+                        <condition id="0" name="On function" sid="149304201076034" type="Function">
+                            <param id="0" name="Name">&quot;playerMove&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="817004162078666">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="891473272934576" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="3" name="Pause" sid="208262611407979" type="player_poxy">
+                                    <param id="0" name="Timer">&quot;getItem&quot;</param>
+                                </action>
+                                <action behavior="Timer" id="3" name="Pause" sid="153264116101633" type="player_poxy">
+                                    <param id="0" name="Timer">&quot;getEnemy&quot;</param>
+                                </action>
+                                <action behavior="actionFSM" id="11" name="Go to state" sid="134713550846141" type="player_poxy">
+                                    <param id="0" name="Name">&quot;pause&quot;</param>
+                                </action>
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="248184130067359" type="player_poxy">
+                                    <param id="0" name="Name">&quot;idle&quot;</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="474597016053284" type="btn_pause">
+                                    <param id="0" name="Animation">&quot;play&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="945489068679798">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="636714031876452" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="4" name="Resume" sid="622567983902917" type="player_poxy">
+                                    <param id="0" name="Timer">&quot;getItem&quot;</param>
+                                </action>
+                                <action behavior="Timer" id="4" name="Resume" sid="666183663106798" type="player_poxy">
+                                    <param id="0" name="Timer">&quot;getEnemy&quot;</param>
+                                </action>
+                                <action behavior="actionFSM" id="11" name="Go to state" sid="431364022552945" type="player_poxy">
+                                    <param id="0" name="Name">&quot;move&quot;</param>
+                                </action>
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="228784949191025" type="player_poxy">
+                                    <param id="0" name="Name">&quot;move&quot;</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="616083072151831" type="btn_pause">
+                                    <param id="0" name="Animation">&quot;pause&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>角色上相关数值设置</comment>
+                <event-block sid="396688452165717">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="197738471478173" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;game&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="336336001119262" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="576607775230285" type="player_poxy">
+                            <param id="0" name="Timer">&quot;movingTimer&quot;</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="955879025177417" type="player_poxy">
+                            <param id="0" name="Name">&quot;combat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="2" name="Start" sid="989287702230782" type="player_poxy">
+                            <param id="0" name="Time">1</param>
+                            <param id="1" name="Timer">&quot;movingTimer&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="922744794237704">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="792931870734426" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">Self.maxHungry</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="236492064595779" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="707363425971424">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="691589414450270" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="536157191349127" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">Self.maxHungry</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="762554102319492" type="player_poxy">
+                                    <param id="0" name="Instance variable">hp</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="849267829271687">
+                            <conditions>
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="407589121832192" type="player_poxy">
+                                    <param id="0" name="Name">&quot;move&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="229539886392364">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="116619936024899" type="player_poxy">
+                                            <param id="0" name="Instance variable">energy</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="858187737203642" type="player_poxy">
+                                            <param id="0" name="Instance variable">energy</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="643905965716818">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="620510097348941" type="player_poxy">
+                                                    <param id="0" name="Instance variable">energy</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="699727151652524" type="Function">
+                                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                                    <param id="1" name="Parameter {n}">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="330801070525100">
+                            <conditions>
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="212055967584861" type="player_poxy">
+                                    <param id="0" name="Name">&quot;pause&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="709674298750331">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="967875661899615" type="player_poxy">
+                                            <param id="0" name="Instance variable">energy</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">Self.maxEnergy</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="569092808553917" type="player_poxy">
+                                            <param id="0" name="Instance variable">energy</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="241435039667315">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="322653698527720" type="player_poxy">
+                                                    <param id="0" name="Instance variable">energy</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">Self.maxEnergy</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="900818495604756" type="player_poxy">
+                                                    <param id="0" name="Instance variable">energy</param>
+                                                    <param id="1" name="Value">Self.maxEnergy</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="719570547449470">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="306192261382526" type="Function">
+                                    <param id="0" name="Name">&quot;displayPlayerUI&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="719453793168023">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="993134504549349" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="492816524969889" type="player_poxy">
+                            <param id="0" name="Name">&quot;dead&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="219963533123633" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;=======角色死亡&quot;</param>
+                        </action>
+                        <action behavior="actionFSM" id="11" name="Go to state" sid="694431756989346" type="player_poxy">
+                            <param id="0" name="Name">&quot;dead&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="290624286623145" type="Function">
+                            <param id="0" name="Name">&quot;gameOver&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="389960682274698">
+                    <conditions>
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="372401958731538" type="player_poxy">
+                            <param id="0" name="Name">&quot;move&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="397793856405586" type="player_skin">
+                            <param id="0" name="Animation">&quot;move&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="996233905388348">
+                    <conditions>
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="648853876703263" type="player_poxy">
+                            <param id="0" name="Name">&quot;search&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="498505709930680" type="player_skin">
+                            <param id="0" name="Animation">&quot;search&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="485553351351963">
+                    <conditions>
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="407982614863606" type="player_poxy">
+                            <param id="0" name="Name">&quot;idle&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="133828300286779" type="player_skin">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>(0 hp; 1 energy; 2hungry;)</comment>
+                <event-block sid="985839805773749">
+                    <conditions>
+                        <condition id="0" name="On function" sid="300519819306611" type="Function">
+                            <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="335798474862714" type="player_poxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="951823608474879" type="player_poxy">
+                            <param id="0" name="Instance variable">energy</param>
+                            <param id="1" name="Value">Function.Param(1)</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="573469686651258" type="player_poxy">
+                            <param id="0" name="Instance variable">hungry</param>
+                            <param id="1" name="Value">Function.Param(2)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="801853029008984">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="729840472835780" type="player_poxy">
+                                    <param id="0" name="Instance variable">hp</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">Self.maxHp</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="459489121786113" type="player_poxy">
+                                    <param id="0" name="Instance variable">hp</param>
+                                    <param id="1" name="Value">Self.maxHp</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="613598879719456">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="877742316647664" type="player_poxy">
+                                    <param id="0" name="Instance variable">energy</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">Self.maxEnergy</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="602220625714660" type="player_poxy">
+                                    <param id="0" name="Instance variable">energy</param>
+                                    <param id="1" name="Value">Self.maxEnergy</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="481120841621784">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="991035129428854" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="197562865532527" type="player_poxy">
+                                    <param id="0" name="Instance variable">hungry</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-group description="" sid="314085674064659" title="adjustHp">
+                            <sub-events>
+                                <event-block sid="155862774763224">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="104531972962312" type="System">
+                                            <param id="0" name="First value">Function.Param(0)</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="850924520364382" type="System">
+                                            <param id="0" name="Object to create">P_hp</param>
+                                            <param id="1" name="Layer">&quot;fx&quot;</param>
+                                            <param id="2" name="X">player_poxy.X</param>
+                                            <param id="3" name="Y">player_poxy.Y+player_poxy.Height/2</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="280598832312113" type="System">
+                                            <param id="0" name="Object to create">txt_center</param>
+                                            <param id="1" name="Layer">&quot;fx&quot;</param>
+                                            <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
+                                            <param id="3" name="Y">player_poxy.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="375859272988605" type="txt_center">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;hurt&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set font color" sid="689925077695551" type="txt_center">
+                                            <param id="0" name="Color">rgb(71,217,37)</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="672461388458497" type="txt_center">
+                                            <param id="0" name="Text">&quot;+&quot;&amp;Function.Param(0)</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="689950847128501" type="txt_center">
+                                            <param id="0" name="Width">100</param>
+                                            <param id="1" name="Height">64</param>
+                                        </action>
+                                        <action id="3" name="Set font size" sid="859445849452398" type="txt_center">
+                                            <param id="0" name="Size (pt)">32</param>
+                                        </action>
+                                        <action id="2" name="Set font face" sid="239886608790992" type="txt_center">
+                                            <param id="0" name="Font face">&quot;Arial&quot;</param>
+                                            <param id="1" name="Style">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="773920685425226" type="txt_center">
+                                            <param id="0" name="Angle">-90</param>
+                                        </action>
+                                        <action behavior="Bullet" id="5" name="Set enabled" sid="589624061628175" type="txt_center">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="2" name="Set fade-in time" sid="533828662794574" type="txt_center">
+                                            <param id="0" name="Fade-in time">0.2</param>
+                                        </action>
+                                        <action behavior="Fade" id="3" name="Set wait time" sid="480503617713940" type="txt_center">
+                                            <param id="0" name="Wait time">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="4" name="Set fade-out time" sid="805707045808728" type="txt_center">
+                                            <param id="0" name="Fade-out time">0.5</param>
+                                        </action>
+                                        <action behavior="Fade" id="1" name="Start fade" sid="893347045891009" type="txt_center" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="538198385867599">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="302572343645727" type="System" />
+                                        <condition id="-8" name="Compare two values" sid="782117819500824" type="System">
+                                            <param id="0" name="First value">Function.Param(0)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="799095614588585">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="674184905173999" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="950129858725608" type="System">
+                                            <param id="0" name="Object to create">txt_center</param>
+                                            <param id="1" name="Layer">&quot;fx&quot;</param>
+                                            <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
+                                            <param id="3" name="Y">player_poxy.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="199885557514628" type="txt_center">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;hurt&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set font color" sid="110492846263244" type="txt_center">
+                                            <param id="0" name="Color">rgb(255,0,0)</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="864804318027076" type="txt_center">
+                                            <param id="0" name="Text">&quot;-&quot;&amp;Function.Param(0)</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="367136015670913" type="txt_center">
+                                            <param id="0" name="Width">100</param>
+                                            <param id="1" name="Height">64</param>
+                                        </action>
+                                        <action id="2" name="Set font face" sid="907767990909554" type="txt_center">
+                                            <param id="0" name="Font face">&quot;Arial&quot;</param>
+                                            <param id="1" name="Style">1</param>
+                                        </action>
+                                        <action id="3" name="Set font size" sid="848117502053226" type="txt_center">
+                                            <param id="0" name="Size (pt)">32</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="715456630803050" type="txt_center">
+                                            <param id="0" name="Angle">-90</param>
+                                        </action>
+                                        <action behavior="Bullet" id="5" name="Set enabled" sid="485854087986953" type="txt_center">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="2" name="Set fade-in time" sid="639459436205315" type="txt_center">
+                                            <param id="0" name="Fade-in time">0.2</param>
+                                        </action>
+                                        <action behavior="Fade" id="3" name="Set wait time" sid="940405099553626" type="txt_center">
+                                            <param id="0" name="Wait time">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="4" name="Set fade-out time" sid="242622990068132" type="txt_center">
+                                            <param id="0" name="Fade-out time">0.5</param>
+                                        </action>
+                                        <action behavior="Fade" id="1" name="Start fade" sid="963059106540977" type="txt_center" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-block sid="719748863807351">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="573847562026842" type="System">
+                                    <param id="0" name="First value">Function.Param(1)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="30" name="Create timer" sid="175806604122021" type="TimeLine">
+                                    <param id="0" name="Timer">&quot;EE&quot;</param>
+                                    <param id="1" name="Name">&quot;EE&quot;</param>
+                                    <param id="2" name="Parameter {n}">Function.Param(1)</param>
+                                </action>
+                                <action id="3" name="Start" sid="457434685414291" type="TimeLine">
+                                    <param id="0" name="Name">&quot;EE&quot;</param>
+                                    <param id="1" name="Time">0.5</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="179599194920553">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="610403181421663" type="System">
+                                    <param id="0" name="First value">Function.Param(2)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="30" name="Create timer" sid="223772991769633" type="TimeLine">
+                                    <param id="0" name="Timer">&quot;EH&quot;</param>
+                                    <param id="1" name="Name">&quot;EH&quot;</param>
+                                    <param id="2" name="Parameter {n}">Function.Param(2)</param>
+                                </action>
+                                <action id="3" name="Start" sid="189235315645875" type="TimeLine">
+                                    <param id="0" name="Name">&quot;EH&quot;</param>
+                                    <param id="1" name="Time">0.5</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="703565219227987" title="adjustEnergy">
+                    <sub-events>
+                        <event-block sid="851962829665888">
+                            <conditions>
+                                <condition id="0" name="On function" sid="926132831618765" type="Function">
+                                    <param id="0" name="Name">&quot;EE&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Delete" sid="960510463765155" type="TimeLine">
+                                    <param id="0" name="Name">&quot;EE&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="162191648490681" type="System">
+                                    <param id="0" name="Object to create">P_energy</param>
+                                    <param id="1" name="Layer">&quot;fx&quot;</param>
+                                    <param id="2" name="X">player_poxy.X</param>
+                                    <param id="3" name="Y">player_poxy.Y+player_poxy.Height/2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="484666289468439" type="System">
+                                    <param id="0" name="Object to create">txt_center</param>
+                                    <param id="1" name="Layer">&quot;fx&quot;</param>
+                                    <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
+                                    <param id="3" name="Y">player_poxy.Y</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="636990031872198" type="txt_center">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;hurt&quot;</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="772914988568552" type="txt_center">
+                                    <param id="0" name="Color">rgb(64,161,190)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="150999826229198" type="txt_center">
+                                    <param id="0" name="Text">&quot;+&quot;&amp;Function.Param(0)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="266741203824588" type="txt_center">
+                                    <param id="0" name="Width">100</param>
+                                    <param id="1" name="Height">64</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="954859833585951" type="txt_center">
+                                    <param id="0" name="Size (pt)">32</param>
+                                </action>
+                                <action id="2" name="Set font face" sid="473501264739102" type="txt_center">
+                                    <param id="0" name="Font face">&quot;Arial&quot;</param>
+                                    <param id="1" name="Style">1</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="949362274344783" type="txt_center">
+                                    <param id="0" name="Angle">-90</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="270935801474964" type="txt_center">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Fade" id="2" name="Set fade-in time" sid="685494405546901" type="txt_center">
+                                    <param id="0" name="Fade-in time">0.2</param>
+                                </action>
+                                <action behavior="Fade" id="3" name="Set wait time" sid="806768321009440" type="txt_center">
+                                    <param id="0" name="Wait time">1</param>
+                                </action>
+                                <action behavior="Fade" id="4" name="Set fade-out time" sid="839202698880872" type="txt_center">
+                                    <param id="0" name="Fade-out time">0.5</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="150437813349463" type="txt_center" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="104020400925493" title="adjustHungry">
+                    <sub-events>
+                        <event-block sid="443710499654837">
+                            <conditions>
+                                <condition id="0" name="On function" sid="890469798248471" type="Function">
+                                    <param id="0" name="Name">&quot;EH&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Delete" sid="254531643634994" type="TimeLine">
+                                    <param id="0" name="Name">&quot;EH&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="592240129080606" type="System">
+                                    <param id="0" name="Object to create">P_hungry</param>
+                                    <param id="1" name="Layer">&quot;fx&quot;</param>
+                                    <param id="2" name="X">player_poxy.X</param>
+                                    <param id="3" name="Y">player_poxy.Y+player_poxy.Height/2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="662585823534971" type="System">
+                                    <param id="0" name="Object to create">txt_center</param>
+                                    <param id="1" name="Layer">&quot;fx&quot;</param>
+                                    <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
+                                    <param id="3" name="Y">player_poxy.Y</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="824604821984073" type="txt_center">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;hurt&quot;</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="616198334329408" type="txt_center">
+                                    <param id="0" name="Color">rgb(248,163,79)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="439086013378829" type="txt_center">
+                                    <param id="0" name="Text">&quot;-&quot;&amp;Function.Param(0)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="288992199684387" type="txt_center">
+                                    <param id="0" name="Width">100</param>
+                                    <param id="1" name="Height">64</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="731285341979492" type="txt_center">
+                                    <param id="0" name="Size (pt)">32</param>
+                                </action>
+                                <action id="2" name="Set font face" sid="264943969251052" type="txt_center">
+                                    <param id="0" name="Font face">&quot;Arial&quot;</param>
+                                    <param id="1" name="Style">1</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="210860504491259" type="txt_center">
+                                    <param id="0" name="Angle">-90</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="374919770764268" type="txt_center">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Fade" id="2" name="Set fade-in time" sid="483878196344799" type="txt_center">
+                                    <param id="0" name="Fade-in time">0.2</param>
+                                </action>
+                                <action behavior="Fade" id="3" name="Set wait time" sid="196698724928031" type="txt_center">
+                                    <param id="0" name="Wait time">1</param>
+                                </action>
+                                <action behavior="Fade" id="4" name="Set fade-out time" sid="122857458796959" type="txt_center">
+                                    <param id="0" name="Fade-out time">0.5</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="366424821950961" type="txt_center" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
 </c2eventsheet>

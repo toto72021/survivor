@@ -15,7 +15,7 @@
     <layers>
         <layer name="Layer 0" sid="380259551706193">
             <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
+            <background-color>153,153,153</background-color>
             <transparent>0</transparent>
             <parallax>
                 <x>1</x>
@@ -69,7 +69,7 @@
                     <instance-variables>
                         <item>fruits</item>
                         <state>full</state>
-                        <randRate>100</randRate>
+                        <randRate>60</randRate>
                         <itemCount>3</itemCount>
                     </instance-variables>
                     <behavior-instances>
@@ -219,6 +219,16 @@
                                 <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>100</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -261,6 +271,16 @@
                                 <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>100</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -301,6 +321,16 @@
                                 <wait-time>0</wait-time>
                                 <fade-out-time>1</fade-out-time>
                                 <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>100</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -533,7 +563,7 @@
                                 <active-at-start>No</active-at-start>
                                 <fade-in-time>0</fade-in-time>
                                 <wait-time>0</wait-time>
-                                <fade-out-time>1</fade-out-time>
+                                <fade-out-time>3</fade-out-time>
                                 <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
@@ -597,6 +627,163 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ui_item" uid="38">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <groupID>item</groupID>
+                        <actionID>item0</actionID>
+                        <diyFloatValue>0</diyFloatValue>
+                        <itemName></itemName>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Persist" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1007</x>
+                        <y>57</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>64</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="P_hp" uid="41">
+                    <properties>
+                        <rate>8</rate>
+                        <spray-cone>0</spray-cone>
+                        <type>One-shot</type>
+                        <initial-particle-properties></initial-particle-properties>
+                        <speed>160</speed>
+                        <size>32</size>
+                        <opacity>80</opacity>
+                        <grow-rate>0</grow-rate>
+                        <x-randomiser>250</x-randomiser>
+                        <y-randomiser>100</y-randomiser>
+                        <speed-randomiser->0</speed-randomiser->
+                        <size-randomiser>0</size-randomiser>
+                        <grow-rate-randomiser>0</grow-rate-randomiser>
+                        <particle-lifetime-properties></particle-lifetime-properties>
+                        <acceleration>50</acceleration>
+                        <gravity>0</gravity>
+                        <angle-randomiser>0</angle-randomiser>
+                        <speed-randomiser>400</speed-randomiser>
+                        <opacity-randomiser>80</opacity-randomiser>
+                        <destroy-mode>Fade to invisible</destroy-mode>
+                        <timeout>1.5</timeout>
+                    </properties>
+                    <instance-variables>
+                        <actionID></actionID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>316</x>
+                        <y>602</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>-1.570796371</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="P_energy" uid="42">
+                    <properties>
+                        <rate>8</rate>
+                        <spray-cone>0</spray-cone>
+                        <type>One-shot</type>
+                        <initial-particle-properties></initial-particle-properties>
+                        <speed>160</speed>
+                        <size>32</size>
+                        <opacity>80</opacity>
+                        <grow-rate>0</grow-rate>
+                        <x-randomiser>250</x-randomiser>
+                        <y-randomiser>100</y-randomiser>
+                        <speed-randomiser->0</speed-randomiser->
+                        <size-randomiser>0</size-randomiser>
+                        <grow-rate-randomiser>0</grow-rate-randomiser>
+                        <particle-lifetime-properties></particle-lifetime-properties>
+                        <acceleration>50</acceleration>
+                        <gravity>0</gravity>
+                        <angle-randomiser>0</angle-randomiser>
+                        <speed-randomiser>400</speed-randomiser>
+                        <opacity-randomiser>80</opacity-randomiser>
+                        <destroy-mode>Fade to invisible</destroy-mode>
+                        <timeout>1.5</timeout>
+                    </properties>
+                    <instance-variables>
+                        <actionID></actionID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>447</x>
+                        <y>605</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>-1.570796371</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="P_hungry" uid="43">
+                    <properties>
+                        <rate>8</rate>
+                        <spray-cone>0</spray-cone>
+                        <type>One-shot</type>
+                        <initial-particle-properties></initial-particle-properties>
+                        <speed>160</speed>
+                        <size>32</size>
+                        <opacity>80</opacity>
+                        <grow-rate>0</grow-rate>
+                        <x-randomiser>250</x-randomiser>
+                        <y-randomiser>100</y-randomiser>
+                        <speed-randomiser->0</speed-randomiser->
+                        <size-randomiser>0</size-randomiser>
+                        <grow-rate-randomiser>0</grow-rate-randomiser>
+                        <particle-lifetime-properties></particle-lifetime-properties>
+                        <acceleration>50</acceleration>
+                        <gravity>0</gravity>
+                        <angle-randomiser>0</angle-randomiser>
+                        <speed-randomiser>400</speed-randomiser>
+                        <opacity-randomiser>80</opacity-randomiser>
+                        <destroy-mode>Fade to invisible</destroy-mode>
+                        <timeout>1.5</timeout>
+                    </properties>
+                    <instance-variables>
+                        <actionID></actionID>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>585</x>
+                        <y>601</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>-1.570796371</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>e_start&amp;end</name>
+    <events>
+        <event-group description="" sid="620228425648332" title="start&amp;end">
+            <sub-events>
+                <event-block sid="544832395571041">
+                    <conditions>
+                        <condition id="0" name="On function" sid="262728182704197" type="Function">
+                            <param id="0" name="Name">&quot;gameOver&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Clear" sid="543454481179342" type="Dictionary" />
+                        <action id="0" name="Call function" sid="262708206685429" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;游戏失败，将重新开始&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="407361983686906" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="449125093415658" type="System">
+                            <param id="0" name="Layout">game</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="103873913536205">
+                    <conditions>
+                        <condition id="0" name="On function" sid="490393420756447" type="Function">
+                            <param id="0" name="Name">&quot;restartGame&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="890968609233438" type="Function">
+                            <param id="0" name="Name">&quot;resetPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="959663007048912" type="Function">
+                            <param id="0" name="Name">&quot;resetArray&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

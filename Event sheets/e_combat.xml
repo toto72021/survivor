@@ -3,6 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_combat</name>
     <events>
+        <include>e_start&amp;end</include>
+        <include>e_player</include>
+        <include>e_ui</include>
         <include>e_item</include>
         <include>e_bubbleImformation</include>
         <include>e_fadeInOut</include>
@@ -17,15 +20,11 @@
                             <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
-                        <action id="-10" name="Set value" sid="185574674956843" type="player_poxy">
-                            <param id="0" name="Instance variable">hp</param>
-                            <param id="1" name="Value">Dictionary.Get(&quot;playerHp&quot;)</param>
-                        </action>
-                        <action behavior="Pin" id="0" name="Pin to object" sid="127483956600997" type="player_skin">
-                            <param id="0" name="Pin to">player_poxy</param>
-                            <param id="1" name="Mode">1</param>
-                        </action>
                         <action id="0" name="Call function" sid="872958305029347" type="Function">
+                            <param id="0" name="Name">&quot;resetPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="792291752817487" type="Function">
                             <param id="0" name="Name">&quot;randomEnemy&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
@@ -122,9 +121,6 @@
                             <param id="0" name="Width">100</param>
                             <param id="1" name="Height">32</param>
                         </action>
-                        <action id="0" name="Set text" sid="409750302530149" type="txt_left">
-                            <param id="0" name="Text">&quot;生命:&quot;&amp;player_poxy.hp</param>
-                        </action>
                         <action id="-3" name="Create object" sid="521780455871855" type="System">
                             <param id="0" name="Object to create">txt_left</param>
                             <param id="1" name="Layer">&quot;ui2&quot;</param>
@@ -133,7 +129,7 @@
                         </action>
                         <action id="-10" name="Set value" sid="920100527285280" type="txt_left">
                             <param id="0" name="Instance variable">groupID</param>
-                            <param id="1" name="Value">&quot;playr&quot;</param>
+                            <param id="1" name="Value">&quot;player&quot;</param>
                         </action>
                         <action id="-10" name="Set value" sid="730076667103138" type="txt_left">
                             <param id="0" name="Instance variable">actionID</param>
@@ -143,14 +139,18 @@
                             <param id="0" name="Width">100</param>
                             <param id="1" name="Height">32</param>
                         </action>
-                        <action id="0" name="Set text" sid="405011454280132" type="txt_left">
-                            <param id="0" name="Text">&quot;攻击:&quot;&amp;player_poxy.atk</param>
-                        </action>
                         <action id="-3" name="Create object" sid="155658700456497" type="System">
                             <param id="0" name="Object to create">btn_attack</param>
                             <param id="1" name="Layer">&quot;ui2&quot;</param>
                             <param id="2" name="X">960</param>
                             <param id="3" name="Y">540</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="589161954577256" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="186926740565969" type="Function">
+                            <param id="0" name="Name">&quot;displayPlayerUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -337,12 +337,16 @@
                                             <param id="1" name="Value">0</param>
                                         </action>
                                         <action behavior="Fade" id="4" name="Set fade-out time" sid="726359714750192" type="enemy">
-                                            <param id="0" name="Fade-out time">2</param>
+                                            <param id="0" name="Fade-out time">3</param>
                                         </action>
                                         <action behavior="Fade" id="1" name="Start fade" sid="820450692719414" type="enemy" />
-                                        <action id="0" name="Add key" sid="274322498764890" type="Dictionary">
-                                            <param id="0" name="Key">&quot;playerHp&quot;</param>
-                                            <param id="1" name="Value">player_poxy.hp</param>
+                                        <action id="0" name="Call function" sid="837005646935803" type="Function">
+                                            <param id="0" name="Name">&quot;randItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;meat&quot;{###}50{###}int(random(1,4))</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="370641513843198" type="Function">
+                                            <param id="0" name="Name">&quot;savePlayer&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -391,17 +395,6 @@
                                             <param id="0" name="Instance variable">hp</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="578578389750609" type="Function">
-                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                                            <param id="1" name="Parameter {n}">&quot;游戏失败，将重新开始&quot;</param>
-                                        </action>
-                                        <action id="3" name="Clear" sid="241878872752806" type="Dictionary" />
-                                        <action id="-16" name="Wait" sid="545478332253588" type="System">
-                                            <param id="0" name="Seconds">2</param>
-                                        </action>
-                                        <action id="-2" name="Go to layout" sid="659182193855784" type="System">
-                                            <param id="0" name="Layout">loading</param>
-                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="114333483657651">
@@ -436,7 +429,12 @@
                             <param id="0" name="Name">&quot;refreshTxt&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="0" name="Call function" sid="500502594711990" type="Function">
+                            <param id="0" name="Name">&quot;displayPlayerUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="225355857172679">
                             <conditions>
@@ -457,25 +455,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="707051430434487">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="821189629233407" type="txts">
-                                    <param id="0" name="Instance variable">groupID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;player&quot;</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="429776732699911" type="txts">
-                                    <param id="0" name="Instance variable">actionID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;hp&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="701087855466912" type="txts">
-                                    <param id="0" name="Text">&quot;生命:&quot;&amp;player_poxy.hp</param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="299291136404288">
@@ -483,6 +462,7 @@
                         <condition behavior="Fade" id="0" name="On fade-out finished" sid="288841750670415" type="enemy" />
                     </conditions>
                     <actions>
+                        <action id="-9" name="Destroy" sid="143669072761881" type="btn_attack" />
                         <action id="-3" name="Set position" sid="783959658748702" type="player_poxy">
                             <param id="0" name="X">1296</param>
                             <param id="1" name="Y">531</param>

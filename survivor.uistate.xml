@@ -10,18 +10,16 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">game</layout>
-        <layout order="2">obj</layout>
-        <layout order="3">UI</layout>
-        <layout order="4">loading</layout>
-        <layout order="6">combat</layout>
-        <event-sheet order="1">e_game</event-sheet>
-        <event-sheet order="5">e_loading</event-sheet>
-        <event-sheet order="7">e_combat</event-sheet>
-        <event-sheet order="8">e_player</event-sheet>
-        <event-sheet order="9">e_fadeInOut</event-sheet>
-        <event-sheet order="10">e_bubbleImformation</event-sheet>
-        <event-sheet active="1" order="11">e_item</event-sheet>
+        <layout order="1">obj</layout>
+        <layout order="0">UI</layout>
+        <layout order="8">game</layout>
+        <layout order="9">combat</layout>
+        <event-sheet active="1" order="2">e_game</event-sheet>
+        <event-sheet order="4">e_combat</event-sheet>
+        <event-sheet order="3">e_player</event-sheet>
+        <event-sheet order="5">e_item</event-sheet>
+        <event-sheet order="6">e_ui</event-sheet>
+        <event-sheet order="7">e_start&amp;end</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -37,6 +35,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="1" name="9patch" />
         <family expanded="1" name="enemys" />
         <family expanded="1" name="UI" />
+        <family expanded="0" name="particle" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
