@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_game</name>
     <events>
+        <include>e_ajax</include>
         <include>e_start&amp;end</include>
         <include>e_ui</include>
         <include>e_player</include>
@@ -53,13 +54,13 @@
                                     <param id="1" name="Timer">&quot;getEnemy&quot;</param>
                                     <param id="2" name="Repeat">1</param>
                                 </action>
-                                <action id="0" name="Call function" sid="670549663731797" type="Function">
-                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
                                 <action id="0" name="Call function" sid="996240761745888" type="Function">
                                     <param id="0" name="Name">&quot;distanceUI&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="670549663731797" type="Function">
+                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;column&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -137,14 +138,18 @@
                                     <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
-                                <action id="0" name="Call function" sid="241607012853871" type="Function">
-                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                <action id="-10" name="Set value" sid="753699309775992" type="player_poxy">
+                                    <param id="0" name="Instance variable">dayNight</param>
+                                    <param id="1" name="Value">&quot;day&quot;</param>
                                 </action>
                                 <action behavior="Timer" id="2" name="Start" sid="939392779110161" type="player_poxy">
                                     <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
                                     <param id="1" name="Timer">&quot;dayTimer&quot;</param>
                                     <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="392322787764306" type="Function">
+                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;column&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -154,7 +159,7 @@
         </event-group>
         <event-group description="" sid="201019932626415" title="bg">
             <sub-events>
-                <variable constant="0" name="daytime" sid="495852605984083" static="0" type="number">6</variable>
+                <variable constant="0" name="daytime" sid="495852605984083" static="0" type="number">24</variable>
                 <event-block sid="317820983016370">
                     <conditions>
                         <condition id="0" name="On function" sid="853087301907280" type="Function">
@@ -205,6 +210,67 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="978478051885027">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="838545479842745" type="player_poxy">
+                            <param id="0" name="Timer">&quot;dayTimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="210188611825710" type="player_poxy">
+                            <param id="0" name="Instance variable">dayNight</param>
+                            <param id="1" name="Value">&quot;night&quot;</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="944008504809469" type="player_poxy">
+                            <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
+                            <param id="1" name="Timer">&quot;stayTimer&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="981883542673044">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="197833662720175" type="player_poxy">
+                            <param id="0" name="Timer">&quot;stayTimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="290869484664677">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="821000752973248" type="player_poxy">
+                                    <param id="0" name="Instance variable">dayNight</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;night&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="2" name="Start" sid="787015455817460" type="player_poxy">
+                                    <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
+                                    <param id="1" name="Timer">&quot;nightTimer&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="629372816605126">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="493351194313778" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="211168772388271" type="player_poxy">
+                                    <param id="0" name="Instance variable">dayNight</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;day&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="2" name="Start" sid="799393340336164" type="player_poxy">
+                                    <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
+                                    <param id="1" name="Timer">&quot;dayTimer&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="612001138115381">
                     <conditions>
                         <condition behavior="Timer" id="0" name="Is timer running" sid="796198863206856" type="player_poxy">
@@ -243,24 +309,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="978478051885027">
-                    <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="838545479842745" type="player_poxy">
-                            <param id="0" name="Timer">&quot;dayTimer&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="222306865079095" type="player_poxy">
-                            <param id="0" name="Instance variable">dayNight</param>
-                            <param id="1" name="Value">&quot;day&quot;</param>
-                        </action>
-                        <action behavior="Timer" id="2" name="Start" sid="944008504809469" type="player_poxy">
-                            <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
-                            <param id="1" name="Timer">&quot;stayTimer&quot;</param>
-                            <param id="2" name="Repeat">1</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="411497728622040">
                     <conditions>
                         <condition behavior="Timer" id="1" name="On time-out" sid="990617590713092" type="player_poxy">
@@ -268,9 +316,9 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="210188611825710" type="player_poxy">
+                        <action id="-10" name="Set value" sid="222306865079095" type="player_poxy">
                             <param id="0" name="Instance variable">dayNight</param>
-                            <param id="1" name="Value">&quot;night&quot;</param>
+                            <param id="1" name="Value">&quot;day&quot;</param>
                         </action>
                         <action behavior="Timer" id="2" name="Start" sid="125642526239556" type="player_poxy">
                             <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
@@ -278,48 +326,6 @@
                             <param id="2" name="Repeat">1</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="981883542673044">
-                    <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="197833662720175" type="player_poxy">
-                            <param id="0" name="Timer">&quot;stayTimer&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="290869484664677">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="821000752973248" type="player_poxy">
-                                    <param id="0" name="Instance variable">dayNight</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;night&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="Timer" id="2" name="Start" sid="799393340336164" type="player_poxy">
-                                    <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
-                                    <param id="1" name="Timer">&quot;dayTimer&quot;</param>
-                                    <param id="2" name="Repeat">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="219554972763869">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="211168772388271" type="player_poxy">
-                                    <param id="0" name="Instance variable">dayNight</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;day&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="Timer" id="2" name="Start" sid="787015455817460" type="player_poxy">
-                                    <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
-                                    <param id="1" name="Timer">&quot;nightTimer&quot;</param>
-                                    <param id="2" name="Repeat">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="685501037914123">
                     <conditions>
@@ -404,7 +410,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-1" name="Set X" sid="157909263469450" type="bg_day">
-                                            <param id="0" name="X">1136</param>
+                                            <param id="0" name="X">1134</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -431,7 +437,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-1" name="Set X" sid="968958282132998" type="bg_night">
-                                            <param id="0" name="X">1136</param>
+                                            <param id="0" name="X">1134</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -447,6 +453,11 @@
                     <conditions>
                         <condition id="3" name="On touched object" sid="502828752469191" type="Touch">
                             <param id="0" name="Object">btn_pause</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="734414732710063" type="btn_pause">
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;pause&quot;</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="216975646761051" type="player_poxy">
                             <param id="0" name="Instance variable">hp</param>
@@ -949,7 +960,7 @@
                                     <param id="0" name="Name">&quot;savePlayer&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
-                                <action id="0" name="Add key" sid="961272318348517" type="Dictionary">
+                                <action id="0" name="Add key" sid="339461354991324" type="Dictionary">
                                     <param id="0" name="Key">&quot;beforeCombat&quot;</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
@@ -960,6 +971,10 @@
                                 <action id="0" name="Add key" sid="365625039427871" type="Dictionary">
                                     <param id="0" name="Key">&quot;enemyTimer&quot;</param>
                                     <param id="1" name="Value">player_poxy.Timer.Remainder(&quot;getEnemy&quot;)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="961272318348517" type="Dictionary">
+                                    <param id="0" name="Key">&quot;dayNight&quot;</param>
+                                    <param id="1" name="Value">player_poxy.dayNight</param>
                                 </action>
                             </actions>
                             <sub-events>

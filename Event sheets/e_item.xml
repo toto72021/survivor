@@ -224,11 +224,23 @@
                             </sub-events>
                         </event-block>
                         <event-block sid="887882959044495">
-                            <conditions />
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="795556812889343" type="System">
+                                    <param id="0" name="First value">LayoutName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;combat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="740758257569008">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="599023600179005" type="System" />
+                            </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="473259778603959" type="Function">
+                                <action id="0" name="Call function" sid="681623736591078" type="Function">
                                     <param id="0" name="Name">&quot;refreshArray&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                    <param id="1" name="Parameter {n}">&quot;column&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -249,6 +261,10 @@
                             <param id="0" name="Instance variable">itemName</param>
                             <param id="1" name="Comparison">1</param>
                             <param id="2" name="Value">&quot;knife&quot;</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="678754252141589" type="ui_item">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Opacity">90</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -289,6 +305,10 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="0" name="Call function" sid="484449967632506" type="Function">
+                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;使用物资 &quot;&amp;Function.Param(0)</param>
+                                        </action>
                                         <action id="3" name="Set at XY" sid="629724153785971" type="Array_item">
                                             <param id="0" name="X">Array_item.CurX</param>
                                             <param id="1" name="Y">1</param>
@@ -326,10 +346,6 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action disabled="1" id="-11" name="Add to" sid="529950099770863" type="player_poxy">
-                                                    <param id="0" name="Instance variable">energy</param>
-                                                    <param id="1" name="Value">5</param>
-                                                </action>
                                                 <action id="0" name="Call function" sid="875606186317331" type="Function">
                                                     <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
                                                     <param id="1" name="Parameter {n}">0{###}5{###}0</param>
@@ -345,10 +361,6 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action disabled="1" id="-12" name="Subtract from" sid="143784593995499" type="player_poxy">
-                                                    <param id="0" name="Instance variable">hungry</param>
-                                                    <param id="1" name="Value">5</param>
-                                                </action>
                                                 <action id="0" name="Call function" sid="822265068143944" type="Function">
                                                     <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
                                                     <param id="1" name="Parameter {n}">0{###}0{###}5</param>
@@ -364,14 +376,6 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action disabled="1" id="-11" name="Add to" sid="501915497106141" type="player_poxy">
-                                                    <param id="0" name="Instance variable">energy</param>
-                                                    <param id="1" name="Value">8</param>
-                                                </action>
-                                                <action disabled="1" id="-12" name="Subtract from" sid="652805084048425" type="player_poxy">
-                                                    <param id="0" name="Instance variable">hungry</param>
-                                                    <param id="1" name="Value">2</param>
-                                                </action>
                                                 <action id="0" name="Call function" sid="658915684976487" type="Function">
                                                     <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
                                                     <param id="1" name="Parameter {n}">0{###}8{###}2</param>
@@ -387,14 +391,6 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action disabled="1" id="-12" name="Subtract from" sid="150009889127138" type="player_poxy">
-                                                    <param id="0" name="Instance variable">hungry</param>
-                                                    <param id="1" name="Value">10</param>
-                                                </action>
-                                                <action disabled="1" id="-11" name="Add to" sid="439417515613112" type="player_poxy">
-                                                    <param id="0" name="Instance variable">hp</param>
-                                                    <param id="1" name="Value">2</param>
-                                                </action>
                                                 <action id="0" name="Call function" sid="459375314693130" type="Function">
                                                     <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
                                                     <param id="1" name="Parameter {n}">2{###}0{###}10</param>
@@ -410,14 +406,6 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action disabled="1" id="-12" name="Subtract from" sid="136005572071135" type="player_poxy">
-                                                    <param id="0" name="Instance variable">hungry</param>
-                                                    <param id="1" name="Value">20</param>
-                                                </action>
-                                                <action disabled="1" id="-11" name="Add to" sid="772228308419952" type="player_poxy">
-                                                    <param id="0" name="Instance variable">hp</param>
-                                                    <param id="1" name="Value">5</param>
-                                                </action>
                                                 <action id="0" name="Call function" sid="249553073443700" type="Function">
                                                     <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
                                                     <param id="1" name="Parameter {n}">5{###}0{###}20</param>
@@ -425,17 +413,59 @@
                                             </actions>
                                         </event-block>
                                         <event-block sid="100926183116056">
-                                            <conditions />
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="918721887462590" type="System">
+                                                    <param id="0" name="First value">LayoutName</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;combat&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="552582928804819" type="Function">
+                                                    <param id="0" name="Name">&quot;destroyItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action behavior="Timer" id="2" name="Start" sid="788310811884789" type="player_poxy">
+                                                    <param id="0" name="Time">1</param>
+                                                    <param id="1" name="Timer">&quot;_useItem&quot;</param>
+                                                    <param id="2" name="Repeat">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="447533998054788">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="184501999925772" type="System" />
+                                            </conditions>
                                             <actions>
                                                 <action id="0" name="Call function" sid="948287261594667" type="Function">
                                                     <param id="0" name="Name">&quot;refreshArray&quot;</param>
-                                                    <param id="1" name="Parameter {n}"></param>
+                                                    <param id="1" name="Parameter {n}">&quot;column&quot;</param>
                                                 </action>
-                                                <action id="0" name="Call function" sid="484449967632506" type="Function">
-                                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                                                    <param id="1" name="Parameter {n}">&quot;使用物资 &quot;&amp;Function.Param(0)</param>
+                                                <action id="-16" name="Wait" sid="308892318360134" type="System">
+                                                    <param id="0" name="Seconds">0</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="950335815499684">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="545242212286715" type="ui_item">
+                                                            <param id="0" name="Instance variable">groupID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;item&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-16" name="Set opacity" sid="164527978361620" type="ui_item">
+                                                            <param id="0" name="Opacity">20</param>
+                                                        </action>
+                                                        <action behavior="Timer" id="2" name="Start" sid="243163746045976" type="ui_item">
+                                                            <param id="0" name="Time">2</param>
+                                                            <param id="1" name="Timer">&quot;_useCD&quot;</param>
+                                                            <param id="2" name="Repeat">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -454,24 +484,88 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="593224659128992">
+                <event-block sid="452910075308790">
                     <conditions>
-                        <condition id="0" name="On function" sid="697523337707721" type="Function">
-                            <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="933890241524674" type="player_poxy">
+                            <param id="0" name="Timer">&quot;_useItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="272915146903455" type="Function">
+                            <param id="0" name="Name">&quot;attack&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;player&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="701218854765999">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="916011225162945" type="System">
+                            <param id="0" name="Object">ui_item</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="464576925107985">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="Is timer running" sid="300489224124656" type="ui_item">
+                                    <param id="0" name="Timer">&quot;_useCD&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="851074869404250" type="ui_item">
+                                    <param id="0" name="Opacity">20+Self.Timer.ElapsedPercent(&quot;_useCD&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="542869598099279">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="271990916092434" type="ui_item">
+                            <param id="0" name="Timer">&quot;_useCD&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="429285286098232" type="ui_item">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="215368519170325">
+                    <conditions>
+                        <condition id="0" name="On function" sid="120816883562067" type="Function">
+                            <param id="0" name="Name">&quot;destroyItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="146618152813156" type="Function">
+                            <param id="0" name="Name">&quot;closeUI&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
                         <event-block sid="443641130209213">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="592575504710822" type="ui_item">
+                                <condition id="-7" name="Compare instance variable" sid="592575504710822" type="ui_itembg">
                                     <param id="0" name="Instance variable">groupID</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;item&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Destroy" sid="182312632222646" type="ui_item" />
+                                <action id="-9" name="Destroy" sid="182312632222646" type="ui_itembg" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="304334010676646">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="767872936917589" type="ui_item">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;item&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="271208391762531" type="ui_item" />
                             </actions>
                         </event-block>
                         <event-block sid="791989147363364">
@@ -486,71 +580,220 @@
                                 <action id="-9" name="Destroy" sid="981182865514259" type="txts" />
                             </actions>
                         </event-block>
-                        <variable constant="0" name="ArrayIndex" sid="157108146355839" static="0" type="number">0</variable>
-                        <event-block sid="213827758872603">
+                    </sub-events>
+                </event-block>
+                <comment>(0 row/column)</comment>
+                <event-block sid="593224659128992">
+                    <conditions>
+                        <condition id="0" name="On function" sid="697523337707721" type="Function">
+                            <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="101608262965092" type="Function">
+                            <param id="0" name="Name">&quot;destroyItem&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="857402414337119" type="Function">
+                            <param id="0" name="Name">&quot;openUI&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;backpack&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable constant="0" name="columnIndex" sid="384636574834946" static="0" type="number">0</variable>
+                        <variable constant="0" name="rowIndex" sid="612842560339632" static="0" type="number">0</variable>
+                        <event-block sid="295950357879063">
                             <conditions>
-                                <condition id="3" name="For each element" sid="298553482991745" type="Array_item">
-                                    <param id="0" name="Axes">2</param>
+                                <condition id="-8" name="Compare two values" sid="869609077845276" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;row&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="727413319473275" type="System">
-                                    <param id="0" name="Object to create">ui_item</param>
-                                    <param id="1" name="Layer">&quot;UI&quot;</param>
-                                    <param id="2" name="X">1064</param>
-                                    <param id="3" name="Y">140+ArrayIndex*72</param>
+                                <action id="-3" name="Create object" sid="173137490549951" type="System">
+                                    <param id="0" name="Object to create">ui_itembg</param>
+                                    <param id="1" name="Layer">&quot;ui2&quot;</param>
+                                    <param id="2" name="X">568</param>
+                                    <param id="3" name="Y">420</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="414665548483909" type="ui_item">
-                                    <param id="0" name="Animation">str(Array_item.At(Array_item.CurX,0))</param>
-                                    <param id="1" name="From">1</param>
+                                <action id="-8" name="Set angle" sid="727096399427974" type="ui_itembg">
+                                    <param id="0" name="Angle">90</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="140438411989880" type="ui_item">
-                                    <param id="0" name="Instance variable">itemName</param>
-                                    <param id="1" name="Value">str(Array_item.At(Array_item.CurX,0))</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="128640341393550" type="System">
-                                    <param id="0" name="Object to create">txt_center</param>
-                                    <param id="1" name="Layer">ui_item.LayerName</param>
-                                    <param id="2" name="X">ui_item.X+16</param>
-                                    <param id="3" name="Y">ui_item.Y+32</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="610945084350031" type="txt_center">
+                                <action id="-10" name="Set value" sid="924031125318990" type="ui_itembg">
                                     <param id="0" name="Instance variable">groupID</param>
                                     <param id="1" name="Value">&quot;item&quot;</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="436443026864875" type="txt_center">
+                                <action id="-10" name="Set value" sid="400703854871551" type="ui_itembg">
                                     <param id="0" name="Instance variable">actionID</param>
-                                    <param id="1" name="Value">str(Array_item.At(Array_item.CurX,0))</param>
-                                </action>
-                                <action id="-7" name="Set size" sid="702752662195699" type="txt_center">
-                                    <param id="0" name="Width">64</param>
-                                    <param id="1" name="Height">32</param>
-                                </action>
-                                <action id="3" name="Set font size" sid="547983149501914" type="txt_center">
-                                    <param id="0" name="Size (pt)">12</param>
-                                </action>
-                                <action id="0" name="Set text" sid="480272037930791" type="txt_center">
-                                    <param id="0" name="Text">str(Array_item.At(Array_item.CurX,1))</param>
-                                </action>
-                                <action id="-10" name="Add to" sid="159395167923635" type="System">
-                                    <param id="0" name="Variable">ArrayIndex</param>
-                                    <param id="1" name="Value">1</param>
+                                    <param id="1" name="Value">&quot;bg&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="422169651579433">
+                                <event-block sid="125817222335550">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="554021715316336" type="System">
-                                            <param id="0" name="First value">Array_item.At(Array_item.CurX,0)</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;water&quot;</param>
+                                        <condition id="3" name="For each element" sid="801981332247358" type="Array_item">
+                                            <param id="0" name="Axes">2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="5" name="Set frame" sid="976120346278301" type="ui_item">
-                                            <param id="0" name="Frame number">Array_item.At(Array_item.CurX,1)</param>
+                                        <action id="-3" name="Create object" sid="346347649443582" type="System">
+                                            <param id="0" name="Object to create">ui_item</param>
+                                            <param id="1" name="Layer">ui_itembg.LayerName</param>
+                                            <param id="2" name="X">ui_itembg.X-ui_itembg.Height/2+72+rowIndex*72</param>
+                                            <param id="3" name="Y">ui_itembg.Y</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="833091598373507" type="ui_item">
+                                            <param id="0" name="Animation">str(Array_item.At(Array_item.CurX,0))</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="428174024785583" type="ui_item">
+                                            <param id="0" name="Instance variable">itemName</param>
+                                            <param id="1" name="Value">str(Array_item.At(Array_item.CurX,0))</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="321987654409312" type="System">
+                                            <param id="0" name="Object to create">txt_center</param>
+                                            <param id="1" name="Layer">ui_item.LayerName</param>
+                                            <param id="2" name="X">ui_item.X+16</param>
+                                            <param id="3" name="Y">ui_item.Y+32</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="531826115173398" type="txt_center">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;item&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="238763097786048" type="txt_center">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">str(Array_item.At(Array_item.CurX,0))</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="566746065732864" type="txt_center">
+                                            <param id="0" name="Width">64</param>
+                                            <param id="1" name="Height">32</param>
+                                        </action>
+                                        <action id="3" name="Set font size" sid="885856082966631" type="txt_center">
+                                            <param id="0" name="Size (pt)">12</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="237093465989843" type="txt_center">
+                                            <param id="0" name="Text">str(Array_item.At(Array_item.CurX,1))</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="473926353956765" type="System">
+                                            <param id="0" name="Variable">rowIndex</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="978407760870831">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="591136503580155" type="System">
+                                                    <param id="0" name="First value">Array_item.At(Array_item.CurX,0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;water&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="5" name="Set frame" sid="297701333694021" type="ui_item">
+                                                    <param id="0" name="Frame number">Array_item.At(Array_item.CurX,1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="143281083678037">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="506958099051027" type="System" />
+                                <condition id="-8" name="Compare two values" sid="584580505106465" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;column&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="707197441849149" type="System">
+                                    <param id="0" name="Object to create">ui_itembg</param>
+                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                    <param id="2" name="X">1064</param>
+                                    <param id="3" name="Y">320</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="597836932239144" type="ui_itembg">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="546673300203560" type="ui_itembg">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;item&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="928606964216931" type="ui_itembg">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;bg&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="169815732268063">
+                                    <conditions>
+                                        <condition id="3" name="For each element" sid="351871023217766" type="Array_item">
+                                            <param id="0" name="Axes">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="894905978543356" type="System">
+                                            <param id="0" name="Object to create">ui_item</param>
+                                            <param id="1" name="Layer">ui_itembg.LayerName</param>
+                                            <param id="2" name="X">ui_itembg.X</param>
+                                            <param id="3" name="Y">ui_itembg.Y-ui_itembg.Height/2+72+columnIndex*72</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="371018874502632" type="ui_item">
+                                            <param id="0" name="Animation">str(Array_item.At(Array_item.CurX,0))</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="847200627059179" type="ui_item">
+                                            <param id="0" name="Instance variable">itemName</param>
+                                            <param id="1" name="Value">str(Array_item.At(Array_item.CurX,0))</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="927234736839493" type="System">
+                                            <param id="0" name="Object to create">txt_center</param>
+                                            <param id="1" name="Layer">ui_item.LayerName</param>
+                                            <param id="2" name="X">ui_item.X+16</param>
+                                            <param id="3" name="Y">ui_item.Y+32</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="296733727601196" type="txt_center">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;item&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="678618528724363" type="txt_center">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">str(Array_item.At(Array_item.CurX,0))</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="403627841420030" type="txt_center">
+                                            <param id="0" name="Width">64</param>
+                                            <param id="1" name="Height">32</param>
+                                        </action>
+                                        <action id="3" name="Set font size" sid="759147133523362" type="txt_center">
+                                            <param id="0" name="Size (pt)">12</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="111551158360613" type="txt_center">
+                                            <param id="0" name="Text">str(Array_item.At(Array_item.CurX,1))</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="214069462116604" type="System">
+                                            <param id="0" name="Variable">columnIndex</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="758689462593949">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="750659406689614" type="System">
+                                                    <param id="0" name="First value">Array_item.At(Array_item.CurX,0)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;water&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="5" name="Set frame" sid="410354855567367" type="ui_item">
+                                                    <param id="0" name="Frame number">Array_item.At(Array_item.CurX,1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>

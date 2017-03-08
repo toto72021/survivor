@@ -71,7 +71,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1136</x>
+                        <x>1135</x>
                         <y>0</y>
                         <z>0</z>
                         <width>1136</width>
@@ -98,7 +98,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1136</x>
+                        <x>1135</x>
                         <y>0</y>
                         <z>0</z>
                         <width>1136</width>
@@ -137,28 +137,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="bg" uid="1">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>568</x>
-                        <y>320</y>
-                        <z>0</z>
-                        <width>1136</width>
-                        <height>640</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.501377404</hotspotY>
-                        <angle>0</angle>
-                        <opacity>0.600000024</opacity>
-                    </world>
-                </instance>
                 <instance type="sunmoon" uid="49">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -181,7 +159,7 @@
                         <x>568</x>
                         <y>406</y>
                         <z>0</z>
-                        <width>1000</width>
+                        <width>900</width>
                         <height>1000</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>

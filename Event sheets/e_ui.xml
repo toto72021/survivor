@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_ui</name>
     <events>
+        <variable constant="0" name="currentOpenUI" sid="852229376110986" static="0" type="text"></variable>
         <event-group description="" sid="926100712693098" title="ui">
             <sub-events>
                 <event-block sid="817209685964957">
@@ -83,6 +84,11 @@
                         <condition id="0" name="On function" sid="142263271383767" type="Function">
                             <param id="0" name="Name">&quot;distanceUI&quot;</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="235195526230136" type="txts">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;player&quot;</param>
+                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>
@@ -101,6 +107,37 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <comment>排行榜前50名</comment>
+                <event-block sid="469861415061865">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="424290982208373">
+                    <conditions>
+                        <condition id="0" name="On function" sid="113837422337791" type="Function">
+                            <param id="0" name="Name">&quot;openUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="279083442082027" type="System">
+                            <param id="0" name="Variable">currentOpenUI</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="347036720791048">
+                    <conditions>
+                        <condition id="0" name="On function" sid="279829591776429" type="Function">
+                            <param id="0" name="Name">&quot;closeUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="323284556121053" type="System">
+                            <param id="0" name="Variable">currentOpenUI</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

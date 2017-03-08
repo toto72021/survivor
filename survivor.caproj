@@ -111,14 +111,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="bg" sid="852957955121816">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="826791405764201" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.501377" original-source="C:\Users\totoyan\Desktop\bg.jpg" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="ui_display" sid="890834198526015">
             <plugin id="Sprite" />
             <animation-folder>
@@ -173,6 +165,15 @@
                 <animation framecount="1" loop="0" name="pause" pingpong="0" repeatcount="1" repeatto="0" sid="554265679689329" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
+                <animation framecount="1" loop="0" name="attack" pingpong="0" repeatcount="1" repeatto="0" sid="896421395455298" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\1.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="backpack" pingpong="0" repeatcount="1" repeatto="0" sid="575911675417003" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="480566859820105" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="SpriteFont" sid="368666003344129">
@@ -199,6 +200,13 @@
                 </animation>
                 <animation framecount="2" loop="1" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="179162898176752" speed="2">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="2" loop="1" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="272374131060706" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="combat" pingpong="0" repeatcount="1" repeatto="0" sid="427618566345965" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -244,14 +252,6 @@
         </object-type>
         <object-type name="LocalStorage" sid="802704590918275">
             <plugin id="LocalStorage" />
-        </object-type>
-        <object-type name="btn_attack" sid="613231254965877">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="attack" pingpong="0" repeatcount="1" repeatto="0" sid="249154985300112" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
         <object-type name="attack" sid="501248009678392">
             <plugin id="TiledBg" />
@@ -388,7 +388,6 @@
         </family>
         <family name="btns" plugin-id="Sprite" sid="376680578472448">
             <members>
-                <member>btn_attack</member>
                 <member>btn_pause</member>
             </members>
             <instance-variables>
@@ -514,6 +513,9 @@
                 <behavior-type name="Persist" sid="631801224018450">
                     <behavior id="Persist" />
                 </behavior-type>
+                <behavior-type name="Timer" sid="498970175274918">
+                    <behavior id="Rex_Timer" />
+                </behavior-type>
             </behaviors>
         </family>
         <family name="particle" plugin-id="Particles" sid="670281765117357">
@@ -544,6 +546,7 @@
         <event-sheet>e_item.xml</event-sheet>
         <event-sheet>e_ui.xml</event-sheet>
         <event-sheet>e_start&amp;end.xml</event-sheet>
+        <event-sheet>e_ajax.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="7" />

@@ -42,9 +42,6 @@
                             <param id="0" name="Width">tipsBg.Width</param>
                             <param id="1" name="Height">tipsBg.Height</param>
                         </action>
-                        <action id="0" name="Set text" sid="533671850562393" type="txt_center">
-                            <param id="0" name="Text">Function.Param(0)</param>
-                        </action>
                         <action id="-10" name="Set value" sid="802438536859140" type="txt_center">
                             <param id="0" name="Instance variable">groupID</param>
                             <param id="1" name="Value">&quot;tips&quot;</param>
@@ -52,6 +49,9 @@
                         <action id="-10" name="Set value" sid="531808317792005" type="txt_center">
                             <param id="0" name="Instance variable">actionID</param>
                             <param id="1" name="Value">&quot;information&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="533671850562393" type="txt_center">
+                            <param id="0" name="Text">Function.Param(0)</param>
                         </action>
                         <action behavior="Fade" id="2" name="Set fade-in time" sid="627147026157384" type="txt_center">
                             <param id="0" name="Fade-in time">0.3</param>

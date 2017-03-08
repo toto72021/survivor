@@ -127,11 +127,24 @@
                                 <action behavior="animationFSM" id="11" name="Go to state" sid="248184130067359" type="player_poxy">
                                     <param id="0" name="Name">&quot;idle&quot;</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="474597016053284" type="btn_pause">
-                                    <param id="0" name="Animation">&quot;play&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="129839990475521">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="865634771045312" type="btn_pause">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;pause&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="474597016053284" type="btn_pause">
+                                            <param id="0" name="Animation">&quot;play&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="945489068679798">
                             <conditions>
@@ -150,11 +163,24 @@
                                 <action behavior="animationFSM" id="11" name="Go to state" sid="228784949191025" type="player_poxy">
                                     <param id="0" name="Name">&quot;move&quot;</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="616083072151831" type="btn_pause">
-                                    <param id="0" name="Animation">&quot;pause&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="856977709571168">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="806327605758249" type="btn_pause">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;pause&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="616083072151831" type="btn_pause">
+                                            <param id="0" name="Animation">&quot;pause&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -186,6 +212,23 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <comment>夜间消耗2倍</comment>
+                        <variable constant="0" name="times" sid="366003336663431" static="0" type="number">1</variable>
+                        <event-block sid="800044262935524">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="666210104411202" type="player_poxy">
+                                    <param id="0" name="Instance variable">dayNight</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;night&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="805199102394348" type="System">
+                                    <param id="0" name="Variable">times</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="922744794237704">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="792931870734426" type="player_poxy">
@@ -197,7 +240,7 @@
                             <actions>
                                 <action id="-11" name="Add to" sid="236492064595779" type="player_poxy">
                                     <param id="0" name="Instance variable">hungry</param>
-                                    <param id="1" name="Value">0.5</param>
+                                    <param id="1" name="Value">0.5*times</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -236,7 +279,7 @@
                                     <actions>
                                         <action id="-12" name="Subtract from" sid="858187737203642" type="player_poxy">
                                             <param id="0" name="Instance variable">energy</param>
-                                            <param id="1" name="Value">1</param>
+                                            <param id="1" name="Value">1*times</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -376,6 +419,32 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="676915448976153">
+                    <conditions>
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="891176147019516" type="player_poxy">
+                            <param id="0" name="Name">&quot;combat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="937390340687892" type="player_skin">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="344423015282078">
+                    <conditions>
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="164216841428766" type="player_poxy">
+                            <param id="0" name="Name">&quot;idle&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="906640822763420" type="player_skin">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>(0 hp; 1 energy; 2hungry;)</comment>
                 <event-block sid="985839805773749">
                     <conditions>
@@ -443,6 +512,7 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <variable constant="0" name="add" sid="968962928396839" static="0" type="number">0.1</variable>
                         <event-group description="" sid="314085674064659" title="adjustHp">
                             <sub-events>
                                 <event-block sid="155862774763224">
@@ -454,6 +524,10 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-10" name="Add to" sid="567861848873678" type="System">
+                                            <param id="0" name="Variable">add</param>
+                                            <param id="1" name="Value">0.5</param>
+                                        </action>
                                         <action id="-3" name="Create object" sid="850924520364382" type="System">
                                             <param id="0" name="Object to create">P_hp</param>
                                             <param id="1" name="Layer">&quot;fx&quot;</param>
@@ -467,6 +541,10 @@
                                             <param id="3" name="Y">player_poxy.Y</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="375859272988605" type="txt_center">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;player&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="986845251989919" type="txt_center">
                                             <param id="0" name="Instance variable">actionID</param>
                                             <param id="1" name="Value">&quot;hurt&quot;</param>
                                         </action>
@@ -488,7 +566,7 @@
                                             <param id="1" name="Style">1</param>
                                         </action>
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="773920685425226" type="txt_center">
-                                            <param id="0" name="Angle">-90</param>
+                                            <param id="0" name="Angle">random(-90,-60)</param>
                                         </action>
                                         <action behavior="Bullet" id="5" name="Set enabled" sid="589624061628175" type="txt_center">
                                             <param id="0" name="State">1</param>
@@ -521,11 +599,19 @@
                                         <condition id="-22" name="Else" sid="674184905173999" type="System" />
                                     </conditions>
                                     <actions>
+                                        <action id="-10" name="Add to" sid="908068187264549" type="System">
+                                            <param id="0" name="Variable">add</param>
+                                            <param id="1" name="Value">0.5</param>
+                                        </action>
                                         <action id="-3" name="Create object" sid="950129858725608" type="System">
                                             <param id="0" name="Object to create">txt_center</param>
                                             <param id="1" name="Layer">&quot;fx&quot;</param>
                                             <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
                                             <param id="3" name="Y">player_poxy.Y</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="915873679970885" type="txt_center">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;player&quot;</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="199885557514628" type="txt_center">
                                             <param id="0" name="Instance variable">actionID</param>
@@ -535,7 +621,7 @@
                                             <param id="0" name="Color">rgb(255,0,0)</param>
                                         </action>
                                         <action id="0" name="Set text" sid="864804318027076" type="txt_center">
-                                            <param id="0" name="Text">&quot;-&quot;&amp;Function.Param(0)</param>
+                                            <param id="0" name="Text">Function.Param(0)</param>
                                         </action>
                                         <action id="-7" name="Set size" sid="367136015670913" type="txt_center">
                                             <param id="0" name="Width">100</param>
@@ -549,7 +635,7 @@
                                             <param id="0" name="Size (pt)">32</param>
                                         </action>
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="715456630803050" type="txt_center">
-                                            <param id="0" name="Angle">-90</param>
+                                            <param id="0" name="Angle">random(30,90)</param>
                                         </action>
                                         <action behavior="Bullet" id="5" name="Set enabled" sid="485854087986953" type="txt_center">
                                             <param id="0" name="State">1</param>
@@ -564,6 +650,9 @@
                                             <param id="0" name="Fade-out time">0.5</param>
                                         </action>
                                         <action behavior="Fade" id="1" name="Start fade" sid="963059106540977" type="txt_center" />
+                                        <action id="12" name="Vibrate" sid="545262998290382" type="Browser">
+                                            <param id="0" name="Pattern">&quot;200,100,200&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -584,8 +673,12 @@
                                 </action>
                                 <action id="3" name="Start" sid="457434685414291" type="TimeLine">
                                     <param id="0" name="Name">&quot;EE&quot;</param>
-                                    <param id="1" name="Time">0.5</param>
+                                    <param id="1" name="Time">add</param>
                                     <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="314744442422359" type="System">
+                                    <param id="0" name="Variable">add</param>
+                                    <param id="1" name="Value">0.5</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -605,8 +698,8 @@
                                 </action>
                                 <action id="3" name="Start" sid="189235315645875" type="TimeLine">
                                     <param id="0" name="Name">&quot;EH&quot;</param>
-                                    <param id="1" name="Time">0.5</param>
-                                    <param id="2" name="Repeat">1</param>
+                                    <param id="1" name="Time">0.5+add</param>
+                                    <param id="2" name="Repeat">0.5</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -636,6 +729,10 @@
                                     <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
                                     <param id="3" name="Y">player_poxy.Y</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="274010969702892" type="txt_center">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;player&quot;</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="636990031872198" type="txt_center">
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;hurt&quot;</param>
@@ -658,7 +755,7 @@
                                     <param id="1" name="Style">1</param>
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="949362274344783" type="txt_center">
-                                    <param id="0" name="Angle">-90</param>
+                                    <param id="0" name="Angle">random(-90,-60)</param>
                                 </action>
                                 <action behavior="Bullet" id="5" name="Set enabled" sid="270935801474964" type="txt_center">
                                     <param id="0" name="State">1</param>
@@ -701,6 +798,10 @@
                                     <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
                                     <param id="3" name="Y">player_poxy.Y</param>
                                 </action>
+                                <action id="-10" name="Set value" sid="718926262861732" type="txt_center">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;player&quot;</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="824604821984073" type="txt_center">
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;hurt&quot;</param>
@@ -723,7 +824,7 @@
                                     <param id="1" name="Style">1</param>
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="210860504491259" type="txt_center">
-                                    <param id="0" name="Angle">-90</param>
+                                    <param id="0" name="Angle">random(-90,-60)</param>
                                 </action>
                                 <action behavior="Bullet" id="5" name="Set enabled" sid="374919770764268" type="txt_center">
                                     <param id="0" name="State">1</param>
