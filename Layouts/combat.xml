@@ -66,6 +66,7 @@
                         <getEnemy>1</getEnemy>
                         <atk>3</atk>
                         <MaxAtk>3</MaxAtk>
+                        <dayNight>day</dayNight>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="actionFSM">

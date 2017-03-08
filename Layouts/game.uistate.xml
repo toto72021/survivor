@@ -5,10 +5,10 @@ It is entirely optional and the project will load without it.  If you are placin
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
         <position-x>893.333</position-x>
-        <position-y>476.307</position-y>
+        <position-y>525.025</position-y>
         <position-z>194.872</position-z>
         <lookat-x>893.333</lookat-x>
-        <lookat-y>476.307</lookat-y>
+        <lookat-y>525.025</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>1</snap-to-grid>
@@ -23,13 +23,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="fx" />
+    <active-layer name="game" />
     <layers>
         <layer locked="0" name="bg_3" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="bg_2" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="bg_1" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="game" parallax-in-editor="0" visible="1" />
-        <layer locked="0" name="fx" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="fx" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="tips" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="UI" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="topUI" parallax-in-editor="0" visible="1" />

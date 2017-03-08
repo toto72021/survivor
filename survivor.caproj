@@ -36,6 +36,7 @@
         <behavior author="Rex.Rainbow" id="Rex_FSM" version="0.100000001">FSM</behavior>
         <behavior author="Rex.Rainbow" id="Rex_MoveTo" version="1">MoveTo</behavior>
         <behavior author="Rex.Rainbow" id="Rex_Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
@@ -82,6 +83,7 @@
                 <instance-variable name="getEnemy" sid="476287779111286" type="number" />
                 <instance-variable name="atk" sid="603813039919440" type="number" />
                 <instance-variable name="MaxAtk" sid="997877670633882" type="number" />
+                <instance-variable name="dayNight" sid="756742600591684" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="actionFSM" sid="153148587235937">
@@ -335,6 +337,34 @@
             <plugin id="Particles" />
             <texture />
         </object-type>
+        <object-type name="bg_day" sid="230569613314526">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="bg_night" sid="326030262491086">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="bg_tween" sid="522231890089693">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\totoyan\Desktop\bg2.png" />
+        </object-type>
+        <object-type name="sunmoon" sid="400523637817488">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Persist" sid="420740213169217">
+                    <behavior id="Persist" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="789339283290135">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="757674209513868" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="txts" plugin-id="Text" sid="270727115053159">
@@ -374,7 +404,14 @@
         <family name="bgs" plugin-id="TiledBg" sid="679559079734112">
             <members>
                 <member>bg_1</member>
+                <member>bg_day</member>
+                <member>bg_night</member>
+                <member>bg_tween</member>
             </members>
+            <instance-variables>
+                <instance-variable name="groupID" sid="875098870871077" type="string" />
+                <instance-variable name="actionID" sid="411883957590561" type="string" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Persist" sid="613756113369411">
                     <behavior id="Persist" />
@@ -416,6 +453,8 @@
             </members>
             <instance-variables>
                 <instance-variable name="Puid" sid="974613017851896" type="number" />
+                <instance-variable name="groupID" sid="336314002065426" type="string" />
+                <instance-variable name="actionID" sid="167220695021617" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Timer" sid="361022625225884">
