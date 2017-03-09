@@ -289,7 +289,7 @@
                         <hp>10</hp>
                         <maxHp>10</maxHp>
                         <energy>0</energy>
-                        <maxEnergy>15</maxEnergy>
+                        <maxEnergy>20</maxEnergy>
                         <hungry>0</hungry>
                         <maxHungry>100</maxHungry>
                         <getItem>1</getItem>
@@ -298,6 +298,7 @@
                         <atk>3</atk>
                         <MaxAtk>3</MaxAtk>
                         <dayNight>day</dayNight>
+                        <DodgeRate>30</DodgeRate>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="actionFSM">

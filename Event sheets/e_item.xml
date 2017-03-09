@@ -223,24 +223,22 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="887882959044495">
+                        <event-block sid="521593559586344">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="795556812889343" type="System">
+                                <condition id="-7" name="Compare instance variable" sid="794134920019209" type="btns">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;backpack&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="651380191778453" type="System">
                                     <param id="0" name="First value">LayoutName</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">&quot;combat&quot;</param>
+                                    <param id="2" name="Second value">&quot;game&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions />
-                        </event-block>
-                        <event-block sid="740758257569008">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="599023600179005" type="System" />
-                            </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="681623736591078" type="Function">
-                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;column&quot;</param>
+                                <action id="-16" name="Set opacity" sid="459852789969101" type="btns">
+                                    <param id="0" name="Opacity">100</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -414,7 +412,7 @@
                                         </event-block>
                                         <event-block sid="100926183116056">
                                             <conditions>
-                                                <condition id="-8" name="Compare two values" sid="918721887462590" type="System">
+                                                <condition id="-8" name="Compare two values" sid="208219095133718" type="System">
                                                     <param id="0" name="First value">LayoutName</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Second value">&quot;combat&quot;</param>
@@ -432,36 +430,28 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="447533998054788">
+                                        <event-block sid="421162148685366">
                                             <conditions>
-                                                <condition id="-22" name="Else" sid="184501999925772" type="System" />
+                                                <condition id="-22" name="Else" sid="405933977567239" type="System" />
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Call function" sid="948287261594667" type="Function">
-                                                    <param id="0" name="Name">&quot;refreshArray&quot;</param>
-                                                    <param id="1" name="Parameter {n}">&quot;column&quot;</param>
-                                                </action>
-                                                <action id="-16" name="Wait" sid="308892318360134" type="System">
-                                                    <param id="0" name="Seconds">0</param>
+                                                <action id="0" name="Call function" sid="704550847157815" type="Function">
+                                                    <param id="0" name="Name">&quot;destroyItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
                                                 </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="950335815499684">
+                                                <event-block sid="261868766218952">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="545242212286715" type="ui_item">
-                                                            <param id="0" name="Instance variable">groupID</param>
+                                                        <condition id="-7" name="Compare instance variable" sid="403483899225625" type="btns">
+                                                            <param id="0" name="Instance variable">actionID</param>
                                                             <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">&quot;item&quot;</param>
+                                                            <param id="2" name="Value">&quot;backpack&quot;</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="-16" name="Set opacity" sid="164527978361620" type="ui_item">
-                                                            <param id="0" name="Opacity">20</param>
-                                                        </action>
-                                                        <action behavior="Timer" id="2" name="Start" sid="243163746045976" type="ui_item">
-                                                            <param id="0" name="Time">2</param>
-                                                            <param id="1" name="Timer">&quot;_useCD&quot;</param>
-                                                            <param id="2" name="Repeat">1</param>
+                                                        <action id="-16" name="Set opacity" sid="271556280753734" type="btns">
+                                                            <param id="0" name="Opacity">100</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>

@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0308</version>
+    <version>1.0.0.0309</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -19,6 +19,7 @@
         <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_PatternGen" version="0.100000001">Gashapon</plugin>
         <plugin author="Rex.Rainbow" id="Rex_TimeLine" version="1">TimeLine</plugin>
         <plugin author="Juan Pablo Tarquino" id="Rex_ZSorter" version="1">Z Sorter</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -84,6 +85,7 @@
                 <instance-variable name="atk" sid="603813039919440" type="number" />
                 <instance-variable name="MaxAtk" sid="997877670633882" type="number" />
                 <instance-variable name="dayNight" sid="756742600591684" type="string" />
+                <instance-variable name="DodgeRate" sid="864065221079858" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="actionFSM" sid="153148587235937">
@@ -176,6 +178,9 @@
                 <animation framecount="1" loop="0" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="480566859820105" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
+                <animation framecount="1" loop="0" name="Animation2" pingpong="0" repeatcount="1" repeatto="0" sid="991328496164161" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="SpriteFont" sid="368666003344129">
@@ -248,16 +253,24 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="hide" pingpong="0" repeatcount="1" repeatto="0" sid="649247560765272" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="shadow" x="0.532" y="1.02" />
+                    </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="enemy_1" pingpong="0" repeatcount="1" repeatto="0" sid="647950284889834" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="shadow" x="0.532" y="1.02" />
+                    </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="enemy_2" pingpong="0" repeatcount="1" repeatto="0" sid="931145470582140" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="shadow" x="0.532" y="1.02" />
+                    </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="enemy_3" pingpong="0" repeatcount="1" repeatto="0" sid="161298102273545" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="shadow" x="0.532" y="1.02" />
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -388,6 +401,13 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="bg_combat1" sid="654576039205668">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Gashapon" sid="795252108905638">
+            <plugin id="Rex_PatternGen" />
+        </object-type>
     </object-folder>
     <families>
         <family name="txts" plugin-id="Text" sid="270727115053159">
@@ -426,6 +446,7 @@
         <family name="bgs" plugin-id="TiledBg" sid="679559079734112">
             <members>
                 <member>bg_1</member>
+                <member>bg_combat1</member>
                 <member>bg_day</member>
                 <member>bg_night</member>
                 <member>bg_tween</member>
