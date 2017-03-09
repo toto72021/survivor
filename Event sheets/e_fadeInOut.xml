@@ -62,7 +62,7 @@
                             <param id="0" name="X">Self.X+1100</param>
                             <param id="1" name="Y">Self.Y</param>
                         </action>
-                        <action behavior="MoveTo" id="4" name="Move to XY" sid="776471733261296" type="player_poxy">
+                        <action behavior="MoveTo" id="4" name="Move to XY" sid="776471733261296" type="player_proxy">
                             <param id="0" name="X">Self.X-1100</param>
                             <param id="1" name="Y">Self.Y</param>
                         </action>

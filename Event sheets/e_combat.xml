@@ -29,7 +29,7 @@
                             <param id="0" name="Name">&quot;randomEnemy&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
-                        <action behavior="animationFSM" id="11" name="Go to state" sid="961180917921464" type="player_poxy">
+                        <action behavior="animationFSM" id="11" name="Go to state" sid="961180917921464" type="player_proxy">
                             <param id="0" name="Name">&quot;combat&quot;</param>
                         </action>
                     </actions>
@@ -82,7 +82,7 @@
                             <param id="3" name="Y">120</param>
                         </action>
                         <action id="4" name="Set animation" sid="564451236572148" type="enemy">
-                            <param id="0" name="Animation">&quot;enemy_1&quot;</param>
+                            <param id="0" name="Animation">&quot;enemy_&quot;&amp;str(int(random(1,4)))</param>
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
@@ -138,14 +138,14 @@
                 </event-block>
                 <event-block sid="640822525908914">
                     <conditions>
-                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="927915549715808" type="player_poxy" />
+                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="927915549715808" type="player_proxy" />
                     </conditions>
                     <actions>
                         <action id="-3" name="Create object" sid="191729041194272" type="System">
                             <param id="0" name="Object to create">txt_left</param>
                             <param id="1" name="Layer">&quot;ui2&quot;</param>
-                            <param id="2" name="X">player_poxy.X+player_poxy.Width+30</param>
-                            <param id="3" name="Y">player_poxy.Y-player_poxy.Height/2</param>
+                            <param id="2" name="X">player_proxy.X+player_proxy.Width+30</param>
+                            <param id="3" name="Y">player_proxy.Y-player_proxy.Height/2</param>
                         </action>
                         <action id="-10" name="Set value" sid="556084799200798" type="txt_left">
                             <param id="0" name="Instance variable">groupID</param>
@@ -162,8 +162,8 @@
                         <action id="-3" name="Create object" sid="521780455871855" type="System">
                             <param id="0" name="Object to create">txt_left</param>
                             <param id="1" name="Layer">&quot;ui2&quot;</param>
-                            <param id="2" name="X">player_poxy.X+player_poxy.Width+30</param>
-                            <param id="3" name="Y">player_poxy.Y-player_poxy.Height/3</param>
+                            <param id="2" name="X">player_proxy.X+player_proxy.Width+30</param>
+                            <param id="3" name="Y">player_proxy.Y-player_proxy.Height/3</param>
                         </action>
                         <action id="-10" name="Set value" sid="920100527285280" type="txt_left">
                             <param id="0" name="Instance variable">groupID</param>
@@ -279,7 +279,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="animationFSM" id="11" name="Go to state" sid="151777695949083" type="player_poxy">
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="151777695949083" type="player_proxy">
                                     <param id="0" name="Name">&quot;escape&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="977205755266833" type="Function">
@@ -332,15 +332,15 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="191731163742230" type="System">
                                     <param id="0" name="Variable">atk</param>
-                                    <param id="1" name="Value">player_poxy.atk</param>
+                                    <param id="1" name="Value">player_proxy.atk</param>
                                 </action>
-                                <action behavior="Sine" id="0" name="Set active" sid="466377746377561" type="player_poxy">
+                                <action behavior="Sine" id="0" name="Set active" sid="466377746377561" type="player_proxy">
                                     <param id="0" name="State">1</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="459634836542997" type="System">
                                     <param id="0" name="Seconds">0.3</param>
                                 </action>
-                                <action behavior="Sine" id="0" name="Set active" sid="152892444343159" type="player_poxy">
+                                <action behavior="Sine" id="0" name="Set active" sid="152892444343159" type="player_proxy">
                                     <param id="0" name="State">0</param>
                                 </action>
                             </actions>
@@ -356,11 +356,11 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="774882978836459" type="System">
                                     <param id="0" name="Variable">objX</param>
-                                    <param id="1" name="Value">player_poxy.X</param>
+                                    <param id="1" name="Value">player_proxy.X</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="252826705371713" type="System">
                                     <param id="0" name="Variable">objY</param>
-                                    <param id="1" name="Value">player_poxy.Y-player_poxy.Height/2</param>
+                                    <param id="1" name="Value">player_proxy.Y-player_proxy.Height/2</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="619186708422161" type="System">
                                     <param id="0" name="Variable">atk</param>
@@ -512,14 +512,14 @@
                             <sub-events>
                                 <event-block sid="976857959339402">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="268675924861349" type="player_poxy">
+                                        <condition id="-7" name="Compare instance variable" sid="268675924861349" type="player_proxy">
                                             <param id="0" name="Instance variable">hp</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="920626407344020" type="player_poxy">
+                                        <action id="-10" name="Set value" sid="920626407344020" type="player_proxy">
                                             <param id="0" name="Instance variable">hp</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -533,12 +533,12 @@
                                     <sub-events>
                                         <event-block sid="896670098494465">
                                             <conditions>
-                                                <condition behavior="animationFSM" id="7" name="Compare current state" sid="397957603107269" type="player_poxy">
+                                                <condition behavior="animationFSM" id="7" name="Compare current state" sid="397957603107269" type="player_proxy">
                                                     <param id="0" name="Name">&quot;escape&quot;</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action behavior="Timer" id="2" name="Start" sid="295488821555461" type="player_poxy">
+                                                <action behavior="Timer" id="2" name="Start" sid="295488821555461" type="player_proxy">
                                                     <param id="0" name="Time">1</param>
                                                     <param id="1" name="Timer">&quot;_escape&quot;</param>
                                                     <param id="2" name="Repeat">1</param>
@@ -576,7 +576,7 @@
                 </event-block>
                 <event-block sid="252568109159028">
                     <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="811727131130196" type="player_poxy">
+                        <condition behavior="Timer" id="1" name="On time-out" sid="811727131130196" type="player_proxy">
                             <param id="0" name="Timer">&quot;_escape&quot;</param>
                         </condition>
                     </conditions>
@@ -622,7 +622,7 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="animationFSM" id="11" name="Go to state" sid="278684713910585" type="player_poxy">
+                        <action behavior="animationFSM" id="11" name="Go to state" sid="278684713910585" type="player_proxy">
                             <param id="0" name="Name">&quot;combat&quot;</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="441827252335509" type="btns">
@@ -683,7 +683,7 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="143669072761881" type="btns" />
-                        <action id="-3" name="Set position" sid="783959658748702" type="player_poxy">
+                        <action id="-3" name="Set position" sid="783959658748702" type="player_proxy">
                             <param id="0" name="X">1296</param>
                             <param id="1" name="Y">531</param>
                         </action>

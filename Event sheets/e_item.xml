@@ -425,7 +425,7 @@
                                                     <param id="0" name="Name">&quot;destroyItem&quot;</param>
                                                     <param id="1" name="Parameter {n}"></param>
                                                 </action>
-                                                <action behavior="Timer" id="2" name="Start" sid="788310811884789" type="player_poxy">
+                                                <action behavior="Timer" id="2" name="Start" sid="788310811884789" type="player_proxy">
                                                     <param id="0" name="Time">1</param>
                                                     <param id="1" name="Timer">&quot;_useItem&quot;</param>
                                                     <param id="2" name="Repeat">1</param>
@@ -486,7 +486,7 @@
                 </event-block>
                 <event-block sid="452910075308790">
                     <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="933890241524674" type="player_poxy">
+                        <condition behavior="Timer" id="1" name="On time-out" sid="933890241524674" type="player_proxy">
                             <param id="0" name="Timer">&quot;_useItem&quot;</param>
                         </condition>
                     </conditions>

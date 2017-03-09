@@ -41,15 +41,15 @@
                                     <param id="0" name="Name">&quot;resetPlayer&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
-                                <action behavior="actionFSM" id="11" name="Go to state" sid="269628624264278" type="player_poxy">
+                                <action behavior="actionFSM" id="11" name="Go to state" sid="269628624264278" type="player_proxy">
                                     <param id="0" name="Name">&quot;pause&quot;</param>
                                 </action>
-                                <action behavior="Timer" id="2" name="Start" sid="516528377802295" type="player_poxy">
+                                <action behavior="Timer" id="2" name="Start" sid="516528377802295" type="player_proxy">
                                     <param id="0" name="Time">Dictionary.Get(&quot;itemTimer&quot;)</param>
                                     <param id="1" name="Timer">&quot;getItem&quot;</param>
                                     <param id="2" name="Repeat">1</param>
                                 </action>
-                                <action behavior="Timer" id="2" name="Start" sid="690358459586670" type="player_poxy">
+                                <action behavior="Timer" id="2" name="Start" sid="690358459586670" type="player_proxy">
                                     <param id="0" name="Time">Dictionary.Get(&quot;enemyTimer&quot;)</param>
                                     <param id="1" name="Timer">&quot;getEnemy&quot;</param>
                                     <param id="2" name="Repeat">1</param>
@@ -71,7 +71,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Timer" id="2" name="Start" sid="851284059593442" type="player_poxy">
+                                        <action behavior="Timer" id="2" name="Start" sid="851284059593442" type="player_proxy">
                                             <param id="0" name="Time">Dictionary.Get(&quot;dayTimer&quot;)</param>
                                             <param id="1" name="Timer">&quot;dayTimer&quot;</param>
                                             <param id="2" name="Repeat">1</param>
@@ -85,7 +85,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Timer" id="2" name="Start" sid="895100139243464" type="player_poxy">
+                                        <action behavior="Timer" id="2" name="Start" sid="895100139243464" type="player_proxy">
                                             <param id="0" name="Time">Dictionary.Get(&quot;nightTimer&quot;)</param>
                                             <param id="1" name="Timer">&quot;nightTimer&quot;</param>
                                             <param id="2" name="Repeat">1</param>
@@ -99,7 +99,7 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Timer" id="2" name="Start" sid="806925694210777" type="player_poxy">
+                                        <action behavior="Timer" id="2" name="Start" sid="806925694210777" type="player_proxy">
                                             <param id="0" name="Time">Dictionary.Get(&quot;stayTimer&quot;)</param>
                                             <param id="1" name="Timer">&quot;stayTimer&quot;</param>
                                             <param id="2" name="Repeat">1</param>
@@ -138,11 +138,11 @@
                                     <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
-                                <action id="-10" name="Set value" sid="753699309775992" type="player_poxy">
+                                <action id="-10" name="Set value" sid="753699309775992" type="player_proxy">
                                     <param id="0" name="Instance variable">dayNight</param>
                                     <param id="1" name="Value">&quot;day&quot;</param>
                                 </action>
-                                <action behavior="Timer" id="2" name="Start" sid="939392779110161" type="player_poxy">
+                                <action behavior="Timer" id="2" name="Start" sid="939392779110161" type="player_proxy">
                                     <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
                                     <param id="1" name="Timer">&quot;dayTimer&quot;</param>
                                     <param id="2" name="Repeat">1</param>
@@ -159,7 +159,7 @@
         </event-group>
         <event-group description="" sid="201019932626415" title="bg">
             <sub-events>
-                <variable constant="0" name="daytime" sid="495852605984083" static="0" type="number">24</variable>
+                <variable constant="0" name="daytime" sid="495852605984083" static="0" type="number">6</variable>
                 <event-block sid="317820983016370">
                     <conditions>
                         <condition id="0" name="On function" sid="853087301907280" type="Function">
@@ -174,16 +174,46 @@
                 </event-block>
                 <event-block sid="219197742876659">
                     <conditions>
-                        <condition behavior="Timer" id="0" name="Is timer running" sid="901284206150019" type="player_poxy">
+                        <condition behavior="Timer" id="0" name="Is timer running" sid="901284206150019" type="player_proxy">
                             <param id="0" name="Timer">&quot;dayTimer&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-16" name="Set opacity" sid="976726003952078" type="bg_tween">
-                            <param id="0" name="Opacity">100*player_poxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
+                            <param id="0" name="Opacity">100*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="543398267745174">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="959901625491921" type="System">
+                                    <param id="0" name="First value">player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="455755602713690" type="shadow">
+                                    <param id="0" name="X">player_proxy.X-player_proxy.Width*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)*2</param>
+                                </action>
+                                <action disabled="1" id="-16" name="Set opacity" sid="766702106336034" type="shadow">
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;dayTimer&quot;)*2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="575232985141038">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="249636183611318" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="853461956565328" type="shadow">
+                                    <param id="0" name="X">(player_proxy.X-player_proxy.Width)+player_proxy.Width*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)*2</param>
+                                </action>
+                                <action disabled="1" id="-16" name="Set opacity" sid="970727834890826" type="shadow">
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;dayTimer&quot;)*2</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="614493654268831">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="865011141890268" type="System">
@@ -192,7 +222,7 @@
                             </conditions>
                             <actions>
                                 <action id="-16" name="Set opacity" sid="722719616282489" type="bg_day">
-                                    <param id="0" name="Opacity">100*player_poxy.Timer.RemainderPercent(&quot;dayTimer&quot;)</param>
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;dayTimer&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -204,7 +234,7 @@
                             </conditions>
                             <actions>
                                 <action id="-16" name="Set opacity" sid="583850453546799" type="bg_night">
-                                    <param id="0" name="Opacity">100*player_poxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -212,16 +242,16 @@
                 </event-block>
                 <event-block sid="978478051885027">
                     <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="838545479842745" type="player_poxy">
+                        <condition behavior="Timer" id="1" name="On time-out" sid="838545479842745" type="player_proxy">
                             <param id="0" name="Timer">&quot;dayTimer&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="210188611825710" type="player_poxy">
+                        <action id="-10" name="Set value" sid="210188611825710" type="player_proxy">
                             <param id="0" name="Instance variable">dayNight</param>
                             <param id="1" name="Value">&quot;night&quot;</param>
                         </action>
-                        <action behavior="Timer" id="2" name="Start" sid="944008504809469" type="player_poxy">
+                        <action behavior="Timer" id="2" name="Start" sid="944008504809469" type="player_proxy">
                             <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
                             <param id="1" name="Timer">&quot;stayTimer&quot;</param>
                             <param id="2" name="Repeat">1</param>
@@ -230,7 +260,7 @@
                 </event-block>
                 <event-block sid="981883542673044">
                     <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="197833662720175" type="player_poxy">
+                        <condition behavior="Timer" id="1" name="On time-out" sid="197833662720175" type="player_proxy">
                             <param id="0" name="Timer">&quot;stayTimer&quot;</param>
                         </condition>
                     </conditions>
@@ -238,14 +268,14 @@
                     <sub-events>
                         <event-block sid="290869484664677">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="821000752973248" type="player_poxy">
+                                <condition id="-7" name="Compare instance variable" sid="821000752973248" type="player_proxy">
                                     <param id="0" name="Instance variable">dayNight</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;night&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Timer" id="2" name="Start" sid="787015455817460" type="player_poxy">
+                                <action behavior="Timer" id="2" name="Start" sid="787015455817460" type="player_proxy">
                                     <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
                                     <param id="1" name="Timer">&quot;nightTimer&quot;</param>
                                     <param id="2" name="Repeat">1</param>
@@ -255,14 +285,14 @@
                         <event-block sid="629372816605126">
                             <conditions>
                                 <condition id="-22" name="Else" sid="493351194313778" type="System" />
-                                <condition id="-7" name="Compare instance variable" sid="211168772388271" type="player_poxy">
+                                <condition id="-7" name="Compare instance variable" sid="211168772388271" type="player_proxy">
                                     <param id="0" name="Instance variable">dayNight</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;day&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Timer" id="2" name="Start" sid="799393340336164" type="player_poxy">
+                                <action behavior="Timer" id="2" name="Start" sid="799393340336164" type="player_proxy">
                                     <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
                                     <param id="1" name="Timer">&quot;dayTimer&quot;</param>
                                     <param id="2" name="Repeat">1</param>
@@ -273,13 +303,13 @@
                 </event-block>
                 <event-block sid="612001138115381">
                     <conditions>
-                        <condition behavior="Timer" id="0" name="Is timer running" sid="796198863206856" type="player_poxy">
+                        <condition behavior="Timer" id="0" name="Is timer running" sid="796198863206856" type="player_proxy">
                             <param id="0" name="Timer">&quot;nightTimer&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-16" name="Set opacity" sid="429885913644629" type="bg_tween">
-                            <param id="0" name="Opacity">100*player_poxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
+                            <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -291,7 +321,7 @@
                             </conditions>
                             <actions>
                                 <action id="-16" name="Set opacity" sid="423526358117342" type="bg_day">
-                                    <param id="0" name="Opacity">100*player_poxy.Timer.ElapsedPercent(&quot;nightTimer&quot;)</param>
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.ElapsedPercent(&quot;nightTimer&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -303,7 +333,7 @@
                             </conditions>
                             <actions>
                                 <action id="-16" name="Set opacity" sid="471874694625113" type="bg_night">
-                                    <param id="0" name="Opacity">100*player_poxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -311,16 +341,16 @@
                 </event-block>
                 <event-block sid="411497728622040">
                     <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="990617590713092" type="player_poxy">
+                        <condition behavior="Timer" id="1" name="On time-out" sid="990617590713092" type="player_proxy">
                             <param id="0" name="Timer">&quot;nightTimer&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="222306865079095" type="player_poxy">
+                        <action id="-10" name="Set value" sid="222306865079095" type="player_proxy">
                             <param id="0" name="Instance variable">dayNight</param>
                             <param id="1" name="Value">&quot;day&quot;</param>
                         </action>
-                        <action behavior="Timer" id="2" name="Start" sid="125642526239556" type="player_poxy">
+                        <action behavior="Timer" id="2" name="Start" sid="125642526239556" type="player_proxy">
                             <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
                             <param id="1" name="Timer">&quot;stayTimer&quot;</param>
                             <param id="2" name="Repeat">1</param>
@@ -329,12 +359,12 @@
                 </event-block>
                 <event-block sid="685501037914123">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="322432018769349" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="322432018769349" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="560548372797937" type="player_poxy">
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="560548372797937" type="player_proxy">
                             <param id="0" name="Name">&quot;move&quot;</param>
                         </condition>
                     </conditions>
@@ -342,17 +372,17 @@
                     <sub-events>
                         <event-block sid="533721378756048">
                             <conditions>
-                                <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="704672140250233" type="player_poxy">
+                                <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="704672140250233" type="player_proxy">
                                     <param id="0" name="Timer">&quot;distance&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Timer" id="2" name="Start" sid="860293612321778" type="player_poxy">
+                                <action behavior="Timer" id="2" name="Start" sid="860293612321778" type="player_proxy">
                                     <param id="0" name="Time">0.01</param>
                                     <param id="1" name="Timer">&quot;distance&quot;</param>
                                     <param id="2" name="Repeat">1</param>
                                 </action>
-                                <action id="-11" name="Add to" sid="485948747059554" type="player_poxy">
+                                <action id="-11" name="Add to" sid="485948747059554" type="player_proxy">
                                     <param id="0" name="Instance variable">moveDistance</param>
                                     <param id="1" name="Value">0.02</param>
                                 </action>
@@ -459,12 +489,12 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;pause&quot;</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="216975646761051" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="216975646761051" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition behavior="animationFSM" id="7" inverted="1" name="Compare current state" sid="869526303250762" type="player_poxy">
+                        <condition behavior="animationFSM" id="7" inverted="1" name="Compare current state" sid="869526303250762" type="player_proxy">
                             <param id="0" name="Name">&quot;search&quot;</param>
                         </condition>
                     </conditions>
@@ -472,7 +502,7 @@
                     <sub-events>
                         <event-block sid="643376936815785">
                             <conditions>
-                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="918745299102447" type="player_poxy">
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="918745299102447" type="player_proxy">
                                     <param id="0" name="Name">&quot;move&quot;</param>
                                 </condition>
                             </conditions>
@@ -486,7 +516,7 @@
                         <event-block sid="785423419376527">
                             <conditions>
                                 <condition id="-22" name="Else" sid="261051543616371" type="System" />
-                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="903516872410773" type="player_poxy">
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="903516872410773" type="player_proxy">
                                     <param id="0" name="Name">&quot;pause&quot;</param>
                                 </condition>
                             </conditions>
@@ -518,10 +548,10 @@
                         <condition id="4" inverted="1" name="Is touching object" sid="375512327496739" type="Touch">
                             <param id="0" name="Object">ui_item</param>
                         </condition>
-                        <condition behavior="animationFSM" id="7" inverted="1" name="Compare current state" sid="622473132646195" type="player_poxy">
+                        <condition behavior="animationFSM" id="7" inverted="1" name="Compare current state" sid="622473132646195" type="player_proxy">
                             <param id="0" name="Name">&quot;search&quot;</param>
                         </condition>
-                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="515552865694884" type="player_poxy">
+                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="515552865694884" type="player_proxy">
                             <param id="0" name="Name">&quot;combat&quot;</param>
                         </condition>
                     </conditions>
@@ -535,13 +565,13 @@
                         <event-block sid="423485905297415">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="575753739921048" type="System">
-                                    <param id="0" name="First value">distance(player_poxy.X,player_poxy.Y,item.X,item.Y)</param>
+                                    <param id="0" name="First value">distance(player_proxy.X,player_proxy.Y,item.X,item.Y)</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Second value">300</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="animationFSM" id="11" name="Go to state" sid="597240105986003" type="player_poxy">
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="597240105986003" type="player_proxy">
                                     <param id="0" name="Name">&quot;search&quot;</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="502694431442154" type="System">
@@ -651,7 +681,7 @@
                                     <param id="0" name="Name">&quot;randItem&quot;</param>
                                     <param id="1" name="Parameter {n}">item.item{###}item.randRate{###}item.itemCount</param>
                                 </action>
-                                <action behavior="animationFSM" id="11" name="Go to state" sid="820305579047143" type="player_poxy">
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="820305579047143" type="player_proxy">
                                     <param id="0" name="Name">&quot;idle&quot;</param>
                                 </action>
                                 <action id="5" name="Set frame" sid="154730213759461" type="item">
@@ -666,23 +696,23 @@
                 <variable constant="0" name="createItemTime" sid="349492969715706" static="0" type="number">10</variable>
                 <event-block sid="113605935947698">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="122105833157247" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="122105833157247" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="167538691668216" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="167538691668216" type="player_proxy">
                             <param id="0" name="Instance variable">getItem</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="212292999013885" type="player_poxy">
+                        <action id="-10" name="Set value" sid="212292999013885" type="player_proxy">
                             <param id="0" name="Instance variable">getItem</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action behavior="Timer" id="2" name="Start" sid="778465336597545" type="player_poxy">
+                        <action behavior="Timer" id="2" name="Start" sid="778465336597545" type="player_proxy">
                             <param id="0" name="Time">int(random(createItemTime-3,createItemTime+3))</param>
                             <param id="1" name="Timer">&quot;getItem&quot;</param>
                             <param id="2" name="Repeat">1</param>
@@ -691,12 +721,12 @@
                 </event-block>
                 <event-block sid="134402125834962">
                     <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_poxy">
+                        <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_proxy">
                             <param id="0" name="Timer">&quot;getItem&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="533454811417940" type="player_poxy">
+                        <action id="-10" name="Set value" sid="533454811417940" type="player_proxy">
                             <param id="0" name="Instance variable">getItem</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -713,12 +743,12 @@
                 </event-block>
                 <event-block sid="232924656955798">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="389748494653536" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="389748494653536" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="949487008321721" type="player_poxy">
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="949487008321721" type="player_proxy">
                             <param id="0" name="Name">&quot;move&quot;</param>
                         </condition>
                     </conditions>
@@ -746,23 +776,23 @@
                 <variable constant="0" name="createEnemyTime" sid="994717593950124" static="0" type="number">15</variable>
                 <event-block sid="266018639757432">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="344193036219462" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="344193036219462" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="950021477764580" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="950021477764580" type="player_proxy">
                             <param id="0" name="Instance variable">getEnemy</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="873306671204019" type="player_poxy">
+                        <action id="-10" name="Set value" sid="873306671204019" type="player_proxy">
                             <param id="0" name="Instance variable">getEnemy</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action behavior="Timer" id="2" name="Start" sid="374230324941309" type="player_poxy">
+                        <action behavior="Timer" id="2" name="Start" sid="374230324941309" type="player_proxy">
                             <param id="0" name="Time">int(random(createEnemyTime-3,createEnemyTime+3))</param>
                             <param id="1" name="Timer">&quot;getEnemy&quot;</param>
                             <param id="2" name="Repeat">1</param>
@@ -771,12 +801,12 @@
                 </event-block>
                 <event-block sid="394976641308997">
                     <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="817593148181625" type="player_poxy">
+                        <condition behavior="Timer" id="1" name="On time-out" sid="817593148181625" type="player_proxy">
                             <param id="0" name="Timer">&quot;getEnemy&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="962416467552644" type="player_poxy">
+                        <action id="-10" name="Set value" sid="962416467552644" type="player_proxy">
                             <param id="0" name="Instance variable">getEnemy</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -793,12 +823,12 @@
                 </event-block>
                 <event-block sid="311805158309637">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="455859021449078" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="455859021449078" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="520113227831705" type="player_poxy">
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="520113227831705" type="player_proxy">
                             <param id="0" name="Name">&quot;move&quot;</param>
                         </condition>
                     </conditions>
@@ -822,7 +852,7 @@
                                             <param id="0" name="Name">&quot;idle&quot;</param>
                                         </condition>
                                         <condition id="-8" name="Compare two values" sid="211116869145287" type="System">
-                                            <param id="0" name="First value">distance(enemy.X,enemy.Y,player_poxy.X,player_poxy.Y)</param>
+                                            <param id="0" name="First value">distance(enemy.X,enemy.Y,player_proxy.X,player_proxy.Y)</param>
                                             <param id="1" name="Comparison">3</param>
                                             <param id="2" name="Second value">400</param>
                                         </condition>
@@ -836,7 +866,7 @@
                                             <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
                                             <param id="1" name="Parameter {n}">&quot;小心！！！&quot;</param>
                                         </action>
-                                        <action behavior="actionFSM" id="11" name="Go to state" sid="439194691815857" type="player_poxy">
+                                        <action behavior="actionFSM" id="11" name="Go to state" sid="439194691815857" type="player_proxy">
                                             <param id="0" name="Name">&quot;combat&quot;</param>
                                         </action>
                                         <action behavior="FSM" id="11" name="Go to state" sid="955757048427578" type="enemy">
@@ -966,54 +996,54 @@
                                 </action>
                                 <action id="0" name="Add key" sid="140097088793777" type="Dictionary">
                                     <param id="0" name="Key">&quot;itemTimer&quot;</param>
-                                    <param id="1" name="Value">player_poxy.Timer.Remainder(&quot;getItem&quot;)</param>
+                                    <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;getItem&quot;)</param>
                                 </action>
                                 <action id="0" name="Add key" sid="365625039427871" type="Dictionary">
                                     <param id="0" name="Key">&quot;enemyTimer&quot;</param>
-                                    <param id="1" name="Value">player_poxy.Timer.Remainder(&quot;getEnemy&quot;)</param>
+                                    <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;getEnemy&quot;)</param>
                                 </action>
                                 <action id="0" name="Add key" sid="961272318348517" type="Dictionary">
                                     <param id="0" name="Key">&quot;dayNight&quot;</param>
-                                    <param id="1" name="Value">player_poxy.dayNight</param>
+                                    <param id="1" name="Value">player_proxy.dayNight</param>
                                 </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="564410948848093">
                                     <conditions>
-                                        <condition behavior="Timer" id="0" name="Is timer running" sid="421834878727003" type="player_poxy">
+                                        <condition behavior="Timer" id="0" name="Is timer running" sid="421834878727003" type="player_proxy">
                                             <param id="0" name="Timer">&quot;dayTimer&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Add key" sid="423385117879106" type="Dictionary">
                                             <param id="0" name="Key">&quot;dayTimer&quot;</param>
-                                            <param id="1" name="Value">player_poxy.Timer.Remainder(&quot;dayTimer&quot;)</param>
+                                            <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;dayTimer&quot;)</param>
                                         </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="638450409799142">
                                     <conditions>
-                                        <condition behavior="Timer" id="0" name="Is timer running" sid="730540974937386" type="player_poxy">
+                                        <condition behavior="Timer" id="0" name="Is timer running" sid="730540974937386" type="player_proxy">
                                             <param id="0" name="Timer">&quot;nightTimer&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Add key" sid="537070387041539" type="Dictionary">
                                             <param id="0" name="Key">&quot;nightTimer&quot;</param>
-                                            <param id="1" name="Value">player_poxy.Timer.Remainder(&quot;nightTimer&quot;)</param>
+                                            <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;nightTimer&quot;)</param>
                                         </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="529088098841231">
                                     <conditions>
-                                        <condition behavior="Timer" id="0" name="Is timer running" sid="901572059599991" type="player_poxy">
+                                        <condition behavior="Timer" id="0" name="Is timer running" sid="901572059599991" type="player_proxy">
                                             <param id="0" name="Timer">&quot;stayTimer&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Add key" sid="995722034636058" type="Dictionary">
                                             <param id="0" name="Key">&quot;stayTimer&quot;</param>
-                                            <param id="1" name="Value">player_poxy.Timer.Remainder(&quot;stayTimer&quot;)</param>
+                                            <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;stayTimer&quot;)</param>
                                         </action>
                                     </actions>
                                 </event-block>

@@ -5,6 +5,43 @@
     <events>
         <event-group description="" sid="436671320337797" title="player">
             <sub-events>
+                <event-block sid="882616897037443">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="858693684653427" type="player_proxy" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="526913259675598" type="player_skin">
+                            <param id="0" name="X">player_proxy.X</param>
+                            <param id="1" name="Y">player_proxy.Y</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="128123219796663" type="player_proxy">
+                            <param id="0" name="Object">shadow</param>
+                            <param id="1" name="Layer">player_proxy.LayerName</param>
+                            <param id="2" name="Image point">&quot;shadow&quot;</param>
+                        </action>
+                        <action id="14" name="Log" sid="994490751635641" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;............shadow&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="615663956374312">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="197411074546240" type="System">
+                                    <param id="0" name="First value">LayoutName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;combat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="835392127460869" type="shadow">
+                                    <param id="0" name="Pin to">player_proxy</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="388755745639879">
                     <conditions>
                         <condition id="0" name="On function" sid="334792523263715" type="Function">
@@ -14,15 +51,15 @@
                     <actions>
                         <action id="0" name="Add key" sid="939625013770849" type="Dictionary">
                             <param id="0" name="Key">&quot;playerHp&quot;</param>
-                            <param id="1" name="Value">player_poxy.hp</param>
+                            <param id="1" name="Value">player_proxy.hp</param>
                         </action>
                         <action id="0" name="Add key" sid="339086378919073" type="Dictionary">
                             <param id="0" name="Key">&quot;playerEnergy&quot;</param>
-                            <param id="1" name="Value">player_poxy.energy</param>
+                            <param id="1" name="Value">player_proxy.energy</param>
                         </action>
                         <action id="0" name="Add key" sid="323637737061899" type="Dictionary">
                             <param id="0" name="Key">&quot;playerHungry&quot;</param>
-                            <param id="1" name="Value">player_poxy.hungry</param>
+                            <param id="1" name="Value">player_proxy.hungry</param>
                         </action>
                     </actions>
                 </event-block>
@@ -34,7 +71,7 @@
                     </conditions>
                     <actions>
                         <action behavior="Pin" id="0" name="Pin to object" sid="459810147244731" type="player_skin">
-                            <param id="0" name="Pin to">player_poxy</param>
+                            <param id="0" name="Pin to">player_proxy</param>
                             <param id="1" name="Mode">1</param>
                         </action>
                     </actions>
@@ -46,15 +83,15 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="339049394915973" type="player_poxy">
+                                <action id="-10" name="Set value" sid="339049394915973" type="player_proxy">
                                     <param id="0" name="Instance variable">hp</param>
                                     <param id="1" name="Value">Dictionary.Get(&quot;playerHp&quot;)</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="658783333934083" type="player_poxy">
+                                <action id="-10" name="Set value" sid="658783333934083" type="player_proxy">
                                     <param id="0" name="Instance variable">energy</param>
                                     <param id="1" name="Value">Dictionary.Get(&quot;playerEnergy&quot;)</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="558181890548466" type="player_poxy">
+                                <action id="-10" name="Set value" sid="558181890548466" type="player_proxy">
                                     <param id="0" name="Instance variable">hungry</param>
                                     <param id="1" name="Value">Dictionary.Get(&quot;playerHungry&quot;)</param>
                                 </action>
@@ -65,31 +102,31 @@
                                 <condition id="-22" name="Else" sid="320304734714180" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="546947577613232" type="player_poxy">
+                                <action id="-10" name="Set value" sid="546947577613232" type="player_proxy">
                                     <param id="0" name="Instance variable">moveDistance</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="433912586595168" type="player_poxy">
+                                <action id="-10" name="Set value" sid="433912586595168" type="player_proxy">
                                     <param id="0" name="Instance variable">hp</param>
                                     <param id="1" name="Value">Self.maxHp</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="783374745642505" type="player_poxy">
+                                <action id="-10" name="Set value" sid="783374745642505" type="player_proxy">
                                     <param id="0" name="Instance variable">energy</param>
                                     <param id="1" name="Value">Self.maxEnergy</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="942971455680461" type="player_poxy">
+                                <action id="-10" name="Set value" sid="942971455680461" type="player_proxy">
                                     <param id="0" name="Instance variable">atk</param>
                                     <param id="1" name="Value">Self.MaxAtk</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="406508347677372" type="player_poxy">
+                                <action id="-10" name="Set value" sid="406508347677372" type="player_proxy">
                                     <param id="0" name="Instance variable">hungry</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="547144334169139" type="player_poxy">
+                                <action id="-10" name="Set value" sid="547144334169139" type="player_proxy">
                                     <param id="0" name="Instance variable">getItem</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="897714852514906" type="player_poxy">
+                                <action id="-10" name="Set value" sid="897714852514906" type="player_proxy">
                                     <param id="0" name="Instance variable">getEnemy</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
@@ -115,16 +152,16 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Timer" id="3" name="Pause" sid="208262611407979" type="player_poxy">
+                                <action behavior="Timer" id="3" name="Pause" sid="208262611407979" type="player_proxy">
                                     <param id="0" name="Timer">&quot;getItem&quot;</param>
                                 </action>
-                                <action behavior="Timer" id="3" name="Pause" sid="153264116101633" type="player_poxy">
+                                <action behavior="Timer" id="3" name="Pause" sid="153264116101633" type="player_proxy">
                                     <param id="0" name="Timer">&quot;getEnemy&quot;</param>
                                 </action>
-                                <action behavior="actionFSM" id="11" name="Go to state" sid="134713550846141" type="player_poxy">
+                                <action behavior="actionFSM" id="11" name="Go to state" sid="134713550846141" type="player_proxy">
                                     <param id="0" name="Name">&quot;pause&quot;</param>
                                 </action>
-                                <action behavior="animationFSM" id="11" name="Go to state" sid="248184130067359" type="player_poxy">
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="248184130067359" type="player_proxy">
                                     <param id="0" name="Name">&quot;idle&quot;</param>
                                 </action>
                             </actions>
@@ -151,16 +188,16 @@
                                 <condition id="-22" name="Else" sid="636714031876452" type="System" />
                             </conditions>
                             <actions>
-                                <action behavior="Timer" id="4" name="Resume" sid="622567983902917" type="player_poxy">
+                                <action behavior="Timer" id="4" name="Resume" sid="622567983902917" type="player_proxy">
                                     <param id="0" name="Timer">&quot;getItem&quot;</param>
                                 </action>
-                                <action behavior="Timer" id="4" name="Resume" sid="666183663106798" type="player_poxy">
+                                <action behavior="Timer" id="4" name="Resume" sid="666183663106798" type="player_proxy">
                                     <param id="0" name="Timer">&quot;getEnemy&quot;</param>
                                 </action>
-                                <action behavior="actionFSM" id="11" name="Go to state" sid="431364022552945" type="player_poxy">
+                                <action behavior="actionFSM" id="11" name="Go to state" sid="431364022552945" type="player_proxy">
                                     <param id="0" name="Name">&quot;move&quot;</param>
                                 </action>
-                                <action behavior="animationFSM" id="11" name="Go to state" sid="228784949191025" type="player_poxy">
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="228784949191025" type="player_proxy">
                                     <param id="0" name="Name">&quot;move&quot;</param>
                                 </action>
                             </actions>
@@ -192,20 +229,20 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Second value">&quot;game&quot;</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="336336001119262" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="336336001119262" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="576607775230285" type="player_poxy">
+                        <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="576607775230285" type="player_proxy">
                             <param id="0" name="Timer">&quot;movingTimer&quot;</param>
                         </condition>
-                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="955879025177417" type="player_poxy">
+                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="955879025177417" type="player_proxy">
                             <param id="0" name="Name">&quot;combat&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Timer" id="2" name="Start" sid="989287702230782" type="player_poxy">
+                        <action behavior="Timer" id="2" name="Start" sid="989287702230782" type="player_proxy">
                             <param id="0" name="Time">1</param>
                             <param id="1" name="Timer">&quot;movingTimer&quot;</param>
                             <param id="2" name="Repeat">1</param>
@@ -216,7 +253,7 @@
                         <variable constant="0" name="times" sid="366003336663431" static="0" type="number">1</variable>
                         <event-block sid="800044262935524">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="666210104411202" type="player_poxy">
+                                <condition id="-7" name="Compare instance variable" sid="666210104411202" type="player_proxy">
                                     <param id="0" name="Instance variable">dayNight</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;night&quot;</param>
@@ -231,14 +268,14 @@
                         </event-block>
                         <event-block sid="922744794237704">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="792931870734426" type="player_poxy">
+                                <condition id="-7" name="Compare instance variable" sid="792931870734426" type="player_proxy">
                                     <param id="0" name="Instance variable">hungry</param>
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">Self.maxHungry</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-11" name="Add to" sid="236492064595779" type="player_poxy">
+                                <action id="-11" name="Add to" sid="236492064595779" type="player_proxy">
                                     <param id="0" name="Instance variable">hungry</param>
                                     <param id="1" name="Value">0.5*times</param>
                                 </action>
@@ -247,14 +284,14 @@
                         <event-block sid="707363425971424">
                             <conditions>
                                 <condition id="-22" name="Else" sid="691589414450270" type="System" />
-                                <condition id="-7" name="Compare instance variable" sid="536157191349127" type="player_poxy">
+                                <condition id="-7" name="Compare instance variable" sid="536157191349127" type="player_proxy">
                                     <param id="0" name="Instance variable">hungry</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Value">Self.maxHungry</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-12" name="Subtract from" sid="762554102319492" type="player_poxy">
+                                <action id="-12" name="Subtract from" sid="762554102319492" type="player_proxy">
                                     <param id="0" name="Instance variable">hp</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
@@ -262,7 +299,7 @@
                         </event-block>
                         <event-block sid="849267829271687">
                             <conditions>
-                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="407589121832192" type="player_poxy">
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="407589121832192" type="player_proxy">
                                     <param id="0" name="Name">&quot;move&quot;</param>
                                 </condition>
                             </conditions>
@@ -270,14 +307,14 @@
                             <sub-events>
                                 <event-block sid="229539886392364">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="116619936024899" type="player_poxy">
+                                        <condition id="-7" name="Compare instance variable" sid="116619936024899" type="player_proxy">
                                             <param id="0" name="Instance variable">energy</param>
                                             <param id="1" name="Comparison">4</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-12" name="Subtract from" sid="858187737203642" type="player_poxy">
+                                        <action id="-12" name="Subtract from" sid="858187737203642" type="player_proxy">
                                             <param id="0" name="Instance variable">energy</param>
                                             <param id="1" name="Value">1*times</param>
                                         </action>
@@ -285,7 +322,7 @@
                                     <sub-events>
                                         <event-block sid="643905965716818">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="620510097348941" type="player_poxy">
+                                                <condition id="-7" name="Compare instance variable" sid="620510097348941" type="player_proxy">
                                                     <param id="0" name="Instance variable">energy</param>
                                                     <param id="1" name="Comparison">3</param>
                                                     <param id="2" name="Value">0</param>
@@ -304,7 +341,7 @@
                         </event-block>
                         <event-block sid="330801070525100">
                             <conditions>
-                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="212055967584861" type="player_poxy">
+                                <condition behavior="actionFSM" id="7" name="Compare current state" sid="212055967584861" type="player_proxy">
                                     <param id="0" name="Name">&quot;pause&quot;</param>
                                 </condition>
                             </conditions>
@@ -312,14 +349,14 @@
                             <sub-events>
                                 <event-block sid="709674298750331">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="967875661899615" type="player_poxy">
+                                        <condition id="-7" name="Compare instance variable" sid="967875661899615" type="player_proxy">
                                             <param id="0" name="Instance variable">energy</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">Self.maxEnergy</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-11" name="Add to" sid="569092808553917" type="player_poxy">
+                                        <action id="-11" name="Add to" sid="569092808553917" type="player_proxy">
                                             <param id="0" name="Instance variable">energy</param>
                                             <param id="1" name="Value">2</param>
                                         </action>
@@ -327,14 +364,14 @@
                                     <sub-events>
                                         <event-block sid="241435039667315">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="322653698527720" type="player_poxy">
+                                                <condition id="-7" name="Compare instance variable" sid="322653698527720" type="player_proxy">
                                                     <param id="0" name="Instance variable">energy</param>
                                                     <param id="1" name="Comparison">5</param>
                                                     <param id="2" name="Value">Self.maxEnergy</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="-10" name="Set value" sid="900818495604756" type="player_poxy">
+                                                <action id="-10" name="Set value" sid="900818495604756" type="player_proxy">
                                                     <param id="0" name="Instance variable">energy</param>
                                                     <param id="1" name="Value">Self.maxEnergy</param>
                                                 </action>
@@ -357,12 +394,12 @@
                 </event-block>
                 <event-block sid="719453793168023">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="993134504549349" type="player_poxy">
+                        <condition id="-7" name="Compare instance variable" sid="993134504549349" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="492816524969889" type="player_poxy">
+                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="492816524969889" type="player_proxy">
                             <param id="0" name="Name">&quot;dead&quot;</param>
                         </condition>
                     </conditions>
@@ -371,7 +408,7 @@
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;=======角色死亡&quot;</param>
                         </action>
-                        <action behavior="actionFSM" id="11" name="Go to state" sid="694431756989346" type="player_poxy">
+                        <action behavior="actionFSM" id="11" name="Go to state" sid="694431756989346" type="player_proxy">
                             <param id="0" name="Name">&quot;dead&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="290624286623145" type="Function">
@@ -382,7 +419,7 @@
                 </event-block>
                 <event-block sid="389960682274698">
                     <conditions>
-                        <condition behavior="animationFSM" id="0" name="On enter state" sid="372401958731538" type="player_poxy">
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="372401958731538" type="player_proxy">
                             <param id="0" name="Name">&quot;move&quot;</param>
                         </condition>
                     </conditions>
@@ -395,7 +432,7 @@
                 </event-block>
                 <event-block sid="996233905388348">
                     <conditions>
-                        <condition behavior="animationFSM" id="0" name="On enter state" sid="648853876703263" type="player_poxy">
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="648853876703263" type="player_proxy">
                             <param id="0" name="Name">&quot;search&quot;</param>
                         </condition>
                     </conditions>
@@ -408,7 +445,7 @@
                 </event-block>
                 <event-block sid="485553351351963">
                     <conditions>
-                        <condition behavior="animationFSM" id="0" name="On enter state" sid="407982614863606" type="player_poxy">
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="407982614863606" type="player_proxy">
                             <param id="0" name="Name">&quot;idle&quot;</param>
                         </condition>
                     </conditions>
@@ -421,7 +458,7 @@
                 </event-block>
                 <event-block sid="676915448976153">
                     <conditions>
-                        <condition behavior="animationFSM" id="0" name="On enter state" sid="891176147019516" type="player_poxy">
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="891176147019516" type="player_proxy">
                             <param id="0" name="Name">&quot;combat&quot;</param>
                         </condition>
                     </conditions>
@@ -434,7 +471,7 @@
                 </event-block>
                 <event-block sid="344423015282078">
                     <conditions>
-                        <condition behavior="animationFSM" id="0" name="On enter state" sid="164216841428766" type="player_poxy">
+                        <condition behavior="animationFSM" id="0" name="On enter state" sid="164216841428766" type="player_proxy">
                             <param id="0" name="Name">&quot;idle&quot;</param>
                         </condition>
                     </conditions>
@@ -453,15 +490,15 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-11" name="Add to" sid="335798474862714" type="player_poxy">
+                        <action id="-11" name="Add to" sid="335798474862714" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Value">Function.Param(0)</param>
                         </action>
-                        <action id="-11" name="Add to" sid="951823608474879" type="player_poxy">
+                        <action id="-11" name="Add to" sid="951823608474879" type="player_proxy">
                             <param id="0" name="Instance variable">energy</param>
                             <param id="1" name="Value">Function.Param(1)</param>
                         </action>
-                        <action id="-12" name="Subtract from" sid="573469686651258" type="player_poxy">
+                        <action id="-12" name="Subtract from" sid="573469686651258" type="player_proxy">
                             <param id="0" name="Instance variable">hungry</param>
                             <param id="1" name="Value">Function.Param(2)</param>
                         </action>
@@ -469,14 +506,14 @@
                     <sub-events>
                         <event-block sid="801853029008984">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="729840472835780" type="player_poxy">
+                                <condition id="-7" name="Compare instance variable" sid="729840472835780" type="player_proxy">
                                     <param id="0" name="Instance variable">hp</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Value">Self.maxHp</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="459489121786113" type="player_poxy">
+                                <action id="-10" name="Set value" sid="459489121786113" type="player_proxy">
                                     <param id="0" name="Instance variable">hp</param>
                                     <param id="1" name="Value">Self.maxHp</param>
                                 </action>
@@ -484,14 +521,14 @@
                         </event-block>
                         <event-block sid="613598879719456">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="877742316647664" type="player_poxy">
+                                <condition id="-7" name="Compare instance variable" sid="877742316647664" type="player_proxy">
                                     <param id="0" name="Instance variable">energy</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Value">Self.maxEnergy</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="602220625714660" type="player_poxy">
+                                <action id="-10" name="Set value" sid="602220625714660" type="player_proxy">
                                     <param id="0" name="Instance variable">energy</param>
                                     <param id="1" name="Value">Self.maxEnergy</param>
                                 </action>
@@ -499,14 +536,14 @@
                         </event-block>
                         <event-block sid="481120841621784">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="991035129428854" type="player_poxy">
+                                <condition id="-7" name="Compare instance variable" sid="991035129428854" type="player_proxy">
                                     <param id="0" name="Instance variable">hungry</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="197562865532527" type="player_poxy">
+                                <action id="-10" name="Set value" sid="197562865532527" type="player_proxy">
                                     <param id="0" name="Instance variable">hungry</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
@@ -531,14 +568,14 @@
                                         <action id="-3" name="Create object" sid="850924520364382" type="System">
                                             <param id="0" name="Object to create">P_hp</param>
                                             <param id="1" name="Layer">&quot;fx&quot;</param>
-                                            <param id="2" name="X">player_poxy.X</param>
-                                            <param id="3" name="Y">player_poxy.Y+player_poxy.Height/2</param>
+                                            <param id="2" name="X">player_proxy.X</param>
+                                            <param id="3" name="Y">player_proxy.Y+player_proxy.Height/2</param>
                                         </action>
                                         <action id="-3" name="Create object" sid="280598832312113" type="System">
                                             <param id="0" name="Object to create">txt_center</param>
                                             <param id="1" name="Layer">&quot;fx&quot;</param>
-                                            <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
-                                            <param id="3" name="Y">player_poxy.Y</param>
+                                            <param id="2" name="X">player_proxy.X+player_proxy.Width/2</param>
+                                            <param id="3" name="Y">player_proxy.Y</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="375859272988605" type="txt_center">
                                             <param id="0" name="Instance variable">groupID</param>
@@ -606,8 +643,8 @@
                                         <action id="-3" name="Create object" sid="950129858725608" type="System">
                                             <param id="0" name="Object to create">txt_center</param>
                                             <param id="1" name="Layer">&quot;fx&quot;</param>
-                                            <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
-                                            <param id="3" name="Y">player_poxy.Y</param>
+                                            <param id="2" name="X">player_proxy.X+player_proxy.Width/2</param>
+                                            <param id="3" name="Y">player_proxy.Y</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="915873679970885" type="txt_center">
                                             <param id="0" name="Instance variable">groupID</param>
@@ -720,14 +757,14 @@
                                 <action id="-3" name="Create object" sid="162191648490681" type="System">
                                     <param id="0" name="Object to create">P_energy</param>
                                     <param id="1" name="Layer">&quot;fx&quot;</param>
-                                    <param id="2" name="X">player_poxy.X</param>
-                                    <param id="3" name="Y">player_poxy.Y+player_poxy.Height/2</param>
+                                    <param id="2" name="X">player_proxy.X</param>
+                                    <param id="3" name="Y">player_proxy.Y+player_proxy.Height/2</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="484666289468439" type="System">
                                     <param id="0" name="Object to create">txt_center</param>
                                     <param id="1" name="Layer">&quot;fx&quot;</param>
-                                    <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
-                                    <param id="3" name="Y">player_poxy.Y</param>
+                                    <param id="2" name="X">player_proxy.X+player_proxy.Width/2</param>
+                                    <param id="3" name="Y">player_proxy.Y</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="274010969702892" type="txt_center">
                                     <param id="0" name="Instance variable">groupID</param>
@@ -789,14 +826,14 @@
                                 <action id="-3" name="Create object" sid="592240129080606" type="System">
                                     <param id="0" name="Object to create">P_hungry</param>
                                     <param id="1" name="Layer">&quot;fx&quot;</param>
-                                    <param id="2" name="X">player_poxy.X</param>
-                                    <param id="3" name="Y">player_poxy.Y+player_poxy.Height/2</param>
+                                    <param id="2" name="X">player_proxy.X</param>
+                                    <param id="3" name="Y">player_proxy.Y+player_proxy.Height/2</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="662585823534971" type="System">
                                     <param id="0" name="Object to create">txt_center</param>
                                     <param id="1" name="Layer">&quot;fx&quot;</param>
-                                    <param id="2" name="X">player_poxy.X+player_poxy.Width/2</param>
-                                    <param id="3" name="Y">player_poxy.Y</param>
+                                    <param id="2" name="X">player_proxy.X+player_proxy.Width/2</param>
+                                    <param id="3" name="Y">player_proxy.Y</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="718926262861732" type="txt_center">
                                     <param id="0" name="Instance variable">groupID</param>

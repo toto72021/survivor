@@ -47,7 +47,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="player_poxy" uid="33">
+                <instance type="player_proxy" uid="33">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -142,8 +142,8 @@
                         <x>1296</x>
                         <y>531</y>
                         <z>0</z>
-                        <width>250</width>
-                        <height>250</height>
+                        <width>200</width>
+                        <height>200</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

@@ -31,7 +31,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="851525286213971" type="txts">
-                                    <param id="0" name="Text">&quot;生命:&quot;&amp;player_poxy.hp</param>
+                                    <param id="0" name="Text">&quot;生命:&quot;&amp;player_proxy.hp</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -45,7 +45,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="373847144075014" type="txts">
-                                    <param id="0" name="Text">&quot;体力:&quot;&amp;player_poxy.energy</param>
+                                    <param id="0" name="Text">&quot;体力:&quot;&amp;player_proxy.energy</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -59,7 +59,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="162840609721531" type="txts">
-                                    <param id="0" name="Text">&quot;饥饿:&quot;&amp;player_poxy.hungry</param>
+                                    <param id="0" name="Text">&quot;饥饿:&quot;&amp;player_proxy.hungry</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -73,7 +73,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="540655580325746" type="txts">
-                                    <param id="0" name="Text">&quot;攻击:&quot;&amp;player_poxy.atk</param>
+                                    <param id="0" name="Text">&quot;攻击:&quot;&amp;player_proxy.atk</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -102,7 +102,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="803401193591680" type="txts">
-                                    <param id="0" name="Text">&quot;距离:&quot;&amp;player_poxy.moveDistance&amp;&quot;米&quot;</param>
+                                    <param id="0" name="Text">&quot;距离:&quot;&amp;player_proxy.moveDistance&amp;&quot;米&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
