@@ -32,6 +32,8 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Destroy" sid="181265932480814" type="enemy" />
+                        <action id="-9" name="Destroy" sid="699512539128064" type="item" />
                         <action id="0" name="Call function" sid="890968609233438" type="Function">
                             <param id="0" name="Name">&quot;resetPlayer&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
