@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_game</name>
     <events>
+        <include>e_leaderboard</include>
         <include>e_ajax</include>
         <include>e_start&amp;end</include>
         <include>e_ui</include>

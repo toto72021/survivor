@@ -597,6 +597,8 @@
         <layout>game.xml</layout>
         <layout>obj.xml</layout>
         <layout>combat.xml</layout>
+        <layout>Plot.xml</layout>
+        <layout>credit.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>e_game.xml</event-sheet>
@@ -609,6 +611,9 @@
         <event-sheet>e_ui.xml</event-sheet>
         <event-sheet>e_start&amp;end.xml</event-sheet>
         <event-sheet>e_ajax.xml</event-sheet>
+        <event-sheet>e_plot.xml</event-sheet>
+        <event-sheet>e_leaderboard.xml</event-sheet>
+        <event-sheet>e_credit.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="7" />

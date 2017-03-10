@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>e_leaderboard</name>
+    <events>
+        <event-group description="" sid="942615062199412" title="leaderboard">
+            <sub-events>
+                <event-block sid="460716415217558">
+                    <conditions>
+                        <condition id="0" name="On function" sid="525760363506797" type="Function">
+                            <param id="0" name="Name">&quot;postScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Post to URL" sid="225202793437977" type="AJAX">
+                            <param id="0" name="Tag">&quot;postScore&quot;</param>
+                            <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/saveScore.php&quot;</param>
+                            <param id="2" name="Data">&quot;name=&quot;&amp;&quot;TT&quot;&amp;&quot;&amp;score=&quot;&amp;player_proxy.moveDistance</param>
+                            <param id="3" name="Method">&quot;POST&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="925233433855264">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="649801404116361" type="AJAX">
+                            <param id="0" name="Tag">&quot;postScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Post to URL" sid="720968922332112" type="AJAX">
+                            <param id="0" name="Tag">&quot;getScore&quot;</param>
+                            <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/getScore.php&quot;</param>
+                            <param id="2" name="Data">&quot;name=&quot;&amp;&quot;TT&quot;</param>
+                            <param id="3" name="Method">&quot;POST&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="746001932338881">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="453572891537720" type="AJAX">
+                            <param id="0" name="Tag">&quot;getScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="785125421035447" type="Function">
+                            <param id="0" name="Name">&quot;createLB&quot;</param>
+                            <param id="1" name="Parameter {n}">AJAX.LastData</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="588333963620660">
+                    <conditions>
+                        <condition id="4" name="On any error" sid="975654651022775" type="AJAX" />
+                        <condition id="1" name="On error" sid="409849905071506" type="AJAX">
+                            <param id="0" name="Tag">&quot;getScore&quot;</param>
+                        </condition>
+                        <condition id="1" name="On error" sid="922566345394986" type="AJAX">
+                            <param id="0" name="Tag">&quot;postScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="917577501378065" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">AJAX.Tag&amp;&quot;&gt;&gt;&gt;AJAX ERROR:&quot;&amp;AJAX.LastData</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="596342717706684">
+                    <conditions>
+                        <condition id="0" name="On function" sid="139708991968978" type="Function">
+                            <param id="0" name="Name">&quot;createLB&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="688857792374055">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
