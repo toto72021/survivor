@@ -4,7 +4,6 @@
     <name>e_combat</name>
     <events>
         <include>e_leaderboard</include>
-        <include>e_ajax</include>
         <include>e_start&amp;end</include>
         <include>e_player</include>
         <include>e_ui</include>

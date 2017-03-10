@@ -18,7 +18,11 @@
                             <param id="2" name="X">388</param>
                             <param id="3" name="Y">160</param>
                         </action>
-                        <action id="-7" name="Set size" sid="725524600942017" type="tipsBg">
+                        <action id="-10" name="Set value" sid="725524600942017" type="tipsBg">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Value">&quot;tips&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="693408315249552" type="tipsBg">
                             <param id="0" name="Width">360</param>
                             <param id="1" name="Height">120</param>
                         </action>

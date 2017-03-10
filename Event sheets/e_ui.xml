@@ -108,11 +108,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>排行榜前50名</comment>
-                <event-block sid="469861415061865">
-                    <conditions />
-                    <actions />
-                </event-block>
                 <event-block sid="424290982208373">
                     <conditions>
                         <condition id="0" name="On function" sid="113837422337791" type="Function">
@@ -138,10 +133,6 @@
                             <param id="1" name="Value">&quot;&quot;</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="266625285983412">
-                    <conditions />
-                    <actions />
                 </event-block>
             </sub-events>
         </event-group>

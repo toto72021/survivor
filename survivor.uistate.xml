@@ -13,20 +13,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="0">UI</layout>
         <layout order="1">obj</layout>
         <layout order="2">game</layout>
-        <layout order="8">combat</layout>
-        <layout order="12">Plot</layout>
-        <layout order="15">credit</layout>
+        <layout order="10">combat</layout>
         <event-sheet order="3">e_game</event-sheet>
         <event-sheet order="4">e_player</event-sheet>
         <event-sheet order="5">e_combat</event-sheet>
         <event-sheet order="6">e_item</event-sheet>
         <event-sheet order="7">e_start&amp;end</event-sheet>
-        <event-sheet order="9">e_ajax</event-sheet>
-        <event-sheet order="10">e_ui</event-sheet>
-        <event-sheet order="11">e_bubbleImformation</event-sheet>
-        <event-sheet order="13">e_loading</event-sheet>
-        <event-sheet order="14">e_leaderboard</event-sheet>
-        <event-sheet active="1" order="16">e_credit</event-sheet>
+        <event-sheet order="8">e_ui</event-sheet>
+        <event-sheet active="1" order="9">e_leaderboard</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -39,11 +33,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="1" name="btns" />
         <family expanded="1" name="bgs" />
         <family expanded="1" name="items" />
-        <family expanded="1" name="9patch" />
+        <family expanded="1" name="bgs9p" />
         <family expanded="1" name="enemys" />
         <family expanded="1" name="UI" />
         <family expanded="0" name="particle" />
         <family expanded="1" name="shadows" />
+        <family expanded="1" name="txtboxs" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />

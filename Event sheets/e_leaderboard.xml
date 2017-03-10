@@ -5,6 +5,190 @@
     <events>
         <event-group description="" sid="942615062199412" title="leaderboard">
             <sub-events>
+                <event-block sid="562930809643180">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="456177011213122" type="Keyboard">
+                            <param id="0" name="Key">76 (L)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="813629527368663" type="Function">
+                            <param id="0" name="Name">&quot;writeName&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="206076996528742">
+                    <conditions>
+                        <condition id="0" name="On function" sid="435008323875497" type="Function">
+                            <param id="0" name="Name">&quot;writeName&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="191872676258327" type="System">
+                            <param id="0" name="Object to create">tipsBg</param>
+                            <param id="1" name="Layer">&quot;topUI&quot;</param>
+                            <param id="2" name="X">388</param>
+                            <param id="3" name="Y">220</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="912988059662969" type="tipsBg">
+                            <param id="0" name="Width">360</param>
+                            <param id="1" name="Height">200</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="155813749043183" type="tipsBg">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Value">&quot;LB&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="248579376838190" type="tipsBg">
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Value">&quot;writeName&quot;</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="188872949969635" type="System">
+                            <param id="0" name="Object to create">TextBox</param>
+                            <param id="1" name="Layer">tipsBg.LayerName</param>
+                            <param id="2" name="X">493</param>
+                            <param id="3" name="Y">309</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="182372913467128" type="TextBox">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Value">&quot;LB&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="841800964186151" type="TextBox">
+                            <param id="0" name="Instance variable">acitonID</param>
+                            <param id="1" name="Value">&quot;writeName&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="289556968611421" type="TextBox">
+                            <param id="0" name="Width">150</param>
+                            <param id="1" name="Height">30</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="734674639014731" type="System">
+                            <param id="0" name="Object to create">txt_center</param>
+                            <param id="1" name="Layer">tipsBg.LayerName</param>
+                            <param id="2" name="X">568</param>
+                            <param id="3" name="Y">380</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="276884841301594" type="txt_center">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Value">&quot;LB&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="669407370669934" type="txt_center">
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Value">&quot;postScore&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="392516232431135" type="txt_center">
+                            <param id="0" name="Instance variable">diyValue</param>
+                            <param id="1" name="Value">&quot;pre&quot;</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="976060565097902" type="txt_center">
+                            <param id="0" name="Width">100</param>
+                            <param id="1" name="Height">55</param>
+                        </action>
+                        <action id="3" name="Set font size" sid="604853112402201" type="txt_center">
+                            <param id="0" name="Size (pt)">24</param>
+                        </action>
+                        <action id="0" name="Set text" sid="927343598535270" type="txt_center">
+                            <param id="0" name="Text">&quot;提交&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="499626374104802">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="429819728351763" type="Touch">
+                            <param id="0" name="Object">txts</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="244987179908432" type="txts">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;LB&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="617913662760374" type="txts">
+                            <param id="0" name="Instance variable">diyValue</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;pre&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="879192096283519" type="txts">
+                            <param id="0" name="Instance variable">diyValue</param>
+                            <param id="1" name="Value">&quot;send&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="550804559652630">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="550743954519310" type="TextBox">
+                                    <param id="0" name="Instance variable">acitonID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;writeName&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="241345241213382" type="Function">
+                                    <param id="0" name="Name">&quot;postScore&quot;</param>
+                                    <param id="1" name="Parameter {n}">TextBox.Text</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="973466355871049">
+                    <conditions>
+                        <condition id="0" name="On function" sid="673588572474560" type="Function">
+                            <param id="0" name="Name">&quot;closeLB&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="966626238380158">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="837900489086649" type="bgs9p">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;LB&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="144548870389720" type="bgs9p" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="932179327895506">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="375098212030154" type="txts">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;LB&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="352867224218546" type="txts" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="813963660246265">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="808771043742241" type="txtboxs">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;LB&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="420129547422382" type="txtboxs" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="794002434176535">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="856893154191286" type="bgs">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;LB&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="266933755964216" type="bgs" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="460716415217558">
                     <conditions>
                         <condition id="0" name="On function" sid="525760363506797" type="Function">
@@ -12,10 +196,14 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-10" name="Set value" sid="598201708102172" type="player_proxy">
+                            <param id="0" name="Instance variable">name</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
                         <action id="2" name="Post to URL" sid="225202793437977" type="AJAX">
                             <param id="0" name="Tag">&quot;postScore&quot;</param>
                             <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/saveScore.php&quot;</param>
-                            <param id="2" name="Data">&quot;name=&quot;&amp;&quot;TT&quot;&amp;&quot;&amp;score=&quot;&amp;player_proxy.moveDistance</param>
+                            <param id="2" name="Data">&quot;name=&quot;&amp;player_proxy.name&amp;&quot;&amp;score=&quot;&amp;player_proxy.moveDistance</param>
                             <param id="3" name="Method">&quot;POST&quot;</param>
                         </action>
                     </actions>
@@ -30,7 +218,7 @@
                         <action id="2" name="Post to URL" sid="720968922332112" type="AJAX">
                             <param id="0" name="Tag">&quot;getScore&quot;</param>
                             <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/getScore.php&quot;</param>
-                            <param id="2" name="Data">&quot;name=&quot;&amp;&quot;TT&quot;</param>
+                            <param id="2" name="Data">&quot;name=&quot;&amp;player_proxy.name</param>
                             <param id="3" name="Method">&quot;POST&quot;</param>
                         </action>
                     </actions>
@@ -42,42 +230,476 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Call function" sid="813098202827145" type="Function">
+                            <param id="0" name="Name">&quot;closeLB&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                         <action id="0" name="Call function" sid="785125421035447" type="Function">
                             <param id="0" name="Name">&quot;createLB&quot;</param>
                             <param id="1" name="Parameter {n}">AJAX.LastData</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block any="1" sid="588333963620660">
+                <event-block any="1" disabled="1" sid="588333963620660">
                     <conditions>
                         <condition id="4" name="On any error" sid="975654651022775" type="AJAX" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="558105232492419" type="Function">
+                            <param id="0" name="Name">&quot;preSend&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="14" name="Log" sid="525246316477080" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">AJAX.Tag&amp;&quot;&gt;&gt;&gt;AJAX ERROR:&quot;&amp;AJAX.LastData</param>
+                        </action>
+                        <action id="0" name="Call function" sid="898774510421949" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;网络错误！&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="795103686960227">
+                    <conditions>
                         <condition id="1" name="On error" sid="409849905071506" type="AJAX">
                             <param id="0" name="Tag">&quot;getScore&quot;</param>
                         </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="614322708794923" type="Function">
+                            <param id="0" name="Name">&quot;preSend&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="14" name="Log" sid="530491096707851" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">AJAX.Tag&amp;&quot;&gt;&gt;&gt;AJAX ERROR:&quot;&amp;AJAX.LastData</param>
+                        </action>
+                        <action id="0" name="Call function" sid="184370060252011" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;获取排行榜失败！&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="620275719567863">
+                    <conditions>
                         <condition id="1" name="On error" sid="922566345394986" type="AJAX">
                             <param id="0" name="Tag">&quot;postScore&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Call function" sid="369379445741283" type="Function">
+                            <param id="0" name="Name">&quot;preSend&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                         <action id="14" name="Log" sid="917577501378065" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">AJAX.Tag&amp;&quot;&gt;&gt;&gt;AJAX ERROR:&quot;&amp;AJAX.LastData</param>
+                        </action>
+                        <action id="0" name="Call function" sid="763793530806948" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;名字提交重复！&quot;</param>
                         </action>
                     </actions>
                 </event-block>
                 <event-block sid="596342717706684">
                     <conditions>
                         <condition id="0" name="On function" sid="139708991968978" type="Function">
+                            <param id="0" name="Name">&quot;preSend&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="576706386410011">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="171885098069482" type="txts">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;LB&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="720788432438981" type="txts">
+                                    <param id="0" name="Instance variable">diyValue</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;send&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="202646798286035" type="txts">
+                                    <param id="0" name="Instance variable">diyValue</param>
+                                    <param id="1" name="Value">&quot;pre&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="524853913936288">
+                    <conditions>
+                        <condition id="0" name="On function" sid="308575902064284" type="Function">
                             <param id="0" name="Name">&quot;createLB&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="688857792374055">
+                        <variable constant="0" name="rankList" sid="276561661331825" static="0" type="text"></variable>
+                        <variable constant="0" name="rankCount" sid="376975813263031" static="0" type="number">0</variable>
+                        <event-block sid="928227814348255">
                             <conditions />
-                            <actions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="511426694850166" type="System">
+                                    <param id="0" name="Object to create">tipsBg</param>
+                                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                    <param id="2" name="X">268</param>
+                                    <param id="3" name="Y">20</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="101252792060418" type="tipsBg">
+                                    <param id="0" name="Width">600</param>
+                                    <param id="1" name="Height">600</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="661671503246855" type="tipsBg">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="559641397205027" type="tipsBg">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;leaderboard&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="988234722045384" type="System">
+                                    <param id="0" name="Object to create">dragBg</param>
+                                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                    <param id="2" name="X">268</param>
+                                    <param id="3" name="Y">20</param>
+                                </action>
+                                <action behavior="DragDrop" id="0" name="Set enabled" sid="980747865217826" type="dragBg">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="805398481246826" type="dragBg">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="433233628201827" type="dragBg">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;dragBg&quot;</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="691149161180580" type="dragBg">
+                                    <param id="0" name="Width">600</param>
+                                    <param id="1" name="Height">600</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="177331201168590" type="System">
+                                    <param id="0" name="Variable">rankList</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="506312824181488" type="System">
+                                    <param id="0" name="Variable">rankCount</param>
+                                    <param id="1" name="Value">tokencount(rankList,&quot;,&quot;)-1</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="578413336459894" type="dragBg">
+                                    <param id="0" name="Height">50*rankCount</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="994767899410305" type="System">
+                                    <param id="0" name="Object to create">txt_center</param>
+                                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                    <param id="2" name="X">800</param>
+                                    <param id="3" name="Y">60</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="930848702505416" type="txt_center">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="720608545161335" type="txt_center">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;close&quot;</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="617422881447683" type="txt_center">
+                                    <param id="0" name="Width">100</param>
+                                    <param id="1" name="Height">55</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="715734607093025" type="txt_center">
+                                    <param id="0" name="Size (pt)">24</param>
+                                </action>
+                                <action id="0" name="Set text" sid="292282570883021" type="txt_center">
+                                    <param id="0" name="Text">&quot;返回&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="635350617014209" type="System">
+                                    <param id="0" name="Object to create">txt_left</param>
+                                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                    <param id="2" name="X">280</param>
+                                    <param id="3" name="Y">120</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="753108336021047" type="txt_left">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="830654542464727" type="txt_left">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;myRank&quot;</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="255869571276920" type="txt_left">
+                                    <param id="0" name="Width">160</param>
+                                    <param id="1" name="Height">50</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="690858315003237" type="txt_left">
+                                    <param id="0" name="Color">rgb(0,255,0)</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="409022182046832" type="txt_left">
+                                    <param id="0" name="Size (pt)">20</param>
+                                </action>
+                                <action id="0" name="Set text" sid="929012508014661" type="txt_left">
+                                    <param id="0" name="Text">tokenat(rankList,rankCount+1,&quot;,&quot;)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="716548200239995" type="System">
+                                    <param id="0" name="Object to create">txt_left</param>
+                                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                    <param id="2" name="X">440</param>
+                                    <param id="3" name="Y">120</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="355529417992747" type="txt_left">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="724771088739092" type="txt_left">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;name&quot;</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="494003272334366" type="txt_left">
+                                    <param id="0" name="Width">160</param>
+                                    <param id="1" name="Height">50</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="881598293877226" type="txt_left">
+                                    <param id="0" name="Size (pt)">20</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="700095080785614" type="txt_left">
+                                    <param id="0" name="Color">rgb(0,255,0)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="326221139347881" type="txt_left">
+                                    <param id="0" name="Text">player_proxy.name</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="586653132433296" type="System">
+                                    <param id="0" name="Object to create">txt_left</param>
+                                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                    <param id="2" name="X">600</param>
+                                    <param id="3" name="Y">120</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="828301587584132" type="txt_left">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="743193927530738" type="txt_left">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;score&quot;</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="534334815731980" type="txt_left">
+                                    <param id="0" name="Width">160</param>
+                                    <param id="1" name="Height">50</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="909740177614636" type="txt_left">
+                                    <param id="0" name="Size (pt)">20</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="775026259144780" type="txt_left">
+                                    <param id="0" name="Color">rgb(0,255,0)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="246002525019987" type="txt_left">
+                                    <param id="0" name="Text">player_proxy.moveDistance</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable constant="0" name="loopR" sid="114808532562150" static="0" type="number">0</variable>
+                                <event-block sid="320615588658885">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="724653382745742" type="System">
+                                            <param id="0" name="Count">rankCount</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="147807285446981" type="System">
+                                            <param id="0" name="Variable">loopR</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="222172909946217" type="System">
+                                            <param id="0" name="Object to create">txt_left</param>
+                                            <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                            <param id="2" name="X">280</param>
+                                            <param id="3" name="Y">120</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="364530877021486" type="txt_left">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;LB&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="420864503811564" type="txt_left">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;myRank&quot;</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="706167227334312" type="txt_left">
+                                            <param id="0" name="Width">160</param>
+                                            <param id="1" name="Height">50</param>
+                                        </action>
+                                        <action id="3" name="Set font size" sid="383321143400925" type="txt_left">
+                                            <param id="0" name="Size (pt)">20</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="209081010081214" type="txt_left">
+                                            <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),loopR,&quot;|&quot;)</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="783796194206610" type="txt_left">
+                                            <param id="0" name="Pin to">dragBg</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="304774060039580" type="System">
+                                            <param id="0" name="Variable">loopR</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="258816990979352" type="System">
+                                            <param id="0" name="Object to create">txt_left</param>
+                                            <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                            <param id="2" name="X">440</param>
+                                            <param id="3" name="Y">120</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="499044606945348" type="txt_left">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;LB&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="129241752778042" type="txt_left">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;name&quot;</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="354642606392705" type="txt_left">
+                                            <param id="0" name="Width">160</param>
+                                            <param id="1" name="Height">50</param>
+                                        </action>
+                                        <action id="3" name="Set font size" sid="131714811747590" type="txt_left">
+                                            <param id="0" name="Size (pt)">20</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="666619816388497" type="txt_left">
+                                            <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),loopR,&quot;|&quot;)</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="102762872488305" type="txt_left">
+                                            <param id="0" name="Pin to">dragBg</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="972447108335660" type="System">
+                                            <param id="0" name="Variable">loopR</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="256575243808015" type="System">
+                                            <param id="0" name="Object to create">txt_left</param>
+                                            <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                            <param id="2" name="X">600</param>
+                                            <param id="3" name="Y">120</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="482795738098913" type="txt_left">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;LB&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="349245719174235" type="txt_left">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;score&quot;</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="345654695304292" type="txt_left">
+                                            <param id="0" name="Width">160</param>
+                                            <param id="1" name="Height">50</param>
+                                        </action>
+                                        <action id="3" name="Set font size" sid="651769356157141" type="txt_left">
+                                            <param id="0" name="Size (pt)">20</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="881629746371933" type="txt_left">
+                                            <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),loopR,&quot;|&quot;)</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="209179139657446" type="txt_left">
+                                            <param id="0" name="Pin to">dragBg</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="473585715075019">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="890002702606914" type="System">
+                                                    <param id="0" name="First value">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),0,&quot;|&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">player_proxy.name</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set font color" sid="446141199924930" type="txt_left">
+                                                    <param id="0" name="Color">rgb(0,255,0)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="726953035447147">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="236426326072893" type="System">
+                                            <param id="0" name="Object to create">bg_mask</param>
+                                            <param id="1" name="Layer">&quot;mask&quot;</param>
+                                            <param id="2" name="X">268</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="1" name="Set blend mode" sid="268687684461453" type="bg_mask">
+                                            <param id="0" name="Blend mode">8</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="274549042984001" type="bg_mask">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;LB&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="574587609180630">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="739934411215663" type="dragBg">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="237071719094326" type="dragBg">
+                            <param id="0" name="Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="463587990151363">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="525278260488406" type="dragBg">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">Self.Height-640</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="301721653381596" type="dragBg">
+                            <param id="0" name="Y">Self.Height-640</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="978005345274401">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="688942507435161" type="Touch">
+                            <param id="0" name="Object">txts</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="541153002270659" type="txts">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;LB&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="172501982866372" type="txts">
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;close&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="134638142530100" type="Function">
+                            <param id="0" name="Name">&quot;closeLB&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="796517178045709" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="325250577764224" type="Function">
+                            <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

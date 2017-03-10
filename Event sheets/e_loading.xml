@@ -9,7 +9,7 @@
             </conditions>
             <actions>
                 <action id="-2" name="Go to layout" sid="977388230701788" type="System">
-                    <param id="0" name="Layout">Plot</param>
+                    <param id="0" name="Layout">plot</param>
                 </action>
             </actions>
         </event-block>

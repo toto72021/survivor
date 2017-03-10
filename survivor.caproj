@@ -25,11 +25,13 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="DragnDrop" version="1">Drag &amp; Drop</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
@@ -86,6 +88,7 @@
                 <instance-variable name="MaxAtk" sid="997877670633882" type="number" />
                 <instance-variable name="dayNight" sid="756742600591684" type="string" />
                 <instance-variable name="DodgeRate" sid="864065221079858" type="number" />
+                <instance-variable name="name" sid="949080086808693" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="actionFSM" sid="153148587235937">
@@ -408,6 +411,17 @@
         <object-type global="1" name="Gashapon" sid="795252108905638">
             <plugin id="Rex_PatternGen" />
         </object-type>
+        <object-type name="TextBox" sid="130841878206822">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="bg_mask" sid="740781980721511">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\totoyan\Desktop\bg2.png" />
+        </object-type>
+        <object-type name="dragBg" sid="753648963845288">
+            <plugin id="NinePatch" />
+            <texture />
+        </object-type>
     </object-folder>
     <families>
         <family name="txts" plugin-id="Text" sid="270727115053159">
@@ -419,6 +433,7 @@
             <instance-variables>
                 <instance-variable name="groupID" sid="643345184050234" type="string" />
                 <instance-variable name="actionID" sid="837793347753041" type="string" />
+                <instance-variable name="diyValue" sid="832924993158354" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Fade" sid="142290252165620">
@@ -426,6 +441,9 @@
                 </behavior-type>
                 <behavior-type name="Bullet" sid="210149233690707">
                     <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Pin" sid="160937591313342">
+                    <behavior id="Pin" />
                 </behavior-type>
             </behaviors>
         </family>
@@ -448,6 +466,7 @@
                 <member>bg_1</member>
                 <member>bg_combat1</member>
                 <member>bg_day</member>
+                <member>bg_mask</member>
                 <member>bg_night</member>
                 <member>bg_tween</member>
             </members>
@@ -486,9 +505,10 @@
                 </behavior-type>
             </behaviors>
         </family>
-        <family name="9patch" plugin-id="NinePatch" sid="397981525466132">
+        <family name="bgs9p" plugin-id="NinePatch" sid="397981525466132">
             <members>
                 <member>blackBg</member>
+                <member>dragBg</member>
                 <member>item_progress</member>
                 <member>item_progressBg</member>
                 <member>itemBg</member>
@@ -498,6 +518,7 @@
                 <instance-variable name="Puid" sid="974613017851896" type="number" />
                 <instance-variable name="groupID" sid="336314002065426" type="string" />
                 <instance-variable name="actionID" sid="167220695021617" type="string" />
+                <instance-variable name="diyStrValue" sid="318916052270433" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Timer" sid="361022625225884">
@@ -508,6 +529,9 @@
                 </behavior-type>
                 <behavior-type name="Flash" sid="267890611999669">
                     <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="DragDrop" sid="644872265561947">
+                    <behavior id="DragnDrop" />
                 </behavior-type>
             </behaviors>
         </family>
@@ -590,6 +614,16 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="txtboxs" plugin-id="TextBox" sid="141676281492049">
+            <members>
+                <member>TextBox</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="groupID" sid="287250121228040" type="string" />
+                <instance-variable name="acitonID" sid="615224533793487" type="string" />
+                <instance-variable name="Puid" sid="948110376582234" type="number" />
+            </instance-variables>
+        </family>
     </families>
     <layout-folder>
         <layout>loading.xml</layout>
@@ -597,7 +631,7 @@
         <layout>game.xml</layout>
         <layout>obj.xml</layout>
         <layout>combat.xml</layout>
-        <layout>Plot.xml</layout>
+        <layout>plot.xml</layout>
         <layout>credit.xml</layout>
     </layout-folder>
     <event-folder>
@@ -610,7 +644,6 @@
         <event-sheet>e_item.xml</event-sheet>
         <event-sheet>e_ui.xml</event-sheet>
         <event-sheet>e_start&amp;end.xml</event-sheet>
-        <event-sheet>e_ajax.xml</event-sheet>
         <event-sheet>e_plot.xml</event-sheet>
         <event-sheet>e_leaderboard.xml</event-sheet>
         <event-sheet>e_credit.xml</event-sheet>
