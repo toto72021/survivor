@@ -405,7 +405,7 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
-        <object-type name="Gashapon" sid="795252108905638">
+        <object-type global="1" name="Gashapon" sid="795252108905638">
             <plugin id="Rex_PatternGen" />
         </object-type>
     </object-folder>

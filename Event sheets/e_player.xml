@@ -444,11 +444,18 @@
                         <action behavior="actionFSM" id="11" name="Go to state" sid="694431756989346" type="player_proxy">
                             <param id="0" name="Name">&quot;dead&quot;</param>
                         </action>
-                        <action id="0" name="Call function" sid="290624286623145" type="Function">
-                            <param id="0" name="Name">&quot;gameOver&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="995482489113532">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="290624286623145" type="Function">
+                                    <param id="0" name="Name">&quot;gameOver&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="389960682274698">
                     <conditions>

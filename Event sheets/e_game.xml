@@ -956,6 +956,9 @@
                                             <param id="0" name="X">Self.X</param>
                                             <param id="1" name="Y">Self.Y-500</param>
                                         </action>
+                                        <action id="12" name="Vibrate" sid="315707905928323" type="Browser">
+                                            <param id="0" name="Pattern">&quot;80,40,80&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="767357362808448">

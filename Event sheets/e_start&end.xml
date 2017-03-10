@@ -3,6 +3,108 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_start&amp;end</name>
     <events>
+        <event-group description="" inactive="1" sid="490185019766432" title="GM">
+            <sub-events>
+                <event-block sid="457758912338602">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="292741446206183" type="Keyboard">
+                            <param id="0" name="Key">16 (Shift)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="206301152813479" type="System">
+                            <param id="0" name="Time scale">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="443880128944932">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="698967183813383" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="665814980702820" type="System">
+                            <param id="0" name="Time scale">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="134699537881793">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="486201505696929" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="139902110473872" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Value">Self.maxHp</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="938370258164503" type="player_proxy">
+                            <param id="0" name="Instance variable">energy</param>
+                            <param id="1" name="Value">Self.maxEnergy</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="385840788809940" type="player_proxy">
+                            <param id="0" name="Instance variable">hungry</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="909323005712838">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="403186661023788" type="Keyboard">
+                            <param id="0" name="Key">46 (Delete)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="414159212633229" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="499491580735752" type="player_proxy">
+                            <param id="0" name="Instance variable">energy</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="847640623676049" type="player_proxy">
+                            <param id="0" name="Instance variable">hungry</param>
+                            <param id="1" name="Value">Self.maxHungry</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="511496631125510">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="262023014908681" type="Keyboard">
+                            <param id="0" name="Key">219 ([)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="813795088889607" type="player_proxy">
+                            <param id="0" name="Instance variable">DodgeRate</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="0" name="Call function" sid="250089054393034" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;GM: dodge&quot;&amp;player_proxy.DodgeRate</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="600533069643752">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="808766619885686" type="Keyboard">
+                            <param id="0" name="Key">221 (])</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="562387897665967" type="player_proxy">
+                            <param id="0" name="Instance variable">DodgeRate</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="0" name="Call function" sid="949028282017203" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;GM: dodge&quot;&amp;player_proxy.DodgeRate</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="620228425648332" title="start&amp;end">
             <sub-events>
                 <event-block sid="544832395571041">
@@ -17,13 +119,39 @@
                             <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;游戏失败，将重新开始&quot;</param>
                         </action>
-                        <action id="-16" name="Wait" sid="407361983686906" type="System">
-                            <param id="0" name="Seconds">2</param>
-                        </action>
-                        <action id="-2" name="Go to layout" sid="449125093415658" type="System">
-                            <param id="0" name="Layout">game</param>
+                        <action behavior="FSM" id="11" name="Go to state" sid="883776612067783" type="enemy">
+                            <param id="0" name="Name">&quot;dead&quot;</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="715798151139229">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="273196358018400" type="System">
+                                    <param id="0" name="First value">LayoutName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;combat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="319394526537911" type="btns" />
+                                <action id="-3" name="Set position" sid="218396636445513" type="player_proxy">
+                                    <param id="0" name="X">1296</param>
+                                    <param id="1" name="Y">531</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="943971788784767">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="407361983686906" type="System">
+                                    <param id="0" name="Seconds">2.1</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="449125093415658" type="System">
+                                    <param id="0" name="Layout">game</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="103873913536205">
                     <conditions>
@@ -43,6 +171,49 @@
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
+                </event-block>
+                <comment>开启GM</comment>
+                <event-block sid="550046780433835">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="529446262328312" type="Keyboard">
+                            <param id="0" name="Key">77 (M)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="909964838163359" type="Keyboard">
+                            <param id="0" name="Key">71 (G)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="970145423128345" type="System">
+                            <param id="0" name="Group name">&quot;GM&quot;</param>
+                            <param id="1" name="State">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="859757742863688">
+                            <conditions>
+                                <condition id="-15" name="Is group active" sid="378186872000308" type="System">
+                                    <param id="0" name="Group name">&quot;GM&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="313512125811440" type="Function">
+                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;开启GM&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="582178054900059">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="522632694893569" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="531056111540947" type="Function">
+                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;关闭GM&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

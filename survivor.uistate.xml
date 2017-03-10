@@ -14,13 +14,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="1">obj</layout>
         <layout order="2">game</layout>
         <layout order="8">combat</layout>
-        <event-sheet active="1" order="3">e_game</event-sheet>
+        <event-sheet order="3">e_game</event-sheet>
         <event-sheet order="4">e_player</event-sheet>
         <event-sheet order="5">e_combat</event-sheet>
         <event-sheet order="6">e_item</event-sheet>
         <event-sheet order="7">e_start&amp;end</event-sheet>
         <event-sheet order="9">e_ajax</event-sheet>
-        <event-sheet order="10">e_ui</event-sheet>
+        <event-sheet active="1" order="10">e_ui</event-sheet>
         <event-sheet order="11">e_bubbleImformation</event-sheet>
     </open-tabs>
     <properties>

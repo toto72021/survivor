@@ -139,6 +139,10 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="266625285983412">
+                    <conditions />
+                    <actions />
+                </event-block>
             </sub-events>
         </event-group>
     </events>
