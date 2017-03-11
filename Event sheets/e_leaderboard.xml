@@ -13,26 +13,26 @@
                     </conditions>
                     <actions>
                         <action id="-3" name="Create object" sid="191872676258327" type="System">
-                            <param id="0" name="Object to create">tipsBg</param>
+                            <param id="0" name="Object to create">bg_tips</param>
                             <param id="1" name="Layer">&quot;topUI&quot;</param>
                             <param id="2" name="X">388</param>
                             <param id="3" name="Y">220</param>
                         </action>
-                        <action id="-7" name="Set size" sid="912988059662969" type="tipsBg">
+                        <action id="-7" name="Set size" sid="912988059662969" type="bg_tips">
                             <param id="0" name="Width">360</param>
                             <param id="1" name="Height">200</param>
                         </action>
-                        <action id="-10" name="Set value" sid="155813749043183" type="tipsBg">
+                        <action id="-10" name="Set value" sid="155813749043183" type="bg_tips">
                             <param id="0" name="Instance variable">groupID</param>
                             <param id="1" name="Value">&quot;LB&quot;</param>
                         </action>
-                        <action id="-10" name="Set value" sid="248579376838190" type="tipsBg">
+                        <action id="-10" name="Set value" sid="248579376838190" type="bg_tips">
                             <param id="0" name="Instance variable">actionID</param>
                             <param id="1" name="Value">&quot;writeName&quot;</param>
                         </action>
                         <action id="-3" name="Create object" sid="188872949969635" type="System">
                             <param id="0" name="Object to create">TextBox</param>
-                            <param id="1" name="Layer">tipsBg.LayerName</param>
+                            <param id="1" name="Layer">bg_tips.LayerName</param>
                             <param id="2" name="X">493</param>
                             <param id="3" name="Y">309</param>
                         </action>
@@ -50,7 +50,7 @@
                         </action>
                         <action id="-3" name="Create object" sid="734674639014731" type="System">
                             <param id="0" name="Object to create">txt_center</param>
-                            <param id="1" name="Layer">tipsBg.LayerName</param>
+                            <param id="1" name="Layer">bg_tips.LayerName</param>
                             <param id="2" name="X">568</param>
                             <param id="3" name="Y">380</param>
                         </action>
@@ -337,41 +337,41 @@
                             <conditions />
                             <actions>
                                 <action id="-3" name="Create object" sid="511426694850166" type="System">
-                                    <param id="0" name="Object to create">tipsBg</param>
+                                    <param id="0" name="Object to create">bg_tips</param>
                                     <param id="1" name="Layer">&quot;topUI&quot;</param>
                                     <param id="2" name="X">268</param>
                                     <param id="3" name="Y">20</param>
                                 </action>
-                                <action id="-7" name="Set size" sid="101252792060418" type="tipsBg">
+                                <action id="-7" name="Set size" sid="101252792060418" type="bg_tips">
                                     <param id="0" name="Width">600</param>
                                     <param id="1" name="Height">600</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="661671503246855" type="tipsBg">
+                                <action id="-10" name="Set value" sid="661671503246855" type="bg_tips">
                                     <param id="0" name="Instance variable">groupID</param>
                                     <param id="1" name="Value">&quot;LB&quot;</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="559641397205027" type="tipsBg">
+                                <action id="-10" name="Set value" sid="559641397205027" type="bg_tips">
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;leaderboard&quot;</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="988234722045384" type="System">
-                                    <param id="0" name="Object to create">dragBg</param>
+                                    <param id="0" name="Object to create">bg_drag</param>
                                     <param id="1" name="Layer">&quot;mask&quot;</param>
                                     <param id="2" name="X">268</param>
                                     <param id="3" name="Y">20</param>
                                 </action>
-                                <action behavior="DragDrop" id="0" name="Set enabled" sid="980747865217826" type="dragBg">
+                                <action behavior="DragDrop" id="0" name="Set enabled" sid="980747865217826" type="bg_drag">
                                     <param id="0" name="State">1</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="805398481246826" type="dragBg">
+                                <action id="-10" name="Set value" sid="805398481246826" type="bg_drag">
                                     <param id="0" name="Instance variable">groupID</param>
                                     <param id="1" name="Value">&quot;LB&quot;</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="433233628201827" type="dragBg">
+                                <action id="-10" name="Set value" sid="433233628201827" type="bg_drag">
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;dragBg&quot;</param>
                                 </action>
-                                <action id="-7" name="Set size" sid="691149161180580" type="dragBg">
+                                <action id="-7" name="Set size" sid="691149161180580" type="bg_drag">
                                     <param id="0" name="Width">600</param>
                                     <param id="1" name="Height">600</param>
                                 </action>
@@ -383,7 +383,7 @@
                                     <param id="0" name="Variable">rankCount</param>
                                     <param id="1" name="Value">tokencount(rankList,&quot;,&quot;)-1</param>
                                 </action>
-                                <action id="-6" name="Set height" sid="578413336459894" type="dragBg">
+                                <action id="-6" name="Set height" sid="578413336459894" type="bg_drag">
                                     <param id="0" name="Height">(dis+15)*rankCount</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="994767899410305" type="System">
@@ -545,7 +545,7 @@
                                                     <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),2,&quot;|&quot;)</param>
                                                 </action>
                                                 <action behavior="Pin" id="0" name="Pin to object" sid="783796194206610" type="txt_left">
-                                                    <param id="0" name="Pin to">dragBg</param>
+                                                    <param id="0" name="Pin to">bg_drag</param>
                                                     <param id="1" name="Mode">1</param>
                                                 </action>
                                             </actions>
@@ -598,7 +598,7 @@
                                                     <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),0,&quot;|&quot;)</param>
                                                 </action>
                                                 <action behavior="Pin" id="0" name="Pin to object" sid="102762872488305" type="txt_left">
-                                                    <param id="0" name="Pin to">dragBg</param>
+                                                    <param id="0" name="Pin to">bg_drag</param>
                                                     <param id="1" name="Mode">1</param>
                                                 </action>
                                             </actions>
@@ -651,7 +651,7 @@
                                                     <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),1,&quot;|&quot;)</param>
                                                 </action>
                                                 <action behavior="Pin" id="0" name="Pin to object" sid="209179139657446" type="txt_left">
-                                                    <param id="0" name="Pin to">dragBg</param>
+                                                    <param id="0" name="Pin to">bg_drag</param>
                                                     <param id="1" name="Mode">1</param>
                                                 </action>
                                             </actions>
@@ -702,26 +702,26 @@
                 </event-block>
                 <event-block sid="574587609180630">
                     <conditions>
-                        <condition id="-2" name="Compare Y" sid="739934411215663" type="dragBg">
+                        <condition id="-2" name="Compare Y" sid="739934411215663" type="bg_drag">
                             <param id="0" name="Comparison">5</param>
                             <param id="1" name="Y co-ordinate">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-2" name="Set Y" sid="237071719094326" type="dragBg">
+                        <action id="-2" name="Set Y" sid="237071719094326" type="bg_drag">
                             <param id="0" name="Y">0</param>
                         </action>
                     </actions>
                 </event-block>
                 <event-block sid="463587990151363">
                     <conditions>
-                        <condition id="-2" name="Compare Y" sid="525278260488406" type="dragBg">
+                        <condition id="-2" name="Compare Y" sid="525278260488406" type="bg_drag">
                             <param id="0" name="Comparison">3</param>
                             <param id="1" name="Y co-ordinate">-(Self.Height-640)</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-2" name="Set Y" sid="301721653381596" type="dragBg">
+                        <action id="-2" name="Set Y" sid="301721653381596" type="bg_drag">
                             <param id="0" name="Y">-(Self.Height-640)</param>
                         </action>
                     </actions>

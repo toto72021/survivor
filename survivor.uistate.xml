@@ -14,9 +14,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="1">obj</layout>
         <layout order="2">game</layout>
         <layout order="10">combat</layout>
-        <event-sheet order="3">le_game</event-sheet>
+        <layout order="13">loading</layout>
+        <layout order="14">credit</layout>
+        <event-sheet active="1" order="3">le_game</event-sheet>
         <event-sheet order="4">e_player</event-sheet>
-        <event-sheet active="1" order="5">le_combat</event-sheet>
+        <event-sheet order="5">le_combat</event-sheet>
         <event-sheet order="6">e_item</event-sheet>
         <event-sheet order="7">e_start&amp;end</event-sheet>
         <event-sheet order="8">e_ui</event-sheet>
@@ -31,37 +33,45 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1">
-        <family expanded="1" name="txts" />
-        <family expanded="1" name="btns" />
-        <family expanded="1" name="bgs" />
-        <family expanded="1" name="items" />
-        <family expanded="1" name="bgs9p" />
-        <family expanded="1" name="enemys" />
-        <family expanded="1" name="UI" />
+        <family expanded="0" name="txts" />
+        <family expanded="0" name="btns" />
+        <family expanded="0" name="bgs" />
+        <family expanded="0" name="items" />
+        <family expanded="0" name="bgs9p" />
+        <family expanded="0" name="enemys" />
+        <family expanded="0" name="UI" />
         <family expanded="0" name="particle" />
-        <family expanded="1" name="shadows" />
-        <family expanded="1" name="txtboxs" />
+        <family expanded="0" name="shadows" />
+        <family expanded="0" name="txtboxs" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="0" path="object-folder/plugins/" />
+        <folder expanded="0" path="object-folder/bg/" />
+        <folder expanded="0" path="object-folder/particle/" />
+        <folder expanded="0" path="object-folder/player/" />
+        <folder expanded="0" path="object-folder/txt/" />
+        <folder expanded="1" path="object-folder/ui/" />
+        <folder expanded="0" path="object-folder/combat/" />
+        <folder expanded="0" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="event-folder/layout/" />
-        <folder expanded="1" path="event-folder/event/" />
+        <folder expanded="0" path="event-folder/layout/" />
+        <folder expanded="0" path="event-folder/event/" />
         <folder expanded="1" path="file-folder/" />
-        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="0" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/bg_ui_item/" />
+        <folder expanded="1" path="animation-folder/bg_sunmoon/" />
         <folder expanded="1" path="animation-folder/player_proxy/" />
-        <folder expanded="1" path="animation-folder/ui_display/" />
-        <folder expanded="1" path="animation-folder/btn_pause/" />
         <folder expanded="1" path="animation-folder/player_skin/" />
+        <folder expanded="1" path="animation-folder/shadow/" />
+        <folder expanded="1" path="animation-folder/ui_display/" />
+        <folder expanded="1" path="animation-folder/ui_item/" />
+        <folder expanded="1" path="animation-folder/btn_pause/" />
         <folder expanded="1" path="animation-folder/item/" />
+        <folder expanded="1" path="animation-folder/mainUI/" />
         <folder expanded="1" path="animation-folder/enemy/" />
         <folder expanded="1" path="animation-folder/camera/" />
-        <folder expanded="1" path="animation-folder/ui_itembg/" />
-        <folder expanded="1" path="animation-folder/ui_item/" />
-        <folder expanded="1" path="animation-folder/sunmoon/" />
-        <folder expanded="1" path="animation-folder/shadow/" />
     </folders-expanded>
 </c2uistate>

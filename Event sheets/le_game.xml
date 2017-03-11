@@ -18,7 +18,7 @@
                         <condition id="-2" name="On start of layout" sid="410969989642070" type="System" />
                     </conditions>
                     <actions>
-                        <action behavior="Rotate" id="0" name="Set speed" sid="743356368032392" type="sunmoon">
+                        <action behavior="Rotate" id="0" name="Set speed" sid="743356368032392" type="bg_sunmoon">
                             <param id="0" name="Speed">360/(4*Function.Call(&quot;dayTime&quot;))</param>
                         </action>
                     </actions>
@@ -896,6 +896,10 @@
                             <param id="2" name="X">1300</param>
                             <param id="3" name="Y">random(420,600)</param>
                         </action>
+                        <action id="4" name="Set animation" sid="732895526669729" type="item">
+                            <param id="0" name="Animation">&quot;item&quot;&amp;str(int(random(4)))</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                         <action id="0" name="Sort all Objects in layer by Y" sid="824499155509265" type="ZSorter">
                             <param id="0" name="Layer">&quot;game&quot;</param>
                         </action>
@@ -1143,20 +1147,20 @@
                     </conditions>
                     <actions>
                         <action id="-3" name="Create object" sid="191188028247913" type="System">
-                            <param id="0" name="Object to create">blackBg</param>
+                            <param id="0" name="Object to create">bg_Black</param>
                             <param id="1" name="Layer">&quot;topUI&quot;</param>
                             <param id="2" name="X">0</param>
                             <param id="3" name="Y">0</param>
                         </action>
-                        <action id="-10" name="Set value" sid="564398486752932" type="blackBg">
+                        <action id="-10" name="Set value" sid="564398486752932" type="bg_Black">
                             <param id="0" name="Instance variable">Puid</param>
                             <param id="1" name="Value">Function.Param(0)</param>
                         </action>
-                        <action id="-7" name="Set size" sid="490240839061521" type="blackBg">
+                        <action id="-7" name="Set size" sid="490240839061521" type="bg_Black">
                             <param id="0" name="Width">1136</param>
                             <param id="1" name="Height">640</param>
                         </action>
-                        <action behavior="Flash" id="0" name="Flash" sid="107688104430692" type="blackBg">
+                        <action behavior="Flash" id="0" name="Flash" sid="107688104430692" type="bg_Black">
                             <param id="0" name="&apos;On&apos; time">0.1</param>
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.8</param>
@@ -1165,16 +1169,16 @@
                 </event-block>
                 <event-block sid="606357790174844">
                     <conditions>
-                        <condition behavior="Flash" id="1" name="On flash ended" sid="690680220784397" type="blackBg" />
+                        <condition behavior="Flash" id="1" name="On flash ended" sid="690680220784397" type="bg_Black" />
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="798194252144188" type="blackBg" />
+                        <action id="-9" name="Destroy" sid="798194252144188" type="bg_Black" />
                     </actions>
                     <sub-events>
                         <event-block sid="419691930515414">
                             <conditions>
                                 <condition id="-14" name="Pick by unique ID" sid="967830415418274" type="enemy">
-                                    <param id="0" name="Unique ID">blackBg.Puid</param>
+                                    <param id="0" name="Unique ID">bg_Black.Puid</param>
                                 </condition>
                             </conditions>
                             <actions>

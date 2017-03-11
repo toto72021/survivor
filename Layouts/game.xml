@@ -137,7 +137,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="sunmoon" uid="49">
+                <instance type="bg_sunmoon" uid="49">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -373,14 +373,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>488</x>
-                        <y>440</y>
+                        <x>460</x>
+                        <y>436</y>
                         <z>0</z>
-                        <width>200</width>
-                        <height>200</height>
+                        <width>155</width>
+                        <height>281</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.503225803</hotspotX>
+                        <hotspotY>0.501779377</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

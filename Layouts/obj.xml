@@ -169,7 +169,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="tipsBg" uid="28">
+                <instance type="bg_tips" uid="28">
                     <properties>
                         <left-margin>4</left-margin>
                         <right-margin>4</right-margin>
@@ -224,7 +224,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="blackBg" uid="31">
+                <instance type="bg_Black" uid="31">
                     <properties>
                         <left-margin>8</left-margin>
                         <right-margin>8</right-margin>
@@ -521,7 +521,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="ui_itembg" uid="1">
+                <instance type="bg_ui_item" uid="1">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -709,7 +709,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dragBg" uid="55">
+                <instance type="bg_drag" uid="55">
                     <properties>
                         <left-margin>8</left-margin>
                         <right-margin>8</right-margin>
@@ -983,7 +983,7 @@
                 <instance type="item" uid="23">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
+                        <initial-animation>item2</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -1014,7 +1014,7 @@
                         <y>354</y>
                         <z>0</z>
                         <width>250</width>
-                        <height>250</height>
+                        <height>160</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

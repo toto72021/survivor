@@ -540,14 +540,14 @@
                     <sub-events>
                         <event-block sid="443641130209213">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="592575504710822" type="ui_itembg">
+                                <condition id="-7" name="Compare instance variable" sid="592575504710822" type="bg_ui_item">
                                     <param id="0" name="Instance variable">groupID</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;item&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Destroy" sid="182312632222646" type="ui_itembg" />
+                                <action id="-9" name="Destroy" sid="182312632222646" type="bg_ui_item" />
                             </actions>
                         </event-block>
                         <event-block sid="304334010676646">
@@ -606,19 +606,19 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="173137490549951" type="System">
-                                    <param id="0" name="Object to create">ui_itembg</param>
+                                    <param id="0" name="Object to create">bg_ui_item</param>
                                     <param id="1" name="Layer">&quot;ui2&quot;</param>
                                     <param id="2" name="X">568</param>
                                     <param id="3" name="Y">420</param>
                                 </action>
-                                <action id="-8" name="Set angle" sid="727096399427974" type="ui_itembg">
+                                <action id="-8" name="Set angle" sid="727096399427974" type="bg_ui_item">
                                     <param id="0" name="Angle">90</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="924031125318990" type="ui_itembg">
+                                <action id="-10" name="Set value" sid="924031125318990" type="bg_ui_item">
                                     <param id="0" name="Instance variable">groupID</param>
                                     <param id="1" name="Value">&quot;item&quot;</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="400703854871551" type="ui_itembg">
+                                <action id="-10" name="Set value" sid="400703854871551" type="bg_ui_item">
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;bg&quot;</param>
                                 </action>
@@ -633,9 +633,9 @@
                                     <actions>
                                         <action id="-3" name="Create object" sid="346347649443582" type="System">
                                             <param id="0" name="Object to create">ui_item</param>
-                                            <param id="1" name="Layer">ui_itembg.LayerName</param>
-                                            <param id="2" name="X">ui_itembg.X-ui_itembg.Height/2+72+rowIndex*72</param>
-                                            <param id="3" name="Y">ui_itembg.Y</param>
+                                            <param id="1" name="Layer">bg_ui_item.LayerName</param>
+                                            <param id="2" name="X">bg_ui_item.X-bg_ui_item.Height/2+72+rowIndex*72</param>
+                                            <param id="3" name="Y">bg_ui_item.Y</param>
                                         </action>
                                         <action id="4" name="Set animation" sid="833091598373507" type="ui_item">
                                             <param id="0" name="Animation">str(Array_item.At(Array_item.CurX,0))</param>
@@ -704,19 +704,19 @@
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="707197441849149" type="System">
-                                    <param id="0" name="Object to create">ui_itembg</param>
+                                    <param id="0" name="Object to create">bg_ui_item</param>
                                     <param id="1" name="Layer">&quot;UI&quot;</param>
                                     <param id="2" name="X">1064</param>
                                     <param id="3" name="Y">320</param>
                                 </action>
-                                <action id="-8" name="Set angle" sid="597836932239144" type="ui_itembg">
+                                <action id="-8" name="Set angle" sid="597836932239144" type="bg_ui_item">
                                     <param id="0" name="Angle">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="546673300203560" type="ui_itembg">
+                                <action id="-10" name="Set value" sid="546673300203560" type="bg_ui_item">
                                     <param id="0" name="Instance variable">groupID</param>
                                     <param id="1" name="Value">&quot;item&quot;</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="928606964216931" type="ui_itembg">
+                                <action id="-10" name="Set value" sid="928606964216931" type="bg_ui_item">
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;bg&quot;</param>
                                 </action>
@@ -731,9 +731,9 @@
                                     <actions>
                                         <action id="-3" name="Create object" sid="894905978543356" type="System">
                                             <param id="0" name="Object to create">ui_item</param>
-                                            <param id="1" name="Layer">ui_itembg.LayerName</param>
-                                            <param id="2" name="X">ui_itembg.X</param>
-                                            <param id="3" name="Y">ui_itembg.Y-ui_itembg.Height/2+72+columnIndex*72</param>
+                                            <param id="1" name="Layer">bg_ui_item.LayerName</param>
+                                            <param id="2" name="X">bg_ui_item.X</param>
+                                            <param id="3" name="Y">bg_ui_item.Y-bg_ui_item.Height/2+72+columnIndex*72</param>
                                         </action>
                                         <action id="4" name="Set animation" sid="371018874502632" type="ui_item">
                                             <param id="0" name="Animation">str(Array_item.At(Array_item.CurX,0))</param>
