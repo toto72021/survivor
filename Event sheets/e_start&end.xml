@@ -147,8 +147,9 @@
                                     <param id="0" name="Seconds">2.1</param>
                                 </action>
                                 <action id="-45" name="Reset persisted objects" sid="380295530132935" type="System" />
-                                <action id="-2" name="Go to layout" sid="449125093415658" type="System">
-                                    <param id="0" name="Layout">game</param>
+                                <action id="0" name="Call function" sid="725291260662575" type="Function">
+                                    <param id="0" name="Name">&quot;writeName&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>

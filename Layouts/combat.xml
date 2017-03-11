@@ -96,7 +96,7 @@
                         <MaxAtk>3</MaxAtk>
                         <dayNight>day</dayNight>
                         <DodgeRate>30</DodgeRate>
-                        <name></name>
+                        <name>player</name>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="actionFSM">

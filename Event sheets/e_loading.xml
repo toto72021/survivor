@@ -3,6 +3,14 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>e_loading</name>
     <events>
+        <event-block sid="414541683908536">
+            <conditions>
+                <condition id="6" name="On update ready" sid="488308680418258" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="9" name="Reload" sid="850525951285371" type="Browser" />
+            </actions>
+        </event-block>
         <event-block sid="202411284113889">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="446401017014441" type="System" />

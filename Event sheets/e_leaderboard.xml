@@ -16,6 +16,14 @@
                             <param id="0" name="Name">&quot;writeName&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
+                        <action disabled="1" id="0" name="Call function" sid="864045896929958" type="Function">
+                            <param id="0" name="Name">&quot;closeLB&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action disabled="1" id="0" name="Call function" sid="990660530699517" type="Function">
+                            <param id="0" name="Name">&quot;createLB&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;tt85|381|1,&#x0D;&#x0A;tt67|326|2,&#x0D;&#x0A;tt29|323|3,&#x0D;&#x0A;tt1|286|4,&#x0D;&#x0A;z|233|5,&#x0D;&#x0A;z5|233|6,&#x0D;&#x0A;z3|223.2|7,&#x0D;&#x0A;z4|220|8,&#x0D;&#x0A;z2|213|9,&#x0D;&#x0A;tt17|205|10,&#x0D;&#x0A;tt79|177|11,&#x0D;&#x0A;tt64|132|12,&#x0D;&#x0A;tt62|114|13,&#x0D;&#x0A;tt54|109|14,&#x0D;&#x0A;sdf|12.7|15,&#x0D;&#x0A;hha|8.52|16,&#x0D;&#x0A;haha|8.4|17,&#x0D;&#x0A;2333|8.32|18,&#x0D;&#x0A;22a|7.48|19,&#x0D;&#x0A;dff|7.18|20,&#x0D;&#x0A;sdfg|6.72|21,&#x0D;&#x0A;hh22|3.98|22,&#x0D;&#x0A;myRank:21&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="206076996528742">
@@ -230,6 +238,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="14" name="Log" sid="439192537081321" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">AJAX.Tag&amp;&quot;&gt;&gt;&gt;AJAX :&quot;&amp;AJAX.LastData</param>
+                        </action>
                         <action id="0" name="Call function" sid="813098202827145" type="Function">
                             <param id="0" name="Name">&quot;closeLB&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
@@ -341,6 +353,7 @@
                     <sub-events>
                         <variable constant="0" name="rankList" sid="276561661331825" static="0" type="text"></variable>
                         <variable constant="0" name="rankCount" sid="376975813263031" static="0" type="number">0</variable>
+                        <variable constant="0" name="dis" sid="114808532562150" static="0" type="number">55</variable>
                         <event-block sid="928227814348255">
                             <conditions />
                             <actions>
@@ -364,7 +377,7 @@
                                 </action>
                                 <action id="-3" name="Create object" sid="988234722045384" type="System">
                                     <param id="0" name="Object to create">dragBg</param>
-                                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                    <param id="1" name="Layer">&quot;mask&quot;</param>
                                     <param id="2" name="X">268</param>
                                     <param id="3" name="Y">20</param>
                                 </action>
@@ -392,7 +405,7 @@
                                     <param id="1" name="Value">tokencount(rankList,&quot;,&quot;)-1</param>
                                 </action>
                                 <action id="-6" name="Set height" sid="578413336459894" type="dragBg">
-                                    <param id="0" name="Height">50*rankCount</param>
+                                    <param id="0" name="Height">(dis+15)*rankCount</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="994767899410305" type="System">
                                     <param id="0" name="Object to create">txt_center</param>
@@ -501,147 +514,198 @@
                                 </action>
                             </actions>
                             <sub-events>
-                                <variable constant="0" name="loopR" sid="114808532562150" static="0" type="number">0</variable>
                                 <event-block sid="320615588658885">
                                     <conditions>
                                         <condition id="-12" name="Repeat" sid="724653382745742" type="System">
                                             <param id="0" name="Count">rankCount</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="147807285446981" type="System">
-                                            <param id="0" name="Variable">loopR</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-3" name="Create object" sid="222172909946217" type="System">
-                                            <param id="0" name="Object to create">txt_left</param>
-                                            <param id="1" name="Layer">&quot;topUI&quot;</param>
-                                            <param id="2" name="X">280</param>
-                                            <param id="3" name="Y">120</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="364530877021486" type="txt_left">
-                                            <param id="0" name="Instance variable">groupID</param>
-                                            <param id="1" name="Value">&quot;LB&quot;</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="420864503811564" type="txt_left">
-                                            <param id="0" name="Instance variable">actionID</param>
-                                            <param id="1" name="Value">&quot;myRank&quot;</param>
-                                        </action>
-                                        <action id="-7" name="Set size" sid="706167227334312" type="txt_left">
-                                            <param id="0" name="Width">160</param>
-                                            <param id="1" name="Height">50</param>
-                                        </action>
-                                        <action id="3" name="Set font size" sid="383321143400925" type="txt_left">
-                                            <param id="0" name="Size (pt)">20</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="209081010081214" type="txt_left">
-                                            <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),loopR,&quot;|&quot;)</param>
-                                        </action>
-                                        <action behavior="Pin" id="0" name="Pin to object" sid="783796194206610" type="txt_left">
-                                            <param id="0" name="Pin to">dragBg</param>
-                                            <param id="1" name="Mode">1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="304774060039580" type="System">
-                                            <param id="0" name="Variable">loopR</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-3" name="Create object" sid="258816990979352" type="System">
-                                            <param id="0" name="Object to create">txt_left</param>
-                                            <param id="1" name="Layer">&quot;topUI&quot;</param>
-                                            <param id="2" name="X">440</param>
-                                            <param id="3" name="Y">120</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="499044606945348" type="txt_left">
-                                            <param id="0" name="Instance variable">groupID</param>
-                                            <param id="1" name="Value">&quot;LB&quot;</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="129241752778042" type="txt_left">
-                                            <param id="0" name="Instance variable">actionID</param>
-                                            <param id="1" name="Value">&quot;name&quot;</param>
-                                        </action>
-                                        <action id="-7" name="Set size" sid="354642606392705" type="txt_left">
-                                            <param id="0" name="Width">160</param>
-                                            <param id="1" name="Height">50</param>
-                                        </action>
-                                        <action id="3" name="Set font size" sid="131714811747590" type="txt_left">
-                                            <param id="0" name="Size (pt)">20</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="666619816388497" type="txt_left">
-                                            <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),loopR,&quot;|&quot;)</param>
-                                        </action>
-                                        <action behavior="Pin" id="0" name="Pin to object" sid="102762872488305" type="txt_left">
-                                            <param id="0" name="Pin to">dragBg</param>
-                                            <param id="1" name="Mode">1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="972447108335660" type="System">
-                                            <param id="0" name="Variable">loopR</param>
-                                            <param id="1" name="Value">2</param>
-                                        </action>
-                                        <action id="-3" name="Create object" sid="256575243808015" type="System">
-                                            <param id="0" name="Object to create">txt_left</param>
-                                            <param id="1" name="Layer">&quot;topUI&quot;</param>
-                                            <param id="2" name="X">600</param>
-                                            <param id="3" name="Y">120</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="482795738098913" type="txt_left">
-                                            <param id="0" name="Instance variable">groupID</param>
-                                            <param id="1" name="Value">&quot;LB&quot;</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="349245719174235" type="txt_left">
-                                            <param id="0" name="Instance variable">actionID</param>
-                                            <param id="1" name="Value">&quot;score&quot;</param>
-                                        </action>
-                                        <action id="-7" name="Set size" sid="345654695304292" type="txt_left">
-                                            <param id="0" name="Width">160</param>
-                                            <param id="1" name="Height">50</param>
-                                        </action>
-                                        <action id="3" name="Set font size" sid="651769356157141" type="txt_left">
-                                            <param id="0" name="Size (pt)">20</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="881629746371933" type="txt_left">
-                                            <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),loopR,&quot;|&quot;)</param>
-                                        </action>
-                                        <action behavior="Pin" id="0" name="Pin to object" sid="209179139657446" type="txt_left">
-                                            <param id="0" name="Pin to">dragBg</param>
-                                            <param id="1" name="Mode">1</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
                                     <sub-events>
-                                        <event-block sid="473585715075019">
-                                            <conditions>
-                                                <condition id="-8" name="Compare two values" sid="890002702606914" type="System">
-                                                    <param id="0" name="First value">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),0,&quot;|&quot;)</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Second value">player_proxy.name</param>
-                                                </condition>
-                                            </conditions>
+                                        <event-block sid="622710699517544">
+                                            <conditions />
                                             <actions>
-                                                <action id="4" name="Set font color" sid="446141199924930" type="txt_left">
-                                                    <param id="0" name="Color">rgb(0,255,0)</param>
+                                                <action id="-3" name="Create object" sid="222172909946217" type="System">
+                                                    <param id="0" name="Object to create">txt_left</param>
+                                                    <param id="1" name="Layer">&quot;mask&quot;</param>
+                                                    <param id="2" name="X">280</param>
+                                                    <param id="3" name="Y">220+loopindex*dis</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="364530877021486" type="txt_left">
+                                                    <param id="0" name="Instance variable">groupID</param>
+                                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="420864503811564" type="txt_left">
+                                                    <param id="0" name="Instance variable">actionID</param>
+                                                    <param id="1" name="Value">&quot;lbRank&quot;</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="706167227334312" type="txt_left">
+                                                    <param id="0" name="Width">160</param>
+                                                    <param id="1" name="Height">80</param>
+                                                </action>
+                                                <action id="2" name="Set font face" sid="383321143400925" type="txt_left">
+                                                    <param id="0" name="Font face">&quot;微软雅黑&quot;</param>
+                                                    <param id="1" name="Style">0</param>
+                                                </action>
+                                                <action id="3" name="Set font size" sid="440483734975109" type="txt_left">
+                                                    <param id="0" name="Size (pt)">20</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="209081010081214" type="txt_left">
+                                                    <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),2,&quot;|&quot;)</param>
+                                                </action>
+                                                <action behavior="Pin" id="0" name="Pin to object" sid="783796194206610" type="txt_left">
+                                                    <param id="0" name="Pin to">dragBg</param>
+                                                    <param id="1" name="Mode">1</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="741391557257328">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="655428723584860" type="System">
+                                                            <param id="0" name="First value">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),0,&quot;|&quot;)</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">player_proxy.name</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set font color" sid="867185499184292" type="txt_left">
+                                                            <param id="0" name="Color">rgb(0,255,0)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="581813475079821">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="258816990979352" type="System">
+                                                    <param id="0" name="Object to create">txt_left</param>
+                                                    <param id="1" name="Layer">&quot;mask&quot;</param>
+                                                    <param id="2" name="X">440</param>
+                                                    <param id="3" name="Y">220+loopindex*dis</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="499044606945348" type="txt_left">
+                                                    <param id="0" name="Instance variable">groupID</param>
+                                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="129241752778042" type="txt_left">
+                                                    <param id="0" name="Instance variable">actionID</param>
+                                                    <param id="1" name="Value">&quot;lbName&quot;</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="354642606392705" type="txt_left">
+                                                    <param id="0" name="Width">160</param>
+                                                    <param id="1" name="Height">80</param>
+                                                </action>
+                                                <action id="2" name="Set font face" sid="639434566190819" type="txt_left">
+                                                    <param id="0" name="Font face">&quot;微软雅黑&quot;</param>
+                                                    <param id="1" name="Style">0</param>
+                                                </action>
+                                                <action id="3" name="Set font size" sid="131714811747590" type="txt_left">
+                                                    <param id="0" name="Size (pt)">16</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="393126695000179" type="txt_left">
+                                                    <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),0,&quot;|&quot;)</param>
+                                                </action>
+                                                <action behavior="Pin" id="0" name="Pin to object" sid="102762872488305" type="txt_left">
+                                                    <param id="0" name="Pin to">dragBg</param>
+                                                    <param id="1" name="Mode">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="473585715075019">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="890002702606914" type="System">
+                                                            <param id="0" name="First value">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),0,&quot;|&quot;)</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">player_proxy.name</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set font color" sid="446141199924930" type="txt_left">
+                                                            <param id="0" name="Color">rgb(0,255,0)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="399951070460399">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="256575243808015" type="System">
+                                                    <param id="0" name="Object to create">txt_left</param>
+                                                    <param id="1" name="Layer">&quot;mask&quot;</param>
+                                                    <param id="2" name="X">600</param>
+                                                    <param id="3" name="Y">220+loopindex*dis</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="482795738098913" type="txt_left">
+                                                    <param id="0" name="Instance variable">groupID</param>
+                                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="349245719174235" type="txt_left">
+                                                    <param id="0" name="Instance variable">actionID</param>
+                                                    <param id="1" name="Value">&quot;lbScore&quot;</param>
+                                                </action>
+                                                <action id="-7" name="Set size" sid="345654695304292" type="txt_left">
+                                                    <param id="0" name="Width">160</param>
+                                                    <param id="1" name="Height">80</param>
+                                                </action>
+                                                <action id="2" name="Set font face" sid="381129083144329" type="txt_left">
+                                                    <param id="0" name="Font face">&quot;微软雅黑&quot;</param>
+                                                    <param id="1" name="Style">0</param>
+                                                </action>
+                                                <action id="3" name="Set font size" sid="651769356157141" type="txt_left">
+                                                    <param id="0" name="Size (pt)">16</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="881629746371933" type="txt_left">
+                                                    <param id="0" name="Text">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),1,&quot;|&quot;)</param>
+                                                </action>
+                                                <action behavior="Pin" id="0" name="Pin to object" sid="209179139657446" type="txt_left">
+                                                    <param id="0" name="Pin to">dragBg</param>
+                                                    <param id="1" name="Mode">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="990418811942151">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="185643674861744" type="System">
+                                                            <param id="0" name="First value">tokenat(tokenat(rankList,loopindex,&quot;,&quot;),0,&quot;|&quot;)</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">player_proxy.name</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set font color" sid="377854459281978" type="txt_left">
+                                                            <param id="0" name="Color">rgb(0,255,0)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                                <event-block sid="726953035447147">
-                                    <conditions />
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="236426326072893" type="System">
-                                            <param id="0" name="Object to create">bg_mask</param>
-                                            <param id="1" name="Layer">&quot;mask&quot;</param>
-                                            <param id="2" name="X">268</param>
-                                            <param id="3" name="Y">0</param>
-                                        </action>
-                                        <action id="1" name="Set blend mode" sid="268687684461453" type="bg_mask">
-                                            <param id="0" name="Blend mode">8</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="274549042984001" type="bg_mask">
-                                            <param id="0" name="Instance variable">groupID</param>
-                                            <param id="1" name="Value">&quot;LB&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="726953035447147">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="236426326072893" type="System">
+                                    <param id="0" name="Object to create">bg_mask</param>
+                                    <param id="1" name="Layer">&quot;mask&quot;</param>
+                                    <param id="2" name="X">268</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="963170911368559" type="bg_mask">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="1" name="Set blend mode" sid="268687684461453" type="bg_mask">
+                                    <param id="0" name="Blend mode">8</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="274549042984001" type="bg_mask">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;LB&quot;</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="343208216315997" type="bg_mask" />
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -662,12 +726,12 @@
                     <conditions>
                         <condition id="-2" name="Compare Y" sid="525278260488406" type="dragBg">
                             <param id="0" name="Comparison">3</param>
-                            <param id="1" name="Y co-ordinate">Self.Height-640</param>
+                            <param id="1" name="Y co-ordinate">-(Self.Height-640)</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-2" name="Set Y" sid="301721653381596" type="dragBg">
-                            <param id="0" name="Y">Self.Height-640</param>
+                            <param id="0" name="Y">-(Self.Height-640)</param>
                         </action>
                     </actions>
                 </event-block>
