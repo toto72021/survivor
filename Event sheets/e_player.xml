@@ -24,17 +24,29 @@
                                     <param id="2" name="Value">&quot;player&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action behavior="Pin" id="1" name="Unpin" sid="648660806940380" type="shadow" />
-                                <action id="-3" name="Set position" sid="242114342010619" type="shadow">
-                                    <param id="0" name="X">player_proxy.ImagePointX(&quot;shadow&quot;)</param>
-                                    <param id="1" name="Y">player_proxy.ImagePointY(&quot;shadow&quot;)</param>
-                                </action>
-                                <action behavior="Pin" id="0" name="Pin to object" sid="987778913454258" type="shadow">
-                                    <param id="0" name="Pin to">player_proxy</param>
-                                    <param id="1" name="Mode">1</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="270037794938102">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="127635136551556" type="System">
+                                            <param id="0" name="First value">LayoutName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;combat&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Pin" id="1" name="Unpin" sid="648660806940380" type="shadow" />
+                                        <action id="-3" name="Set position" sid="242114342010619" type="shadow">
+                                            <param id="0" name="X">player_proxy.ImagePointX(&quot;shadow&quot;)</param>
+                                            <param id="1" name="Y">player_proxy.ImagePointY(&quot;shadow&quot;)</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="987778913454258" type="shadow">
+                                            <param id="0" name="Pin to">player_proxy</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="133812032067127">
                             <conditions>
@@ -86,6 +98,10 @@
                             <param id="0" name="Key">&quot;playerHp&quot;</param>
                             <param id="1" name="Value">player_proxy.hp</param>
                         </action>
+                        <action id="0" name="Add key" sid="547352803288537" type="Dictionary">
+                            <param id="0" name="Key">&quot;playerMaxHp&quot;</param>
+                            <param id="1" name="Value">player_proxy.maxHp</param>
+                        </action>
                         <action id="0" name="Add key" sid="339086378919073" type="Dictionary">
                             <param id="0" name="Key">&quot;playerEnergy&quot;</param>
                             <param id="1" name="Value">player_proxy.energy</param>
@@ -119,6 +135,10 @@
                                 <action id="-10" name="Set value" sid="339049394915973" type="player_proxy">
                                     <param id="0" name="Instance variable">hp</param>
                                     <param id="1" name="Value">Dictionary.Get(&quot;playerHp&quot;)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="745054452213240" type="player_proxy">
+                                    <param id="0" name="Instance variable">maxHp</param>
+                                    <param id="1" name="Value">Dictionary.Get(&quot;playerMaxHp&quot;)</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="658783333934083" type="player_proxy">
                                     <param id="0" name="Instance variable">energy</param>

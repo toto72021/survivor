@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>e_sound</name>
+    <events>
+        <event-group description="" sid="169599602660724" title="sound">
+            <sub-events>
+                <event-block sid="245713567129632">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="132225810527853" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="479656078572254">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="438763559440901" type="System">
+                                    <param id="0" name="First value">LayoutName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;plot&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="864925169068976" type="Function">
+                                    <param id="0" name="Name">&quot;playBgMusic&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;alone&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="406374268029910">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="766400242261194" type="System">
+                                    <param id="0" name="First value">LayoutName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;combat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="748529511115304" type="Function">
+                                    <param id="0" name="Name">&quot;playBgMusic&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;combat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="364419367803696">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="612260851622123" type="System">
+                                    <param id="0" name="First value">LayoutName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;game&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="702974012978660">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="949947922405272" type="player_proxy">
+                                            <param id="0" name="Instance variable">moveDistance</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">Self.jungleDis</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="834657457377693" type="Function">
+                                            <param id="0" name="Name">&quot;playBgMusic&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;nextbg&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="975042695119540">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="273556648909293" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="863300604215254" type="Function">
+                                            <param id="0" name="Name">&quot;playBgMusic&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;alone&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>(0sound; )</comment>
+                <event-block sid="440653687515864">
+                    <conditions>
+                        <condition id="0" name="On function" sid="179903606272528" type="Function">
+                            <param id="0" name="Name">&quot;playBgMusic&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="261407425104596" type="Audio" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="866521966500554">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="470025173425656" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;alone&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="287546079121355" type="Audio">
+                                    <param id="0" name="Audio file">alone</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="262791091462268">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="413560097912628" type="System" />
+                                <condition id="-8" name="Compare two values" sid="226865105161890" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;combat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="882400343989568" type="Audio">
+                                    <param id="0" name="Audio file">combat</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="403630219498667">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="756224589100390" type="System" />
+                                <condition id="-8" name="Compare two values" sid="908067583178311" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;nextbg&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="935634021166322" type="Audio">
+                                    <param id="0" name="Audio file">combat</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="119717067381467">
+                    <conditions>
+                        <condition id="0" name="On function" sid="967024112201849" type="Function">
+                            <param id="0" name="Name">&quot;playEffectSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="355884678810057">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Play" sid="934079020511570" type="Audio">
+                                    <param id="0" name="Audio file">combat</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

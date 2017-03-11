@@ -14,14 +14,15 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="1">obj</layout>
         <layout order="2">game</layout>
         <layout order="10">combat</layout>
-        <event-sheet order="3">e_game</event-sheet>
+        <event-sheet order="3">le_game</event-sheet>
         <event-sheet order="4">e_player</event-sheet>
-        <event-sheet order="5">e_combat</event-sheet>
-        <event-sheet active="1" order="6">e_item</event-sheet>
+        <event-sheet active="1" order="5">le_combat</event-sheet>
+        <event-sheet order="6">e_item</event-sheet>
         <event-sheet order="7">e_start&amp;end</event-sheet>
         <event-sheet order="8">e_ui</event-sheet>
         <event-sheet order="9">e_leaderboard</event-sheet>
-        <event-sheet order="11">e_loading</event-sheet>
+        <event-sheet order="11">le_loading</event-sheet>
+        <event-sheet order="12">e_sound</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -45,6 +46,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="event-folder/layout/" />
+        <folder expanded="1" path="event-folder/event/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />

@@ -2,7 +2,7 @@
 <c2layout>
     <name>loading</name>
     <sid>270614758150063</sid>
-    <event-sheet>e_loading</event-sheet>
+    <event-sheet>le_loading</event-sheet>
     <size>
         <width>1708</width>
         <height>960</height>

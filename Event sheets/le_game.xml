@@ -1,0 +1,1369 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>le_game</name>
+    <events>
+        <include>e_sound</include>
+        <include>e_leaderboard</include>
+        <include>e_start&amp;end</include>
+        <include>e_ui</include>
+        <include>e_player</include>
+        <include>e_item</include>
+        <include>e_bubbleImformation</include>
+        <include>e_fadeInOut</include>
+        <event-group description="" sid="512011241026526" title="startGame">
+            <sub-events>
+                <event-block sid="540826238320770">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="410969989642070" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="743356368032392" type="sunmoon">
+                            <param id="0" name="Speed">360/(4*Function.Call(&quot;dayTime&quot;))</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="558595140408808">
+                            <conditions>
+                                <condition id="3" name="Has key" sid="803792020903754" type="Dictionary">
+                                    <param id="0" name="Key">&quot;beforeCombat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="925449031289323" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;---------继续关卡&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="887340121346956" type="Function">
+                                    <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="837047729685871" type="Function">
+                                    <param id="0" name="Name">&quot;resetPlayer&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action behavior="actionFSM" id="11" name="Go to state" sid="269628624264278" type="player_proxy">
+                                    <param id="0" name="Name">&quot;pause&quot;</param>
+                                </action>
+                                <action behavior="Timer" id="2" name="Start" sid="516528377802295" type="player_proxy">
+                                    <param id="0" name="Time">Dictionary.Get(&quot;itemTimer&quot;)</param>
+                                    <param id="1" name="Timer">&quot;getItem&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action behavior="Timer" id="2" name="Start" sid="690358459586670" type="player_proxy">
+                                    <param id="0" name="Time">Dictionary.Get(&quot;enemyTimer&quot;)</param>
+                                    <param id="1" name="Timer">&quot;getEnemy&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="996240761745888" type="Function">
+                                    <param id="0" name="Name">&quot;distanceUI&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="830863351709518">
+                                    <conditions>
+                                        <condition id="3" name="Has key" sid="458680016501347" type="Dictionary">
+                                            <param id="0" name="Key">&quot;dayTimer&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Timer" id="2" name="Start" sid="851284059593442" type="player_proxy">
+                                            <param id="0" name="Time">Dictionary.Get(&quot;dayTimer&quot;)</param>
+                                            <param id="1" name="Timer">&quot;dayTimer&quot;</param>
+                                            <param id="2" name="Repeat">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="793857903091139">
+                                    <conditions>
+                                        <condition id="3" name="Has key" sid="274785212193473" type="Dictionary">
+                                            <param id="0" name="Key">&quot;nightTimer&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Timer" id="2" name="Start" sid="895100139243464" type="player_proxy">
+                                            <param id="0" name="Time">Dictionary.Get(&quot;nightTimer&quot;)</param>
+                                            <param id="1" name="Timer">&quot;nightTimer&quot;</param>
+                                            <param id="2" name="Repeat">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="925421780994309">
+                                    <conditions>
+                                        <condition id="3" name="Has key" sid="465526938360503" type="Dictionary">
+                                            <param id="0" name="Key">&quot;stayTimer&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Timer" id="2" name="Start" sid="806925694210777" type="player_proxy">
+                                            <param id="0" name="Time">Dictionary.Get(&quot;stayTimer&quot;)</param>
+                                            <param id="1" name="Timer">&quot;stayTimer&quot;</param>
+                                            <param id="2" name="Repeat">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="383947546812025">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="683521970678743" type="System">
+                                            <param id="0" name="Seconds">0</param>
+                                        </action>
+                                        <action id="3" name="Clear" sid="599245506837567" type="Dictionary" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="336213358331126">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="510694307328524" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="875277697532691" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;---------重新关卡&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="966273524258812" type="Function">
+                                    <param id="0" name="Name">&quot;restartGame&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="155339708088285" type="Function">
+                                    <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                    <param id="1" name="Parameter {n}">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="596293567632364" type="Function">
+                                    <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-10" name="Set value" sid="753699309775992" type="player_proxy">
+                                    <param id="0" name="Instance variable">dayNight</param>
+                                    <param id="1" name="Value">&quot;day&quot;</param>
+                                </action>
+                                <action behavior="Timer" id="2" name="Start" sid="939392779110161" type="player_proxy">
+                                    <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
+                                    <param id="1" name="Timer">&quot;dayTimer&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="201019932626415" title="bg">
+            <sub-events>
+                <variable constant="0" name="daytime" sid="495852605984083" static="0" type="number">24</variable>
+                <event-block sid="317820983016370">
+                    <conditions>
+                        <condition id="0" name="On function" sid="853087301907280" type="Function">
+                            <param id="0" name="Name">&quot;dayTime&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="267228391637538" type="Function">
+                            <param id="0" name="Value">daytime</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="219197742876659">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="Is timer running" sid="901284206150019" type="player_proxy">
+                            <param id="0" name="Timer">&quot;dayTimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="976726003952078" type="bg_tween">
+                            <param id="0" name="Opacity">100*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="543398267745174">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="959901625491921" type="System">
+                                    <param id="0" name="First value">player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0.5</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="654916261077204" type="shadow">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;player&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="455755602713690" type="shadow">
+                                    <param id="0" name="X">player_proxy.X-player_proxy.Width*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="833773850233697">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="799700030718860" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="495448421912998" type="shadow">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;player&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="600895458703091" type="shadow">
+                                    <param id="0" name="X">player_proxy.X-(player_proxy.Width)*player_proxy.Timer.RemainderPercent(&quot;dayTimer&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="614493654268831">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="865011141890268" type="System">
+                                    <param id="0" name="Object">bg_day</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="722719616282489" type="bg_day">
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;dayTimer&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="550535040192182">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="404663231077866" type="System">
+                                    <param id="0" name="Object">bg_night</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="583850453546799" type="bg_night">
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="978478051885027">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="838545479842745" type="player_proxy">
+                            <param id="0" name="Timer">&quot;dayTimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="210188611825710" type="player_proxy">
+                            <param id="0" name="Instance variable">dayNight</param>
+                            <param id="1" name="Value">&quot;night&quot;</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="944008504809469" type="player_proxy">
+                            <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
+                            <param id="1" name="Timer">&quot;stayTimer&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="981883542673044">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="197833662720175" type="player_proxy">
+                            <param id="0" name="Timer">&quot;stayTimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="290869484664677">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="821000752973248" type="player_proxy">
+                                    <param id="0" name="Instance variable">dayNight</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;night&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="2" name="Start" sid="787015455817460" type="player_proxy">
+                                    <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
+                                    <param id="1" name="Timer">&quot;nightTimer&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="629372816605126">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="493351194313778" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="211168772388271" type="player_proxy">
+                                    <param id="0" name="Instance variable">dayNight</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;day&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="2" name="Start" sid="799393340336164" type="player_proxy">
+                                    <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
+                                    <param id="1" name="Timer">&quot;dayTimer&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="612001138115381">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="Is timer running" sid="796198863206856" type="player_proxy">
+                            <param id="0" name="Timer">&quot;nightTimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="429885913644629" type="bg_tween">
+                            <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="755873324584884">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="693430721122828" type="System">
+                                    <param id="0" name="First value">player_proxy.Timer.ElapsedPercent(&quot;nightTimer&quot;)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0.5</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="578704348449079" type="shadow">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;player&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="638912612623173" type="shadow">
+                                    <param id="0" name="X">player_proxy.X-player_proxy.Width*player_proxy.Timer.ElapsedPercent(&quot;nightTimer&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="599268281597627">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="219556747000739" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="430131995899802" type="shadow">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;player&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="892275972519435" type="shadow">
+                                    <param id="0" name="X">player_proxy.X-(player_proxy.Width)*player_proxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="710695582203850">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="978130618310541" type="System">
+                                    <param id="0" name="Object">bg_day</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="423526358117342" type="bg_day">
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.ElapsedPercent(&quot;nightTimer&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="209685382443015">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="598724981992774" type="System">
+                                    <param id="0" name="Object">bg_night</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="471874694625113" type="bg_night">
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="411497728622040">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="990617590713092" type="player_proxy">
+                            <param id="0" name="Timer">&quot;nightTimer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="222306865079095" type="player_proxy">
+                            <param id="0" name="Instance variable">dayNight</param>
+                            <param id="1" name="Value">&quot;day&quot;</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="125642526239556" type="player_proxy">
+                            <param id="0" name="Time">Function.Call(&quot;dayTime&quot;)</param>
+                            <param id="1" name="Timer">&quot;stayTimer&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="685501037914123">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="322432018769349" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="560548372797937" type="player_proxy">
+                            <param id="0" name="Name">&quot;move&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="533721378756048">
+                            <conditions>
+                                <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="704672140250233" type="player_proxy">
+                                    <param id="0" name="Timer">&quot;distance&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Timer" id="2" name="Start" sid="860293612321778" type="player_proxy">
+                                    <param id="0" name="Time">0.01</param>
+                                    <param id="1" name="Timer">&quot;distance&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="485948747059554" type="player_proxy">
+                                    <param id="0" name="Instance variable">moveDistance</param>
+                                    <param id="1" name="Value">0.02</param>
+                                </action>
+                                <action id="0" name="Call function" sid="265061183348503" type="Function">
+                                    <param id="0" name="Name">&quot;distanceUI&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="371126363486503">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="328596642252529" type="System">
+                                    <param id="0" name="Object">bg_1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="278349996396260" type="bg_1">
+                                    <param id="0" name="X">Self.X-60*dt </param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="193675963963449">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="995985812361873" type="bg_1">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
+                                            <param id="0" name="X">1134</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="587319255960326">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="917733750186090" type="player_proxy">
+                                                    <param id="0" name="Instance variable">moveDistance</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">Self.jungleDis</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="422492135245752">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="608631292453795" type="bg_2">
+                                                            <param id="0" name="Instance variable">actionID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;jungle&quot;</param>
+                                                        </condition>
+                                                        <condition id="-33" name="Pick by comparison" sid="791537795081066" type="System">
+                                                            <param id="0" name="Object">bg_2</param>
+                                                            <param id="1" name="Expression">bg_2.PickedCount</param>
+                                                            <param id="2" name="Comparison">3</param>
+                                                            <param id="3" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                </event-block>
+                                                <event-block sid="217263431794640">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="372161634547988" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-3" name="Create object" sid="148350593055628" type="System">
+                                                            <param id="0" name="Object to create">bg_2</param>
+                                                            <param id="1" name="Layer">bg_1.LayerName</param>
+                                                            <param id="2" name="X">1134</param>
+                                                            <param id="3" name="Y">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="530696651477947" type="bg_1">
+                                                            <param id="0" name="Instance variable">groupID</param>
+                                                            <param id="1" name="Value">&quot;bg&quot;</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="327447101806633" type="bg_1">
+                                                            <param id="0" name="Instance variable">actionID</param>
+                                                            <param id="1" name="Value">&quot;jungle&quot;</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="914935846140659" type="bg_1" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="459222645075463">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="655788789370600" type="System">
+                                    <param id="0" name="Object">bg_2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="459828493495321" type="bg_2">
+                                    <param id="0" name="X">Self.X-60*dt </param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="417748383502165">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="460723728099217" type="bg_2">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="874079131341739" type="bg_2">
+                                            <param id="0" name="X">1134</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="662116184266010">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="289088099703028" type="System">
+                                    <param id="0" name="Object">bg_day</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="976913682603606" type="bg_day">
+                                    <param id="0" name="X">Self.X-30*dt </param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="256651105044986">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="307670523590789" type="bg_day">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="157909263469450" type="bg_day">
+                                            <param id="0" name="X">1134</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="661885103736473">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="694114368196084" type="System">
+                                    <param id="0" name="Object">bg_night</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="698963135349670" type="bg_night">
+                                    <param id="0" name="X">Self.X-30*dt </param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="777509258710062">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="333710821464146" type="bg_night">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="968958282132998" type="bg_night">
+                                            <param id="0" name="X">1134</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="930036176914099" title="pause">
+            <sub-events>
+                <event-block sid="470508083561893">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="502828752469191" type="Touch">
+                            <param id="0" name="Object">btns</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="216975646761051" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="212404933076653">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="734414732710063" type="btns">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;pause&quot;</param>
+                                </condition>
+                                <condition behavior="animationFSM" id="7" inverted="1" name="Compare current state" sid="869526303250762" type="player_proxy">
+                                    <param id="0" name="Name">&quot;search&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="643376936815785">
+                                    <conditions>
+                                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="918745299102447" type="player_proxy">
+                                            <param id="0" name="Name">&quot;move&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="798735269371241" type="Function">
+                                            <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                            <param id="1" name="Parameter {n}">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="785423419376527">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="261051543616371" type="System" />
+                                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="903516872410773" type="player_proxy">
+                                            <param id="0" name="Name">&quot;pause&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="856400568331397" type="Function">
+                                            <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                            <param id="1" name="Parameter {n}">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="462675132152822">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="643561026890337" type="btns">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;backpack&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="213599217817643">
+                                    <conditions>
+                                        <condition id="-10" name="Compare opacity" sid="398612493655046" type="btns">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="774991042752171" type="btns">
+                                            <param id="0" name="Opacity">40</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="354741662646819" type="Function">
+                                            <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;column&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="717002848553544">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="973809828607087" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="655751330693129" type="btns">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="502777078148920" type="Function">
+                                            <param id="0" name="Name">&quot;destroyItem&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="828169281532222" title="search">
+            <sub-events>
+                <event-block sid="702431015071049">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="745759963021714" type="Touch">
+                            <param id="0" name="Object">item</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="683561995008160" type="item">
+                            <param id="0" name="Comparison">1</param>
+                            <param id="1" name="Number">1</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="922247635323748" type="Touch">
+                            <param id="0" name="Object">btn_pause</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="375512327496739" type="Touch">
+                            <param id="0" name="Object">ui_item</param>
+                        </condition>
+                        <condition behavior="animationFSM" id="7" inverted="1" name="Compare current state" sid="622473132646195" type="player_proxy">
+                            <param id="0" name="Name">&quot;search&quot;</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="515552865694884" type="player_proxy">
+                            <param id="0" name="Name">&quot;combat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="361907751114613" type="Function">
+                            <param id="0" name="Name">&quot;playerMove&quot;</param>
+                            <param id="1" name="Parameter {n}">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="423485905297415">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="575753739921048" type="System">
+                                    <param id="0" name="First value">distance(player_proxy.X,player_proxy.Y,item.X,item.Y)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">300</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="597240105986003" type="player_proxy">
+                                    <param id="0" name="Name">&quot;search&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="502694431442154" type="System">
+                                    <param id="0" name="Object to create">item_progressBg</param>
+                                    <param id="1" name="Layer">item.LayerName</param>
+                                    <param id="2" name="X">item.X-item.Width/2</param>
+                                    <param id="3" name="Y">item.Y-item.Height/1.8</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="409652545679276" type="item_progressBg">
+                                    <param id="0" name="Width">192</param>
+                                    <param id="1" name="Height">32</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="993530137242196" type="item_progressBg">
+                                    <param id="0" name="Instance variable">Puid</param>
+                                    <param id="1" name="Value">item.UID</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="747532856637336" type="System">
+                                    <param id="0" name="Object to create">item_progress</param>
+                                    <param id="1" name="Layer">item.LayerName</param>
+                                    <param id="2" name="X">item_progressBg.X</param>
+                                    <param id="3" name="Y">item_progressBg.Y</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="395756806628392" type="item_progress">
+                                    <param id="0" name="Width">item_progressBg.Width</param>
+                                    <param id="1" name="Height">item_progressBg.Height</param>
+                                </action>
+                                <action behavior="Timer" id="2" name="Start" sid="510790260753939" type="item_progress">
+                                    <param id="0" name="Time">2</param>
+                                    <param id="1" name="Timer">&quot;_search&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="812356747586140" type="item_progress">
+                                    <param id="0" name="Instance variable">Puid</param>
+                                    <param id="1" name="Value">item.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="282408008533065">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="166605646156120" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="671139949565997" type="Function">
+                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;我需要再靠近一些&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="643323966426988">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="965361187667005" type="System">
+                            <param id="0" name="Object">item_progress</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="148503343554043">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="Is timer running" sid="615126271606557" type="item_progress">
+                                    <param id="0" name="Timer">&quot;_search&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="559232367482699" type="item_progress">
+                                    <param id="0" name="Width">192*Self.Timer.ElapsedPercent(&quot;_search&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="205550839058595">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="489420826373977" type="item_progress">
+                            <param id="0" name="Timer">&quot;_search&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="667145515496186" type="item_progress" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="545551055699564">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="557319835276603" type="item_progressBg">
+                                    <param id="0" name="Instance variable">Puid</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">item_progress.Puid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="718798403334703" type="item_progressBg" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="502096189808208">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="865121107316906" type="item">
+                                    <param id="0" name="Unique ID">item_progress.Puid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="259712271711381" type="Function">
+                                    <param id="0" name="Name">&quot;randItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">choose(&quot;fruits&quot;,&quot;coconut&quot;,&quot;egg&quot;){###}item.randRate{###}item.itemCount</param>
+                                </action>
+                                <action disabled="1" id="0" name="Call function" sid="875407684931372" type="Function">
+                                    <param id="0" name="Name">&quot;randItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">item.item{###}item.randRate{###}item.itemCount</param>
+                                </action>
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="820305579047143" type="player_proxy">
+                                    <param id="0" name="Name">&quot;idle&quot;</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="154730213759461" type="item">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action behavior="Fade" id="0" name="Restart fade" sid="979196013198350" type="item" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <variable constant="0" name="createItemTime" sid="349492969715706" static="0" type="number">9</variable>
+                <event-block sid="113605935947698">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="122105833157247" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="167538691668216" type="player_proxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="212292999013885" type="player_proxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="778465336597545" type="player_proxy">
+                            <param id="0" name="Time">int(random(createItemTime-3,createItemTime+3))</param>
+                            <param id="1" name="Timer">&quot;getItem&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="134402125834962">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_proxy">
+                            <param id="0" name="Timer">&quot;getItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="533454811417940" type="player_proxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="327012752372787" type="System">
+                            <param id="0" name="Object to create">item</param>
+                            <param id="1" name="Layer">&quot;game&quot;</param>
+                            <param id="2" name="X">1300</param>
+                            <param id="3" name="Y">random(420,600)</param>
+                        </action>
+                        <action id="0" name="Sort all Objects in layer by Y" sid="824499155509265" type="ZSorter">
+                            <param id="0" name="Layer">&quot;game&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="232924656955798">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="389748494653536" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="949487008321721" type="player_proxy">
+                            <param id="0" name="Name">&quot;move&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="508755093592370">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="531408137324893" type="System">
+                                    <param id="0" name="Object">item</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="698507866076654" type="item">
+                                    <param id="0" name="X">Self.X-60*dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="230229336000061" title="enemy">
+            <sub-events>
+                <comment></comment>
+                <variable constant="0" name="createEnemyTime" sid="994717593950124" static="0" type="number">15</variable>
+                <event-block sid="266018639757432">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="344193036219462" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="950021477764580" type="player_proxy">
+                            <param id="0" name="Instance variable">getEnemy</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="873306671204019" type="player_proxy">
+                            <param id="0" name="Instance variable">getEnemy</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="374230324941309" type="player_proxy">
+                            <param id="0" name="Time">int(random(createEnemyTime-3,createEnemyTime+3))</param>
+                            <param id="1" name="Timer">&quot;getEnemy&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="394976641308997">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="817593148181625" type="player_proxy">
+                            <param id="0" name="Timer">&quot;getEnemy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="962416467552644" type="player_proxy">
+                            <param id="0" name="Instance variable">getEnemy</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="691272744033101" type="System">
+                            <param id="0" name="Object to create">enemy</param>
+                            <param id="1" name="Layer">&quot;bg_2&quot;</param>
+                            <param id="2" name="X">1300</param>
+                            <param id="3" name="Y">280</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="751094805425462" type="enemy">
+                            <param id="0" name="Animation">&quot;hide&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="534429856576500" type="enemy">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Value">&quot;enemy&quot;</param>
+                        </action>
+                        <action behavior="FSM" id="11" name="Go to state" sid="586541709583339" type="enemy">
+                            <param id="0" name="Name">&quot;idle&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="311805158309637">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="455859021449078" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="520113227831705" type="player_proxy">
+                            <param id="0" name="Name">&quot;move&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="143617145446704">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="300786570183863" type="System">
+                                    <param id="0" name="Object">enemy</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="503263516623015" type="enemy">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;enemy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="547851034755485" type="enemy">
+                                    <param id="0" name="X">Self.X-60*dt</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="336667580685557">
+                                    <conditions>
+                                        <condition behavior="FSM" id="7" name="Compare current state" sid="958482282745264" type="enemy">
+                                            <param id="0" name="Name">&quot;idle&quot;</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="211116869145287" type="System">
+                                            <param id="0" name="First value">distance(enemy.X,enemy.Y,player_proxy.X,player_proxy.Y)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">400</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="959444387093747" type="Function">
+                                            <param id="0" name="Name">&quot;playerMove&quot;</param>
+                                            <param id="1" name="Parameter {n}">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="226830126313021" type="Function">
+                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;小心！！！&quot;</param>
+                                        </action>
+                                        <action behavior="actionFSM" id="11" name="Go to state" sid="439194691815857" type="player_proxy">
+                                            <param id="0" name="Name">&quot;combat&quot;</param>
+                                        </action>
+                                        <action behavior="FSM" id="11" name="Go to state" sid="955757048427578" type="enemy">
+                                            <param id="0" name="Name">&quot;appear&quot;</param>
+                                        </action>
+                                        <action behavior="MoveTo" id="4" name="Move to XY" sid="980104205557413" type="enemy">
+                                            <param id="0" name="X">Self.X</param>
+                                            <param id="1" name="Y">Self.Y-500</param>
+                                        </action>
+                                        <action id="12" name="Vibrate" sid="315707905928323" type="Browser">
+                                            <param id="0" name="Pattern">&quot;80,40,80&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="767357362808448">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="994188909239154" type="enemy">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">-800</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="108055042858300" type="enemy" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="882510827404602">
+                    <conditions>
+                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="572352291410122" type="enemy" />
+                        <condition id="-7" name="Compare instance variable" sid="182933212285197" type="enemy">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;enemy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="790317781003821">
+                            <conditions>
+                                <condition behavior="FSM" id="7" name="Compare current state" sid="871766649592010" type="enemy">
+                                    <param id="0" name="Name">&quot;appear&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="FSM" id="11" name="Go to state" sid="371661489509909" type="enemy">
+                                    <param id="0" name="Name">&quot;land&quot;</param>
+                                </action>
+                                <action id="-26" name="Move to layer" sid="671606311025510" type="enemy">
+                                    <param id="0" name="Layer">&quot;game&quot;</param>
+                                </action>
+                                <action behavior="MoveTo" id="4" name="Move to XY" sid="600720886835826" type="enemy">
+                                    <param id="0" name="X">Self.X</param>
+                                    <param id="1" name="Y">Self.Y+600</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="526439260382820">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="881628242930415" type="System" />
+                                <condition behavior="FSM" id="7" name="Compare current state" sid="392198281234998" type="enemy">
+                                    <param id="0" name="Name">&quot;land&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="FSM" id="11" name="Go to state" sid="326842087367026" type="enemy">
+                                    <param id="0" name="Name">&quot;attack&quot;</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="794520418589754" type="enemy">
+                                    <param id="0" name="Object">shadow</param>
+                                    <param id="1" name="Layer">enemy.LayerName</param>
+                                    <param id="2" name="Image point">&quot;shadow&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="688972189215727" type="shadow">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;enemy&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="101487529162094" type="shadow">
+                                    <param id="0" name="Instance variable">Puid</param>
+                                    <param id="1" name="Value">enemy.UID</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="722008374377632" type="shadow">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">enemy</param>
+                                </action>
+                                <action id="0" name="Call function" sid="190771790001431" type="Function">
+                                    <param id="0" name="Name">&quot;inCombat&quot;</param>
+                                    <param id="1" name="Parameter {n}">enemy.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="241968830640250">
+                    <conditions>
+                        <condition id="0" name="On function" sid="267013654151806" type="Function">
+                            <param id="0" name="Name">&quot;inCombat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="191188028247913" type="System">
+                            <param id="0" name="Object to create">blackBg</param>
+                            <param id="1" name="Layer">&quot;topUI&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="564398486752932" type="blackBg">
+                            <param id="0" name="Instance variable">Puid</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="490240839061521" type="blackBg">
+                            <param id="0" name="Width">1136</param>
+                            <param id="1" name="Height">640</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="107688104430692" type="blackBg">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.8</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="606357790174844">
+                    <conditions>
+                        <condition behavior="Flash" id="1" name="On flash ended" sid="690680220784397" type="blackBg" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="798194252144188" type="blackBg" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="419691930515414">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="967830415418274" type="enemy">
+                                    <param id="0" name="Unique ID">blackBg.Puid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="987689730626112" type="enemy" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="145617916153780">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="978079159553405" type="shadow">
+                                            <param id="0" name="Instance variable">Puid</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">enemy.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="253324007593703" type="shadow" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="883700691675577">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="435443180392415" type="Function">
+                                    <param id="0" name="Name">&quot;savePlayer&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Add key" sid="339461354991324" type="Dictionary">
+                                    <param id="0" name="Key">&quot;beforeCombat&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="140097088793777" type="Dictionary">
+                                    <param id="0" name="Key">&quot;itemTimer&quot;</param>
+                                    <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;getItem&quot;)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="365625039427871" type="Dictionary">
+                                    <param id="0" name="Key">&quot;enemyTimer&quot;</param>
+                                    <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;getEnemy&quot;)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="961272318348517" type="Dictionary">
+                                    <param id="0" name="Key">&quot;dayNight&quot;</param>
+                                    <param id="1" name="Value">player_proxy.dayNight</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="564410948848093">
+                                    <conditions>
+                                        <condition behavior="Timer" id="0" name="Is timer running" sid="421834878727003" type="player_proxy">
+                                            <param id="0" name="Timer">&quot;dayTimer&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" sid="423385117879106" type="Dictionary">
+                                            <param id="0" name="Key">&quot;dayTimer&quot;</param>
+                                            <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;dayTimer&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="638450409799142">
+                                    <conditions>
+                                        <condition behavior="Timer" id="0" name="Is timer running" sid="730540974937386" type="player_proxy">
+                                            <param id="0" name="Timer">&quot;nightTimer&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" sid="537070387041539" type="Dictionary">
+                                            <param id="0" name="Key">&quot;nightTimer&quot;</param>
+                                            <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;nightTimer&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="529088098841231">
+                                    <conditions>
+                                        <condition behavior="Timer" id="0" name="Is timer running" sid="901572059599991" type="player_proxy">
+                                            <param id="0" name="Timer">&quot;stayTimer&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" sid="995722034636058" type="Dictionary">
+                                            <param id="0" name="Key">&quot;stayTimer&quot;</param>
+                                            <param id="1" name="Value">player_proxy.Timer.Remainder(&quot;stayTimer&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="716822769369058">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="186123412103183" type="System">
+                                            <param id="0" name="Seconds">0</param>
+                                        </action>
+                                        <action id="-2" name="Go to layout" sid="188962376800383" type="System">
+                                            <param id="0" name="Layout">combat</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="421412782927476" title="shadow">
+            <sub-events>
+                <event-block sid="569368584195750">
+                    <conditions>
+                        <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="692949206698650" type="player_proxy">
+                            <param id="0" name="Timer">&quot;shadow&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="2" name="Start" sid="238079138939495" type="player_proxy">
+                            <param id="0" name="Time">15</param>
+                            <param id="1" name="Timer">&quot;shadow&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="716504783528719">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="322139937064242" type="player_proxy">
+                            <param id="0" name="Timer">&quot;shadow&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="658189487066528" type="System">
+                            <param id="0" name="Object to create">enemy</param>
+                            <param id="1" name="Layer">&quot;bg_forward&quot;</param>
+                            <param id="2" name="X">1300</param>
+                            <param id="3" name="Y">440</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="658324777982560" type="enemy">
+                            <param id="0" name="Animation">&quot;shadow&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="226600999451660" type="enemy">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Value">&quot;shadow&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="662516176385712" type="enemy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Value">999</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="186317020388853" type="enemy">
+                            <param id="0" name="Scale">2</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="913805446404467" type="enemy">
+                            <param id="0" name="Time">0.5</param>
+                            <param id="1" name="Timer">&quot;move&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="972692593730890">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="274862700879794" type="enemy">
+                            <param id="0" name="Timer">&quot;move&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="537292331802741" type="enemy" />
+                        <action id="0" name="Add key" sid="615720643313522" type="Dictionary">
+                            <param id="0" name="Key">&quot;bossEnemy&quot;</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="280080159619838">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="929722760913231" type="System">
+                            <param id="0" name="Object">enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="223628950568270">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="Is timer running" sid="742246844120089" type="enemy">
+                                    <param id="0" name="Timer">&quot;move&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="843799729464957" type="enemy">
+                                    <param id="0" name="X">lerp(1300,-150,Self.Timer.ElapsedPercent(&quot;move&quot;))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

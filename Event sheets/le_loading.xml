@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>le_loading</name>
+    <events>
+        <include>e_sound</include>
+        <event-block sid="414541683908536">
+            <conditions>
+                <condition id="6" name="On update ready" sid="488308680418258" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="9" name="Reload" sid="850525951285371" type="Browser" />
+            </actions>
+        </event-block>
+        <variable constant="0" name="loadCompleted" sid="188075732612864" static="0" type="number">0</variable>
+        <event-block sid="202411284113889">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="446401017014441" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="776787011386615">
+                    <conditions />
+                    <actions>
+                        <action id="4" name="Preload" sid="815230407098447" type="Audio">
+                            <param id="0" name="Audio file">alone</param>
+                        </action>
+                        <action id="4" name="Preload" sid="425297346456827" type="Audio">
+                            <param id="0" name="Audio file">combat</param>
+                        </action>
+                        <action id="4" name="Preload" sid="973103871530669" type="Audio">
+                            <param id="0" name="Audio file">nextbg</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="278916269155556">
+                            <conditions>
+                                <condition id="1" name="Preloads complete" sid="600889837463598" type="Audio" />
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="977388230701788" type="System">
+                                    <param id="0" name="Layout">plot</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

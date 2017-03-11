@@ -12,6 +12,7 @@
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
@@ -89,6 +90,7 @@
                 <instance-variable name="dayNight" sid="756742600591684" type="string" />
                 <instance-variable name="DodgeRate" sid="864065221079858" type="number" />
                 <instance-variable name="name" sid="949080086808693" type="string" />
+                <instance-variable name="jungleDis" sid="386314129986318" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="actionFSM" sid="153148587235937">
@@ -192,6 +194,9 @@
         </object-type>
         <object-type global="1" name="TimeLine" sid="324923768728432">
             <plugin id="Rex_TimeLine" />
+            <instance-variables>
+                <instance-variable name="diyValue" sid="279779038061040" type="string" />
+            </instance-variables>
         </object-type>
         <object-type name="player_skin" sid="250622074366556">
             <plugin id="Sprite" />
@@ -274,6 +279,12 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <image-point name="shadow" x="0.532" y="1.02" />
                     </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="shadow" pingpong="0" repeatcount="1" repeatto="0" sid="959620498742033" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="enemy_4" pingpong="0" repeatcount="1" repeatto="0" sid="825518962992872" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -422,6 +433,13 @@
             <plugin id="NinePatch" />
             <texture />
         </object-type>
+        <object-type name="bg_2" sid="260914530959441">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Audio" sid="631631585288913">
+            <plugin id="Audio" />
+        </object-type>
     </object-folder>
     <families>
         <family name="txts" plugin-id="Text" sid="270727115053159">
@@ -464,6 +482,7 @@
         <family name="bgs" plugin-id="TiledBg" sid="679559079734112">
             <members>
                 <member>bg_1</member>
+                <member>bg_2</member>
                 <member>bg_combat1</member>
                 <member>bg_day</member>
                 <member>bg_mask</member>
@@ -544,6 +563,8 @@
                 <instance-variable name="maxHp" sid="681147668022997" type="number" />
                 <instance-variable name="atk" sid="743560507304885" type="number" />
                 <instance-variable name="MaxAtk" sid="578902262247195" type="number" />
+                <instance-variable name="acitionID" sid="332693527184222" type="string" />
+                <instance-variable name="groupID" sid="123953561451205" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="FSM" sid="856670421644751">
@@ -635,18 +656,23 @@
         <layout>credit.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>e_game.xml</event-sheet>
-        <event-sheet>e_loading.xml</event-sheet>
-        <event-sheet>e_combat.xml</event-sheet>
-        <event-sheet>e_player.xml</event-sheet>
-        <event-sheet>e_fadeInOut.xml</event-sheet>
-        <event-sheet>e_bubbleImformation.xml</event-sheet>
-        <event-sheet>e_item.xml</event-sheet>
-        <event-sheet>e_ui.xml</event-sheet>
-        <event-sheet>e_start&amp;end.xml</event-sheet>
-        <event-sheet>e_plot.xml</event-sheet>
-        <event-sheet>e_leaderboard.xml</event-sheet>
-        <event-sheet>e_credit.xml</event-sheet>
+        <event-folder name="layout">
+            <event-sheet>le_combat.xml</event-sheet>
+            <event-sheet>le_credit.xml</event-sheet>
+            <event-sheet>le_game.xml</event-sheet>
+            <event-sheet>le_loading.xml</event-sheet>
+            <event-sheet>le_plot.xml</event-sheet>
+        </event-folder>
+        <event-folder name="event">
+            <event-sheet>e_bubbleImformation.xml</event-sheet>
+            <event-sheet>e_fadeInOut.xml</event-sheet>
+            <event-sheet>e_item.xml</event-sheet>
+            <event-sheet>e_leaderboard.xml</event-sheet>
+            <event-sheet>e_player.xml</event-sheet>
+            <event-sheet>e_sound.xml</event-sheet>
+            <event-sheet>e_start&amp;end.xml</event-sheet>
+            <event-sheet>e_ui.xml</event-sheet>
+        </event-folder>
     </event-folder>
     <global-instances>
         <global-instance type="Function" uid="7" />
@@ -659,8 +685,29 @@
         <global-instance type="Browser" uid="11" />
         <global-instance type="Keyboard" uid="14" />
         <global-instance type="LocalStorage" uid="32" />
+        <global-instance type="Audio" uid="59">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="alone.m4a" />
+        <file name="alone.ogg" />
+        <file name="combat.m4a" />
+        <file name="combat.ogg" />
+        <file name="nextbg.m4a" />
+        <file name="nextbg.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">

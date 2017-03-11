@@ -5,27 +5,6 @@
     <events>
         <event-group description="" sid="942615062199412" title="leaderboard">
             <sub-events>
-                <event-block sid="562930809643180">
-                    <conditions>
-                        <condition id="3" name="On key released" sid="456177011213122" type="Keyboard">
-                            <param id="0" name="Key">76 (L)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="813629527368663" type="Function">
-                            <param id="0" name="Name">&quot;writeName&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action disabled="1" id="0" name="Call function" sid="864045896929958" type="Function">
-                            <param id="0" name="Name">&quot;closeLB&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action disabled="1" id="0" name="Call function" sid="990660530699517" type="Function">
-                            <param id="0" name="Name">&quot;createLB&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;tt85|381|1,&#x0D;&#x0A;tt67|326|2,&#x0D;&#x0A;tt29|323|3,&#x0D;&#x0A;tt1|286|4,&#x0D;&#x0A;z|233|5,&#x0D;&#x0A;z5|233|6,&#x0D;&#x0A;z3|223.2|7,&#x0D;&#x0A;z4|220|8,&#x0D;&#x0A;z2|213|9,&#x0D;&#x0A;tt17|205|10,&#x0D;&#x0A;tt79|177|11,&#x0D;&#x0A;tt64|132|12,&#x0D;&#x0A;tt62|114|13,&#x0D;&#x0A;tt54|109|14,&#x0D;&#x0A;sdf|12.7|15,&#x0D;&#x0A;hha|8.52|16,&#x0D;&#x0A;haha|8.4|17,&#x0D;&#x0A;2333|8.32|18,&#x0D;&#x0A;22a|7.48|19,&#x0D;&#x0A;dff|7.18|20,&#x0D;&#x0A;sdfg|6.72|21,&#x0D;&#x0A;hh22|3.98|22,&#x0D;&#x0A;myRank:21&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="206076996528742">
                     <conditions>
                         <condition id="0" name="On function" sid="435008323875497" type="Function">
@@ -445,18 +424,22 @@
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;myRank&quot;</param>
                                 </action>
+                                <action id="2" name="Set font face" sid="114406738914001" type="txt_left">
+                                    <param id="0" name="Font face">&quot;微软雅黑&quot;</param>
+                                    <param id="1" name="Style">0</param>
+                                </action>
                                 <action id="-7" name="Set size" sid="255869571276920" type="txt_left">
-                                    <param id="0" name="Width">160</param>
-                                    <param id="1" name="Height">50</param>
+                                    <param id="0" name="Width">200</param>
+                                    <param id="1" name="Height">100</param>
                                 </action>
                                 <action id="4" name="Set font color" sid="690858315003237" type="txt_left">
                                     <param id="0" name="Color">rgb(0,255,0)</param>
                                 </action>
                                 <action id="3" name="Set font size" sid="409022182046832" type="txt_left">
-                                    <param id="0" name="Size (pt)">20</param>
+                                    <param id="0" name="Size (pt)">18</param>
                                 </action>
                                 <action id="0" name="Set text" sid="929012508014661" type="txt_left">
-                                    <param id="0" name="Text">tokenat(rankList,rankCount+1,&quot;,&quot;)</param>
+                                    <param id="0" name="Text">replace(tokenat(rankList,rankCount,&quot;,&quot;),&quot;myRank:&quot;,&quot;&quot;)</param>
                                 </action>
                                 <action id="-3" name="Create object" sid="716548200239995" type="System">
                                     <param id="0" name="Object to create">txt_left</param>
@@ -472,9 +455,13 @@
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;name&quot;</param>
                                 </action>
+                                <action id="2" name="Set font face" sid="125115067983476" type="txt_left">
+                                    <param id="0" name="Font face">&quot;微软雅黑&quot;</param>
+                                    <param id="1" name="Style">0</param>
+                                </action>
                                 <action id="-7" name="Set size" sid="494003272334366" type="txt_left">
                                     <param id="0" name="Width">160</param>
-                                    <param id="1" name="Height">50</param>
+                                    <param id="1" name="Height">100</param>
                                 </action>
                                 <action id="3" name="Set font size" sid="881598293877226" type="txt_left">
                                     <param id="0" name="Size (pt)">20</param>
@@ -499,9 +486,13 @@
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;score&quot;</param>
                                 </action>
+                                <action id="2" name="Set font face" sid="520406200303982" type="txt_left">
+                                    <param id="0" name="Font face">&quot;微软雅黑&quot;</param>
+                                    <param id="1" name="Style">0</param>
+                                </action>
                                 <action id="-7" name="Set size" sid="534334815731980" type="txt_left">
                                     <param id="0" name="Width">160</param>
-                                    <param id="1" name="Height">50</param>
+                                    <param id="1" name="Height">100</param>
                                 </action>
                                 <action id="3" name="Set font size" sid="909740177614636" type="txt_left">
                                     <param id="0" name="Size (pt)">20</param>

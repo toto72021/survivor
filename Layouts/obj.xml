@@ -322,7 +322,7 @@
                 <instance type="enemy" uid="30">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
+                        <initial-animation>shadow</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -331,6 +331,8 @@
                         <maxHp>5</maxHp>
                         <atk>3</atk>
                         <MaxAtk>3</MaxAtk>
+                        <acitionID></acitionID>
+                        <groupID></groupID>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="FSM">
@@ -381,8 +383,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>892</x>
-                        <y>291</y>
+                        <x>-150</x>
+                        <y>540</y>
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
@@ -771,7 +773,7 @@
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
-                        <wrapping>Word</wrapping>
+                        <wrapping>Character</wrapping>
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
@@ -825,7 +827,7 @@
                         <horizontal-alignment>Right</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Right</hotspot>
-                        <wrapping>Word</wrapping>
+                        <wrapping>Character</wrapping>
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
@@ -879,7 +881,7 @@
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Left</hotspot>
-                        <wrapping>Word</wrapping>
+                        <wrapping>Character</wrapping>
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
@@ -933,7 +935,7 @@
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Left</hotspot>
-                        <wrapping>Word</wrapping>
+                        <wrapping>Character</wrapping>
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
@@ -1048,7 +1050,7 @@
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Left</hotspot>
-                        <wrapping>Word</wrapping>
+                        <wrapping>Character</wrapping>
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
@@ -1118,6 +1120,33 @@
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>0.400000006</opacity>
+                    </world>
+                </instance>
+                <instance type="bg_2" uid="58">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <instance-variables>
+                        <groupID>bg</groupID>
+                        <actionID></actionID>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Persist" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-408</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <width>404</width>
+                        <height>640</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
                     </world>
                 </instance>
             </instances>

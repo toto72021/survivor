@@ -2,7 +2,7 @@
 <c2layout>
     <name>game</name>
     <sid>383762086566382</sid>
-    <event-sheet>e_game</event-sheet>
+    <event-sheet>le_game</event-sheet>
     <size>
         <width>1708</width>
         <height>960</height>
@@ -286,8 +286,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <hp>10</hp>
-                        <maxHp>10</maxHp>
+                        <hp>7</hp>
+                        <maxHp>7</maxHp>
                         <energy>0</energy>
                         <maxEnergy>20</maxEnergy>
                         <hungry>0</hungry>
@@ -300,6 +300,7 @@
                         <dayNight>day</dayNight>
                         <DodgeRate>30</DodgeRate>
                         <name>player</name>
+                        <jungleDis>100</jungleDis>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="actionFSM">
@@ -505,6 +506,24 @@
             <instances />
             <effects />
         </layer>
+        <layer name="bg_forward" sid="718032072886027">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
     </layers>
     <nonworld-instances>
         <instance type="Array_item" uid="9">
@@ -518,6 +537,9 @@
             <properties>
                 <game-time>Yes</game-time>
             </properties>
+            <instance-variables>
+                <diyValue></diyValue>
+            </instance-variables>
         </instance>
         <instance type="ZSorter" uid="24">
             <properties>

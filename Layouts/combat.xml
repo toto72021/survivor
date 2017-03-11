@@ -2,7 +2,7 @@
 <c2layout>
     <name>combat</name>
     <sid>411952869703147</sid>
-    <event-sheet>e_combat</event-sheet>
+    <event-sheet>le_combat</event-sheet>
     <size>
         <width>1708</width>
         <height>960</height>
@@ -83,8 +83,8 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <hp>10</hp>
-                        <maxHp>10</maxHp>
+                        <hp>7</hp>
+                        <maxHp>7</maxHp>
                         <energy>0</energy>
                         <maxEnergy>20</maxEnergy>
                         <hungry>0</hungry>
@@ -97,6 +97,7 @@
                         <dayNight>day</dayNight>
                         <DodgeRate>30</DodgeRate>
                         <name>player</name>
+                        <jungleDis>100</jungleDis>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="actionFSM">
