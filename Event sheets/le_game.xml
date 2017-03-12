@@ -177,7 +177,7 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="543398267745174">
+                        <event-block disabled="1" sid="543398267745174">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="959901625491921" type="System">
                                     <param id="0" name="First value">player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
@@ -196,7 +196,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="833773850233697">
+                        <event-block disabled="1" sid="833773850233697">
                             <conditions>
                                 <condition id="-22" name="Else" sid="799700030718860" type="System" />
                                 <condition id="-7" name="Compare instance variable" sid="495448421912998" type="shadow">
@@ -310,7 +310,7 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="755873324584884">
+                        <event-block disabled="1" sid="755873324584884">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="693430721122828" type="System">
                                     <param id="0" name="First value">player_proxy.Timer.ElapsedPercent(&quot;nightTimer&quot;)</param>
@@ -329,7 +329,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="599268281597627">
+                        <event-block disabled="1" sid="599268281597627">
                             <conditions>
                                 <condition id="-22" name="Else" sid="219556747000739" type="System" />
                                 <condition id="-7" name="Compare instance variable" sid="430131995899802" type="shadow">
@@ -444,7 +444,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
-                                            <param id="0" name="X">1134</param>
+                                            <param id="0" name="X">self.Width</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -482,14 +482,14 @@
                                                         <action id="-3" name="Create object" sid="148350593055628" type="System">
                                                             <param id="0" name="Object to create">bg_2</param>
                                                             <param id="1" name="Layer">bg_1.LayerName</param>
-                                                            <param id="2" name="X">1134</param>
+                                                            <param id="2" name="X">bg_1.x</param>
                                                             <param id="3" name="Y">0</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="530696651477947" type="bg_1">
+                                                        <action id="-10" name="Set value" sid="530696651477947" type="bg_2">
                                                             <param id="0" name="Instance variable">groupID</param>
                                                             <param id="1" name="Value">&quot;bg&quot;</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="327447101806633" type="bg_1">
+                                                        <action id="-10" name="Set value" sid="327447101806633" type="bg_2">
                                                             <param id="0" name="Instance variable">actionID</param>
                                                             <param id="1" name="Value">&quot;jungle&quot;</param>
                                                         </action>
@@ -523,7 +523,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-1" name="Set X" sid="874079131341739" type="bg_2">
-                                            <param id="0" name="X">1134</param>
+                                            <param id="0" name="X">self.Width</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -976,9 +976,9 @@
                         </action>
                         <action id="-3" name="Create object" sid="691272744033101" type="System">
                             <param id="0" name="Object to create">enemy</param>
-                            <param id="1" name="Layer">&quot;bg_2&quot;</param>
+                            <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">280</param>
+                            <param id="3" name="Y">380</param>
                         </action>
                         <action id="4" name="Set animation" sid="751094805425462" type="enemy">
                             <param id="0" name="Animation">&quot;hide&quot;</param>

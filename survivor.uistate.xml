@@ -11,20 +11,20 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">UI</layout>
-        <layout order="1">obj</layout>
-        <layout order="2">game</layout>
-        <layout order="10">combat</layout>
-        <layout order="13">loading</layout>
-        <layout order="14">credit</layout>
-        <event-sheet active="1" order="3">le_game</event-sheet>
-        <event-sheet order="4">e_player</event-sheet>
-        <event-sheet order="5">le_combat</event-sheet>
-        <event-sheet order="6">e_item</event-sheet>
-        <event-sheet order="7">e_start&amp;end</event-sheet>
-        <event-sheet order="8">e_ui</event-sheet>
-        <event-sheet order="9">e_leaderboard</event-sheet>
-        <event-sheet order="11">le_loading</event-sheet>
-        <event-sheet order="12">e_sound</event-sheet>
+        <layout order="1">game</layout>
+        <layout order="9">combat</layout>
+        <layout order="12">loading</layout>
+        <layout order="13">credit</layout>
+        <layout order="14">obj</layout>
+        <event-sheet active="1" order="2">le_game</event-sheet>
+        <event-sheet order="3">e_player</event-sheet>
+        <event-sheet order="4">le_combat</event-sheet>
+        <event-sheet order="5">e_item</event-sheet>
+        <event-sheet order="6">e_start&amp;end</event-sheet>
+        <event-sheet order="7">e_ui</event-sheet>
+        <event-sheet order="8">e_leaderboard</event-sheet>
+        <event-sheet order="10">le_loading</event-sheet>
+        <event-sheet order="11">e_sound</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -47,13 +47,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/plugins/" />
-        <folder expanded="0" path="object-folder/bg/" />
+        <folder expanded="1" path="object-folder/bg/" />
         <folder expanded="0" path="object-folder/particle/" />
-        <folder expanded="0" path="object-folder/player/" />
-        <folder expanded="0" path="object-folder/txt/" />
+        <folder expanded="1" path="object-folder/player/" />
+        <folder expanded="1" path="object-folder/txt/" />
         <folder expanded="1" path="object-folder/ui/" />
-        <folder expanded="0" path="object-folder/combat/" />
-        <folder expanded="0" path="layout-folder/" />
+        <folder expanded="1" path="object-folder/combat/" />
+        <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="0" path="event-folder/layout/" />
         <folder expanded="0" path="event-folder/event/" />

@@ -117,11 +117,11 @@
         <object-folder name="bg">
             <object-type name="bg_1" sid="792114711608954">
                 <plugin id="TiledBg" />
-                <texture />
+                <texture original-source="C:\Users\Administrator\Desktop\survivor\bg1.png" />
             </object-type>
             <object-type name="bg_2" sid="260914530959441">
                 <plugin id="TiledBg" />
-                <texture />
+                <texture original-source="D:\totoyan\C2\C2inWorks\JPG\地图\2bg.png" />
             </object-type>
             <object-type name="bg_combat1" sid="654576039205668">
                 <plugin id="TiledBg" />
@@ -129,7 +129,7 @@
             </object-type>
             <object-type name="bg_day" sid="230569613314526">
                 <plugin id="TiledBg" />
-                <texture />
+                <texture original-source="C:\Users\Administrator\Desktop\survivor\day.png" />
             </object-type>
             <object-type name="bg_mask" sid="740781980721511">
                 <plugin id="TiledBg" />
@@ -137,7 +137,7 @@
             </object-type>
             <object-type name="bg_night" sid="326030262491086">
                 <plugin id="TiledBg" />
-                <texture />
+                <texture original-source="C:\Users\Administrator\Desktop\survivor\night.png" />
             </object-type>
             <object-type name="bg_tween" sid="522231890089693">
                 <plugin id="TiledBg" />
@@ -433,10 +433,11 @@
             <object-type name="enemy" sid="758094540637594">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="hide" pingpong="0" repeatcount="1" repeatto="0" sid="649247560765272" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="shadow" x="0.532" y="1.02" />
+                    <animation framecount="2" loop="1" name="hide" pingpong="0" repeatcount="1" repeatto="0" sid="649247560765272" speed="2">
+                        <frame duration="1" hotspotX="0.501845" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\survivor\enemy_1_1.png">
+                            <image-point name="shadow" x="0.531365" y="1.02" />
                         </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.503448" original-source="C:\Users\Administrator\Desktop\survivor\enemy_1_2.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="enemy_1" pingpong="0" repeatcount="1" repeatto="0" sid="647950284889834" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
