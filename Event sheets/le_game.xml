@@ -1290,7 +1290,7 @@
                     </conditions>
                     <actions>
                         <action behavior="Timer" id="2" name="Start" sid="238079138939495" type="player_proxy">
-                            <param id="0" name="Time">15</param>
+                            <param id="0" name="Time">20</param>
                             <param id="1" name="Timer">&quot;shadow&quot;</param>
                             <param id="2" name="Repeat">1</param>
                         </action>
@@ -1339,9 +1339,13 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="537292331802741" type="enemy" />
+                        <action id="-11" name="Add to" sid="881117822591235" type="player_proxy">
+                            <param id="0" name="Instance variable">vsBoss</param>
+                            <param id="1" name="Value">20</param>
+                        </action>
                         <action id="0" name="Add key" sid="615720643313522" type="Dictionary">
                             <param id="0" name="Key">&quot;bossEnemy&quot;</param>
-                            <param id="1" name="Value">10</param>
+                            <param id="1" name="Value">player_proxy.vsBoss</param>
                         </action>
                     </actions>
                 </event-block>

@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.03091</version>
+    <version>1.0.0.0312</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -225,6 +225,7 @@
                     <instance-variable name="DodgeRate" sid="864065221079858" type="number" />
                     <instance-variable name="name" sid="949080086808693" type="string" />
                     <instance-variable name="jungleDis" sid="386314129986318" type="number" />
+                    <instance-variable name="vsBoss" sid="458967737310218" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="actionFSM" sid="153148587235937">

@@ -750,9 +750,13 @@
                         <action id="-16" name="Wait" sid="796517178045709" type="System">
                             <param id="0" name="Seconds">0</param>
                         </action>
-                        <action id="0" name="Call function" sid="325250577764224" type="Function">
+                        <action disabled="1" id="0" name="Call function" sid="325250577764224" type="Function">
                             <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="556610897022258" type="Function">
+                            <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;credit&quot;</param>
                         </action>
                     </actions>
                 </event-block>

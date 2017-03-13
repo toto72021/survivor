@@ -123,6 +123,10 @@
                             <param id="0" name="Pin to">player_proxy</param>
                             <param id="1" name="Mode">1</param>
                         </action>
+                        <action id="-10" name="Set value" sid="891514922828090" type="player_proxy">
+                            <param id="0" name="Instance variable">vsBoss</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="458793353960623">
