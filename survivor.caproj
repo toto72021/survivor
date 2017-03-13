@@ -377,17 +377,14 @@
             <object-type name="item" sid="633495286332799">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="box" pingpong="0" repeatcount="1" repeatto="0" sid="566895108284491" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
                     <animation framecount="1" loop="0" name="item1" pingpong="0" repeatcount="1" repeatto="0" sid="725706218239883" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\物件\item1.png" />
+                        <frame duration="1" hotspotX="0.484" hotspotY="0.726316" original-source="C:\Users\totoyan\Desktop\JPG\物件\item1.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="item2" pingpong="0" repeatcount="1" repeatto="0" sid="391148996954806" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\物件\item2.png" />
+                        <frame duration="1" hotspotX="0.516" hotspotY="0.825" original-source="C:\Users\totoyan\Desktop\JPG\物件\item2.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="item3" pingpong="0" repeatcount="1" repeatto="0" sid="216294309101656" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\物件\item3.png" />
+                        <frame duration="1" hotspotX="0.44" hotspotY="0.641667" original-source="C:\Users\totoyan\Desktop\JPG\物件\item3.png" />
                     </animation>
                 </animation-folder>
             </object-type>

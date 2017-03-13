@@ -294,6 +294,9 @@
                             <param id="0" name="Width">100</param>
                             <param id="1" name="Height">32</param>
                         </action>
+                        <action id="4" name="Set font color" sid="317845464994897" type="txt_right">
+                            <param id="0" name="Color">rgb(255, 255,255)</param>
+                        </action>
                         <action id="0" name="Set text" sid="201395005956125" type="txt_right">
                             <param id="0" name="Text">&quot;攻击:&quot;&amp;enemy.atk</param>
                         </action>
@@ -643,7 +646,7 @@
                                     <param id="0" name="Color">rgb(255,0,0)</param>
                                 </action>
                                 <action id="0" name="Set text" sid="292613837323190" type="txt_center">
-                                    <param id="0" name="Text">Function.Param(0)</param>
+                                    <param id="0" name="Text">attack.atk</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="497572731023819" type="txt_center">
                                     <param id="0" name="Width">100</param>

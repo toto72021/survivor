@@ -376,7 +376,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
-                                            <param id="0" name="X">self.Width</param>
+                                            <param id="0" name="X">self.Width-2</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -454,7 +454,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-1" name="Set X" sid="874079131341739" type="bg_2">
-                                            <param id="0" name="X">self.Width</param>
+                                            <param id="0" name="X">self.Width-2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -909,7 +909,7 @@
                             <param id="0" name="Object to create">enemy</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">380</param>
+                            <param id="3" name="Y">480</param>
                         </action>
                         <action id="4" name="Set animation" sid="751094805425462" type="enemy">
                             <param id="0" name="Animation">&quot;hide&quot;</param>
@@ -962,7 +962,7 @@
                                         <condition id="-8" name="Compare two values" sid="211116869145287" type="System">
                                             <param id="0" name="First value">distance(enemy.X,enemy.Y,player_proxy.X,player_proxy.Y)</param>
                                             <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">400</param>
+                                            <param id="2" name="Second value">300</param>
                                         </condition>
                                     </conditions>
                                     <actions>
