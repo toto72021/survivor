@@ -231,7 +231,7 @@
                             <param id="0" name="Object to create">enemy</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">-160</param>
-                            <param id="3" name="Y">120</param>
+                            <param id="3" name="Y">220</param>
                         </action>
                         <action id="4" name="Set animation" sid="564451236572148" type="enemy">
                             <param id="0" name="Animation">Function.Param(0)</param>
@@ -646,7 +646,7 @@
                                     <param id="0" name="Color">rgb(255,0,0)</param>
                                 </action>
                                 <action id="0" name="Set text" sid="292613837323190" type="txt_center">
-                                    <param id="0" name="Text">attack.atk</param>
+                                    <param id="0" name="Text">&quot;-&quot;&amp;attack.atk</param>
                                 </action>
                                 <action id="-7" name="Set size" sid="497572731023819" type="txt_center">
                                     <param id="0" name="Width">100</param>

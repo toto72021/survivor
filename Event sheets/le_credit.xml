@@ -88,7 +88,7 @@
                                 </action>
                                 <action id="-7" name="Set size" sid="258072449227971" type="txt_center">
                                     <param id="0" name="Width">120</param>
-                                    <param id="1" name="Height">50</param>
+                                    <param id="1" name="Height">150</param>
                                 </action>
                                 <action id="3" name="Set font size" sid="808152721615406" type="txt_center">
                                     <param id="0" name="Size (pt)">24</param>

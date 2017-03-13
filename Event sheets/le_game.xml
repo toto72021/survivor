@@ -825,7 +825,7 @@
                             <param id="0" name="Object to create">item</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">random(420,600)</param>
+                            <param id="3" name="Y">random(500,620)</param>
                         </action>
                         <action id="4" name="Set animation" sid="732895526669729" type="item">
                             <param id="0" name="Animation">&quot;item&quot;&amp;str(int(random(4)))</param>
@@ -909,9 +909,9 @@
                             <param id="0" name="Object to create">enemy</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">480</param>
+                            <param id="3" name="Y">400</param>
                         </action>
-                        <action id="4" name="Set animation" sid="751094805425462" type="enemy">
+                        <action id="4" name="Set animation" sid="931404661489923" type="enemy">
                             <param id="0" name="Animation">&quot;hide&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
@@ -922,6 +922,7 @@
                         <action behavior="FSM" id="11" name="Go to state" sid="586541709583339" type="enemy">
                             <param id="0" name="Name">&quot;idle&quot;</param>
                         </action>
+                        <action id="-25" name="Move to bottom" sid="751094805425462" type="enemy" />
                     </actions>
                 </event-block>
                 <event-block sid="311805158309637">
@@ -1045,6 +1046,7 @@
                                 <action behavior="FSM" id="11" name="Go to state" sid="326842087367026" type="enemy">
                                     <param id="0" name="Name">&quot;attack&quot;</param>
                                 </action>
+                                <action id="-24" name="Move to top" sid="129387282640783" type="enemy" />
                                 <action id="0" name="Call function" sid="190771790001431" type="Function">
                                     <param id="0" name="Name">&quot;inCombat&quot;</param>
                                     <param id="1" name="Parameter {n}">enemy.UID</param>
