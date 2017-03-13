@@ -709,6 +709,11 @@
         <file name="combat.ogg" />
         <file name="nextbg.m4a" />
         <file name="nextbg.ogg" />
+        <file name="bag.m4a" />
+        <file name="drink.m4a" />
+        <file name="getItem.m4a" />
+        <file name="getItem.ogg" />
+        <file name="hit.m4a" />
     </sounds-folder>
     <music-folder />
     <files-folder>
