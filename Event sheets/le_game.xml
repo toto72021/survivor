@@ -375,15 +375,12 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action disabled="1" id="-1" name="Set X" sid="851866427931559" type="bg_1">
+                                        <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
                                             <param id="0" name="X">self.Width</param>
-                                        </action>
-                                        <action id="-1" name="Set X" sid="812235267900709" type="bg_1">
-                                            <param id="0" name="X">1753</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block disabled="1" sid="587319255960326">
+                                        <event-block sid="587319255960326">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="917733750186090" type="player_proxy">
                                                     <param id="0" name="Instance variable">moveDistance</param>
@@ -393,7 +390,7 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <event-block disabled="1" sid="422492135245752">
+                                                <event-block sid="422492135245752">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="608631292453795" type="bg_2">
                                                             <param id="0" name="Instance variable">actionID</param>
@@ -408,7 +405,7 @@
                                                     </conditions>
                                                     <actions />
                                                 </event-block>
-                                                <event-block disabled="1" sid="217263431794640">
+                                                <event-block sid="217263431794640">
                                                     <conditions>
                                                         <condition id="-22" name="Else" sid="372161634547988" type="System" />
                                                     </conditions>
@@ -456,11 +453,8 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action disabled="1" id="-1" name="Set X" sid="874079131341739" type="bg_2">
+                                        <action id="-1" name="Set X" sid="874079131341739" type="bg_2">
                                             <param id="0" name="X">self.Width</param>
-                                        </action>
-                                        <action id="-1" name="Set X" sid="168815750575097" type="bg_2">
-                                            <param id="0" name="X">1097</param>
                                         </action>
                                     </actions>
                                 </event-block>

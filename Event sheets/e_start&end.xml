@@ -124,10 +124,50 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="451237532490308">
+                    <conditions>
+                        <condition id="18" name="On double-tap object" sid="563276247023324" type="Touch">
+                            <param id="0" name="Object">ui_display</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="808973445150364" type="ui_display">
+                            <param id="0" name="Animation">&quot;hp&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="842967294320491" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Value">Self.maxHp</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="457020230073074" type="player_proxy">
+                            <param id="0" name="Instance variable">energy</param>
+                            <param id="1" name="Value">Self.maxEnergy</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="378085944683304" type="player_proxy">
+                            <param id="0" name="Instance variable">hungry</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="620228425648332" title="start&amp;end">
             <sub-events>
+                <event-block sid="886292512784492">
+                    <conditions>
+                        <condition id="18" name="On double-tap object" sid="942489119538658" type="Touch">
+                            <param id="0" name="Object">player_proxy</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="541079847545095" type="player_proxy">
+                            <param id="0" name="Name">&quot;pause&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="938871088030972" type="Function">
+                            <param id="0" name="Name">&quot;openGM&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="544832395571041">
                     <conditions>
                         <condition id="0" name="On function" sid="262728182704197" type="Function">
@@ -203,6 +243,19 @@
                         </condition>
                         <condition id="2" name="Key is down" sid="909964838163359" type="Keyboard">
                             <param id="0" name="Key">71 (G)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="291127062924784" type="Function">
+                            <param id="0" name="Name">&quot;openGM&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="617546653847760">
+                    <conditions>
+                        <condition id="0" name="On function" sid="825748707045288" type="Function">
+                            <param id="0" name="Name">&quot;openGM&quot;</param>
                         </condition>
                     </conditions>
                     <actions>

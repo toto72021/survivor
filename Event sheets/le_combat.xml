@@ -278,6 +278,9 @@
                             <param id="0" name="Instance variable">actionID</param>
                             <param id="1" name="Value">&quot;hp&quot;</param>
                         </action>
+                        <action id="4" name="Set font color" sid="234513837758308" type="txt_right">
+                            <param id="0" name="Color">rgb(255, 255,255)</param>
+                        </action>
                         <action id="0" name="Set text" sid="119743910074895" type="txt_right">
                             <param id="0" name="Text">&quot;生命:&quot;&amp;enemy.hp</param>
                         </action>
@@ -327,6 +330,9 @@
                             <param id="0" name="Width">100</param>
                             <param id="1" name="Height">32</param>
                         </action>
+                        <action id="4" name="Set font color" sid="316273507403708" type="txt_left">
+                            <param id="0" name="Color">rgb(255, 255,255)</param>
+                        </action>
                         <action id="-3" name="Create object" sid="521780455871855" type="System">
                             <param id="0" name="Object to create">txt_left</param>
                             <param id="1" name="Layer">&quot;ui2&quot;</param>
@@ -344,6 +350,9 @@
                         <action id="-7" name="Set size" sid="266912017455601" type="txt_left">
                             <param id="0" name="Width">100</param>
                             <param id="1" name="Height">32</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="522557741862418" type="txt_left">
+                            <param id="0" name="Color">rgb(255, 255,255)</param>
                         </action>
                         <action id="-3" name="Create object" sid="155658700456497" type="System">
                             <param id="0" name="Object to create">btn_pause</param>
@@ -616,6 +625,53 @@
                                     <param id="0" name="Instance variable">hp</param>
                                     <param id="1" name="Value">attack.atk</param>
                                 </action>
+                                <action id="-3" name="Create object" sid="950289526748896" type="System">
+                                    <param id="0" name="Object to create">txt_center</param>
+                                    <param id="1" name="Layer">&quot;fx&quot;</param>
+                                    <param id="2" name="X">enemy.X+enemy.Width/2</param>
+                                    <param id="3" name="Y">enemy.Y</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="857104071771294" type="txt_center">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;player&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="361268096026336" type="txt_center">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;hurt&quot;</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="196947788022765" type="txt_center">
+                                    <param id="0" name="Color">rgb(255,0,0)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="292613837323190" type="txt_center">
+                                    <param id="0" name="Text">Function.Param(0)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="497572731023819" type="txt_center">
+                                    <param id="0" name="Width">100</param>
+                                    <param id="1" name="Height">64</param>
+                                </action>
+                                <action id="2" name="Set font face" sid="585010192831247" type="txt_center">
+                                    <param id="0" name="Font face">&quot;Arial&quot;</param>
+                                    <param id="1" name="Style">1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="167551416808921" type="txt_center">
+                                    <param id="0" name="Size (pt)">32</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="879643838852746" type="txt_center">
+                                    <param id="0" name="Angle">random(30,90)</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="884172933010322" type="txt_center">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Fade" id="2" name="Set fade-in time" sid="952137940931937" type="txt_center">
+                                    <param id="0" name="Fade-in time">0.2</param>
+                                </action>
+                                <action behavior="Fade" id="3" name="Set wait time" sid="297519661910270" type="txt_center">
+                                    <param id="0" name="Wait time">1</param>
+                                </action>
+                                <action behavior="Fade" id="4" name="Set fade-out time" sid="539684692392347" type="txt_center">
+                                    <param id="0" name="Fade-out time">0.5</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="231397571826821" type="txt_center" />
                             </actions>
                             <sub-events>
                                 <event-block sid="530765414554739">
@@ -643,6 +699,14 @@
                                                 <action id="0" name="Call function" sid="806435152091691" type="Function">
                                                     <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
                                                     <param id="1" name="Parameter {n}">&quot;恭喜你找到生机！完成游戏！&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="170375963860664" type="System">
+                                                    <param id="0" name="Seconds">2.1</param>
+                                                </action>
+                                                <action id="-45" name="Reset persisted objects" sid="141241278510286" type="System" />
+                                                <action id="0" name="Call function" sid="508892771611379" type="Function">
+                                                    <param id="0" name="Name">&quot;writeName&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
                                                 </action>
                                             </actions>
                                         </event-block>

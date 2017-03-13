@@ -250,7 +250,7 @@
                         <x>1753</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>1136</width>
+                        <width>1753</width>
                         <height>640</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -300,7 +300,7 @@
                         <dayNight>day</dayNight>
                         <DodgeRate>30</DodgeRate>
                         <name>player</name>
-                        <jungleDis>200</jungleDis>
+                        <jungleDis>100</jungleDis>
                         <vsBoss>0</vsBoss>
                     </instance-variables>
                     <behavior-instances>
