@@ -2,11 +2,11 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0312</version>
+    <version>1.0.0.0312.1</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
-    <app-id>com.mycompany.myapp</app-id>
+    <app-id>cn.imssr.survivor</app-id>
     <unique-id>314ocrib9g874</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
@@ -125,7 +125,7 @@
             </object-type>
             <object-type name="bg_combat1" sid="654576039205668">
                 <plugin id="TiledBg" />
-                <texture />
+                <texture original-source="C:\Users\totoyan\Desktop\JPG\角色\combg2.png" />
             </object-type>
             <object-type name="bg_day" sid="230569613314526">
                 <plugin id="TiledBg" />
@@ -276,30 +276,16 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="2" loop="1" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="179162898176752" speed="2">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\1.png" />
+                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
                     </animation>
                     <animation framecount="2" loop="1" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="272374131060706" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
+                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\6.png" />
                     </animation>
-                    <animation framecount="1" loop="0" name="combat" pingpong="0" repeatcount="1" repeatto="0" sid="427618566345965" speed="5">
-                        <frame duration="1" hotspotX="0.47" hotspotY="0.48">
-                            <collision-poly>
-                                <point x="0.204" y="0.02" />
-                                <point x="0.796" y="0.02" />
-                                <point x="0.796" y="0.984" />
-                                <point x="0.204" y="0.984" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="shadow" sid="805201375927247">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="shadow" pingpong="0" repeatcount="1" repeatto="0" sid="444675749474803" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="2" loop="0" name="combat" pingpong="0" repeatcount="1" repeatto="0" sid="427618566345965" speed="5">
+                        <frame duration="1" hotspotX="0.651613" hotspotY="0.384342" original-source="C:\Users\totoyan\Desktop\JPG\角色\c1.png" />
+                        <frame duration="1" hotspotX="0.741935" hotspotY="0.380783" original-source="C:\Users\totoyan\Desktop\JPG\角色\c2.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -441,18 +427,18 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.503448" original-source="C:\Users\Administrator\Desktop\survivor\enemy_1_2.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="enemy_1" pingpong="0" repeatcount="1" repeatto="0" sid="647950284889834" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="shadow" x="0.532" y="1.02" />
+                        <frame duration="1" hotspotX="0.502703" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\角色\enemy2.png">
+                            <image-point name="shadow" x="0.52973" y="1.02" />
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="enemy_2" pingpong="0" repeatcount="1" repeatto="0" sid="931145470582140" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="shadow" x="0.532" y="1.02" />
+                        <frame duration="1" hotspotX="0.503401" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\角色\enemy1.png">
+                            <image-point name="shadow" x="0.530612" y="1.02" />
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="enemy_3" pingpong="0" repeatcount="1" repeatto="0" sid="161298102273545" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="shadow" x="0.532" y="1.02" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\角色\enemy4.png">
+                            <image-point name="shadow" x="0.532468" y="1.02" />
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="shadow" pingpong="0" repeatcount="1" repeatto="0" sid="959620498742033" speed="5">
@@ -654,24 +640,6 @@
                 <instance-variable name="actionID" sid="872824750397700" type="string" />
             </instance-variables>
         </family>
-        <family name="shadows" plugin-id="Sprite" sid="949890086132860">
-            <members>
-                <member>shadow</member>
-            </members>
-            <instance-variables>
-                <instance-variable name="groupID" sid="816840386846760" type="string" />
-                <instance-variable name="actionID" sid="783910296511479" type="string" />
-                <instance-variable name="Puid" sid="409204220788504" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Persist" sid="654916746508500">
-                    <behavior id="Persist" />
-                </behavior-type>
-                <behavior-type name="Pin" sid="209268641723901">
-                    <behavior id="Pin" />
-                </behavior-type>
-            </behaviors>
-        </family>
         <family name="txtboxs" plugin-id="TextBox" sid="141676281492049">
             <members>
                 <member>TextBox</member>
@@ -748,9 +716,6 @@
     <music-folder />
     <files-folder>
         <file-folder name="Icons">
-            <file name="icon-16.png" />
-            <file name="icon-32.png" />
-            <file name="icon-114.png" />
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />

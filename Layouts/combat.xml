@@ -97,7 +97,7 @@
                         <dayNight>day</dayNight>
                         <DodgeRate>30</DodgeRate>
                         <name>player</name>
-                        <jungleDis>100</jungleDis>
+                        <jungleDis>200</jungleDis>
                         <vsBoss>0</vsBoss>
                     </instance-variables>
                     <behavior-instances>

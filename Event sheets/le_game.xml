@@ -177,40 +177,6 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block disabled="1" sid="543398267745174">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="959901625491921" type="System">
-                                    <param id="0" name="First value">player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">0.5</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="654916261077204" type="shadow">
-                                    <param id="0" name="Instance variable">groupID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;player&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="455755602713690" type="shadow">
-                                    <param id="0" name="X">player_proxy.X-player_proxy.Width*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="833773850233697">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="799700030718860" type="System" />
-                                <condition id="-7" name="Compare instance variable" sid="495448421912998" type="shadow">
-                                    <param id="0" name="Instance variable">groupID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;player&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="600895458703091" type="shadow">
-                                    <param id="0" name="X">player_proxy.X-(player_proxy.Width)*player_proxy.Timer.RemainderPercent(&quot;dayTimer&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="614493654268831">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="865011141890268" type="System">
@@ -310,40 +276,6 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block disabled="1" sid="755873324584884">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="693430721122828" type="System">
-                                    <param id="0" name="First value">player_proxy.Timer.ElapsedPercent(&quot;nightTimer&quot;)</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">0.5</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="578704348449079" type="shadow">
-                                    <param id="0" name="Instance variable">groupID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;player&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="638912612623173" type="shadow">
-                                    <param id="0" name="X">player_proxy.X-player_proxy.Width*player_proxy.Timer.ElapsedPercent(&quot;nightTimer&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="599268281597627">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="219556747000739" type="System" />
-                                <condition id="-7" name="Compare instance variable" sid="430131995899802" type="shadow">
-                                    <param id="0" name="Instance variable">groupID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;player&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="892275972519435" type="shadow">
-                                    <param id="0" name="X">player_proxy.X-(player_proxy.Width)*player_proxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="710695582203850">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="978130618310541" type="System">
@@ -443,12 +375,15 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
+                                        <action disabled="1" id="-1" name="Set X" sid="851866427931559" type="bg_1">
                                             <param id="0" name="X">self.Width</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="812235267900709" type="bg_1">
+                                            <param id="0" name="X">1753</param>
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="587319255960326">
+                                        <event-block disabled="1" sid="587319255960326">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="917733750186090" type="player_proxy">
                                                     <param id="0" name="Instance variable">moveDistance</param>
@@ -458,23 +393,22 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <event-block sid="422492135245752">
+                                                <event-block disabled="1" sid="422492135245752">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="608631292453795" type="bg_2">
                                                             <param id="0" name="Instance variable">actionID</param>
                                                             <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">&quot;jungle&quot;</param>
                                                         </condition>
-                                                        <condition id="-33" name="Pick by comparison" sid="791537795081066" type="System">
-                                                            <param id="0" name="Object">bg_2</param>
-                                                            <param id="1" name="Expression">bg_2.PickedCount</param>
-                                                            <param id="2" name="Comparison">3</param>
-                                                            <param id="3" name="Value">1</param>
+                                                        <condition id="-8" name="Compare two values" sid="556160283252731" type="System">
+                                                            <param id="0" name="First value">bg_2.Count</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Second value">2</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions />
                                                 </event-block>
-                                                <event-block sid="217263431794640">
+                                                <event-block disabled="1" sid="217263431794640">
                                                     <conditions>
                                                         <condition id="-22" name="Else" sid="372161634547988" type="System" />
                                                     </conditions>
@@ -522,8 +456,11 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-1" name="Set X" sid="874079131341739" type="bg_2">
+                                        <action disabled="1" id="-1" name="Set X" sid="874079131341739" type="bg_2">
                                             <param id="0" name="X">self.Width</param>
+                                        </action>
+                                        <action id="-1" name="Set X" sid="168815750575097" type="bg_2">
+                                            <param id="0" name="X">1097</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1114,23 +1051,6 @@
                                 <action behavior="FSM" id="11" name="Go to state" sid="326842087367026" type="enemy">
                                     <param id="0" name="Name">&quot;attack&quot;</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="794520418589754" type="enemy">
-                                    <param id="0" name="Object">shadow</param>
-                                    <param id="1" name="Layer">enemy.LayerName</param>
-                                    <param id="2" name="Image point">&quot;shadow&quot;</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="688972189215727" type="shadow">
-                                    <param id="0" name="Instance variable">groupID</param>
-                                    <param id="1" name="Value">&quot;enemy&quot;</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="101487529162094" type="shadow">
-                                    <param id="0" name="Instance variable">Puid</param>
-                                    <param id="1" name="Value">enemy.UID</param>
-                                </action>
-                                <action id="-29" name="Move to object" sid="722008374377632" type="shadow">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Object">enemy</param>
-                                </action>
                                 <action id="0" name="Call function" sid="190771790001431" type="Function">
                                     <param id="0" name="Name">&quot;inCombat&quot;</param>
                                     <param id="1" name="Parameter {n}">enemy.UID</param>
@@ -1184,20 +1104,6 @@
                             <actions>
                                 <action id="-9" name="Destroy" sid="987689730626112" type="enemy" />
                             </actions>
-                            <sub-events>
-                                <event-block sid="145617916153780">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="978079159553405" type="shadow">
-                                            <param id="0" name="Instance variable">Puid</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">enemy.UID</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Destroy" sid="253324007593703" type="shadow" />
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                         <event-block sid="883700691675577">
                             <conditions />
@@ -1290,7 +1196,7 @@
                     </conditions>
                     <actions>
                         <action behavior="Timer" id="2" name="Start" sid="238079138939495" type="player_proxy">
-                            <param id="0" name="Time">20</param>
+                            <param id="0" name="Time">40</param>
                             <param id="1" name="Timer">&quot;shadow&quot;</param>
                             <param id="2" name="Repeat">1</param>
                         </action>
@@ -1307,7 +1213,7 @@
                             <param id="0" name="Object to create">enemy</param>
                             <param id="1" name="Layer">&quot;bg_forward&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">440</param>
+                            <param id="3" name="Y">500</param>
                         </action>
                         <action id="4" name="Set animation" sid="658324777982560" type="enemy">
                             <param id="0" name="Animation">&quot;shadow&quot;</param>
@@ -1341,7 +1247,7 @@
                         <action id="-9" name="Destroy" sid="537292331802741" type="enemy" />
                         <action id="-11" name="Add to" sid="881117822591235" type="player_proxy">
                             <param id="0" name="Instance variable">vsBoss</param>
-                            <param id="1" name="Value">20</param>
+                            <param id="1" name="Value">10</param>
                         </action>
                         <action id="0" name="Add key" sid="615720643313522" type="Dictionary">
                             <param id="0" name="Key">&quot;bossEnemy&quot;</param>
