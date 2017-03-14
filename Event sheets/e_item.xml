@@ -118,6 +118,10 @@
                             <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;获得物资 &quot;&amp;Function.Param(0)&amp;&quot; X&quot;&amp;Function.Param(1)</param>
                         </action>
+                        <action id="0" name="Call function" sid="494548973492914" type="Function">
+                            <param id="0" name="Name">&quot;playEffectSound&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;getItem&quot;</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <variable constant="0" name="findItem" sid="602574618039731" static="0" type="number">0</variable>
@@ -303,6 +307,10 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="0" name="Call function" sid="507985340413576" type="Function">
+                                            <param id="0" name="Name">&quot;playEffectSound&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;drink&quot;</param>
+                                        </action>
                                         <action id="0" name="Call function" sid="484449967632506" type="Function">
                                             <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
                                             <param id="1" name="Parameter {n}">&quot;使用物资 &quot;&amp;Function.Param(0)</param>

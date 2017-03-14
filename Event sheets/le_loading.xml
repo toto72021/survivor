@@ -31,6 +31,9 @@
                         <action id="4" name="Preload" sid="973103871530669" type="Audio">
                             <param id="0" name="Audio file">nextbg</param>
                         </action>
+                        <action id="4" name="Preload" sid="137530871720381" type="Audio">
+                            <param id="0" name="Audio file">getItem</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="278916269155556">

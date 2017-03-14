@@ -623,6 +623,10 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="0" name="Call function" sid="206177752762895" type="Function">
+                                            <param id="0" name="Name">&quot;playEffectSound&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;hit&quot;</param>
+                                        </action>
                                         <action id="-11" name="Add to" sid="687812364742808" type="player_proxy">
                                             <param id="0" name="Instance variable">hp</param>
                                             <param id="1" name="Value">Function.Param(0)</param>
