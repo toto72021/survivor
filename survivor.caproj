@@ -29,6 +29,7 @@
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="video" version="1">Video</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -355,7 +356,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="play" pingpong="0" repeatcount="1" repeatto="0" sid="697180827613888" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502857" hotspotY="0.509091" original-source="C:\Users\Administrator\Desktop\survivor\continue.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="pause" pingpong="0" repeatcount="1" repeatto="0" sid="554265679689329" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -369,22 +370,31 @@
                     <animation framecount="1" loop="0" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="480566859820105" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="1" loop="0" name="Animation2" pingpong="0" repeatcount="1" repeatto="0" sid="991328496164161" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="item" sid="633495286332799">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="item1" pingpong="0" repeatcount="1" repeatto="0" sid="725706218239883" speed="5">
-                        <frame duration="1" hotspotX="0.516" hotspotY="0.921053" original-source="C:\Users\totoyan\Desktop\JPG\物件\item1.png" />
+                    <animation framecount="3" loop="0" name="item1" pingpong="1" repeatcount="1" repeatto="0" sid="725706218239883" speed="0">
+                        <frame duration="1" hotspotX="0.534483" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou0.png" />
+                        <frame duration="1" hotspotX="0.530435" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou1.png" />
+                        <frame duration="1" hotspotX="0.534483" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou2.png" />
                     </animation>
-                    <animation framecount="1" loop="0" name="item2" pingpong="0" repeatcount="1" repeatto="0" sid="391148996954806" speed="5">
-                        <frame duration="1" hotspotX="0.556" hotspotY="0.9125" original-source="C:\Users\totoyan\Desktop\JPG\物件\item2.png" />
+                    <animation framecount="4" loop="0" name="item2" pingpong="1" repeatcount="1" repeatto="0" sid="391148996954806" speed="0">
+                        <frame duration="1" hotspotX="0.446809" hotspotY="0.884774" original-source="C:\Users\Administrator\Desktop\survivor\coco0.png" />
+                        <frame duration="1" hotspotX="0.485507" hotspotY="0.878261" original-source="C:\Users\Administrator\Desktop\survivor\coco1.png" />
+                        <frame duration="1" hotspotX="0.559748" hotspotY="0.881857" original-source="C:\Users\Administrator\Desktop\survivor\coco2.png" />
+                        <frame duration="1" hotspotX="0.631579" hotspotY="0.885246" original-source="C:\Users\Administrator\Desktop\survivor\coco4.png" />
                     </animation>
-                    <animation framecount="1" loop="0" name="item3" pingpong="0" repeatcount="1" repeatto="0" sid="216294309101656" speed="5">
-                        <frame duration="1" hotspotX="0.464" hotspotY="0.825" original-source="C:\Users\totoyan\Desktop\JPG\物件\item3.png" />
+                    <animation framecount="3" loop="0" name="item3" pingpong="1" repeatcount="1" repeatto="0" sid="216294309101656" speed="0">
+                        <frame duration="1" hotspotX="0.611511" hotspotY="0.904594" original-source="C:\Users\Administrator\Desktop\survivor\tree0.png" />
+                        <frame duration="1" hotspotX="0.588652" hotspotY="0.90625" original-source="C:\Users\Administrator\Desktop\survivor\tree1.png" />
+                        <frame duration="1" hotspotX="0.574324" hotspotY="0.907534" original-source="C:\Users\Administrator\Desktop\survivor\tree2.png" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="item4" pingpong="0" repeatcount="1" repeatto="0" sid="776798645943354" speed="0">
+                        <frame duration="1" hotspotX="0.528302" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan0.png" />
+                        <frame duration="1" hotspotX="0.528302" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan1.png" />
+                        <frame duration="1" hotspotX="0.52" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan2.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -460,6 +470,9 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-type name="Video" sid="474969304197489">
+            <plugin id="video" />
+        </object-type>
     </object-folder>
     <families>
         <family name="txts" plugin-id="Text" sid="270727115053159">
@@ -721,6 +734,10 @@
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
         </file-folder>
+        <file name="FB.webm" />
     </files-folder>
 </c2project>

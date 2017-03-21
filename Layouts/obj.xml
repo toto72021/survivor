@@ -906,11 +906,11 @@
                         <x>148</x>
                         <y>354</y>
                         <z>0</z>
-                        <width>250</width>
-                        <height>160</height>
+                        <width>141</width>
+                        <height>243</height>
                         <depth>0</depth>
-                        <hotspotX>0.555999994</hotspotX>
-                        <hotspotY>0.912500024</hotspotY>
+                        <hotspotX>0.446808517</hotspotX>
+                        <hotspotY>0.884773672</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
