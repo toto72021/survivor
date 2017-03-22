@@ -1027,7 +1027,7 @@
                             <param id="0" name="Object to create">enemy</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">400</param>
+                            <param id="3" name="Y">460</param>
                         </action>
                         <action id="4" name="Set animation" sid="931404661489923" type="enemy">
                             <param id="0" name="Animation">&quot;hide&quot;</param>
@@ -1149,7 +1149,7 @@
                                 </action>
                                 <action behavior="MoveTo" id="4" name="Move to XY" sid="600720886835826" type="enemy">
                                     <param id="0" name="X">Self.X</param>
-                                    <param id="1" name="Y">Self.Y+600</param>
+                                    <param id="1" name="Y">player_proxy.Y</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1342,7 +1342,10 @@
                             <param id="1" name="Value">999</param>
                         </action>
                         <action id="9" name="Set scale" sid="186317020388853" type="enemy">
-                            <param id="0" name="Scale">2</param>
+                            <param id="0" name="Scale">2.5</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="477430462911272" type="enemy">
+                            <param id="0" name="Opacity">30</param>
                         </action>
                         <action behavior="Timer" id="2" name="Start" sid="913805446404467" type="enemy">
                             <param id="0" name="Time">0.5</param>

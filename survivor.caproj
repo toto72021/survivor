@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0321</version>
+    <version>1.0.0.032103</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -428,10 +428,10 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="1" name="hide" pingpong="0" repeatcount="1" repeatto="0" sid="649247560765272" speed="2">
-                        <frame duration="1" hotspotX="0.501845" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\survivor\enemy_1_1.png">
+                        <frame duration="1" hotspotX="0.501845" hotspotY="1" original-source="C:\Users\Administrator\Desktop\survivor\enemy_1_1.png">
                             <image-point name="shadow" x="0.531365" y="1.02" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.503448" original-source="C:\Users\Administrator\Desktop\survivor\enemy_1_2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator\Desktop\survivor\enemy_1_2.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="enemy_1" pingpong="0" repeatcount="1" repeatto="0" sid="647950284889834" speed="5">
                         <frame duration="1" hotspotX="0.502703" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\角色\enemy2.png">
@@ -736,5 +736,6 @@
             <file name="loading-logo.png" />
         </file-folder>
         <file name="FB.webm" />
+        <file name="fb.mp4" />
     </files-folder>
 </c2project>
