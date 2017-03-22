@@ -624,6 +624,180 @@
         </event-group>
         <event-group description="" sid="828169281532222" title="search">
             <sub-events>
+                <event-block sid="134402125834962">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_proxy">
+                            <param id="0" name="Timer">&quot;getItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="533454811417940" type="player_proxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="327012752372787" type="System">
+                            <param id="0" name="Object to create">item</param>
+                            <param id="1" name="Layer">&quot;game&quot;</param>
+                            <param id="2" name="X">1300</param>
+                            <param id="3" name="Y">random(470,640)</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="732895526669729" type="item">
+                            <param id="0" name="Animation">&quot;item&quot;&amp;str(int(random(2,5)))</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="849888177488642" type="item">
+                            <param id="0" name="Scale">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="165176547391654">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="466307351109534" type="item">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Y co-ordinate">player_proxy.Y+100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="680269651750426" type="item">
+                                    <param id="0" name="Scale">2.2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="774248455950315">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="602733929991344" type="item">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Y co-ordinate">player_proxy.Y-100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="626741456631936" type="item">
+                                    <param id="0" name="Scale">1.8</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>石头没有</comment>
+                        <event-block sid="481877777285939">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="698386323918214" type="item">
+                                    <param id="0" name="Animation">&quot;item1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="892403549492710" type="item">
+                                    <param id="0" name="Instance variable">item</param>
+                                    <param id="1" name="Value">&quot;stone&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="656316486182441" type="item">
+                                    <param id="0" name="Instance variable">randRate</param>
+                                    <param id="1" name="Value">60</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="804244404513240" type="item">
+                                    <param id="0" name="Instance variable">itemCount</param>
+                                    <param id="1" name="Value">int(random(1,4))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="373801879989996">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="971166734485968" type="item">
+                                    <param id="0" name="Animation">&quot;item2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="632756902047099" type="item">
+                                    <param id="0" name="Instance variable">item</param>
+                                    <param id="1" name="Value">&quot;coconut&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="215467378177242" type="item">
+                                    <param id="0" name="Instance variable">randRate</param>
+                                    <param id="1" name="Value">40</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="625120139131145" type="item">
+                                    <param id="0" name="Instance variable">itemCount</param>
+                                    <param id="1" name="Value">int(random(1,4))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="935099035336622">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="122146476583861" type="item">
+                                    <param id="0" name="Animation">&quot;item3&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="956079895608444" type="item">
+                                    <param id="0" name="Instance variable">item</param>
+                                    <param id="1" name="Value">&quot;fruits&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="197330064950962" type="item">
+                                    <param id="0" name="Instance variable">randRate</param>
+                                    <param id="1" name="Value">60</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="158110438712962" type="item">
+                                    <param id="0" name="Instance variable">itemCount</param>
+                                    <param id="1" name="Value">int(random(1,4))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="692916617657638">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="153578868524765" type="item">
+                                    <param id="0" name="Animation">&quot;item4&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="853507358092940" type="item">
+                                    <param id="0" name="Instance variable">item</param>
+                                    <param id="1" name="Value">&quot;egg&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="429846271441279" type="item">
+                                    <param id="0" name="Instance variable">randRate</param>
+                                    <param id="1" name="Value">50</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="202050599408846" type="item">
+                                    <param id="0" name="Instance variable">itemCount</param>
+                                    <param id="1" name="Value">int(random(1,4))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="183397166629048">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Sort all Objects in layer by Y" sid="824499155509265" type="ZSorter">
+                                    <param id="0" name="Layer">&quot;game&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="232924656955798">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="389748494653536" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="949487008321721" type="player_proxy">
+                            <param id="0" name="Name">&quot;move&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="508755093592370">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="531408137324893" type="System">
+                                    <param id="0" name="Object">item</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="698507866076654" type="item">
+                                    <param id="0" name="X">Self.X-60*dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="702431015071049">
                     <conditions>
                         <condition id="3" name="On touched object" sid="745759963021714" type="Touch">
@@ -662,6 +836,9 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="6" name="Set speed" sid="635238191757133" type="item">
+                                    <param id="0" name="Speed">item.AnimationFrameCount</param>
+                                </action>
                                 <action behavior="animationFSM" id="11" name="Go to state" sid="597240105986003" type="player_proxy">
                                     <param id="0" name="Name">&quot;search&quot;</param>
                                 </action>
@@ -764,20 +941,14 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="259712271711381" type="Function">
-                                    <param id="0" name="Name">&quot;randItem&quot;</param>
-                                    <param id="1" name="Parameter {n}">choose(&quot;fruits&quot;,&quot;coconut&quot;,&quot;egg&quot;){###}item.randRate{###}item.itemCount</param>
-                                </action>
-                                <action disabled="1" id="0" name="Call function" sid="875407684931372" type="Function">
+                                <action id="0" name="Call function" sid="875407684931372" type="Function">
                                     <param id="0" name="Name">&quot;randItem&quot;</param>
                                     <param id="1" name="Parameter {n}">item.item{###}item.randRate{###}item.itemCount</param>
                                 </action>
                                 <action behavior="animationFSM" id="11" name="Go to state" sid="820305579047143" type="player_proxy">
                                     <param id="0" name="Name">&quot;idle&quot;</param>
                                 </action>
-                                <action id="5" name="Set frame" sid="154730213759461" type="item">
-                                    <param id="0" name="Frame number">1</param>
-                                </action>
+                                <action id="2" name="Stop" sid="624521066490022" type="item" />
                                 <action behavior="Fade" id="0" name="Restart fade" sid="979196013198350" type="item" />
                             </actions>
                         </event-block>
@@ -809,59 +980,6 @@
                             <param id="2" name="Repeat">1</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="134402125834962">
-                    <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_proxy">
-                            <param id="0" name="Timer">&quot;getItem&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="533454811417940" type="player_proxy">
-                            <param id="0" name="Instance variable">getItem</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-3" name="Create object" sid="327012752372787" type="System">
-                            <param id="0" name="Object to create">item</param>
-                            <param id="1" name="Layer">&quot;game&quot;</param>
-                            <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">random(500,620)</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="732895526669729" type="item">
-                            <param id="0" name="Animation">&quot;item&quot;&amp;str(int(random(4)))</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="0" name="Sort all Objects in layer by Y" sid="824499155509265" type="ZSorter">
-                            <param id="0" name="Layer">&quot;game&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="232924656955798">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="389748494653536" type="player_proxy">
-                            <param id="0" name="Instance variable">hp</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="949487008321721" type="player_proxy">
-                            <param id="0" name="Name">&quot;move&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="508755093592370">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="531408137324893" type="System">
-                                    <param id="0" name="Object">item</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="698507866076654" type="item">
-                                    <param id="0" name="X">Self.X-60*dt</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

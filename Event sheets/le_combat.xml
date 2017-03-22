@@ -990,7 +990,7 @@
                         <action id="-9" name="Destroy" sid="143669072761881" type="btns" />
                         <action id="-3" name="Set position" sid="783959658748702" type="player_proxy">
                             <param id="0" name="X">1296</param>
-                            <param id="1" name="Y">531</param>
+                            <param id="1" name="Y">585</param>
                         </action>
                         <action id="-16" name="Wait" sid="614128268506030" type="System">
                             <param id="0" name="Seconds">0</param>

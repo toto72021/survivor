@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0313</version>
+    <version>1.0.0.0321</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -250,7 +250,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="643726420089173" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
                             <image-point name="shadow" x="0.5" y="1" />
                         </frame>
                     </animation>
@@ -265,28 +265,28 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="7" loop="1" name="move" pingpong="0" repeatcount="1" repeatto="0" sid="332984890256604" speed="7">
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\1.png" />
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\3.png" />
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\4.png" />
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\5.png" />
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\6.png" />
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\7.png" />
+                        <frame duration="1" hotspotX="0.483871" hotspotY="0.857651" original-source="C:\Users\totoyan\Desktop\JPG\角色\1.png" />
+                        <frame duration="1" hotspotX="0.483871" hotspotY="0.857651" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
+                        <frame duration="1" hotspotX="0.483871" hotspotY="0.857651" original-source="C:\Users\totoyan\Desktop\JPG\角色\3.png" />
+                        <frame duration="1" hotspotX="0.483871" hotspotY="0.857651" original-source="C:\Users\totoyan\Desktop\JPG\角色\4.png" />
+                        <frame duration="1" hotspotX="0.483871" hotspotY="0.857651" original-source="C:\Users\totoyan\Desktop\JPG\角色\5.png" />
+                        <frame duration="1" hotspotX="0.483871" hotspotY="0.857651" original-source="C:\Users\totoyan\Desktop\JPG\角色\6.png" />
+                        <frame duration="1" hotspotX="0.483871" hotspotY="0.857651" original-source="C:\Users\totoyan\Desktop\JPG\角色\7.png" />
                     </animation>
                     <animation framecount="1" loop="1" name="search" pingpong="0" repeatcount="1" repeatto="0" sid="499157092028607" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="2" loop="1" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="179162898176752" speed="2">
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\1.png" />
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
+                        <frame duration="1" hotspotX="0.483871" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\1.png" />
+                        <frame duration="1" hotspotX="0.483871" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
                     </animation>
                     <animation framecount="2" loop="1" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="272374131060706" speed="5">
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
-                        <frame duration="1" hotspotX="0.503226" hotspotY="0.501779" original-source="C:\Users\totoyan\Desktop\JPG\角色\6.png" />
+                        <frame duration="1" hotspotX="0.470968" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
+                        <frame duration="1" hotspotX="0.470968" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\6.png" />
                     </animation>
                     <animation framecount="2" loop="0" name="combat" pingpong="0" repeatcount="1" repeatto="0" sid="427618566345965" speed="5">
-                        <frame duration="1" hotspotX="0.651613" hotspotY="0.384342" original-source="C:\Users\totoyan\Desktop\JPG\角色\c1.png" />
-                        <frame duration="1" hotspotX="0.741935" hotspotY="0.380783" original-source="C:\Users\totoyan\Desktop\JPG\角色\c2.png" />
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" original-source="C:\Users\totoyan\Desktop\JPG\角色\c1.png" />
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" original-source="C:\Users\totoyan\Desktop\JPG\角色\c2.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -375,23 +375,23 @@
             <object-type name="item" sid="633495286332799">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="3" loop="0" name="item1" pingpong="1" repeatcount="1" repeatto="0" sid="725706218239883" speed="0">
+                    <animation framecount="3" loop="1" name="item1" pingpong="1" repeatcount="1" repeatto="0" sid="725706218239883" speed="0">
                         <frame duration="1" hotspotX="0.534483" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou0.png" />
                         <frame duration="1" hotspotX="0.530435" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou1.png" />
                         <frame duration="1" hotspotX="0.534483" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou2.png" />
                     </animation>
-                    <animation framecount="4" loop="0" name="item2" pingpong="1" repeatcount="1" repeatto="0" sid="391148996954806" speed="0">
+                    <animation framecount="4" loop="1" name="item2" pingpong="1" repeatcount="1" repeatto="0" sid="391148996954806" speed="0">
                         <frame duration="1" hotspotX="0.446809" hotspotY="0.884774" original-source="C:\Users\Administrator\Desktop\survivor\coco0.png" />
                         <frame duration="1" hotspotX="0.485507" hotspotY="0.878261" original-source="C:\Users\Administrator\Desktop\survivor\coco1.png" />
                         <frame duration="1" hotspotX="0.559748" hotspotY="0.881857" original-source="C:\Users\Administrator\Desktop\survivor\coco2.png" />
                         <frame duration="1" hotspotX="0.631579" hotspotY="0.885246" original-source="C:\Users\Administrator\Desktop\survivor\coco4.png" />
                     </animation>
-                    <animation framecount="3" loop="0" name="item3" pingpong="1" repeatcount="1" repeatto="0" sid="216294309101656" speed="0">
+                    <animation framecount="3" loop="1" name="item3" pingpong="1" repeatcount="1" repeatto="0" sid="216294309101656" speed="0">
                         <frame duration="1" hotspotX="0.611511" hotspotY="0.904594" original-source="C:\Users\Administrator\Desktop\survivor\tree0.png" />
                         <frame duration="1" hotspotX="0.588652" hotspotY="0.90625" original-source="C:\Users\Administrator\Desktop\survivor\tree1.png" />
                         <frame duration="1" hotspotX="0.574324" hotspotY="0.907534" original-source="C:\Users\Administrator\Desktop\survivor\tree2.png" />
                     </animation>
-                    <animation framecount="3" loop="0" name="item4" pingpong="0" repeatcount="1" repeatto="0" sid="776798645943354" speed="0">
+                    <animation framecount="3" loop="1" name="item4" pingpong="0" repeatcount="1" repeatto="0" sid="776798645943354" speed="0">
                         <frame duration="1" hotspotX="0.528302" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan0.png" />
                         <frame duration="1" hotspotX="0.528302" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan1.png" />
                         <frame duration="1" hotspotX="0.52" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan2.png" />
@@ -734,9 +734,6 @@
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
-            <file name="icon-16.png" />
-            <file name="icon-32.png" />
-            <file name="icon-114.png" />
         </file-folder>
         <file name="FB.webm" />
     </files-folder>
