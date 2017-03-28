@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.032103</version>
+    <version>1.0.0.0328</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -113,6 +113,9 @@
             </object-type>
             <object-type name="Touch" sid="214129854298855">
                 <plugin id="Touch" />
+            </object-type>
+            <object-type name="Video" sid="474969304197489">
+                <plugin id="video" />
             </object-type>
         </object-folder>
         <object-folder name="bg">
@@ -470,9 +473,6 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-type name="Video" sid="474969304197489">
-            <plugin id="video" />
-        </object-type>
     </object-folder>
     <families>
         <family name="txts" plugin-id="Text" sid="270727115053159">
@@ -734,8 +734,11 @@
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
         </file-folder>
-        <file name="FB.webm" />
+        <file name="fb.webm" />
         <file name="fb.mp4" />
     </files-folder>
 </c2project>
