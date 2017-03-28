@@ -8,7 +8,7 @@
     <author-website>http://imssr.cn/demo/survivor</author-website>
     <app-id>cn.imssr.survivor</app-id>
     <unique-id>314ocrib9g874</unique-id>
-    <saved-with-version>23900</saved-with-version>
+    <saved-with-version>24300</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
@@ -114,7 +114,7 @@
             <object-type name="Touch" sid="214129854298855">
                 <plugin id="Touch" />
             </object-type>
-            <object-type name="Video" sid="474969304197489">
+            <object-type name="Video" sid="319601046415048">
                 <plugin id="video" />
             </object-type>
         </object-folder>
@@ -173,11 +173,11 @@
             </object-type>
             <object-type name="item_progressBg" sid="501996573890198">
                 <plugin id="NinePatch" />
-                <texture />
+                <texture original-source="C:\Users\Administrator\Desktop\survivor\progress.png" />
             </object-type>
             <object-type name="item_progress" sid="363383954264154">
                 <plugin id="NinePatch" />
-                <texture />
+                <texture original-source="C:\Users\Administrator\Desktop\survivor\progress2.png" />
             </object-type>
             <object-type name="bg_sunmoon" sid="400523637817488">
                 <plugin id="Sprite" />
@@ -317,13 +317,13 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="hp" pingpong="0" repeatcount="1" repeatto="0" sid="933559306150137" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505618" original-source="C:\Users\Administrator\Desktop\survivor\hp.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="energy" pingpong="0" repeatcount="1" repeatto="0" sid="874184195370500" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505618" original-source="C:\Users\Administrator\Desktop\survivor\hungry.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="hungry" pingpong="0" repeatcount="1" repeatto="0" sid="399949632179869" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.505618" original-source="C:\Users\Administrator\Desktop\survivor\power.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -379,25 +379,56 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="3" loop="1" name="item1" pingpong="1" repeatcount="1" repeatto="0" sid="725706218239883" speed="0">
-                        <frame duration="1" hotspotX="0.534483" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou0.png" />
-                        <frame duration="1" hotspotX="0.530435" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou1.png" />
-                        <frame duration="1" hotspotX="0.534483" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou2.png" />
+                        <frame duration="1" hotspotX="0.534483" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou0.png">
+                            <image-point name="search" x="0.5" y="-0.2" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.530435" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou1.png">
+                            <image-point name="search" x="0.504348" y="-0.2" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.534483" hotspotY="0.8" original-source="C:\Users\Administrator\Desktop\survivor\shitou2.png">
+                            <image-point name="search" x="0.5" y="-0.2" />
+                        </frame>
                     </animation>
                     <animation framecount="4" loop="1" name="item2" pingpong="1" repeatcount="1" repeatto="0" sid="391148996954806" speed="0">
-                        <frame duration="1" hotspotX="0.446809" hotspotY="0.884774" original-source="C:\Users\Administrator\Desktop\survivor\coco0.png" />
-                        <frame duration="1" hotspotX="0.485507" hotspotY="0.878261" original-source="C:\Users\Administrator\Desktop\survivor\coco1.png" />
-                        <frame duration="1" hotspotX="0.559748" hotspotY="0.881857" original-source="C:\Users\Administrator\Desktop\survivor\coco2.png" />
-                        <frame duration="1" hotspotX="0.631579" hotspotY="0.885246" original-source="C:\Users\Administrator\Desktop\survivor\coco4.png" />
+                        <frame duration="1" hotspotX="0.446809" hotspotY="0.884774" original-source="C:\Users\Administrator\Desktop\survivor\coco0.png">
+                            <image-point name="search" x="0.503546" y="-0.0411523" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.485507" hotspotY="0.878261" original-source="C:\Users\Administrator\Desktop\survivor\coco1.png">
+                            <image-point name="search" x="0.5" y="-0.0434783" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.559748" hotspotY="0.881857" original-source="C:\Users\Administrator\Desktop\survivor\coco2.png">
+                            <image-point name="search" x="0.503145" y="-0.0421941" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.631579" hotspotY="0.885246" original-source="C:\Users\Administrator\Desktop\survivor\coco4.png">
+                            <image-point name="search" x="0.505263" y="-0.0409836" />
+                        </frame>
                     </animation>
                     <animation framecount="3" loop="1" name="item3" pingpong="1" repeatcount="1" repeatto="0" sid="216294309101656" speed="0">
-                        <frame duration="1" hotspotX="0.611511" hotspotY="0.904594" original-source="C:\Users\Administrator\Desktop\survivor\tree0.png" />
-                        <frame duration="1" hotspotX="0.588652" hotspotY="0.90625" original-source="C:\Users\Administrator\Desktop\survivor\tree1.png" />
-                        <frame duration="1" hotspotX="0.574324" hotspotY="0.907534" original-source="C:\Users\Administrator\Desktop\survivor\tree2.png" />
+                        <frame duration="1" hotspotX="0.611511" hotspotY="0.904594" original-source="C:\Users\Administrator\Desktop\survivor\tree0.png">
+                            <image-point name="search" x="0.503597" y="-0.0353357" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.588652" hotspotY="0.90625" original-source="C:\Users\Administrator\Desktop\survivor\tree1.png">
+                            <image-point name="search" x="0.503546" y="-0.0347222" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.574324" hotspotY="0.907534" original-source="C:\Users\Administrator\Desktop\survivor\tree2.png">
+                            <image-point name="search" x="0.506757" y="-0.0342466" />
+                        </frame>
                     </animation>
                     <animation framecount="3" loop="1" name="item4" pingpong="0" repeatcount="1" repeatto="0" sid="776798645943354" speed="0">
-                        <frame duration="1" hotspotX="0.528302" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan0.png" />
-                        <frame duration="1" hotspotX="0.528302" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan1.png" />
-                        <frame duration="1" hotspotX="0.52" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan2.png" />
+                        <frame duration="1" hotspotX="0.528302" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan0.png">
+                            <image-point name="search" x="0.509434" y="-0.4" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.528302" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan1.png">
+                            <image-point name="search" x="0.509434" y="-0.4" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.52" hotspotY="0.9" original-source="C:\Users\Administrator\Desktop\survivor\dan2.png">
+                            <image-point name="search" x="0.5" y="-0.4" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="item5" pingpong="0" repeatcount="1" repeatto="0" sid="767743038857364" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\survivor\water.png">
+                            <image-point name="search" x="0.5" y="-0.576923" />
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>

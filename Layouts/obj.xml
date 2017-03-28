@@ -61,10 +61,10 @@
                 </instance>
                 <instance type="item_progressBg" uid="26">
                     <properties>
-                        <left-margin>4</left-margin>
-                        <right-margin>4</right-margin>
-                        <top-margin>4</top-margin>
-                        <bottom-margin>4</bottom-margin>
+                        <left-margin>17</left-margin>
+                        <right-margin>17</right-margin>
+                        <top-margin>14</top-margin>
+                        <bottom-margin>14</bottom-margin>
                         <edges>Stretch</edges>
                         <fill>Stretch</fill>
                         <initial-visibility>Visible</initial-visibility>
@@ -103,8 +103,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>20</x>
-                        <y>189</y>
+                        <x>12</x>
+                        <y>206</y>
                         <z>0</z>
                         <width>175</width>
                         <height>29</height>
@@ -116,10 +116,10 @@
                 </instance>
                 <instance type="item_progress" uid="25">
                     <properties>
-                        <left-margin>4</left-margin>
-                        <right-margin>4</right-margin>
-                        <top-margin>4</top-margin>
-                        <bottom-margin>4</bottom-margin>
+                        <left-margin>15</left-margin>
+                        <right-margin>15</right-margin>
+                        <top-margin>15</top-margin>
+                        <bottom-margin>15</bottom-margin>
                         <edges>Stretch</edges>
                         <fill>Stretch</fill>
                         <initial-visibility>Visible</initial-visibility>
@@ -158,10 +158,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>19</x>
-                        <y>186</y>
+                        <x>12.947616577</x>
+                        <y>204.513381958</y>
                         <z>0</z>
-                        <width>108</width>
+                        <width>172.44744873</width>
                         <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>

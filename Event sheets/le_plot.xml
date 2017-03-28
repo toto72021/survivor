@@ -16,17 +16,12 @@
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;&lt;&gt;&lt;&gt;load Vedio&quot;</param>
                         </action>
-                        <action id="0" name="Set source" sid="699351741914536" type="Video">
-                            <param id="0" name="WebM source">&quot;fb.webm&quot;</param>
-                            <param id="1" name="Ogg Theora source">&quot;&quot;</param>
-                            <param id="2" name="H.264 source">&quot;fb.mp4&quot;</param>
-                        </action>
-                        <action id="6" name="Play" sid="694704406859826" type="Video" />
+                        <action id="6" name="Play" sid="563829336438930" type="Video" />
                     </actions>
                 </event-block>
                 <event-block sid="683160462849865">
                     <conditions>
-                        <condition id="2" name="Has ended" sid="145068095077417" type="Video" />
+                        <condition id="2" name="Has ended" sid="728466655610282" type="Video" />
                     </conditions>
                     <actions>
                         <action id="14" name="Log" sid="491273172906086" type="Browser">
