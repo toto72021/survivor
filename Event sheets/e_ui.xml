@@ -11,71 +11,104 @@
                         <condition id="0" name="On function" sid="496450291296444" type="Function">
                             <param id="0" name="Name">&quot;displayPlayerUI&quot;</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="587113438098067" type="txts">
-                            <param id="0" name="Instance variable">groupID</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">&quot;player&quot;</param>
-                        </condition>
                     </conditions>
-                    <actions>
-                        <action id="-24" name="Move to top" sid="357602448887273" type="txts" />
-                    </actions>
+                    <actions />
                     <sub-events>
-                        <event-block sid="663909563299214">
+                        <event-block sid="149982818068252">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="383915369612207" type="txts">
-                                    <param id="0" name="Instance variable">actionID</param>
+                                <condition id="-7" name="Compare instance variable" sid="587113438098067" type="txts">
+                                    <param id="0" name="Instance variable">groupID</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;hp&quot;</param>
+                                    <param id="2" name="Value">&quot;player&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Set text" sid="851525286213971" type="txts">
-                                    <param id="0" name="Text">&quot;生命:&quot;&amp;player_proxy.hp</param>
-                                </action>
+                                <action id="-24" name="Move to top" sid="357602448887273" type="txts" />
                             </actions>
+                            <sub-events>
+                                <event-block sid="663909563299214">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="383915369612207" type="txts">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;hp&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="851525286213971" type="txts">
+                                            <param id="0" name="Text">&quot;生命:&quot;&amp;player_proxy.hp</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="823911233944541">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="927719118732037" type="txts">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;energy&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="373847144075014" type="txts">
+                                            <param id="0" name="Text">&quot;体力:&quot;&amp;player_proxy.energy</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="134697173454321">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="528021544201560" type="txts">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;hungry&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="162840609721531" type="txts">
+                                            <param id="0" name="Text">&quot;饥饿:&quot;&amp;player_proxy.hungry</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="441837632219677">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="897824182096654" type="txts">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;atk&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="540655580325746" type="txts">
+                                            <param id="0" name="Text">&quot;攻击:&quot;&amp;player_proxy.atk</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
-                        <event-block sid="823911233944541">
+                        <event-block sid="168510533701183">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="927719118732037" type="txts">
-                                    <param id="0" name="Instance variable">actionID</param>
+                                <condition id="-7" name="Compare instance variable" sid="288251268897997" type="txts">
+                                    <param id="0" name="Instance variable">groupID</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;energy&quot;</param>
+                                    <param id="2" name="Value">&quot;enemy&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="373847144075014" type="txts">
-                                    <param id="0" name="Text">&quot;体力:&quot;&amp;player_proxy.energy</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="134697173454321">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="528021544201560" type="txts">
-                                    <param id="0" name="Instance variable">actionID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;hungry&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="162840609721531" type="txts">
-                                    <param id="0" name="Text">&quot;饥饿:&quot;&amp;player_proxy.hungry</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="441837632219677">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="897824182096654" type="txts">
-                                    <param id="0" name="Instance variable">actionID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;atk&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="540655580325746" type="txts">
-                                    <param id="0" name="Text">&quot;攻击:&quot;&amp;player_proxy.atk</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="963640851311484">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="350735679025390" type="txts">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;hp&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="128847193350041" type="txts">
+                                            <param id="0" name="Text">&quot;生命:&quot;&amp;enemy.hp</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

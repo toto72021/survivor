@@ -1,0 +1,1031 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>e_fight</name>
+    <events>
+        <event-group description="" sid="937040084521324" title="attack">
+            <sub-events>
+                <event-block sid="904260449660448">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="481940799927854" type="Touch">
+                            <param id="0" name="Object">btns</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="150733374165277" type="btns">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="235379873894412">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="479622760389678" type="btns">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;attack&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="738183474905368" type="Function">
+                                    <param id="0" name="Name">&quot;attack&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;enemy&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="799357673172295">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="909500087793106" type="btns">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;escape&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="animationFSM" id="11" name="Go to state" sid="122371449055617" type="player_proxy">
+                                    <param id="0" name="Name">&quot;escape&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="648689338651776" type="Function">
+                                    <param id="0" name="Name">&quot;attack&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;player&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="968469826865515">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="869544406325254" type="System">
+                                    <param id="0" name="Object">btns</param>
+                                    <param id="1" name="Expression">btns.groupID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">&quot;combat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="760829198139429" type="btns">
+                                    <param id="0" name="Opacity">40</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="289044749447062">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="573854948132576" type="player_skin">
+                            <param id="0" name="Animation">&quot;combat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="864505662200649">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="124374306839631" type="btns">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;attack&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="841839383396688" type="btns">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="384288812568498">
+                    <conditions>
+                        <condition id="0" name="On function" sid="725947600386697" type="Function">
+                            <param id="0" name="Name">&quot;endTurn&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="animationFSM" id="11" name="Go to state" sid="490639743086509" type="player_proxy">
+                            <param id="0" name="Name">&quot;combat&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="825820139866352" type="btns">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="392841587957625">
+                    <conditions>
+                        <condition id="0" name="On function" sid="350086336311045" type="Function">
+                            <param id="0" name="Name">&quot;attack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="objX" sid="842738208165865" static="0" type="number">0</variable>
+                        <variable constant="0" name="objY" sid="905611773891962" static="0" type="number">0</variable>
+                        <variable constant="0" name="atk" sid="141950979596027" static="0" type="number">0</variable>
+                        <event-block sid="403588192062644">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="744787714643321" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;enemy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="666701170757894" type="System">
+                                    <param id="0" name="Variable">objX</param>
+                                    <param id="1" name="Value">enemy.X</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="490954408923187" type="System">
+                                    <param id="0" name="Variable">objY</param>
+                                    <param id="1" name="Value">enemy.Y-enemy.Height/2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="786746112711161" type="System">
+                                    <param id="0" name="Variable">atk</param>
+                                    <param id="1" name="Value">player_proxy.atk</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="115055262019357">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="665913191669078" type="enemy">
+                                            <param id="0" name="Unique ID">player_proxy.Euid</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Sine" id="0" name="Set active" sid="791560328046714" type="enemy">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="993930807721233" type="System">
+                                            <param id="0" name="Seconds">0.3</param>
+                                        </action>
+                                        <action behavior="Sine" id="0" name="Set active" sid="591519007559692" type="enemy">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="608405004033214">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="653643639367623" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;player&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="630238084728047" type="System">
+                                    <param id="0" name="Variable">objX</param>
+                                    <param id="1" name="Value">player_proxy.X</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="460772039030844" type="System">
+                                    <param id="0" name="Variable">objY</param>
+                                    <param id="1" name="Value">player_proxy.Y-player_proxy.Height/2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="743041896858433" type="System">
+                                    <param id="0" name="Variable">atk</param>
+                                    <param id="1" name="Value">enemy.atk</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="414448904900021" type="player_proxy">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="859780296527505" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="608416019099341" type="player_proxy">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="382054773211049">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="323237538362656" type="System">
+                                    <param id="0" name="Object to create">attack</param>
+                                    <param id="1" name="Layer">&quot;fx&quot;</param>
+                                    <param id="2" name="X">objX</param>
+                                    <param id="3" name="Y">objY</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="143702210180610" type="attack">
+                                    <param id="0" name="Width">120</param>
+                                    <param id="1" name="Height">200</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="490911667995034" type="attack">
+                                    <param id="0" name="Angle">45</param>
+                                </action>
+                                <action behavior="Timer" id="2" name="Start" sid="859330693796908" type="attack">
+                                    <param id="0" name="Time">0.2</param>
+                                    <param id="1" name="Timer">&quot;_attack&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="712287852482999" type="attack">
+                                    <param id="0" name="Instance variable">atk</param>
+                                    <param id="1" name="Value">atk</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="149283224422550" type="attack">
+                                    <param id="0" name="Instance variable">target</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="392393698470681">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="Is timer running" sid="544575552466904" type="attack">
+                            <param id="0" name="Timer">&quot;_attack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Set height" sid="964218381355639" type="attack">
+                            <param id="0" name="Height">200*Self.Timer.ElapsedPercent(&quot;_attack&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="719979483563553">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="754819974512802" type="attack">
+                            <param id="0" name="Timer">&quot;_attack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="957693235481121">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="251313747344557" type="attack">
+                                    <param id="0" name="Instance variable">target</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;enemy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="462299182089535" type="camera">
+                                    <param id="0" name="Magnitude">20</param>
+                                    <param id="1" name="Duration">0.5</param>
+                                    <param id="2" name="Mode">0</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="620472481076451" type="enemy">
+                                    <param id="0" name="Instance variable">hp</param>
+                                    <param id="1" name="Value">attack.atk</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="513278298451467" type="System">
+                                    <param id="0" name="Object to create">txt_center</param>
+                                    <param id="1" name="Layer">&quot;fx&quot;</param>
+                                    <param id="2" name="X">enemy.X+enemy.Width/2</param>
+                                    <param id="3" name="Y">enemy.Y</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="339596928748361" type="txt_center">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;player&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="321519882755133" type="txt_center">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;hurt&quot;</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="524605747188969" type="txt_center">
+                                    <param id="0" name="Color">rgb(255,0,0)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="353358687453588" type="txt_center">
+                                    <param id="0" name="Text">&quot;-&quot;&amp;attack.atk</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="977983954830916" type="txt_center">
+                                    <param id="0" name="Width">100</param>
+                                    <param id="1" name="Height">64</param>
+                                </action>
+                                <action id="2" name="Set font face" sid="925642685259735" type="txt_center">
+                                    <param id="0" name="Font face">&quot;Arial&quot;</param>
+                                    <param id="1" name="Style">1</param>
+                                </action>
+                                <action id="3" name="Set font size" sid="860936764132476" type="txt_center">
+                                    <param id="0" name="Size (pt)">32</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="587718111917863" type="txt_center">
+                                    <param id="0" name="Angle">random(30,90)</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="839047494677204" type="txt_center">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Fade" id="2" name="Set fade-in time" sid="108307421941457" type="txt_center">
+                                    <param id="0" name="Fade-in time">0.2</param>
+                                </action>
+                                <action behavior="Fade" id="3" name="Set wait time" sid="449272577173731" type="txt_center">
+                                    <param id="0" name="Wait time">1</param>
+                                </action>
+                                <action behavior="Fade" id="4" name="Set fade-out time" sid="645593306579186" type="txt_center">
+                                    <param id="0" name="Fade-out time">0.5</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="343630319631022" type="txt_center" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="652585719474310">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="293708936398183" type="enemy">
+                                            <param id="0" name="Instance variable">hp</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="971690042846133" type="enemy">
+                                            <param id="0" name="Instance variable">hp</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="845712051465596">
+                                            <conditions>
+                                                <condition id="2" name="Is playing" sid="474002442024348" type="enemy">
+                                                    <param id="0" name="Animation">&quot;enemy_4&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="259804454598919" type="Function">
+                                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;恭喜你找到生机！完成游戏！&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="554151238713261" type="System">
+                                                    <param id="0" name="Seconds">2.1</param>
+                                                </action>
+                                                <action id="-45" name="Reset persisted objects" sid="236668166207661" type="System" />
+                                                <action id="0" name="Call function" sid="404736569830602" type="Function">
+                                                    <param id="0" name="Name">&quot;writeName&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="549321867163789">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="328278200436667" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="FSM" id="11" name="Go to state" sid="553929354348625" type="enemy">
+                                                    <param id="0" name="Name">&quot;dead&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="172133043032349" type="Function">
+                                                    <param id="0" name="Name">&quot;randItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;meat&quot;{###}50{###}int(random(1,4))</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="971417641012598">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="814964772288757" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="208608866481214" type="Function">
+                                            <param id="0" name="Name">&quot;attack&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;player&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="510724853884208">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="167124569816591" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="321806662732980" type="attack">
+                                    <param id="0" name="Instance variable">target</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;player&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="290755063055225">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="281651846675170" type="System">
+                                            <param id="0" name="First value">int(random(1)+player_proxy.DodgeRate/100)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="102241533357652" type="Function">
+                                            <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;miss&quot;{###}0{###}0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="311446564333533">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="799941594788804" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="ScrollTo" id="0" name="Shake" sid="848565410980647" type="camera">
+                                            <param id="0" name="Magnitude">20</param>
+                                            <param id="1" name="Duration">0.5</param>
+                                            <param id="2" name="Mode">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="692898525038321" type="Function">
+                                            <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
+                                            <param id="1" name="Parameter {n}">-attack.atk{###}0{###}0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="627245354306259">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="468513398407982" type="player_proxy">
+                                            <param id="0" name="Instance variable">hp</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="718209923332163" type="player_proxy">
+                                            <param id="0" name="Instance variable">hp</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="929416210503259">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="759140497570086" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="596892009054251">
+                                            <conditions>
+                                                <condition behavior="animationFSM" id="7" name="Compare current state" sid="750064028013289" type="player_proxy">
+                                                    <param id="0" name="Name">&quot;escape&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Timer" id="2" name="Start" sid="554846829569036" type="player_proxy">
+                                                    <param id="0" name="Time">1</param>
+                                                    <param id="1" name="Timer">&quot;_escape&quot;</param>
+                                                    <param id="2" name="Repeat">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="684451692821767">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="790817978495170" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="308052363870591" type="System">
+                                                    <param id="0" name="Seconds">1</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="268378522301073" type="Function">
+                                                    <param id="0" name="Name">&quot;endTurn&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="421959445406470">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="254844161610985" type="Function">
+                                    <param id="0" name="Name">&quot;displayPlayerUI&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="892296666509690">
+                    <conditions>
+                        <condition behavior="FSM" id="0" name="On enter state" sid="262544917968618" type="enemy">
+                            <param id="0" name="Name">&quot;dead&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade" id="4" name="Set fade-out time" sid="563374519661485" type="enemy">
+                            <param id="0" name="Fade-out time">2</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="714240854431341" type="enemy" />
+                    </actions>
+                </event-block>
+                <event-block sid="824559832679519">
+                    <conditions>
+                        <condition behavior="Fade" id="0" name="On fade-out finished" sid="803032222884805" type="enemy" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="184385635099863" type="Function">
+                            <param id="0" name="Name">&quot;endCombat&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="473844164477644">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="715371679134122" type="player_proxy">
+                            <param id="0" name="Timer">&quot;_escape&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="176452166809566">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="333245431179476" type="System">
+                                    <param id="0" name="First value">int(random(1)+0.5)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="581186992731171" type="Function">
+                                    <param id="0" name="Name">&quot;endCombat&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="692556466908030">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="752692282374394" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="544684682679638" type="Function">
+                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;逃跑失败！&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="860545024875781" type="Function">
+                                    <param id="0" name="Name">&quot;endTurn&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="195832436439972">
+                    <conditions>
+                        <condition id="0" name="On function" sid="166183100545970" type="Function">
+                            <param id="0" name="Name">&quot;endTurn&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="animationFSM" id="11" name="Go to state" sid="898565146180963" type="player_proxy">
+                            <param id="0" name="Name">&quot;combat&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="204740226901457">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="745705348996479" type="System">
+                                    <param id="0" name="Object">btns</param>
+                                    <param id="1" name="Expression">btns.groupID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">&quot;combat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="335578030075914" type="btns">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="323150398619307">
+                    <conditions>
+                        <condition id="0" name="On function" sid="463483013642838" type="Function">
+                            <param id="0" name="Name">&quot;endCombat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="625157547518351" type="player_proxy">
+                            <param id="0" name="Instance variable">Euid</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="248127662809235">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="762092958491095" type="System">
+                                    <param id="0" name="Object">btns</param>
+                                    <param id="1" name="Expression">btns.groupID</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">&quot;combat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="356271818446931" type="btns" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="579573555800686">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="770898081970419" type="enemy">
+                                    <param id="0" name="Unique ID">player_proxy.Euid</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="679390168905195" type="enemy" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="261615185882723" title="enemy">
+            <sub-events>
+                <event-block sid="580817425737095">
+                    <conditions>
+                        <condition id="0" name="On function" sid="223331698277055" type="Function">
+                            <param id="0" name="Name">&quot;countTime&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="622959785545746" type="System">
+                            <param id="0" name="Object to create">countTime</param>
+                            <param id="1" name="Layer">&quot;tips&quot;</param>
+                            <param id="2" name="X">OriginalWindowWidth/2</param>
+                            <param id="3" name="Y">OriginalWindowHeight/2</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="344536827741428" type="countTime">
+                            <param id="0" name="Frame number">player_proxy.combatTime</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="558749930662988" type="countTime">
+                            <param id="0" name="Instance variable">acitonID</param>
+                            <param id="1" name="Value">&quot;countTime&quot;</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="629507784352834" type="player_proxy">
+                            <param id="0" name="Time">1</param>
+                            <param id="1" name="Timer">&quot;_combatTime&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="174421237832939" type="player_proxy">
+                            <param id="0" name="Instance variable">combatTime</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="640644780791870">
+                    <conditions>
+                        <condition id="0" name="On function" sid="874391538592964" type="Function">
+                            <param id="0" name="Name">&quot;combatTime&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="948676745402565" type="player_proxy">
+                            <param id="0" name="Instance variable">combatTime</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="241062129334402" type="Function">
+                            <param id="0" name="Name">&quot;countTime&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="361054844299301">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="782062782624812" type="System">
+                            <param id="0" name="Object">countTime</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="229598421389031">
+                            <conditions>
+                                <condition behavior="Timer" id="0" name="Is timer running" sid="996751531701486" type="player_proxy">
+                                    <param id="0" name="Timer">&quot;_combatTime&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="574201932456245" type="countTime">
+                                    <param id="0" name="Instance variable">acitonID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;countTime&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="282049177477252" type="countTime">
+                                    <param id="0" name="Scale">1+25*player_proxy.Timer.RemainderPercent(&quot;_combatTime&quot;)</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="535702222595094" type="countTime">
+                                    <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;_combatTime&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="868415890471166">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="936433344825169" type="player_proxy">
+                            <param id="0" name="Timer">&quot;_combatTime&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="724263445973511" type="countTime" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="216699683238107">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="303174081707551" type="player_proxy">
+                                    <param id="0" name="Instance variable">combatTime</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="857476969825300" type="Function">
+                                    <param id="0" name="Name">&quot;countTime&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="356963164485909">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="104377133524949" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="293258994717811">
+                                    <conditions>
+                                        <condition behavior="FSM" id="7" name="Compare current state" sid="897947947173972" type="enemy">
+                                            <param id="0" name="Name">&quot;prepare&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="FSM" id="11" name="Go to state" sid="237581436330269" type="enemy">
+                                            <param id="0" name="Name">&quot;combat&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="398005607584591">
+                    <conditions>
+                        <condition behavior="FSM" id="0" name="On enter state" sid="498315245357187" type="enemy">
+                            <param id="0" name="Name">&quot;combat&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="FSM" id="11" name="Go to state" sid="605893144842369" type="enemy">
+                            <param id="0" name="Name">&quot;atk1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="161261412046409">
+                    <conditions>
+                        <condition behavior="FSM" id="0" name="On enter state" sid="409165518588673" type="enemy">
+                            <param id="0" name="Name">&quot;atk1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="579278545677567" type="enemy">
+                            <param id="0" name="Animation">Self.name&amp;&quot;_atk1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="373555573884604" type="enemy">
+                            <param id="0" name="Time">Self.atkTime</param>
+                            <param id="1" name="Timer">&quot;_atkT&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="959331896680951">
+                    <conditions>
+                        <condition behavior="Timer" id="1" name="On time-out" sid="347752324747287" type="enemy">
+                            <param id="0" name="Timer">&quot;_atkT&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="FSM" id="11" name="Go to state" sid="800149902292472" type="enemy">
+                            <param id="0" name="Name">&quot;atk2&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="308040798407814">
+                    <conditions>
+                        <condition behavior="FSM" id="0" name="On enter state" sid="493941059005263" type="enemy">
+                            <param id="0" name="Name">&quot;atk2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="150076151248441" type="enemy">
+                            <param id="0" name="Animation">Self.name&amp;&quot;_atk2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="662156478817197">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="748723213022204" type="enemy">
+                            <param id="0" name="Animation">Self.name&amp;&quot;_atk2&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="241706563567913" type="enemy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="988220319603965" type="Function">
+                            <param id="0" name="Name">&quot;attack&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;player&quot;</param>
+                        </action>
+                        <action behavior="FSM" id="11" name="Go to state" sid="788032489983811" type="enemy">
+                            <param id="0" name="Name">&quot;atk1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="744706194438354">
+                    <conditions>
+                        <condition id="0" name="On function" sid="440090017576453" type="Function">
+                            <param id="0" name="Name">&quot;randomEnemy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Remove all patterns" sid="885635538262743" type="Gashapon" />
+                        <action id="2" name="Set pattern" sid="832611234889600" type="Gashapon">
+                            <param id="0" name="Pattern">&quot;enemy_1&quot;</param>
+                            <param id="1" name="Count">60</param>
+                        </action>
+                        <action id="2" name="Set pattern" sid="634557158220182" type="Gashapon">
+                            <param id="0" name="Pattern">&quot;enemy_2&quot;</param>
+                            <param id="1" name="Count">30</param>
+                        </action>
+                        <action id="2" name="Set pattern" sid="538773952120311" type="Gashapon">
+                            <param id="0" name="Pattern">&quot;enemy_3&quot;</param>
+                            <param id="1" name="Count">10</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="140069734064394">
+                            <conditions>
+                                <condition id="3" name="Has key" sid="273081320037729" type="Dictionary">
+                                    <param id="0" name="Key">&quot;bossEnemy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set pattern" sid="855982598539912" type="Gashapon">
+                                    <param id="0" name="Pattern">&quot;enemy_4&quot;</param>
+                                    <param id="1" name="Count">Dictionary.Get(&quot;bossEnemy&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <variable constant="0" name="enemyName" sid="860952437324970" static="0" type="text">enemy_1</variable>
+                        <event-block sid="471931411327364">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="401441229102391" type="System">
+                                    <param id="0" name="Variable">enemyName</param>
+                                    <param id="1" name="Value">Gashapon.Pattern</param>
+                                </action>
+                                <action id="14" name="Log" sid="292587055792558" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;   ...........gashaton:&quot;&amp;enemyName</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable constant="0" name="enemyAtk" sid="157659114389422" static="0" type="number">1</variable>
+                                <variable constant="0" name="enemyHp" sid="537400048247302" static="0" type="number">1</variable>
+                                <variable constant="0" name="enemyAT" sid="455338350494455" static="0" type="number">1</variable>
+                                <event-block sid="828248568306616">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="913742521962876" type="System">
+                                            <param id="0" name="Variable">enemyName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;enemy_1&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="165467185274781" type="System">
+                                            <param id="0" name="Variable">enemyAtk</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="628853382475554" type="System">
+                                            <param id="0" name="Variable">enemyHp</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="387735804878130" type="System">
+                                            <param id="0" name="Variable">enemyAT</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="726291897016631">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="589092379813039" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="645801987637062" type="System">
+                                            <param id="0" name="Variable">enemyName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;enemy_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="933930560606633" type="System">
+                                            <param id="0" name="Variable">enemyAtk</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="891222036869246" type="System">
+                                            <param id="0" name="Variable">enemyHp</param>
+                                            <param id="1" name="Value">7</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="771092238184728" type="System">
+                                            <param id="0" name="Variable">enemyAT</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="312306004639316">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="177375029886449" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="682213826449095" type="System">
+                                            <param id="0" name="Variable">enemyName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;enemy_3&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="947123235052158" type="System">
+                                            <param id="0" name="Variable">enemyAtk</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="773611568823472" type="System">
+                                            <param id="0" name="Variable">enemyHp</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="877193780709033" type="System">
+                                            <param id="0" name="Variable">enemyAT</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="400701334756552">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="525412120767855" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="207588716259697" type="System">
+                                            <param id="0" name="Variable">enemyName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;enemy_4&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="331113073283301" type="System">
+                                            <param id="0" name="Variable">enemyAtk</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="430908435910353" type="System">
+                                            <param id="0" name="Variable">enemyHp</param>
+                                            <param id="1" name="Value">20</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="643461285992236" type="System">
+                                            <param id="0" name="Variable">enemyAT</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="127999552579084">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="278723903944296" type="Function">
+                                            <param id="0" name="Name">&quot;createEnemy&quot;</param>
+                                            <param id="1" name="Parameter {n}">enemyName{###}enemyHp{###}enemyAtk{###}enemyAT</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="965851208310841">
+                    <conditions>
+                        <condition id="0" name="On function" sid="446309180981218" type="Function">
+                            <param id="0" name="Name">&quot;createEnemy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="221457499685294" type="System">
+                            <param id="0" name="Object to create">enemy</param>
+                            <param id="1" name="Layer">&quot;game&quot;</param>
+                            <param id="2" name="X">1300</param>
+                            <param id="3" name="Y">player_proxy.Y</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="518561582673243" type="enemy">
+                            <param id="0" name="Animation">Function.Param(0)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="154477502519928" type="enemy">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Value">&quot;enemy&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="656317092907775" type="enemy">
+                            <param id="0" name="Instance variable">acitionID</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="799939676262404" type="enemy">
+                            <param id="0" name="Instance variable">name</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="774303261097058" type="enemy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Value">Function.Param(1)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="549442139004438" type="enemy">
+                            <param id="0" name="Instance variable">atk</param>
+                            <param id="1" name="Value">Function.Param(2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="937805325792748" type="enemy">
+                            <param id="0" name="Instance variable">atkTime</param>
+                            <param id="1" name="Value">Function.Param(3)</param>
+                        </action>
+                        <action behavior="FSM" id="11" name="Go to state" sid="438879279543844" type="enemy">
+                            <param id="0" name="Name">&quot;idle&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

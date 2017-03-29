@@ -37,9 +37,9 @@
                         <text>Text</text>
                         <scale>1</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <character-spacing>0</character-spacing>
                         <line-height>0</line-height>
@@ -47,14 +47,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>67</x>
-                        <y>27</y>
+                        <x>14</x>
+                        <y>58</y>
                         <z>0</z>
                         <width>200</width>
                         <height>30</height>
                         <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -103,8 +103,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>12</x>
-                        <y>206</y>
+                        <x>16</x>
+                        <y>419</y>
                         <z>0</z>
                         <width>175</width>
                         <height>29</height>
@@ -158,8 +158,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>12.947616577</x>
-                        <y>204.513381958</y>
+                        <x>17</x>
+                        <y>417</y>
                         <z>0</z>
                         <width>172.44744873</width>
                         <height>32</height>
@@ -699,8 +699,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>32</x>
-                        <y>154</y>
+                        <x>53</x>
+                        <y>199</y>
                         <z>0</z>
                         <width>101</width>
                         <height>55</height>
@@ -753,8 +753,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>212</x>
-                        <y>86</y>
+                        <x>214</x>
+                        <y>129</y>
                         <z>0</z>
                         <width>200</width>
                         <height>59</height>
@@ -885,6 +885,7 @@
                         <state>full</state>
                         <randRate>70</randRate>
                         <itemCount>3</itemCount>
+                        <isSearch>0</isSearch>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -976,8 +977,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>216.516616821</x>
-                        <y>193.92817688</y>
+                        <x>11</x>
+                        <y>26</y>
                         <z>0</z>
                         <width>160</width>
                         <height>50</height>
@@ -1056,6 +1057,8 @@
                         <MaxAtk>3</MaxAtk>
                         <acitionID></acitionID>
                         <groupID></groupID>
+                        <atkTime>0</atkTime>
+                        <name></name>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="FSM">
@@ -1072,7 +1075,7 @@
                         <behavior-instance type="MoveTo">
                             <properties>
                                 <activated>Yes</activated>
-                                <max-speed>1600</max-speed>
+                                <max-speed>400</max-speed>
                                 <acceleration>0</acceleration>
                                 <deceleration>0</deceleration>
                                 <stop-by-solid>No</stop-by-solid>
@@ -1082,7 +1085,7 @@
                         <behavior-instance type="Sine">
                             <properties>
                                 <active-on-start>No</active-on-start>
-                                <movement>Vertical</movement>
+                                <movement>Forwards/backwards</movement>
                                 <wave>Sine</wave>
                                 <period>0.3</period>
                                 <period-random>0</period-random>
@@ -1114,6 +1117,44 @@
                         <depth>0</depth>
                         <hotspotX>0.501845002</hotspotX>
                         <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="countTime" uid="61">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <acitonID></acitonID>
+                        <Puid>0</Puid>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0.7</wait-time>
+                                <fade-out-time>0.3</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>232</x>
+                        <y>30</y>
+                        <z>0</z>
+                        <width>8</width>
+                        <height>12</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

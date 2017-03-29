@@ -322,7 +322,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <groupID></groupID>
+                        <groupID>move</groupID>
                         <actionID>pause</actionID>
                     </instance-variables>
                     <behavior-instances>

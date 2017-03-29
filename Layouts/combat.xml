@@ -99,6 +99,8 @@
                         <name>player</name>
                         <jungleDis>100</jungleDis>
                         <vsBoss>0</vsBoss>
+                        <combatTime>0</combatTime>
+                        <Euid>0</Euid>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="actionFSM">
@@ -131,7 +133,7 @@
                         <behavior-instance type="Sine">
                             <properties>
                                 <active-on-start>No</active-on-start>
-                                <movement>Vertical</movement>
+                                <movement>Horizontal</movement>
                                 <wave>Sine</wave>
                                 <period>0.3</period>
                                 <period-random>0</period-random>

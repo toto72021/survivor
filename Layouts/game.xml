@@ -302,6 +302,8 @@
                         <name>player</name>
                         <jungleDis>100</jungleDis>
                         <vsBoss>0</vsBoss>
+                        <combatTime>0</combatTime>
+                        <Euid>0</Euid>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="actionFSM">
@@ -334,7 +336,7 @@
                         <behavior-instance type="Sine">
                             <properties>
                                 <active-on-start>No</active-on-start>
-                                <movement>Vertical</movement>
+                                <movement>Horizontal</movement>
                                 <wave>Sine</wave>
                                 <period>0.3</period>
                                 <period-random>0</period-random>
@@ -522,7 +524,37 @@
             <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances />
+            <instances>
+                <instance type="camera" uid="62">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="ScrollTo">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>568</x>
+                        <y>320</y>
+                        <z>0</z>
+                        <width>16</width>
+                        <height>15</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.533333361</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
             <effects />
         </layer>
     </layers>
