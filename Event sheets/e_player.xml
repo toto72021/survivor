@@ -457,7 +457,7 @@
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="937390340687892" type="player_skin">
-                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="0" name="Animation">&quot;combat&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>

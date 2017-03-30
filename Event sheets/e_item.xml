@@ -422,30 +422,8 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="100926183116056">
-                                            <conditions>
-                                                <condition id="-8" name="Compare two values" sid="208219095133718" type="System">
-                                                    <param id="0" name="First value">LayoutName</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Second value">&quot;combat&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="552582928804819" type="Function">
-                                                    <param id="0" name="Name">&quot;destroyItem&quot;</param>
-                                                    <param id="1" name="Parameter {n}"></param>
-                                                </action>
-                                                <action behavior="Timer" id="2" name="Start" sid="788310811884789" type="player_proxy">
-                                                    <param id="0" name="Time">1</param>
-                                                    <param id="1" name="Timer">&quot;_useItem&quot;</param>
-                                                    <param id="2" name="Repeat">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
                                         <event-block sid="421162148685366">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="405933977567239" type="System" />
-                                            </conditions>
+                                            <conditions />
                                             <actions>
                                                 <action id="0" name="Call function" sid="704550847157815" type="Function">
                                                     <param id="0" name="Name">&quot;destroyItem&quot;</param>
@@ -485,19 +463,6 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="452910075308790">
-                    <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="933890241524674" type="player_proxy">
-                            <param id="0" name="Timer">&quot;_useItem&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="272915146903455" type="Function">
-                            <param id="0" name="Name">&quot;attack&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;player&quot;</param>
-                        </action>
-                    </actions>
                 </event-block>
                 <event-block sid="701218854765999">
                     <conditions>

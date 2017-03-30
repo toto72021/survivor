@@ -13,6 +13,14 @@
                 <action id="9" name="Reload" sid="850525951285371" type="Browser" />
             </actions>
         </event-block>
+        <event-block sid="814181069642227">
+            <conditions>
+                <condition id="19" name="On update found" sid="427057495416612" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="9" name="Reload" sid="191652480647863" type="Browser" />
+            </actions>
+        </event-block>
         <event-block sid="202411284113889">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="446401017014441" type="System" />

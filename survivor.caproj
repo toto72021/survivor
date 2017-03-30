@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0328</version>
+    <version>1.0.0.0330</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -126,10 +126,6 @@
             <object-type name="bg_2" sid="260914530959441">
                 <plugin id="TiledBg" />
                 <texture original-source="D:\totoyan\C2\C2inWorks\JPG\地图\2bg.png" />
-            </object-type>
-            <object-type name="bg_combat1" sid="654576039205668">
-                <plugin id="TiledBg" />
-                <texture original-source="C:\Users\totoyan\Desktop\JPG\角色\combg2.png" />
             </object-type>
             <object-type name="bg_day" sid="230569613314526">
                 <plugin id="TiledBg" />
@@ -289,9 +285,13 @@
                         <frame duration="1" hotspotX="0.470968" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
                         <frame duration="1" hotspotX="0.470968" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\6.png" />
                     </animation>
-                    <animation framecount="2" loop="0" name="combat" pingpong="0" repeatcount="1" repeatto="0" sid="427618566345965" speed="5">
+                    <animation framecount="6" loop="0" name="combat" pingpong="0" repeatcount="1" repeatto="0" sid="427618566345965" speed="4">
                         <frame duration="1" hotspotX="0.4" hotspotY="0.935943" original-source="C:\Users\totoyan\Desktop\JPG\角色\c1.png" />
                         <frame duration="1" hotspotX="0.4" hotspotY="0.935943" original-source="C:\Users\totoyan\Desktop\JPG\角色\c2.png" />
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" />
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" />
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" />
+                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -484,11 +484,11 @@
                             <image-point name="shadow" x="0.532468" y="1.02" />
                         </frame>
                     </animation>
-                    <animation framecount="1" loop="0" name="shadow" pingpong="0" repeatcount="1" repeatto="0" sid="959620498742033" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
                     <animation framecount="1" loop="0" name="enemy_4" pingpong="0" repeatcount="1" repeatto="0" sid="825518962992872" speed="5">
                         <frame duration="1" hotspotX="0.496" hotspotY="0.932" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="shadow" pingpong="0" repeatcount="1" repeatto="0" sid="959620498742033" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="1" loop="0" name="enemy_1_atk1" pingpong="0" repeatcount="1" repeatto="0" sid="215148671448984" speed="5">
                         <frame duration="1" hotspotX="0.475676" hotspotY="0.908">
@@ -498,6 +498,26 @@
                     <animation framecount="1" loop="0" name="enemy_1_atk2" pingpong="0" repeatcount="1" repeatto="0" sid="496533021605257" speed="5">
                         <frame duration="1" hotspotX="0.475676" hotspotY="0.908">
                             <image-point name="shadow" x="0.52973" y="1.02" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="enemy_2_ak1" pingpong="0" repeatcount="1" repeatto="0" sid="269743772245146" speed="5">
+                        <frame duration="1" hotspotX="0.571429" hotspotY="0.948">
+                            <image-point name="shadow" x="0.530612" y="1.02" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="enemy_2_atk2" pingpong="0" repeatcount="1" repeatto="0" sid="280972346999881" speed="5">
+                        <frame duration="1" hotspotX="0.571429" hotspotY="0.948">
+                            <image-point name="shadow" x="0.530612" y="1.02" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="enemy_3_atk1" pingpong="0" repeatcount="1" repeatto="0" sid="794579399437323" speed="5">
+                        <frame duration="1" hotspotX="0.487013" hotspotY="0.948">
+                            <image-point name="shadow" x="0.532468" y="1.02" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="enemy_3_atk2" pingpong="0" repeatcount="1" repeatto="0" sid="271218106097459" speed="5">
+                        <frame duration="1" hotspotX="0.487013" hotspotY="0.948">
+                            <image-point name="shadow" x="0.532468" y="1.02" />
                         </frame>
                     </animation>
                 </animation-folder>
@@ -582,7 +602,6 @@
             <members>
                 <member>bg_1</member>
                 <member>bg_2</member>
-                <member>bg_combat1</member>
                 <member>bg_day</member>
                 <member>bg_mask</member>
                 <member>bg_night</member>
@@ -735,13 +754,11 @@
         <layout>UI.xml</layout>
         <layout>game.xml</layout>
         <layout>obj.xml</layout>
-        <layout>combat.xml</layout>
         <layout>plot.xml</layout>
         <layout>credit.xml</layout>
     </layout-folder>
     <event-folder>
         <event-folder name="layout">
-            <event-sheet>le_combat.xml</event-sheet>
             <event-sheet>le_credit.xml</event-sheet>
             <event-sheet>le_game.xml</event-sheet>
             <event-sheet>le_loading.xml</event-sheet>
