@@ -916,25 +916,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-            </instances>
-            <effects />
-        </layer>
-        <layer name="mask" sid="882588952836749">
-            <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
-            <transparent>1</transparent>
-            <parallax>
-                <x>1</x>
-                <y>1</y>
-            </parallax>
-            <zoom-rate>1</zoom-rate>
-            <opacity>1</opacity>
-            <force-own-texture>1</force-own-texture>
-            <global>0</global>
-            <use-render-cells>0</use-render-cells>
-            <blend-mode>0</blend-mode>
-            <effect-fallback>0</effect-fallback>
-            <instances>
                 <instance type="txt_left" uid="57">
                     <properties>
                         <text>1499999999</text>
@@ -989,33 +970,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="bg_mask" uid="54">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <instance-variables>
-                        <groupID>bg</groupID>
-                        <actionID></actionID>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Persist" />
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>268</x>
-                        <y>0</y>
-                        <z>0</z>
-                        <width>600</width>
-                        <height>640</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>0.400000006</opacity>
-                    </world>
-                </instance>
                 <instance type="bg_2" uid="58">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -1031,10 +985,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-408</x>
-                        <y>0</y>
+                        <x>-355</x>
+                        <y>655</y>
                         <z>0</z>
-                        <width>404</width>
+                        <width>1753</width>
                         <height>640</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -1157,6 +1111,107 @@
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="selectbox" uid="37">
+                    <properties>
+                        <left-margin>10</left-margin>
+                        <right-margin>10</right-margin>
+                        <top-margin>10</top-margin>
+                        <bottom-margin>10</bottom-margin>
+                        <edges>Stretch</edges>
+                        <fill>Stretch</fill>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Center</hotspot>
+                        <seams>Overlap</seams>
+                    </properties>
+                    <instance-variables>
+                        <Puid>0</Puid>
+                        <groupID></groupID>
+                        <actionID></actionID>
+                        <diyStrValue></diyStrValue>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Timer">
+                            <properties>
+                                <sync-timescale>Yes</sync-timescale>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="DragDrop">
+                            <properties>
+                                <axes>Vertical only</axes>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1090.20324707</x>
+                        <y>174.272491455</y>
+                        <z>0</z>
+                        <width>70</width>
+                        <height>70</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="mask" sid="882588952836749">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>1</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="bg_mask" uid="54">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <instance-variables>
+                        <groupID>bg</groupID>
+                        <actionID></actionID>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Persist" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>268</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <width>600</width>
+                        <height>640</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>0.400000006</opacity>
                     </world>
                 </instance>
             </instances>

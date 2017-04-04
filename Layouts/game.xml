@@ -300,7 +300,7 @@
                         <dayNight>day</dayNight>
                         <DodgeRate>30</DodgeRate>
                         <name>player</name>
-                        <jungleDis>100</jungleDis>
+                        <jungleDis>200</jungleDis>
                         <vsBoss>0</vsBoss>
                         <combatTime>0</combatTime>
                         <Euid>0</Euid>

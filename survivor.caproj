@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0330</version>
+    <version>1.0.0.0404</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -346,14 +346,29 @@
                     <animation framecount="1" loop="0" name="fruits" pingpong="0" repeatcount="1" repeatto="0" sid="700352310851996" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item7.png" />
                     </animation>
-                    <animation framecount="1" loop="0" name="coconut" pingpong="0" repeatcount="1" repeatto="0" sid="217712069512791" speed="5">
+                    <animation framecount="1" loop="0" name="coconut" pingpong="0" repeatcount="1" repeatto="0" sid="217712069512791" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item3.png" />
                     </animation>
-                    <animation framecount="1" loop="0" name="egg" pingpong="0" repeatcount="1" repeatto="0" sid="393943300714414" speed="5">
+                    <animation framecount="1" loop="0" name="egg" pingpong="0" repeatcount="1" repeatto="0" sid="393943300714414" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item4.png" />
                     </animation>
-                    <animation framecount="1" loop="0" name="meat" pingpong="0" repeatcount="1" repeatto="0" sid="843337833992914" speed="5">
+                    <animation framecount="1" loop="0" name="rawMeat" pingpong="0" repeatcount="1" repeatto="0" sid="843337833992914" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item2.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="stone" pingpong="0" repeatcount="1" repeatto="0" sid="326070216378129" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\stone.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="wood" pingpong="0" repeatcount="1" repeatto="0" sid="838211446697123" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\wood.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="fire" pingpong="0" repeatcount="1" repeatto="0" sid="842624383265517" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="rubbish" pingpong="0" repeatcount="1" repeatto="0" sid="512993147961792" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\rubs.png" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="cookedMeat" pingpong="0" repeatcount="1" repeatto="0" sid="274405052505068" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -373,6 +388,12 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="1" loop="0" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="480566859820105" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="make" pingpong="0" repeatcount="1" repeatto="0" sid="934255580539541" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="create" pingpong="0" repeatcount="1" repeatto="0" sid="246340284544649" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -432,6 +453,9 @@
                             <image-point name="search" x="0.5" y="-0.576923" />
                         </frame>
                     </animation>
+                    <animation framecount="1" loop="0" name="item6" pingpong="0" repeatcount="1" repeatto="0" sid="197088983712706" speed="5">
+                        <frame duration="1" hotspotX="0.450331" hotspotY="0.791667" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\wood2.png" />
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="mainUI" sid="776189858125899">
@@ -441,6 +465,10 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\背景，界面\主界面-zxy.jpg" />
                     </animation>
                 </animation-folder>
+            </object-type>
+            <object-type name="selectbox" sid="382349337216217">
+                <plugin id="NinePatch" />
+                <texture />
             </object-type>
         </object-folder>
         <object-folder name="combat">
@@ -651,6 +679,7 @@
                 <member>item_progress</member>
                 <member>item_progressBg</member>
                 <member>itemBg</member>
+                <member>selectbox</member>
             </members>
             <instance-variables>
                 <instance-variable name="Puid" sid="974613017851896" type="number" />
@@ -774,6 +803,7 @@
             <event-sheet>e_start&amp;end.xml</event-sheet>
             <event-sheet>e_ui.xml</event-sheet>
             <event-sheet>e_fight.xml</event-sheet>
+            <event-sheet>e_createItem.xml</event-sheet>
         </event-folder>
     </event-folder>
     <global-instances>

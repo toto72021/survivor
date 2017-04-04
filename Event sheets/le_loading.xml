@@ -3,24 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>le_loading</name>
     <events>
+        <include>e_bubbleImformation</include>
         <include>e_sound</include>
         <variable constant="0" name="loadCompleted" sid="188075732612864" static="0" type="number">0</variable>
-        <event-block sid="414541683908536">
-            <conditions>
-                <condition id="6" name="On update ready" sid="488308680418258" type="Browser" />
-            </conditions>
-            <actions>
-                <action id="9" name="Reload" sid="850525951285371" type="Browser" />
-            </actions>
-        </event-block>
-        <event-block sid="814181069642227">
-            <conditions>
-                <condition id="19" name="On update found" sid="427057495416612" type="Browser" />
-            </conditions>
-            <actions>
-                <action id="9" name="Reload" sid="191652480647863" type="Browser" />
-            </actions>
-        </event-block>
+        <variable constant="0" name="update" sid="754195661449998" static="0" type="number">0</variable>
         <event-block sid="202411284113889">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="446401017014441" type="System" />
@@ -28,6 +14,10 @@
             <actions>
                 <action id="-9" name="Set value" sid="376575296560691" type="System">
                     <param id="0" name="Variable">loadCompleted</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="900586373272485" type="System">
+                    <param id="0" name="Variable">update</param>
                     <param id="1" name="Value">0</param>
                 </action>
                 <action id="4" name="Preload" sid="815230407098447" type="Audio">
@@ -42,6 +32,33 @@
                 <action id="4" name="Preload" sid="137530871720381" type="Audio">
                     <param id="0" name="Audio file">getItem</param>
                 </action>
+            </actions>
+        </event-block>
+        <event-block sid="814181069642227">
+            <conditions>
+                <condition id="19" name="On update found" sid="427057495416612" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="460294121459455" type="System">
+                    <param id="0" name="Variable">update</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Call function" sid="778748763832090" type="Function">
+                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;正在更新中。。。&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="134960839659818" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="9" name="Reload" sid="497954450490131" type="Browser" />
+            </actions>
+        </event-block>
+        <event-block sid="414541683908536">
+            <conditions>
+                <condition id="6" name="On update ready" sid="488308680418258" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="9" name="Reload" sid="850525951285371" type="Browser" />
             </actions>
         </event-block>
         <event-block sid="278916269155556">
@@ -61,6 +78,11 @@
                     <param id="0" name="Variable">loadCompleted</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="416955047768972" type="System">
+                    <param id="0" name="Variable">update</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
                 </condition>
                 <condition id="-8" name="Compare two values" sid="195698100954072" type="System">
                     <param id="0" name="First value">loadingprogress</param>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>e_createItem</name>
+    <events>
+        <event-group description="" sid="322181380822962" title="create">
+            <sub-events>
+                <event-block sid="138634709527456">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="494395334004995" type="Touch">
+                            <param id="0" name="Object">ui_item</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="428833392067090" type="ui_item">
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;createItem&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="995035517002159" type="ui_item">
+                            <param id="0" name="Instance variable">itemName</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;knife&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="753829502957074">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="274479188440454" type="ui_item">
+                                    <param id="0" name="Object">selectbox</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="269735107488900" type="selectbox" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="965551726168132">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="509696995665470" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="417370794578974" type="Function">
+                                    <param id="0" name="Name">&quot;selectItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">ui_item.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="971203480975006">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="894358972812875" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="991080073390282">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="377829875127200" type="btn_pause">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;create&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="329947926776834">
+                                            <conditions>
+                                                <condition id="-3" name="Is on-screen" sid="887598000908312" type="selectbox" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="909262181221845" type="btn_pause">
+                                                    <param id="0" name="Opacity">100</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="271727896963563">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="211125968730515" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Set opacity" sid="670816584958941" type="btn_pause">
+                                                    <param id="0" name="Opacity">40</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="963705820840473">
+                    <conditions>
+                        <condition id="0" name="On function" sid="179370356694574" type="Function">
+                            <param id="0" name="Name">&quot;selectItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="615524834144056">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="645106561949555" type="ui_item">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="500796955691130" type="System">
+                                    <param id="0" name="Object to create">selectbox</param>
+                                    <param id="1" name="Layer">ui_item.LayerName</param>
+                                    <param id="2" name="X">ui_item.X</param>
+                                    <param id="3" name="Y">ui_item.Y</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="160919945593059" type="selectbox">
+                                    <param id="0" name="Width">70</param>
+                                    <param id="1" name="Height">70</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="113024054042591" type="selectbox">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">ui_item.groupID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="285140340002488" type="selectbox">
+                                    <param id="0" name="Instance variable">Puid</param>
+                                    <param id="1" name="Value">ui_item.UID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="917163464496906" type="selectbox">
+                                    <param id="0" name="Instance variable">diyStrValue</param>
+                                    <param id="1" name="Value">ui_item.itemName</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="402008380779973">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="167971228239275" type="Touch">
+                            <param id="0" name="Object">btns</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="936332253829272" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="674453463099860" type="btns">
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;create&quot;</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="812215577420609" type="btns">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="661140317137053" type="Function">
+                            <param id="0" name="Name">&quot;createItem&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="369756222402011">
+                    <conditions>
+                        <condition id="0" name="On function" sid="897822264200364" type="Function">
+                            <param id="0" name="Name">&quot;createItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="createItem" sid="142561738480762" static="0" type="text">rubbish</variable>
+                        <variable constant="0" name="material1" sid="941555049756575" static="0" type="text"></variable>
+                        <variable constant="0" name="material2" sid="990596178030683" static="0" type="text"></variable>
+                        <event-block sid="624302833386872">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="511170579440513" type="System">
+                                    <param id="0" name="Object">selectbox</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="721084899520236" type="Function">
+                                    <param id="0" name="Name">&quot;useItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">selectbox.diyStrValue{###}1{###}&quot;no&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="274517136004265">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="271283810018704" type="selectbox">
+                                            <param id="0" name="Instance variable">diyStrValue</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;stone&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="629069115246691" type="System">
+                                            <param id="0" name="Variable">material1</param>
+                                            <param id="1" name="Value">&quot;stone&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="955510949716065">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="427048180524669" type="selectbox">
+                                            <param id="0" name="Instance variable">diyStrValue</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;wood&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="199482559894978" type="System">
+                                            <param id="0" name="Variable">material2</param>
+                                            <param id="1" name="Value">&quot;wood&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="623685444981160">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="985973848290411" type="selectbox">
+                                            <param id="0" name="Instance variable">diyStrValue</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;fire&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="585147608711866" type="System">
+                                            <param id="0" name="Variable">material1</param>
+                                            <param id="1" name="Value">&quot;fire&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="749301539466188">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="322294868576464" type="selectbox">
+                                            <param id="0" name="Instance variable">diyStrValue</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;rawMeat&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="882527597361523" type="System">
+                                            <param id="0" name="Variable">material2</param>
+                                            <param id="1" name="Value">&quot;rawMeat&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="310052585132539">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="109459722875177" type="System">
+                                    <param id="0" name="Variable">material1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;stone&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="710694810554680" type="System">
+                                    <param id="0" name="Variable">material2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;wood&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="296003680039074" type="System">
+                                    <param id="0" name="Variable">createItem</param>
+                                    <param id="1" name="Value">&quot;fire&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="206569640710003">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="776497583129203" type="System">
+                                    <param id="0" name="Variable">material1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;fire&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="325372075380937" type="System">
+                                    <param id="0" name="Variable">material2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;rawMeat&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="860732150428010" type="System">
+                                    <param id="0" name="Variable">createItem</param>
+                                    <param id="1" name="Value">&quot;cookedMeat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="447048410922929">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="255501139779906" type="Function">
+                                    <param id="0" name="Name">&quot;destroyItem&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="225639996589285" type="Function">
+                                    <param id="0" name="Name">&quot;getItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">createItem{###}1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

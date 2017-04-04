@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>le_game</name>
     <events>
+        <include>e_createItem</include>
         <include>e_fight</include>
         <include>e_sound</include>
         <include>e_leaderboard</include>
@@ -417,13 +418,17 @@
                                                             <param id="2" name="X">bg_1.x</param>
                                                             <param id="3" name="Y">0</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="530696651477947" type="bg_2">
+                                                        <action id="-10" name="Set value" sid="205311880404685" type="bg_2">
                                                             <param id="0" name="Instance variable">groupID</param>
                                                             <param id="1" name="Value">&quot;bg&quot;</param>
                                                         </action>
                                                         <action id="-10" name="Set value" sid="327447101806633" type="bg_2">
                                                             <param id="0" name="Instance variable">actionID</param>
                                                             <param id="1" name="Value">&quot;jungle&quot;</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="530696651477947" type="bg_2">
+                                                            <param id="0" name="Width">1753</param>
+                                                            <param id="1" name="Height">640</param>
                                                         </action>
                                                         <action id="-9" name="Destroy" sid="914935846140659" type="bg_1" />
                                                     </actions>
@@ -608,10 +613,47 @@
                                         <condition id="-22" name="Else" sid="973809828607087" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-16" name="Set opacity" sid="655751330693129" type="btns">
-                                            <param id="0" name="Opacity">100</param>
-                                        </action>
                                         <action id="0" name="Call function" sid="502777078148920" type="Function">
+                                            <param id="0" name="Name">&quot;destroyItem&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="271178297552463">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="758086869030439" type="btns">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;make&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="721596711239561">
+                                    <conditions>
+                                        <condition id="-10" name="Compare opacity" sid="666491334541453" type="btns">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Opacity">100</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="179327513483339" type="btns">
+                                            <param id="0" name="Opacity">40</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="565748866508267" type="Function">
+                                            <param id="0" name="Name">&quot;refreshArray&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;row&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="763536559717868">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="864870978405682" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="800309080261758" type="Function">
                                             <param id="0" name="Name">&quot;destroyItem&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
@@ -625,7 +667,7 @@
         </event-group>
         <event-group description="" sid="828169281532222" title="search">
             <sub-events>
-                <variable constant="0" name="itemCount" sid="936463988997133" static="0" type="number">5</variable>
+                <variable constant="0" name="itemCount" sid="936463988997133" static="0" type="number">6</variable>
                 <event-block sid="134402125834962">
                     <conditions>
                         <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_proxy">
@@ -759,7 +801,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="429846271441279" type="item">
                                     <param id="0" name="Instance variable">randRate</param>
-                                    <param id="1" name="Value">50</param>
+                                    <param id="1" name="Value">60</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="202050599408846" type="item">
                                     <param id="0" name="Instance variable">itemCount</param>
@@ -785,6 +827,27 @@
                                 <action id="-10" name="Set value" sid="111821649289736" type="item">
                                     <param id="0" name="Instance variable">itemCount</param>
                                     <param id="1" name="Value">int(random(1,3))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="698969468661470">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="575645863638328" type="item">
+                                    <param id="0" name="Animation">&quot;item6&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="977753180484877" type="item">
+                                    <param id="0" name="Instance variable">item</param>
+                                    <param id="1" name="Value">&quot;wood&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="880448988161754" type="item">
+                                    <param id="0" name="Instance variable">randRate</param>
+                                    <param id="1" name="Value">80</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="344890577027911" type="item">
+                                    <param id="0" name="Instance variable">itemCount</param>
+                                    <param id="1" name="Value">int(random(1,4))</param>
                                 </action>
                             </actions>
                         </event-block>

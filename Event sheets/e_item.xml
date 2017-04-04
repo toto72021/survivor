@@ -79,30 +79,12 @@
                             <conditions>
                                 <condition id="-22" name="Else" sid="493506561133561" type="System" />
                             </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="705889298099608">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="766432429269180" type="System">
-                                            <param id="0" name="First value">LayoutName</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">&quot;combat&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                </event-block>
-                                <event-block sid="477892394042528">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="288431077955423" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="311092846541908" type="Function">
-                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                                            <param id="1" name="Parameter {n}">&quot;搜索物资失败 &quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                            <actions>
+                                <action id="0" name="Call function" sid="311092846541908" type="Function">
+                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;搜索物资失败 &quot;</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -172,7 +154,7 @@
                             </sub-events>
                         </event-block>
                         <comment>控制背包大小</comment>
-                        <variable constant="0" name="itemBagSize" sid="886038041156688" static="0" type="number">5</variable>
+                        <variable constant="0" name="itemBagSize" sid="886038041156688" static="0" type="number">10</variable>
                         <event-block sid="603577534418250">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="505762490536361" type="System">
@@ -255,9 +237,9 @@
                             <param id="0" name="Object">ui_item</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="371169702841298" type="ui_item">
-                            <param id="0" name="Instance variable">itemName</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">&quot;&quot;</param>
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;useItem&quot;</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="872473252695738" type="ui_item">
                             <param id="0" name="Instance variable">itemName</param>
@@ -276,7 +258,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>( 0 itemName; 1 count)</comment>
+                <comment>( 0 itemName; 1 count; 2 noUseEffect )</comment>
                 <event-block sid="146123588382721">
                     <conditions>
                         <condition id="0" name="On function" sid="666035148453605" type="Function">
@@ -307,14 +289,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="507985340413576" type="Function">
-                                            <param id="0" name="Name">&quot;playEffectSound&quot;</param>
-                                            <param id="1" name="Parameter {n}">&quot;drink&quot;</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="484449967632506" type="Function">
-                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                                            <param id="1" name="Parameter {n}">&quot;使用物资 &quot;&amp;Function.Param(0)</param>
-                                        </action>
                                         <action id="3" name="Set at XY" sid="629724153785971" type="Array_item">
                                             <param id="0" name="X">Array_item.CurX</param>
                                             <param id="1" name="Y">1</param>
@@ -343,84 +317,153 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="811413521224521">
+                                        <event-block sid="727293965316341">
                                             <conditions>
-                                                <condition id="-8" name="Compare two values" sid="278874631007192" type="System">
-                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                <condition id="-8" name="Compare two values" sid="384038737124097" type="System">
+                                                    <param id="0" name="First value">Function.Param(2)</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Second value">&quot;water&quot;</param>
+                                                    <param id="2" name="Second value">0</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="875606186317331" type="Function">
-                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
-                                                    <param id="1" name="Parameter {n}">0{###}5{###}0</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="421408157977396">
-                                            <conditions>
-                                                <condition id="-8" name="Compare two values" sid="328821390772705" type="System">
-                                                    <param id="0" name="First value">Function.Param(0)</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Second value">&quot;fruits&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="822265068143944" type="Function">
-                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
-                                                    <param id="1" name="Parameter {n}">0{###}0{###}5</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="988373618330623">
-                                            <conditions>
-                                                <condition id="-8" name="Compare two values" sid="892875453287837" type="System">
-                                                    <param id="0" name="First value">Function.Param(0)</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Second value">&quot;coconut&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="658915684976487" type="Function">
-                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
-                                                    <param id="1" name="Parameter {n}">0{###}8{###}2</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="530133616235946">
-                                            <conditions>
-                                                <condition id="-8" name="Compare two values" sid="644887903806899" type="System">
-                                                    <param id="0" name="First value">Function.Param(0)</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Second value">&quot;egg&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Call function" sid="459375314693130" type="Function">
-                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
-                                                    <param id="1" name="Parameter {n}">2{###}0{###}10</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="316153772095795">
-                                            <conditions>
-                                                <condition id="-8" name="Compare two values" sid="945955749119815" type="System">
-                                                    <param id="0" name="First value">Function.Param(0)</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Second value">&quot;meat&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-11" name="Add to" sid="754906865711055" type="player_proxy">
-                                                    <param id="0" name="Instance variable">maxHp</param>
-                                                    <param id="1" name="Value">0.5</param>
-                                                </action>
-                                                <action id="0" name="Call function" sid="249553073443700" type="Function">
-                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
-                                                    <param id="1" name="Parameter {n}">5{###}0{###}20</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="659355687613476">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="991708968430419" type="System">
+                                                            <param id="0" name="First value">Function.Param(0)</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">&quot;wood&quot;</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="188981281075197" type="System">
+                                                            <param id="0" name="First value">Function.Param(0)</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">&quot;fire&quot;</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="215565358230226" type="System">
+                                                            <param id="0" name="First value">Function.Param(0)</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">&quot;stone&quot;</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="484449967632506" type="Function">
+                                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                                            <param id="1" name="Parameter {n}">&quot;使用 &quot;&amp;Function.Param(0)</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="507985340413576" type="Function">
+                                                            <param id="0" name="Name">&quot;playEffectSound&quot;</param>
+                                                            <param id="1" name="Parameter {n}">&quot;drink&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="811413521224521">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="278874631007192" type="System">
+                                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;water&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Call function" sid="875606186317331" type="Function">
+                                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">0{###}5{###}0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="421408157977396">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="328821390772705" type="System">
+                                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;fruits&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Call function" sid="822265068143944" type="Function">
+                                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">0{###}0{###}5</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="988373618330623">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="892875453287837" type="System">
+                                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;coconut&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Call function" sid="658915684976487" type="Function">
+                                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">0{###}8{###}2</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="530133616235946">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="644887903806899" type="System">
+                                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;egg&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Call function" sid="459375314693130" type="Function">
+                                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">2{###}0{###}10</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="316153772095795">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="945955749119815" type="System">
+                                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;rawMeat&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Call function" sid="249553073443700" type="Function">
+                                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">1{###}0{###}5</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="733132911936162">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="562453420901179" type="System">
+                                                                    <param id="0" name="First value">Function.Param(0)</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Second value">&quot;cookedMeat&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-11" name="Add to" sid="863476390704399" type="player_proxy">
+                                                                    <param id="0" name="Instance variable">maxHp</param>
+                                                                    <param id="1" name="Value">0.5</param>
+                                                                </action>
+                                                                <action id="0" name="Call function" sid="607984373227729" type="Function">
+                                                                    <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
+                                                                    <param id="1" name="Parameter {n}">5{###}0{###}20</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="283736071303014">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="739754528943614" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="263483479576046" type="Function">
+                                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                                            <param id="1" name="Parameter {n}">&quot;使用了但并没发生什么 &quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <event-block sid="421162148685366">
                                             <conditions />
@@ -430,22 +473,6 @@
                                                     <param id="1" name="Parameter {n}"></param>
                                                 </action>
                                             </actions>
-                                            <sub-events>
-                                                <event-block sid="261868766218952">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="403483899225625" type="btns">
-                                                            <param id="0" name="Instance variable">actionID</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">&quot;backpack&quot;</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="-16" name="Set opacity" sid="271556280753734" type="btns">
-                                                            <param id="0" name="Opacity">100</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -464,53 +491,54 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="701218854765999">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="916011225162945" type="System">
-                            <param id="0" name="Object">ui_item</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="464576925107985">
-                            <conditions>
-                                <condition behavior="Timer" id="0" name="Is timer running" sid="300489224124656" type="ui_item">
-                                    <param id="0" name="Timer">&quot;_useCD&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-16" name="Set opacity" sid="851074869404250" type="ui_item">
-                                    <param id="0" name="Opacity">20+Self.Timer.ElapsedPercent(&quot;_useCD&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="542869598099279">
-                    <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="271990916092434" type="ui_item">
-                            <param id="0" name="Timer">&quot;_useCD&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-16" name="Set opacity" sid="429285286098232" type="ui_item">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="215368519170325">
                     <conditions>
                         <condition id="0" name="On function" sid="120816883562067" type="Function">
                             <param id="0" name="Name">&quot;destroyItem&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="146618152813156" type="Function">
-                            <param id="0" name="Name">&quot;closeUI&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
+                        <event-block sid="327885108906578">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="641537731276399" type="btns">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;item&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="871428769935125" type="btns">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="763559228289416">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="131174709201789" type="btns">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;create&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="497396152176821" type="btns" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="313952984592928">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="488621498670092" type="bgs9p">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;item&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="536715792949348" type="bgs9p" />
+                            </actions>
+                        </event-block>
                         <event-block sid="443641130209213">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="592575504710822" type="bg_ui_item">
@@ -547,9 +575,18 @@
                                 <action id="-9" name="Destroy" sid="981182865514259" type="txts" />
                             </actions>
                         </event-block>
+                        <event-block sid="347612281796527">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="146618152813156" type="Function">
+                                    <param id="0" name="Name">&quot;closeUI&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
-                <comment>(0 row/column)</comment>
+                <comment>(0 row制作包/column背包)</comment>
                 <event-block sid="593224659128992">
                     <conditions>
                         <condition id="0" name="On function" sid="697523337707721" type="Function">
@@ -557,10 +594,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="101608262965092" type="Function">
-                            <param id="0" name="Name">&quot;destroyItem&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
                         <action id="0" name="Call function" sid="857402414337119" type="Function">
                             <param id="0" name="Name">&quot;openUI&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;backpack&quot;</param>
@@ -580,9 +613,9 @@
                             <actions>
                                 <action id="-3" name="Create object" sid="173137490549951" type="System">
                                     <param id="0" name="Object to create">bg_ui_item</param>
-                                    <param id="1" name="Layer">&quot;ui2&quot;</param>
+                                    <param id="1" name="Layer">&quot;UI&quot;</param>
                                     <param id="2" name="X">568</param>
-                                    <param id="3" name="Y">420</param>
+                                    <param id="3" name="Y">220</param>
                                 </action>
                                 <action id="-8" name="Set angle" sid="727096399427974" type="bg_ui_item">
                                     <param id="0" name="Angle">90</param>
@@ -595,6 +628,27 @@
                                     <param id="0" name="Instance variable">actionID</param>
                                     <param id="1" name="Value">&quot;bg&quot;</param>
                                 </action>
+                                <action id="-3" name="Create object" sid="507255109821406" type="System">
+                                    <param id="0" name="Object to create">btn_pause</param>
+                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                    <param id="2" name="X">640</param>
+                                    <param id="3" name="Y">360</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="384256312153683" type="btn_pause">
+                                    <param id="0" name="Animation">&quot;create&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="220484136014212" type="btn_pause">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;item&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="558989527180804" type="btn_pause">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;create&quot;</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="416497505813391" type="btn_pause">
+                                    <param id="0" name="Opacity">40</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="125817222335550">
@@ -604,17 +658,25 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Create object" sid="346347649443582" type="System">
+                                        <action id="-3" name="Create object" sid="710262366845934" type="System">
                                             <param id="0" name="Object to create">ui_item</param>
                                             <param id="1" name="Layer">bg_ui_item.LayerName</param>
-                                            <param id="2" name="X">bg_ui_item.X-bg_ui_item.Height/2+72+rowIndex*72</param>
-                                            <param id="3" name="Y">bg_ui_item.Y</param>
+                                            <param id="2" name="X">bg_ui_item.X-bg_ui_item.Height/3+floor(rowIndex/2)*80</param>
+                                            <param id="3" name="Y">bg_ui_item.Y-bg_ui_item.Width/2+(rowIndex%2)*80</param>
                                         </action>
                                         <action id="4" name="Set animation" sid="833091598373507" type="ui_item">
                                             <param id="0" name="Animation">str(Array_item.At(Array_item.CurX,0))</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="428174024785583" type="ui_item">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;item&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="897129561997310" type="ui_item">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;createItem&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="369548777688946" type="ui_item">
                                             <param id="0" name="Instance variable">itemName</param>
                                             <param id="1" name="Value">str(Array_item.At(Array_item.CurX,0))</param>
                                         </action>
@@ -702,11 +764,19 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Create object" sid="894905978543356" type="System">
+                                        <action id="-3" name="Create object" sid="183246216676630" type="System">
                                             <param id="0" name="Object to create">ui_item</param>
                                             <param id="1" name="Layer">bg_ui_item.LayerName</param>
-                                            <param id="2" name="X">bg_ui_item.X</param>
-                                            <param id="3" name="Y">bg_ui_item.Y-bg_ui_item.Height/2+72+columnIndex*72</param>
+                                            <param id="2" name="X">bg_ui_item.X-bg_ui_item.Width/2+(columnIndex%2)*80</param>
+                                            <param id="3" name="Y">bg_ui_item.Y-bg_ui_item.Height/3+floor(columnIndex/2)*80</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="396445759679798" type="ui_item">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;item&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="883902409108545" type="ui_item">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;useItem&quot;</param>
                                         </action>
                                         <action id="4" name="Set animation" sid="371018874502632" type="ui_item">
                                             <param id="0" name="Animation">str(Array_item.At(Array_item.CurX,0))</param>

@@ -48,6 +48,19 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="777560912165687">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="289238321489833" type="Keyboard">
+                            <param id="0" name="Key">49 (1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="266005080440904" type="Function">
+                            <param id="0" name="Name">&quot;getItem&quot;</param>
+                            <param id="1" name="Parameter {n}">choose(&quot;rawMeat&quot;,&quot;wood&quot;,&quot;stone&quot;,&quot;water&quot;,&quot;egg&quot;,&quot;fruits&quot;,&quot;coconut&quot;){###}3</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="909323005712838">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="403186661023788" type="Keyboard">
@@ -57,7 +70,7 @@
                     <actions>
                         <action id="-10" name="Set value" sid="414159212633229" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
-                            <param id="1" name="Value">10</param>
+                            <param id="1" name="Value">5</param>
                         </action>
                         <action id="-10" name="Set value" sid="499491580735752" type="player_proxy">
                             <param id="0" name="Instance variable">energy</param>

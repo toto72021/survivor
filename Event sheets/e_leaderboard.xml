@@ -183,10 +183,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="598201708102172" type="player_proxy">
-                            <param id="0" name="Instance variable">name</param>
-                            <param id="1" name="Value">Function.Param(0)</param>
-                        </action>
                         <action id="2" name="Post to URL" sid="225202793437977" type="AJAX">
                             <param id="0" name="Tag">&quot;postScore&quot;</param>
                             <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/saveScore.php&quot;</param>
@@ -202,6 +198,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-10" name="Set value" sid="598201708102172" type="player_proxy">
+                            <param id="0" name="Instance variable">name</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
                         <action id="2" name="Post to URL" sid="720968922332112" type="AJAX">
                             <param id="0" name="Tag">&quot;getScore&quot;</param>
                             <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/getScore.php&quot;</param>
@@ -228,25 +228,6 @@
                         <action id="0" name="Call function" sid="785125421035447" type="Function">
                             <param id="0" name="Name">&quot;createLB&quot;</param>
                             <param id="1" name="Parameter {n}">AJAX.LastData</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block any="1" disabled="1" sid="588333963620660">
-                    <conditions>
-                        <condition id="4" name="On any error" sid="975654651022775" type="AJAX" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="558105232492419" type="Function">
-                            <param id="0" name="Name">&quot;preSend&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="14" name="Log" sid="525246316477080" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">AJAX.Tag&amp;&quot;&gt;&gt;&gt;AJAX ERROR:&quot;&amp;AJAX.LastData</param>
-                        </action>
-                        <action id="0" name="Call function" sid="898774510421949" type="Function">
-                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;网络错误！&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -288,7 +269,7 @@
                         </action>
                         <action id="0" name="Call function" sid="763793530806948" type="Function">
                             <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;名字提交重复！&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;网络出现问题！&quot;</param>
                         </action>
                     </actions>
                 </event-block>
