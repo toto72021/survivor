@@ -788,7 +788,7 @@
                                             <param id="0" name="Object to create">txt_right</param>
                                             <param id="1" name="Layer">&quot;UI&quot;</param>
                                             <param id="2" name="X">enemy.X+enemy.Width</param>
-                                            <param id="3" name="Y">enemy.Y-enemy.Height/1.5</param>
+                                            <param id="3" name="Y">enemy.Y-enemy.Height/0.5</param>
                                         </action>
                                         <action id="-7" name="Set size" sid="677882753232432" type="txt_right">
                                             <param id="0" name="Width">100</param>
@@ -858,7 +858,7 @@
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="579278545677567" type="enemy">
-                            <param id="0" name="Animation">Self.name&amp;&quot;_atk1&quot;</param>
+                            <param id="0" name="Animation">Self.name&amp;&quot;_idle&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action behavior="Timer" id="2" name="Start" sid="373555573884604" type="enemy">
@@ -888,7 +888,7 @@
                     </conditions>
                     <actions>
                         <action id="4" name="Set animation" sid="150076151248441" type="enemy">
-                            <param id="0" name="Animation">Self.name&amp;&quot;_atk2&quot;</param>
+                            <param id="0" name="Animation">Self.name&amp;&quot;_atk&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
@@ -896,7 +896,7 @@
                 <event-block sid="662156478817197">
                     <conditions>
                         <condition id="4" name="On finished" sid="748723213022204" type="enemy">
-                            <param id="0" name="Animation">Self.name&amp;&quot;_atk2&quot;</param>
+                            <param id="0" name="Animation">Self.name&amp;&quot;_atk&quot;</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="241706563567913" type="enemy">
                             <param id="0" name="Instance variable">hp</param>
@@ -1085,10 +1085,10 @@
                             <param id="0" name="Object to create">enemy</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">player_proxy.Y</param>
+                            <param id="3" name="Y">player_proxy.Y-player_proxy.Height/2</param>
                         </action>
                         <action id="4" name="Set animation" sid="518561582673243" type="enemy">
-                            <param id="0" name="Animation">Function.Param(0)</param>
+                            <param id="0" name="Animation">Function.Param(0)&amp;&quot;_idle&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="-10" name="Set value" sid="154477502519928" type="enemy">

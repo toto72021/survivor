@@ -12,6 +12,10 @@
                         <condition id="-2" name="On start of layout" sid="333750052281429" type="System" />
                     </conditions>
                     <actions>
+                        <action id="0" name="Call function" sid="602722120601519" type="Function">
+                            <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                         <action id="14" name="Log" sid="856798970524120" type="Browser">
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;&lt;&gt;&lt;&gt;load Vedio&quot;</param>
@@ -28,8 +32,9 @@
                             <param id="0" name="Type">0</param>
                             <param id="1" name="Message">&quot;&lt;&gt;&lt;&gt;play  END&quot; </param>
                         </action>
-                        <action id="-2" name="Go to layout" sid="285620358542761" type="System">
-                            <param id="0" name="Layout">game</param>
+                        <action id="0" name="Call function" sid="998490639934411" type="Function">
+                            <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;game&quot;</param>
                         </action>
                     </actions>
                 </event-block>

@@ -1162,7 +1162,7 @@
                                                 <condition id="-8" name="Compare two values" sid="995079455973898" type="System">
                                                     <param id="0" name="First value">distance(enemy.X,enemy.Y,player_proxy.X,player_proxy.Y)</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Second value">400</param>
+                                                    <param id="2" name="Second value">300</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -1250,24 +1250,13 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="MoveTo" id="4" name="Move to XY" sid="411763109181296" type="enemy">
-                                    <param id="0" name="X">player_proxy.X+300</param>
-                                    <param id="1" name="Y">player_proxy.Y</param>
+                                <action id="0" name="Call function" sid="367118689037378" type="Function">
+                                    <param id="0" name="Name">&quot;combatTime&quot;</param>
+                                    <param id="1" name="Parameter {n}">3</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="325295333948901">
-                    <conditions>
-                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="437953285074432" type="enemy" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="367118689037378" type="Function">
-                            <param id="0" name="Name">&quot;combatTime&quot;</param>
-                            <param id="1" name="Parameter {n}">3</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -1277,6 +1266,9 @@
                     <conditions>
                         <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="692949206698650" type="player_proxy">
                             <param id="0" name="Timer">&quot;shadow&quot;</param>
+                        </condition>
+                        <condition behavior="actionFSM" id="7" inverted="1" name="Compare current state" sid="474173294140582" type="player_proxy">
+                            <param id="0" name="Name">&quot;combat&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -1315,11 +1307,8 @@
                         <action id="9" name="Set scale" sid="186317020388853" type="enemy">
                             <param id="0" name="Scale">2.5</param>
                         </action>
-                        <action id="-16" name="Set opacity" sid="477430462911272" type="enemy">
-                            <param id="0" name="Opacity">30</param>
-                        </action>
                         <action behavior="Timer" id="2" name="Start" sid="913805446404467" type="enemy">
-                            <param id="0" name="Time">0.5</param>
+                            <param id="0" name="Time">0.65</param>
                             <param id="1" name="Timer">&quot;move&quot;</param>
                             <param id="2" name="Repeat">1</param>
                         </action>

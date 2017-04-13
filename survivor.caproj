@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0404</version>
+    <version>1.0.0.041401</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -497,56 +497,118 @@
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Administrator\Desktop\survivor\enemy_1_2.png" />
                     </animation>
-                    <animation framecount="1" loop="0" name="enemy_1" pingpong="0" repeatcount="1" repeatto="0" sid="647950284889834" speed="5">
-                        <frame duration="1" hotspotX="0.475676" hotspotY="0.908" original-source="C:\Users\totoyan\Desktop\JPG\角色\enemy2.png">
-                            <image-point name="shadow" x="0.52973" y="1.02" />
-                        </frame>
+                    <animation framecount="14" loop="1" name="enemy_1_idle" pingpong="1" repeatcount="1" repeatto="0" sid="215148671448984" speed="6">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
                     </animation>
-                    <animation framecount="1" loop="0" name="enemy_2" pingpong="0" repeatcount="1" repeatto="0" sid="931145470582140" speed="5">
-                        <frame duration="1" hotspotX="0.571429" hotspotY="0.948" original-source="C:\Users\totoyan\Desktop\JPG\角色\enemy1.png">
-                            <image-point name="shadow" x="0.530612" y="1.02" />
-                        </frame>
+                    <animation framecount="14" loop="0" name="enemy_1_atk" pingpong="0" repeatcount="1" repeatto="0" sid="496533021605257" speed="10">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854" />
                     </animation>
-                    <animation framecount="1" loop="0" name="enemy_3" pingpong="0" repeatcount="1" repeatto="0" sid="161298102273545" speed="5">
-                        <frame duration="1" hotspotX="0.487013" hotspotY="0.948" original-source="C:\Users\totoyan\Desktop\JPG\角色\enemy4.png">
-                            <image-point name="shadow" x="0.532468" y="1.02" />
-                        </frame>
+                    <animation framecount="9" loop="1" name="enemy_2_idle" pingpong="1" repeatcount="1" repeatto="0" sid="269743772245146" speed="6">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="1" loop="0" name="enemy_4" pingpong="0" repeatcount="1" repeatto="0" sid="825518962992872" speed="5">
-                        <frame duration="1" hotspotX="0.496" hotspotY="0.932" />
+                    <animation framecount="10" loop="0" name="enemy_2_atk" pingpong="0" repeatcount="1" repeatto="0" sid="280972346999881" speed="8">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="1" loop="0" name="shadow" pingpong="0" repeatcount="1" repeatto="0" sid="959620498742033" speed="5">
+                    <animation framecount="10" loop="1" name="enemy_3_idle" pingpong="1" repeatcount="1" repeatto="0" sid="794579399437323" speed="6">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488" />
+                    </animation>
+                    <animation framecount="12" loop="0" name="enemy_3_atk" pingpong="0" repeatcount="1" repeatto="0" sid="271218106097459" speed="8">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="11" loop="1" name="enemy_4_idle" pingpong="0" repeatcount="1" repeatto="0" sid="825518962992872" speed="5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.501945" />
+                    </animation>
+                    <animation framecount="14" loop="1" name="enemy_4_atk" pingpong="0" repeatcount="1" repeatto="0" sid="767744254742502" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
-                    <animation framecount="1" loop="0" name="enemy_1_atk1" pingpong="0" repeatcount="1" repeatto="0" sid="215148671448984" speed="5">
-                        <frame duration="1" hotspotX="0.475676" hotspotY="0.908">
-                            <image-point name="shadow" x="0.52973" y="1.02" />
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="enemy_1_atk2" pingpong="0" repeatcount="1" repeatto="0" sid="496533021605257" speed="5">
-                        <frame duration="1" hotspotX="0.475676" hotspotY="0.908">
-                            <image-point name="shadow" x="0.52973" y="1.02" />
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="enemy_2_ak1" pingpong="0" repeatcount="1" repeatto="0" sid="269743772245146" speed="5">
-                        <frame duration="1" hotspotX="0.571429" hotspotY="0.948">
-                            <image-point name="shadow" x="0.530612" y="1.02" />
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="enemy_2_atk2" pingpong="0" repeatcount="1" repeatto="0" sid="280972346999881" speed="5">
-                        <frame duration="1" hotspotX="0.571429" hotspotY="0.948">
-                            <image-point name="shadow" x="0.530612" y="1.02" />
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="enemy_3_atk1" pingpong="0" repeatcount="1" repeatto="0" sid="794579399437323" speed="5">
-                        <frame duration="1" hotspotX="0.487013" hotspotY="0.948">
-                            <image-point name="shadow" x="0.532468" y="1.02" />
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="enemy_3_atk2" pingpong="0" repeatcount="1" repeatto="0" sid="271218106097459" speed="5">
-                        <frame duration="1" hotspotX="0.487013" hotspotY="0.948">
-                            <image-point name="shadow" x="0.532468" y="1.02" />
-                        </frame>
+                    <animation framecount="1" loop="0" name="shadow" pingpong="0" repeatcount="1" repeatto="0" sid="959620498742033" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\77.png" />
                     </animation>
                 </animation-folder>
             </object-type>

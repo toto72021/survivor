@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>le_loading</name>
     <events>
+        <include>e_fadeInOut</include>
         <include>e_bubbleImformation</include>
         <include>e_sound</include>
         <variable constant="0" name="loadCompleted" sid="188075732612864" static="0" type="number">0</variable>
@@ -12,6 +13,10 @@
                 <condition id="-2" name="On start of layout" sid="446401017014441" type="System" />
             </conditions>
             <actions>
+                <action id="0" name="Call function" sid="732862259891410" type="Function">
+                    <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
                 <action id="-9" name="Set value" sid="376575296560691" type="System">
                     <param id="0" name="Variable">loadCompleted</param>
                     <param id="1" name="Value">0</param>
@@ -43,14 +48,34 @@
                     <param id="0" name="Variable">update</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="0" name="Call function" sid="778748763832090" type="Function">
+                <action id="30" name="Create timer" sid="912355411829404" type="TimeLine">
+                    <param id="0" name="Timer">&quot;update&quot;</param>
+                    <param id="1" name="Name">&quot;update&quot;</param>
+                    <param id="2" name="Parameter {n}"></param>
+                </action>
+                <action id="3" name="Start" sid="150160344531312" type="TimeLine">
+                    <param id="0" name="Name">&quot;update&quot;</param>
+                    <param id="1" name="Time">0.1</param>
+                    <param id="2" name="Repeat">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="554084157880197">
+            <conditions>
+                <condition id="0" name="On function" sid="573767161784133" type="Function">
+                    <param id="0" name="Name">&quot;update&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Start" sid="179850678934204" type="TimeLine">
+                    <param id="0" name="Name">&quot;update&quot;</param>
+                    <param id="1" name="Time">3</param>
+                    <param id="2" name="Repeat">1</param>
+                </action>
+                <action id="0" name="Call function" sid="366516384933382" type="Function">
                     <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
                     <param id="1" name="Parameter {n}">&quot;正在更新中。。。&quot;</param>
                 </action>
-                <action id="-16" name="Wait" sid="134960839659818" type="System">
-                    <param id="0" name="Seconds">3</param>
-                </action>
-                <action id="9" name="Reload" sid="497954450490131" type="Browser" />
             </actions>
         </event-block>
         <event-block sid="414541683908536">
@@ -64,9 +89,21 @@
         <event-block sid="278916269155556">
             <conditions>
                 <condition id="1" name="Preloads complete" sid="600889837463598" type="Audio" />
+                <condition id="-14" name="Compare variable" sid="756823323373822" type="System">
+                    <param id="0" name="Variable">loadCompleted</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-9" name="Set value" sid="408477303420135" type="System">
+                    <param id="0" name="Variable">loadCompleted</param>
+                    <param id="1" name="Value">0.5</param>
+                </action>
+                <action id="-16" name="Wait" sid="138488384673646" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-9" name="Set value" sid="818493200977606" type="System">
                     <param id="0" name="Variable">loadCompleted</param>
                     <param id="1" name="Value">1</param>
                 </action>
@@ -95,8 +132,9 @@
                     <param id="0" name="Variable">loadCompleted</param>
                     <param id="1" name="Value">2</param>
                 </action>
-                <action id="-2" name="Go to layout" sid="977388230701788" type="System">
-                    <param id="0" name="Layout">plot</param>
+                <action id="0" name="Call function" sid="575606146761089" type="Function">
+                    <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
                 </action>
             </actions>
         </event-block>
