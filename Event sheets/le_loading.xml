@@ -41,14 +41,14 @@
             <sub-events>
                 <event-block sid="158496065904455">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="671083935664535" type="txts">
-                            <param id="0" name="Instance variable">groupID</param>
+                        <condition id="-7" name="Compare instance variable" sid="671083935664535" type="txt_center">
+                            <param id="0" name="Instance variable">actionID</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;ver&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="314496371571073" type="txts">
+                        <action id="0" name="Set text" sid="314496371571073" type="txt_center">
                             <param id="0" name="Text">projectversion</param>
                         </action>
                     </actions>
@@ -71,21 +71,25 @@
                 </action>
                 <action id="3" name="Start" sid="150160344531312" type="TimeLine">
                     <param id="0" name="Name">&quot;update&quot;</param>
-                    <param id="1" name="Time">0.1</param>
+                    <param id="1" name="Time">3</param>
                     <param id="2" name="Repeat">1</param>
+                </action>
+                <action id="0" name="Call function" sid="986876385850903" type="Function">
+                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;正在更新中。。。&quot;</param>
                 </action>
             </actions>
             <sub-events>
                 <event-block sid="290161578387302">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="552732148841937" type="txts">
-                            <param id="0" name="Instance variable">groupID</param>
+                        <condition id="-7" name="Compare instance variable" sid="552732148841937" type="txt_center">
+                            <param id="0" name="Instance variable">actionID</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;ver&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="918653109565391" type="txts">
+                        <action id="0" name="Set text" sid="918653109565391" type="txt_center">
                             <param id="0" name="Text">&quot;检测到更新，正在更新中。。。&quot;</param>
                         </action>
                     </actions>

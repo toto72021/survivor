@@ -25,6 +25,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet active="1" order="10">le_loading</event-sheet>
         <event-sheet order="11">le_plot</event-sheet>
         <event-sheet order="12">e_fadeInOut</event-sheet>
+        <event-sheet order="15">e_bubbleImformation</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

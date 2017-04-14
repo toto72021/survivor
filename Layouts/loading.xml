@@ -54,7 +54,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="tip" sid="567129603269692">
+        <layer name="tips" sid="567129603269692">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -93,7 +93,7 @@
                         <text>Text</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16,400,0</font>
-                        <color>0,0,0</color>
+                        <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
@@ -131,10 +131,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>953</x>
-                        <y>39</y>
+                        <y>46</y>
                         <z>0</z>
                         <width>334</width>
-                        <height>40</height>
+                        <height>54</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
