@@ -14,6 +14,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="1">game</layout>
         <layout order="3">obj</layout>
         <layout order="13">plot</layout>
+        <layout order="14">loading</layout>
         <event-sheet order="2">le_game</event-sheet>
         <event-sheet order="4">e_fight</event-sheet>
         <event-sheet order="5">e_item</event-sheet>

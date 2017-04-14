@@ -38,6 +38,22 @@
                     <param id="0" name="Audio file">getItem</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="158496065904455">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="671083935664535" type="txts">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ver&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="314496371571073" type="txts">
+                            <param id="0" name="Text">projectversion</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="814181069642227">
             <conditions>
@@ -59,6 +75,22 @@
                     <param id="2" name="Repeat">1</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="290161578387302">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="552732148841937" type="txts">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ver&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="918653109565391" type="txts">
+                            <param id="0" name="Text">&quot;检测到更新，正在更新中。。。&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="554084157880197">
             <conditions>
