@@ -281,17 +281,29 @@
                         <frame duration="1" hotspotX="0.483871" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\1.png" />
                         <frame duration="1" hotspotX="0.483871" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
                     </animation>
-                    <animation framecount="2" loop="1" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="272374131060706" speed="5">
-                        <frame duration="1" hotspotX="0.470968" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\2.png" />
-                        <frame duration="1" hotspotX="0.470968" hotspotY="0.864769" original-source="C:\Users\totoyan\Desktop\JPG\角色\6.png" />
+                    <animation framecount="6" loop="1" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="272374131060706" speed="8">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
                     </animation>
-                    <animation framecount="6" loop="0" name="combat" pingpong="0" repeatcount="1" repeatto="0" sid="427618566345965" speed="4">
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" original-source="C:\Users\totoyan\Desktop\JPG\角色\c1.png" />
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" original-source="C:\Users\totoyan\Desktop\JPG\角色\c2.png" />
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" />
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" />
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" />
-                        <frame duration="1" hotspotX="0.4" hotspotY="0.935943" />
+                    <animation framecount="14" loop="0" name="combat" pingpong="0" repeatcount="1" repeatto="0" sid="427618566345965" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.501961" />
                     </animation>
                 </animation-folder>
             </object-type>
