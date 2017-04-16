@@ -1085,7 +1085,7 @@
                             <param id="0" name="Object to create">enemy</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">player_proxy.Y-player_proxy.Height/2</param>
+                            <param id="3" name="Y">player_proxy.Y</param>
                         </action>
                         <action id="4" name="Set animation" sid="518561582673243" type="enemy">
                             <param id="0" name="Animation">Function.Param(0)&amp;&quot;_idle&quot;</param>

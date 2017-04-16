@@ -48,9 +48,10 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Pin" id="0" name="Pin to object" sid="459810147244731" type="player_skin">
+                        <action behavior="PinToImagePoint" id="1" name="Pin to image point" sid="459810147244731" type="player_skin">
                             <param id="0" name="Pin to">player_proxy</param>
-                            <param id="1" name="Mode">1</param>
+                            <param id="1" name="ImagePoint">&quot;bottom&quot;</param>
+                            <param id="2" name="Mode">0</param>
                         </action>
                         <action id="-10" name="Set value" sid="891514922828090" type="player_proxy">
                             <param id="0" name="Instance variable">vsBoss</param>

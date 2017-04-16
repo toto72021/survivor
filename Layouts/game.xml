@@ -5,7 +5,7 @@
     <event-sheet>le_game</event-sheet>
     <size>
         <width>1708</width>
-        <height>960</height>
+        <height>640</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -351,8 +351,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>436</x>
-                        <y>540</y>
+                        <x>448</x>
+                        <y>548</y>
                         <z>0</z>
                         <width>100</width>
                         <height>200</height>
@@ -372,12 +372,13 @@
                     </properties>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
+                        <behavior-instance type="PinToImagePoint" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>428</x>
-                        <y>536</y>
+                        <x>452</x>
+                        <y>444</y>
                         <z>0</z>
                         <width>225</width>
                         <height>256</height>

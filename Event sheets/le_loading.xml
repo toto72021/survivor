@@ -17,6 +17,10 @@
                     <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
+                <action id="0" name="Call function" sid="171391192925819" type="Function">
+                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;检查更新中。。。&quot;</param>
+                </action>
                 <action id="-9" name="Set value" sid="376575296560691" type="System">
                     <param id="0" name="Variable">loadCompleted</param>
                     <param id="1" name="Value">0</param>
@@ -60,23 +64,13 @@
                 <condition id="19" name="On update found" sid="427057495416612" type="Browser" />
             </conditions>
             <actions>
+                <action id="14" name="Log" sid="101422371271206" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;正在更新文件！！！&quot;</param>
+                </action>
                 <action id="-9" name="Set value" sid="460294121459455" type="System">
                     <param id="0" name="Variable">update</param>
                     <param id="1" name="Value">1</param>
-                </action>
-                <action id="30" name="Create timer" sid="912355411829404" type="TimeLine">
-                    <param id="0" name="Timer">&quot;update&quot;</param>
-                    <param id="1" name="Name">&quot;update&quot;</param>
-                    <param id="2" name="Parameter {n}"></param>
-                </action>
-                <action id="3" name="Start" sid="150160344531312" type="TimeLine">
-                    <param id="0" name="Name">&quot;update&quot;</param>
-                    <param id="1" name="Time">3</param>
-                    <param id="2" name="Repeat">1</param>
-                </action>
-                <action id="0" name="Call function" sid="986876385850903" type="Function">
-                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;正在更新中。。。&quot;</param>
                 </action>
             </actions>
             <sub-events>
@@ -96,30 +90,16 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="554084157880197">
-            <conditions>
-                <condition id="0" name="On function" sid="573767161784133" type="Function">
-                    <param id="0" name="Name">&quot;update&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="3" name="Start" sid="179850678934204" type="TimeLine">
-                    <param id="0" name="Name">&quot;update&quot;</param>
-                    <param id="1" name="Time">3</param>
-                    <param id="2" name="Repeat">1</param>
-                </action>
-                <action id="0" name="Call function" sid="366516384933382" type="Function">
-                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;正在更新中。。。&quot;</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="414541683908536">
             <conditions>
                 <condition id="6" name="On update ready" sid="488308680418258" type="Browser" />
             </conditions>
             <actions>
-                <action id="9" name="Reload" sid="850525951285371" type="Browser" />
+                <action behavior="Timer" id="2" name="Start" sid="523980331403504" type="loadLogo">
+                    <param id="0" name="Time">1</param>
+                    <param id="1" name="Timer">&quot;_start&quot;</param>
+                    <param id="2" name="Repeat">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="278916269155556">
@@ -136,43 +116,150 @@
                     <param id="0" name="Variable">loadCompleted</param>
                     <param id="1" name="Value">0.5</param>
                 </action>
-                <action id="-16" name="Wait" sid="138488384673646" type="System">
-                    <param id="0" name="Seconds">2</param>
+                <action behavior="Timer" id="2" name="Start" sid="765794722781103" type="loadLogo">
+                    <param id="0" name="Time">2</param>
+                    <param id="1" name="Timer">&quot;_load&quot;</param>
+                    <param id="2" name="Repeat">1</param>
                 </action>
-                <action id="-9" name="Set value" sid="818493200977606" type="System">
-                    <param id="0" name="Variable">loadCompleted</param>
-                    <param id="1" name="Value">1</param>
+            </actions>
+        </event-block>
+        <event-block sid="743866421199785">
+            <conditions>
+                <condition behavior="Timer" id="0" name="Is timer running" sid="681135483863361" type="loadLogo">
+                    <param id="0" name="Timer">&quot;_load&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="580404441725718" type="loadLogo">
+                    <param id="0" name="X">lerp(280,660,Self.Timer.ElapsedPercent(&quot;_load&quot;))</param>
+                </action>
+                <action id="-5" name="Set width" sid="980302913543878" type="item_progress">
+                    <param id="0" name="Width">400*loadLogo.Timer.ElapsedPercent(&quot;_load&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="639041756083653">
+            <conditions>
+                <condition behavior="Timer" id="1" name="On time-out" sid="871110530583176" type="loadLogo">
+                    <param id="0" name="Timer">&quot;_load&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="793704899019678">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="578701826875797" type="System">
+                            <param id="0" name="Variable">update</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="30" name="Create timer" sid="912355411829404" type="TimeLine">
+                            <param id="0" name="Timer">&quot;update&quot;</param>
+                            <param id="1" name="Name">&quot;update&quot;</param>
+                            <param id="2" name="Parameter {n}"></param>
+                        </action>
+                        <action id="3" name="Start" sid="150160344531312" type="TimeLine">
+                            <param id="0" name="Name">&quot;update&quot;</param>
+                            <param id="1" name="Time">0.1</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="633549606238721">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="933974075100864" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="818493200977606" type="System">
+                            <param id="0" name="Variable">loadCompleted</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="838759243839731" type="loadLogo">
+                            <param id="0" name="Time">1</param>
+                            <param id="1" name="Timer">&quot;_start&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="821041567014305">
+            <conditions>
+                <condition behavior="Timer" id="0" name="Is timer running" sid="427930410182832" type="loadLogo">
+                    <param id="0" name="Timer">&quot;_start&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="896171851311318" type="loadLogo">
+                    <param id="0" name="X">660+200*Self.Timer.ElapsedPercent(&quot;_start&quot;)</param>
+                </action>
+                <action id="-5" name="Set width" sid="502710884839777" type="item_progress">
+                    <param id="0" name="Width">400+200*loadLogo.Timer.ElapsedPercent(&quot;_start&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="554084157880197">
+            <conditions>
+                <condition id="0" name="On function" sid="573767161784133" type="Function">
+                    <param id="0" name="Name">&quot;update&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="986876385850903" type="Function">
+                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;发现新版本！正在更新中。。。&quot;</param>
+                </action>
+                <action id="3" name="Start" sid="179850678934204" type="TimeLine">
+                    <param id="0" name="Name">&quot;update&quot;</param>
+                    <param id="1" name="Time">3</param>
+                    <param id="2" name="Repeat">1</param>
                 </action>
             </actions>
         </event-block>
         <event-block sid="249521442781843">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="931487934082924" type="System">
-                    <param id="0" name="Variable">loadCompleted</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="416955047768972" type="System">
-                    <param id="0" name="Variable">update</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-                <condition id="-8" name="Compare two values" sid="195698100954072" type="System">
-                    <param id="0" name="First value">loadingprogress</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Second value">1</param>
+                <condition behavior="Timer" id="1" name="On time-out" sid="646788203429137" type="loadLogo">
+                    <param id="0" name="Timer">&quot;_start&quot;</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="215152030191016" type="System">
-                    <param id="0" name="Variable">loadCompleted</param>
-                    <param id="1" name="Value">2</param>
-                </action>
-                <action id="0" name="Call function" sid="575606146761089" type="Function">
-                    <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="496141147701228">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="931487934082924" type="System">
+                            <param id="0" name="Variable">loadCompleted</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="416955047768972" type="System">
+                            <param id="0" name="Variable">update</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="195698100954072" type="System">
+                            <param id="0" name="First value">loadingprogress</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="575606146761089" type="Function">
+                            <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="325611681933716">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="780870737246444" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Reload" sid="850525951285371" type="Browser" />
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

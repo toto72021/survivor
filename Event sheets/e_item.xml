@@ -154,7 +154,7 @@
                             </sub-events>
                         </event-block>
                         <comment>控制背包大小</comment>
-                        <variable constant="0" name="itemBagSize" sid="886038041156688" static="0" type="number">10</variable>
+                        <variable constant="0" name="itemBagSize" sid="886038041156688" static="0" type="number">6</variable>
                         <event-block sid="603577534418250">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="505762490536361" type="System">
