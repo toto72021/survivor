@@ -11,7 +11,7 @@
                         <condition id="-2" name="On start of layout" sid="403328631277971" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="691613791905765" type="SpriteFont">
+                        <action id="0" name="Set text" sid="691613791905765" type="num">
                             <param id="0" name="Text">&quot;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;CREDIT&#x0D;&#x0A;&#x0D;&#x0A;     DEVELOPER&#x0D;&#x0A;&#x0D;&#x0A;           totoyan;&#x0D;&#x0A;           yeying;&#x0D;&#x0A;           liuchang;&#x0D;&#x0A;           zhangxinyu;&#x0D;&#x0A;           hongxiaoling&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;     THANKS&#x0D;&#x0A;&#x0D;&#x0A;           ssyar.com;&#x0D;&#x0A;           iconboy;&#x0D;&#x0A;           chfreezer;&#x0D;&#x0A;           jomo;&#x0D;&#x0A;           rexrainbow;&#x0D;&#x0A;           aven&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;THANKS ALL OF YOU!!!&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&quot;</param>
                         </action>
                     </actions>
@@ -20,7 +20,7 @@
                 <event-block sid="323792616382327">
                     <conditions>
                         <condition id="4" name="Is touching object" sid="292291466600701" type="Touch">
-                            <param id="0" name="Object">SpriteFont</param>
+                            <param id="0" name="Object">num</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -44,13 +44,13 @@
                 <event-block sid="472500537413193">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="938984465509492" type="System" />
-                        <condition id="-2" name="Compare Y" sid="409846558633614" type="SpriteFont">
+                        <condition id="-2" name="Compare Y" sid="409846558633614" type="num">
                             <param id="0" name="Comparison">5</param>
                             <param id="1" name="Y co-ordinate">-(Self.Height-LayoutHeight)</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-2" name="Set Y" sid="221352468666710" type="SpriteFont">
+                        <action id="-2" name="Set Y" sid="221352468666710" type="num">
                             <param id="0" name="Y">Self.Y-speed</param>
                         </action>
                     </actions>

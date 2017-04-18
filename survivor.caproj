@@ -346,9 +346,12 @@
             <object-type name="txt_right" sid="275527139939712">
                 <plugin id="Text" />
             </object-type>
-            <object-type name="SpriteFont" sid="368666003344129">
+            <object-type name="num" sid="368666003344129">
                 <plugin id="Spritefont2" />
-                <texture />
+                <instance-variables>
+                    <instance-variable name="action" sid="716033239251633" type="string" />
+                </instance-variables>
+                <texture original-source="C:\Users\Administrator\Desktop\数字.png" />
             </object-type>
         </object-folder>
         <object-folder name="ui">
@@ -390,7 +393,7 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item4.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="rawMeat" pingpong="0" repeatcount="1" repeatto="0" sid="843337833992914" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\rawMeat.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="stone" pingpong="0" repeatcount="1" repeatto="0" sid="326070216378129" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\stone.png" />
@@ -405,7 +408,7 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\rubs.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="cookedMeat" pingpong="0" repeatcount="1" repeatto="0" sid="274405052505068" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\cookedMeat.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -419,10 +422,10 @@
                         <frame duration="1" hotspotX="0.502857" hotspotY="0.509091" original-source="C:\Users\Administrator\Desktop\resource\btn_pause.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="attack" pingpong="0" repeatcount="1" repeatto="0" sid="896421395455298" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\1.png" />
+                        <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\swar.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="backpack" pingpong="0" repeatcount="1" repeatto="0" sid="575911675417003" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.504951" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\bag.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="escape" pingpong="0" repeatcount="1" repeatto="0" sid="480566859820105" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -432,6 +435,9 @@
                     </animation>
                     <animation framecount="1" loop="0" name="create" pingpong="0" repeatcount="1" repeatto="0" sid="246340284544649" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="search" pingpong="0" repeatcount="1" repeatto="0" sid="166867102509946" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\btn_research.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -486,7 +492,7 @@
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="item5" pingpong="0" repeatcount="1" repeatto="0" sid="767743038857364" speed="5">
-                        <frame duration="1" hotspotX="0.494444" hotspotY="0.0769231" original-source="C:\Users\Administrator\Desktop\survivor\water.png">
+                        <frame duration="1" hotspotX="0.483333" hotspotY="-0.269231" original-source="C:\Users\Administrator\Desktop\survivor\water.png">
                             <image-point name="search" x="0.5" y="-0.576923" />
                         </frame>
                     </animation>

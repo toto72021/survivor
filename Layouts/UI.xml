@@ -194,8 +194,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>66.744857788</x>
-                        <y>136.470657349</y>
+                        <x>28</x>
+                        <y>-136</y>
                         <z>0</z>
                         <width>117</width>
                         <height>55</height>
@@ -248,8 +248,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>124.587753296</x>
-                        <y>87.235328674</y>
+                        <x>86</x>
+                        <y>-186</y>
                         <z>0</z>
                         <width>80.781311035</width>
                         <height>39.97354126</height>
@@ -302,8 +302,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>138.019363403</x>
-                        <y>162.274505615</y>
+                        <x>99</x>
+                        <y>-111</y>
                         <z>0</z>
                         <width>86.517440796</width>
                         <height>39.97354126</height>
@@ -385,8 +385,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>11</x>
-                        <y>211</y>
+                        <x>-28</x>
+                        <y>-62</y>
                         <z>0</z>
                         <width>286</width>
                         <height>51</height>
@@ -417,10 +417,10 @@
                         <x>1062</x>
                         <y>568</y>
                         <z>0</z>
-                        <width>120</width>
+                        <width>101</width>
                         <height>100</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.504950523</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -448,6 +448,105 @@
                         <z>0</z>
                         <width>120</width>
                         <height>100</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="num" uid="64">
+                    <properties>
+                        <character-width>40</character-width>
+                        <character-height>50</character-height>
+                        <character-set>123456789.0</character-set>
+                        <text>1234</text>
+                        <scale>1</scale>
+                        <initial-visibility>Visible</initial-visibility>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <action>energy</action>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>128</x>
+                        <y>52</y>
+                        <z>0</z>
+                        <width>163</width>
+                        <height>61</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="num" uid="65">
+                    <properties>
+                        <character-width>40</character-width>
+                        <character-height>50</character-height>
+                        <character-set>123456789.0</character-set>
+                        <text>1234</text>
+                        <scale>1</scale>
+                        <initial-visibility>Visible</initial-visibility>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <action>hp</action>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>68</x>
+                        <y>112</y>
+                        <z>0</z>
+                        <width>163</width>
+                        <height>61</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="num" uid="66">
+                    <properties>
+                        <character-width>40</character-width>
+                        <character-height>50</character-height>
+                        <character-set>123456789.0</character-set>
+                        <text>1234</text>
+                        <scale>1</scale>
+                        <initial-visibility>Visible</initial-visibility>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                    </properties>
+                    <instance-variables>
+                        <action>hungry</action>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>140</x>
+                        <y>144</y>
+                        <z>0</z>
+                        <width>163</width>
+                        <height>61</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

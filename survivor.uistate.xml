@@ -10,7 +10,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">UI</layout>
+        <layout active="1" order="0">UI</layout>
         <layout order="1">game</layout>
         <layout order="3">obj</layout>
         <layout order="10">plot</layout>
@@ -22,7 +22,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet order="7">e_ui</event-sheet>
         <event-sheet order="8">e_start&amp;end</event-sheet>
         <event-sheet order="9">le_plot</event-sheet>
-        <event-sheet active="1" order="11">le_loading</event-sheet>
+        <event-sheet order="11">le_loading</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

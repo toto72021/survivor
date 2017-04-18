@@ -29,7 +29,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="SpriteFont" uid="20">
+                <instance type="num" uid="20">
                     <properties>
                         <character-width>16</character-width>
                         <character-height>16</character-height>
@@ -44,6 +44,9 @@
                         <character-spacing>0</character-spacing>
                         <line-height>0</line-height>
                     </properties>
+                    <instance-variables>
+                        <action></action>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

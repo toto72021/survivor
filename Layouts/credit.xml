@@ -51,7 +51,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="SpriteFont" uid="52">
+                <instance type="num" uid="52">
                     <properties>
                         <character-width>16</character-width>
                         <character-height>16</character-height>
@@ -66,6 +66,9 @@
                         <character-spacing>0</character-spacing>
                         <line-height>0</line-height>
                     </properties>
+                    <instance-variables>
+                        <action></action>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
