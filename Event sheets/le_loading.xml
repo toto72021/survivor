@@ -59,19 +59,18 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <comment>这里有问题</comment>
         <event-block sid="814181069642227">
             <conditions>
                 <condition id="19" name="On update found" sid="427057495416612" type="Browser" />
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="460294121459455" type="System">
-                    <param id="0" name="Variable">update</param>
-                    <param id="1" name="Value">1</param>
-                </action>
                 <action id="14" name="Log" sid="101422371271206" type="Browser">
                     <param id="0" name="Type">0</param>
                     <param id="1" name="Message">&quot;正在更新文件！！！&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="460294121459455" type="System">
+                    <param id="0" name="Variable">update</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
             <sub-events>
