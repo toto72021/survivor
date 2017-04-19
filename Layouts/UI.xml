@@ -324,9 +324,10 @@
                     <instance-variables>
                         <groupID>move</groupID>
                         <actionID>pause</actionID>
+                        <Puid>0</Puid>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Persist" />
+                        <behavior-instance type="Pin" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -407,9 +408,10 @@
                     <instance-variables>
                         <groupID>item</groupID>
                         <actionID>backpack</actionID>
+                        <Puid>0</Puid>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Persist" />
+                        <behavior-instance type="Pin" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -436,9 +438,10 @@
                     <instance-variables>
                         <groupID>item</groupID>
                         <actionID>make</actionID>
+                        <Puid>0</Puid>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Persist" />
+                        <behavior-instance type="Pin" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

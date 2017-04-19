@@ -167,6 +167,7 @@
                         <variable constant="0" name="createItem" sid="142561738480762" static="0" type="text">rubbish</variable>
                         <variable constant="0" name="material1" sid="941555049756575" static="0" type="text"></variable>
                         <variable constant="0" name="material2" sid="990596178030683" static="0" type="text"></variable>
+                        <variable constant="0" name="material3" sid="404996770384989" static="0" type="text"></variable>
                         <event-block sid="624302833386872">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="511170579440513" type="System">

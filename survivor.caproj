@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.04171732</version>
+    <version>1.0.0.0419</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -164,7 +164,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="default" pingpong="0" repeatcount="1" repeatto="0" sid="348961624809026" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.504348" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\itembg.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -267,9 +267,12 @@
                     <behavior-type name="PinToImagePoint" sid="192996445570600">
                         <behavior id="Rex_pin2imgpt" />
                     </behavior-type>
+                    <behavior-type name="Timer" sid="507779138181231">
+                        <behavior id="Rex_Timer" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="6" loop="1" name="move" pingpong="0" repeatcount="1" repeatto="0" sid="332984890256604" speed="7">
+                    <animation framecount="6" loop="1" name="move" pingpong="0" repeatcount="1" repeatto="0" sid="332984890256604" speed="8">
                         <frame duration="1" hotspotX="0.502222" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.502222" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.502222" hotspotY="0.5" />
@@ -375,40 +378,46 @@
                     <instance-variable name="itemName" sid="592777860765638" type="string" />
                 </instance-variables>
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="knife" pingpong="0" repeatcount="1" repeatto="0" sid="462963690497642" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item1.png" />
+                    <animation framecount="2" loop="0" name="knife" pingpong="0" repeatcount="1" repeatto="0" sid="462963690497642" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\h_knife0.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\h_knife.png" />
                     </animation>
                     <animation framecount="3" loop="0" name="water" pingpong="0" repeatcount="1" repeatto="0" sid="393019595602774" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item5.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item6.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\h_kittle01.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\h_kittle02.png" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="1" loop="0" name="fruits" pingpong="0" repeatcount="1" repeatto="0" sid="700352310851996" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item7.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\seed.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="coconut" pingpong="0" repeatcount="1" repeatto="0" sid="217712069512791" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item3.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\coconut.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="egg" pingpong="0" repeatcount="1" repeatto="0" sid="393943300714414" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\UI\ui_item4.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\eng.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="rawMeat" pingpong="0" repeatcount="1" repeatto="0" sid="843337833992914" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\rawMeat.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="stone" pingpong="0" repeatcount="1" repeatto="0" sid="326070216378129" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\stone.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\stone.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="wood" pingpong="0" repeatcount="1" repeatto="0" sid="838211446697123" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\wood.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\wood.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="fire" pingpong="0" repeatcount="1" repeatto="0" sid="842624383265517" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\fire.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="rubbish" pingpong="0" repeatcount="1" repeatto="0" sid="512993147961792" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\rubs.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\rub.png" />
                     </animation>
                     <animation framecount="1" loop="0" name="cookedMeat" pingpong="0" repeatcount="1" repeatto="0" sid="274405052505068" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\cookedMeat.png" />
+                    </animation>
+                    <animation framecount="3" loop="0" name="water2" pingpong="0" repeatcount="1" repeatto="0" sid="659758935075205" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\h_kittle1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\h_kittle2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -511,7 +520,7 @@
             </object-type>
             <object-type name="selectbox" sid="382349337216217">
                 <plugin id="NinePatch" />
-                <texture />
+                <texture original-source="C:\Users\Administrator\Desktop\resource\res\select.png" />
             </object-type>
             <object-type name="loadLogo" sid="568647725260619">
                 <plugin id="Sprite" />
@@ -737,10 +746,11 @@
             <instance-variables>
                 <instance-variable name="groupID" sid="702355999223260" type="string" />
                 <instance-variable name="actionID" sid="320262683896434" type="string" />
+                <instance-variable name="Puid" sid="412057583214639" type="number" />
             </instance-variables>
             <behaviors>
-                <behavior-type name="Persist" sid="682585978973577">
-                    <behavior id="Persist" />
+                <behavior-type name="Pin" sid="292310642430540">
+                    <behavior id="Pin" />
                 </behavior-type>
             </behaviors>
         </family>

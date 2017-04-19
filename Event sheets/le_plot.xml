@@ -7,11 +7,16 @@
         <include>e_sound</include>
         <event-group description="" sid="508896808231153" title="vedio">
             <sub-events>
+                <variable constant="0" name="createRole" sid="813615235308059" static="1" type="number">0</variable>
                 <event-block sid="327600397706945">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="333750052281429" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="966379235285249" type="System">
+                            <param id="0" name="Variable">createRole</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                         <action id="0" name="Call function" sid="602722120601519" type="Function">
                             <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
@@ -35,6 +40,93 @@
                         <action id="0" name="Call function" sid="998490639934411" type="Function">
                             <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;game&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="917357672136051">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="236751628997370" type="System">
+                            <param id="0" name="First value">Video.PlaybackTime</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">20</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="169222880440773" type="System">
+                            <param id="0" name="Variable">createRole</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="432761295864503" type="System">
+                            <param id="0" name="Variable">createRole</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="257149384707957" type="System">
+                            <param id="0" name="Object to create">player_skin</param>
+                            <param id="1" name="Layer">&quot;game&quot;</param>
+                            <param id="2" name="X">-200</param>
+                            <param id="3" name="Y">448</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="987677313058174" type="player_skin">
+                            <param id="0" name="Animation">&quot;move&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="439021492636045" type="player_skin">
+                            <param id="0" name="Speed">5</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="909493852166396" type="player_skin">
+                            <param id="0" name="Time">Video.Duration-Video.PlaybackTime</param>
+                            <param id="1" name="Timer">&quot;_move&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="309608552005346">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="979535616636754" type="System">
+                            <param id="0" name="First value">Video.PlaybackTime</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">27</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="825747878191523" type="System">
+                            <param id="0" name="Variable">createRole</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="666797106607940" type="System">
+                            <param id="0" name="Variable">createRole</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="742703038898283" type="player_skin">
+                            <param id="0" name="Time">Video.Duration-Video.PlaybackTime</param>
+                            <param id="1" name="Timer">&quot;_fade&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="198519312359714">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="Is timer running" sid="506817400562160" type="player_skin">
+                            <param id="0" name="Timer">&quot;_move&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="646248124100499" type="player_skin">
+                            <param id="0" name="X">lerp(-200,452,Self.Timer.ElapsedPercent(&quot;_move&quot;))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="193667260011379">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="Is timer running" sid="613128368501502" type="player_skin">
+                            <param id="0" name="Timer">&quot;_fade&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="552983056859648" type="player_skin">
+                            <param id="0" name="Opacity">100*Self.Timer.RemainderPercent(&quot;_fade&quot;)</param>
                         </action>
                     </actions>
                 </event-block>

@@ -4,8 +4,8 @@
     <sid>118055725813763</sid>
     <event-sheet>le_plot</event-sheet>
     <size>
-        <width>1700</width>
-        <height>1600</height>
+        <width>1136</width>
+        <height>640</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Layer 0" sid="922578022962123">
+        <layer name="game" sid="922578022962123">
             <initially-visible>1</initially-visible>
             <background-color>0,0,0</background-color>
             <transparent>0</transparent>
