@@ -165,13 +165,13 @@
         </event-group>
         <event-group description="" sid="620228425648332" title="start&amp;end">
             <sub-events>
-                <event-block sid="886292512784492">
+                <event-block sid="240928675672749">
                     <conditions>
-                        <condition id="18" name="On double-tap object" sid="942489119538658" type="Touch">
-                            <param id="0" name="Object">player_proxy</param>
+                        <condition id="16" name="On hold over object" sid="495082963784067" type="Touch">
+                            <param id="0" name="Object">ui_display</param>
                         </condition>
-                        <condition behavior="actionFSM" id="7" name="Compare current state" sid="541079847545095" type="player_proxy">
-                            <param id="0" name="Name">&quot;pause&quot;</param>
+                        <condition id="2" name="Is playing" sid="149403245547545" type="ui_display">
+                            <param id="0" name="Animation">&quot;hp&quot;</param>
                         </condition>
                     </conditions>
                     <actions>

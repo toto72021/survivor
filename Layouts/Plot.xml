@@ -31,9 +31,9 @@
             <instances>
                 <instance type="Video" uid="2">
                     <properties>
-                        <webm-source>fb.webm</webm-source>
+                        <webm-source></webm-source>
                         <ogg-theora-source></ogg-theora-source>
-                        <h264-source>fb.mp4</h264-source>
+                        <h264-source>fb_1.mp4</h264-source>
                         <autoplay>Preload</autoplay>
                         <play-in-background>No</play-in-background>
                         <initial-visibility>Visible</initial-visibility>

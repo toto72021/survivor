@@ -1146,6 +1146,11 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;enemy&quot;</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="763581434917027" type="enemy">
+                                    <param id="0" name="Instance variable">name</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;enemy_4&quot;</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>

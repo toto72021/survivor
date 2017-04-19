@@ -973,7 +973,6 @@
             <file name="icon-32.png" />
             <file name="icon-114.png" />
         </file-folder>
-        <file name="fb.webm" />
-        <file name="fb.mp4" />
+        <file name="fb_1.mp4" />
     </files-folder>
 </c2project>

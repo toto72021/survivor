@@ -14,6 +14,48 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="566798147236657">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="737134399609436" type="num">
+                                    <param id="0" name="Instance variable">action</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;hp&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="612103241901569" type="num">
+                                    <param id="0" name="Text">player_proxy.hp</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="292649784870881">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="594919484522402" type="num">
+                                    <param id="0" name="Instance variable">action</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;energy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="402721352076099" type="num">
+                                    <param id="0" name="Text">player_proxy.energy</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="881918401010065">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="837482975205197" type="num">
+                                    <param id="0" name="Instance variable">action</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;hungry&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="970693849057180" type="num">
+                                    <param id="0" name="Text">player_proxy.hungry</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="149982818068252">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="587113438098067" type="txts">
