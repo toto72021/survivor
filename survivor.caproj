@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.04201425</version>
+    <version>1.0.0.04202355</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -58,7 +58,7 @@
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
     <first-layout>loading</first-layout>
-    <use-loader-layout>0</use-loader-layout>
+    <use-loader-layout>1</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
         <prop name="Downscaling">Medium quality</prop>
@@ -122,23 +122,11 @@
         <object-folder name="bg">
             <object-type name="bg_1" sid="792114711608954">
                 <plugin id="TiledBg" />
-                <texture original-source="C:\Users\Administrator\Desktop\survivor\bg1.png" />
-            </object-type>
-            <object-type name="bg_2" sid="260914530959441">
-                <plugin id="TiledBg" />
-                <texture original-source="D:\totoyan\C2\C2inWorks\JPG\地图\2bg.png" />
-            </object-type>
-            <object-type name="bg_day" sid="230569613314526">
-                <plugin id="TiledBg" />
-                <texture original-source="C:\Users\Administrator\Desktop\survivor\day.png" />
+                <texture original-source="C:\Users\Administrator\Desktop\resource\res\map.png" />
             </object-type>
             <object-type name="bg_mask" sid="740781980721511">
                 <plugin id="TiledBg" />
                 <texture original-source="C:\Users\totoyan\Desktop\bg2.png" />
-            </object-type>
-            <object-type name="bg_night" sid="326030262491086">
-                <plugin id="TiledBg" />
-                <texture original-source="C:\Users\Administrator\Desktop\survivor\night.png" />
             </object-type>
             <object-type name="bg_tween" sid="522231890089693">
                 <plugin id="TiledBg" />
@@ -188,9 +176,13 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="757674209513868" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\run.png" />
                     </animation>
                 </animation-folder>
+            </object-type>
+            <object-type name="bg_mask2" sid="198001034581860">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\totoyan\Desktop\bg2.png" />
             </object-type>
         </object-folder>
         <object-folder name="particle">
@@ -448,6 +440,10 @@
                     <animation framecount="1" loop="0" name="search" pingpong="0" repeatcount="1" repeatto="0" sid="166867102509946" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\btn_research.png" />
                     </animation>
+                    <animation framecount="2" loop="0" name="backpage" pingpong="0" repeatcount="1" repeatto="0" sid="333535988278837" speed="0">
+                        <frame duration="1" hotspotX="0.501285" hotspotY="0.506024" original-source="C:\Users\Administrator\Desktop\resource\res\btn_back.png" />
+                        <frame duration="1" hotspotX="0.502632" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\btn_sucess.png" />
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="item" sid="633495286332799">
@@ -466,7 +462,7 @@
                     </animation>
                     <animation framecount="4" loop="1" name="item2" pingpong="1" repeatcount="1" repeatto="0" sid="391148996954806" speed="0">
                         <frame duration="1" hotspotX="0.446809" hotspotY="0.884774" original-source="C:\Users\Administrator\Desktop\survivor\coco0.png">
-                            <image-point name="search" x="0.503546" y="-0.0411523" />
+                            <image-point name="search" x="0.41844" y="0.395062" />
                         </frame>
                         <frame duration="1" hotspotX="0.485507" hotspotY="0.878261" original-source="C:\Users\Administrator\Desktop\survivor\coco1.png">
                             <image-point name="search" x="0.5" y="-0.0434783" />
@@ -480,7 +476,7 @@
                     </animation>
                     <animation framecount="3" loop="1" name="item3" pingpong="1" repeatcount="1" repeatto="0" sid="216294309101656" speed="0">
                         <frame duration="1" hotspotX="0.611511" hotspotY="0.904594" original-source="C:\Users\Administrator\Desktop\survivor\tree0.png">
-                            <image-point name="search" x="0.503597" y="-0.0353357" />
+                            <image-point name="search" x="0.510791" y="0.484099" />
                         </frame>
                         <frame duration="1" hotspotX="0.588652" hotspotY="0.90625" original-source="C:\Users\Administrator\Desktop\survivor\tree1.png">
                             <image-point name="search" x="0.503546" y="-0.0347222" />
@@ -506,15 +502,26 @@
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="item6" pingpong="0" repeatcount="1" repeatto="0" sid="197088983712706" speed="5">
-                        <frame duration="1" hotspotX="0.450331" hotspotY="0.791667" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\wood2.png" />
+                        <frame duration="1" hotspotX="0.450331" hotspotY="0.791667" original-source="D:\totoyan\C2\C2inWorks\yusheng\res\wood2.png">
+                            <image-point name="search" x="0.443709" y="-0.444444" />
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
             <object-type name="mainUI" sid="776189858125899">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="843804956543330">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="613097155409151" speed="5">
+                    <animation framecount="1" loop="0" name="mainUI" pingpong="0" repeatcount="1" repeatto="0" sid="613097155409151" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\JPG\背景，界面\主界面-zxy.jpg" />
+                    </animation>
+                    <animation framecount="2" loop="0" name="end" pingpong="0" repeatcount="1" repeatto="0" sid="468728976277688" speed="0">
+                        <frame duration="1" hotspotX="0.500626" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\death.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\res\successbg.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -752,15 +759,16 @@
                 <behavior-type name="Pin" sid="292310642430540">
                     <behavior id="Pin" />
                 </behavior-type>
+                <behavior-type name="Fade" sid="412442357341484">
+                    <behavior id="Fade" />
+                </behavior-type>
             </behaviors>
         </family>
         <family name="bgs" plugin-id="TiledBg" sid="679559079734112">
             <members>
                 <member>bg_1</member>
-                <member>bg_2</member>
-                <member>bg_day</member>
                 <member>bg_mask</member>
-                <member>bg_night</member>
+                <member>bg_mask2</member>
                 <member>bg_tween</member>
             </members>
             <instance-variables>
@@ -913,6 +921,7 @@
         <layout>obj.xml</layout>
         <layout>plot.xml</layout>
         <layout>credit.xml</layout>
+        <layout>end.xml</layout>
     </layout-folder>
     <event-folder>
         <event-folder name="layout">
@@ -920,6 +929,7 @@
             <event-sheet>le_game.xml</event-sheet>
             <event-sheet>le_loading.xml</event-sheet>
             <event-sheet>le_plot.xml</event-sheet>
+            <event-sheet>le_end.xml</event-sheet>
         </event-folder>
         <event-folder name="event">
             <event-sheet>e_bubbleImformation.xml</event-sheet>

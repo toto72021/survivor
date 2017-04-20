@@ -178,32 +178,6 @@
                             <param id="0" name="Opacity">100*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="614493654268831">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="865011141890268" type="System">
-                                    <param id="0" name="Object">bg_day</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-16" name="Set opacity" sid="722719616282489" type="bg_day">
-                                    <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;dayTimer&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="550535040192182">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="404663231077866" type="System">
-                                    <param id="0" name="Object">bg_night</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-16" name="Set opacity" sid="583850453546799" type="bg_night">
-                                    <param id="0" name="Opacity">100*player_proxy.Timer.ElapsedPercent(&quot;dayTimer&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="978478051885027">
                     <conditions>
@@ -277,32 +251,6 @@
                             <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="710695582203850">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="978130618310541" type="System">
-                                    <param id="0" name="Object">bg_day</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-16" name="Set opacity" sid="423526358117342" type="bg_day">
-                                    <param id="0" name="Opacity">100*player_proxy.Timer.ElapsedPercent(&quot;nightTimer&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="209685382443015">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="598724981992774" type="System">
-                                    <param id="0" name="Object">bg_night</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-16" name="Set opacity" sid="471874694625113" type="bg_night">
-                                    <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;nightTimer&quot;)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="411497728622040">
                     <conditions>
@@ -378,143 +326,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
-                                            <param id="0" name="X">self.Width-2</param>
-                                        </action>
-                                    </actions>
-                                    <sub-events>
-                                        <event-block sid="587319255960326">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="917733750186090" type="player_proxy">
-                                                    <param id="0" name="Instance variable">moveDistance</param>
-                                                    <param id="1" name="Comparison">5</param>
-                                                    <param id="2" name="Value">Self.jungleDis</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="422492135245752">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="608631292453795" type="bg_2">
-                                                            <param id="0" name="Instance variable">actionID</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">&quot;jungle&quot;</param>
-                                                        </condition>
-                                                        <condition id="-8" name="Compare two values" sid="556160283252731" type="System">
-                                                            <param id="0" name="First value">bg_2.Count</param>
-                                                            <param id="1" name="Comparison">5</param>
-                                                            <param id="2" name="Second value">2</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions />
-                                                </event-block>
-                                                <event-block sid="217263431794640">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="372161634547988" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="-3" name="Create object" sid="148350593055628" type="System">
-                                                            <param id="0" name="Object to create">bg_2</param>
-                                                            <param id="1" name="Layer">bg_1.LayerName</param>
-                                                            <param id="2" name="X">bg_1.x</param>
-                                                            <param id="3" name="Y">0</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="205311880404685" type="bg_2">
-                                                            <param id="0" name="Instance variable">groupID</param>
-                                                            <param id="1" name="Value">&quot;bg&quot;</param>
-                                                        </action>
-                                                        <action id="-10" name="Set value" sid="327447101806633" type="bg_2">
-                                                            <param id="0" name="Instance variable">actionID</param>
-                                                            <param id="1" name="Value">&quot;jungle&quot;</param>
-                                                        </action>
-                                                        <action id="-7" name="Set size" sid="530696651477947" type="bg_2">
-                                                            <param id="0" name="Width">1753</param>
-                                                            <param id="1" name="Height">640</param>
-                                                        </action>
-                                                        <action id="-9" name="Destroy" sid="914935846140659" type="bg_1" />
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="459222645075463">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="655788789370600" type="System">
-                                    <param id="0" name="Object">bg_2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="459828493495321" type="bg_2">
-                                    <param id="0" name="X">Self.X-60*dt </param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="417748383502165">
-                                    <conditions>
-                                        <condition id="-1" name="Compare X" sid="460723728099217" type="bg_2">
-                                            <param id="0" name="Comparison">3</param>
-                                            <param id="1" name="X co-ordinate">-Self.Width</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-1" name="Set X" sid="874079131341739" type="bg_2">
-                                            <param id="0" name="X">self.Width-2</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="662116184266010">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="289088099703028" type="System">
-                                    <param id="0" name="Object">bg_day</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="976913682603606" type="bg_day">
-                                    <param id="0" name="X">Self.X-30*dt </param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="256651105044986">
-                                    <conditions>
-                                        <condition id="-1" name="Compare X" sid="307670523590789" type="bg_day">
-                                            <param id="0" name="Comparison">3</param>
-                                            <param id="1" name="X co-ordinate">-Self.Width</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-1" name="Set X" sid="157909263469450" type="bg_day">
-                                            <param id="0" name="X">1134</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="661885103736473">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="694114368196084" type="System">
-                                    <param id="0" name="Object">bg_night</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="698963135349670" type="bg_night">
-                                    <param id="0" name="X">Self.X-30*dt </param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="777509258710062">
-                                    <conditions>
-                                        <condition id="-1" name="Compare X" sid="333710821464146" type="bg_night">
-                                            <param id="0" name="Comparison">3</param>
-                                            <param id="1" name="X co-ordinate">-Self.Width</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-1" name="Set X" sid="968958282132998" type="bg_night">
-                                            <param id="0" name="X">1134</param>
+                                            <param id="0" name="X">self.Width</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -898,8 +710,8 @@
                         <action id="-3" name="Create object" sid="879595037391692" type="System">
                             <param id="0" name="Object to create">btn_pause</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
-                            <param id="2" name="X">item.X</param>
-                            <param id="3" name="Y">item.Y-item.Height/2</param>
+                            <param id="2" name="X">item.ImagePointX(&quot;search&quot;)-96</param>
+                            <param id="3" name="Y">item.ImagePointY(&quot;search&quot;)</param>
                         </action>
                         <action id="4" name="Set animation" sid="225878096492318" type="btn_pause">
                             <param id="0" name="Animation">&quot;search&quot;</param>

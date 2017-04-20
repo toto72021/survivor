@@ -181,6 +181,79 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="445819533589693">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="680287237865348" type="Touch">
+                            <param id="0" name="Object">btn_pause</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="416805271895332" type="btn_pause">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;end&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="809164449642477">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="772651917892952" type="btn_pause">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;success&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="954305281068450" type="Function">
+                                    <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;game&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="105964038417743">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="233319380149294" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="955855138932604" type="btn_pause">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;failed&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="170936710046729" type="Function">
+                                    <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;game&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="139522422612517">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="566143329954085" type="Keyboard">
+                            <param id="0" name="Key">49 (1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="797981685937968" type="Function">
+                            <param id="0" name="Name">&quot;gameOver&quot;</param>
+                            <param id="1" name="Parameter {n}">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="306009061982138">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="545210762906729" type="Keyboard">
+                            <param id="0" name="Key">50 (2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="978697598891642" type="Function">
+                            <param id="0" name="Name">&quot;gameOver&quot;</param>
+                            <param id="1" name="Parameter {n}">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>(0  0失败；1胜利)</comment>
                 <event-block sid="544832395571041">
                     <conditions>
                         <condition id="0" name="On function" sid="262728182704197" type="Function">
@@ -189,39 +262,80 @@
                     </conditions>
                     <actions>
                         <action id="3" name="Clear" sid="543454481179342" type="Dictionary" />
-                        <action id="0" name="Call function" sid="262708206685429" type="Function">
-                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;游戏失败，将重新开始&quot;</param>
-                        </action>
                         <action behavior="FSM" id="11" name="Go to state" sid="883776612067783" type="enemy">
                             <param id="0" name="Name">&quot;dead&quot;</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="715798151139229">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="273196358018400" type="System">
-                                    <param id="0" name="First value">LayoutName</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">&quot;combat&quot;</param>
-                                </condition>
-                            </conditions>
+                        <event-block sid="708101307331643">
+                            <conditions />
                             <actions>
-                                <action id="-9" name="Destroy" sid="319394526537911" type="btns" />
-                                <action id="-3" name="Set position" sid="218396636445513" type="player_proxy">
-                                    <param id="0" name="X">1296</param>
-                                    <param id="1" name="Y">531</param>
+                                <action id="-3" name="Create object" sid="621860005850715" type="System">
+                                    <param id="0" name="Object to create">mainUI</param>
+                                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                    <param id="2" name="X">568.5</param>
+                                    <param id="3" name="Y">180</param>
                                 </action>
+                                <action id="4" name="Set animation" sid="966310632930760" type="mainUI">
+                                    <param id="0" name="Animation">&quot;end&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="392405505136404" type="mainUI">
+                                    <param id="0" name="Frame number">Function.Param(0)</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="270128925458124" type="mainUI" />
+                                <action id="-3" name="Create object" sid="945881893121527" type="System">
+                                    <param id="0" name="Object to create">btn_pause</param>
+                                    <param id="1" name="Layer">&quot;topUI&quot;</param>
+                                    <param id="2" name="X">568.5</param>
+                                    <param id="3" name="Y">440</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="825626008468773" type="btn_pause">
+                                    <param id="0" name="Animation">&quot;backpage&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="481685127413626" type="btn_pause">
+                                    <param id="0" name="Frame number">Function.Param(0)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="571013972410470" type="btn_pause">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;end&quot;</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="597220394630339" type="btn_pause" />
                             </actions>
+                            <sub-events>
+                                <event-block sid="198042419983592">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="677507181882228" type="System">
+                                            <param id="0" name="First value">Function.Param(0)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="188796248620891" type="btn_pause">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;success&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="131142010135335">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="676522805480278" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="536364238794817" type="btn_pause">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;failed&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="943971788784767">
                             <conditions />
                             <actions>
-                                <action id="-16" name="Wait" sid="407361983686906" type="System">
-                                    <param id="0" name="Seconds">2.1</param>
-                                </action>
-                                <action id="-45" name="Reset persisted objects" sid="380295530132935" type="System" />
-                                <action id="0" name="Call function" sid="725291260662575" type="Function">
+                                <action disabled="1" id="0" name="Call function" sid="725291260662575" type="Function">
                                     <param id="0" name="Name">&quot;writeName&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>le_end</name>
+    <events>
+        <include>e_fadeInOut</include>
+        <include>e_sound</include>
+        <event-group description="" sid="737162965227578" title="end">
+            <sub-events>
+                <event-block sid="571104148005805">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="581718412666064" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Pause" sid="457235680768014" type="Video" />
+                        <action id="0" name="Set source" sid="518106403550667" type="Video">
+                            <param id="0" name="WebM source">&quot;fb_1.mp4&quot;</param>
+                            <param id="1" name="Ogg Theora source">&quot;fb_1.mp4&quot;</param>
+                            <param id="2" name="H.264 source">&quot;fb_1.mp4&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="325646880159745">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

@@ -405,7 +405,7 @@
                             <actions>
                                 <action id="0" name="Call function" sid="290624286623145" type="Function">
                                     <param id="0" name="Name">&quot;gameOver&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
+                                    <param id="1" name="Parameter {n}">0</param>
                                 </action>
                             </actions>
                         </event-block>

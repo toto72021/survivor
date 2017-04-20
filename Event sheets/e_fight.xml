@@ -336,17 +336,9 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="0" name="Call function" sid="259804454598919" type="Function">
-                                                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                                                            <param id="1" name="Parameter {n}">&quot;恭喜你找到生机！完成游戏！&quot;</param>
-                                                        </action>
-                                                        <action id="-16" name="Wait" sid="554151238713261" type="System">
-                                                            <param id="0" name="Seconds">2.1</param>
-                                                        </action>
-                                                        <action id="-45" name="Reset persisted objects" sid="236668166207661" type="System" />
-                                                        <action id="0" name="Call function" sid="404736569830602" type="Function">
-                                                            <param id="0" name="Name">&quot;writeName&quot;</param>
-                                                            <param id="1" name="Parameter {n}"></param>
+                                                        <action id="0" name="Call function" sid="670257975185609" type="Function">
+                                                            <param id="0" name="Name">&quot;gameOver&quot;</param>
+                                                            <param id="1" name="Parameter {n}">1</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
