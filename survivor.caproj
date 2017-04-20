@@ -2,13 +2,13 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0420</version>
+    <version>1.0.0.04201425</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
     <app-id>cn.imssr.survivor</app-id>
     <unique-id>314ocrib9g874</unique-id>
-    <saved-with-version>24300</saved-with-version>
+    <saved-with-version>24400</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>

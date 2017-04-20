@@ -13,12 +13,6 @@
                 <condition id="-2" name="On start of layout" sid="446401017014441" type="System" />
             </conditions>
             <actions>
-                <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
-                    <param id="0" name="Tag">&quot;checkV&quot;</param>
-                    <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
-                    <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
-                    <param id="3" name="Method">&quot;POST&quot;</param>
-                </action>
                 <action id="0" name="Call function" sid="732862259891410" type="Function">
                     <param id="0" name="Name">&quot;fadeInLayout&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
@@ -56,47 +50,6 @@
                     <actions>
                         <action id="0" name="Set text" sid="314496371571073" type="txt_center">
                             <param id="0" name="Text">&quot;当前版本：&quot;&amp;projectversion</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="408558698994186">
-            <conditions>
-                <condition id="0" name="On completed" sid="195292980571438" type="AJAX">
-                    <param id="0" name="Tag">&quot;checkV&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="14" name="Log" sid="294565210017825" type="Browser">
-                    <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">&quot;版本信息返回：&quot;&amp;AJAX.LastData</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="971155772454830">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="471206992255420" type="System">
-                            <param id="0" name="First value">AJAX.LastData</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">&quot;version_completed&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="247461632237716" type="System">
-                            <param id="0" name="Variable">loadCompleted</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="375395888972600">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="542222376391919" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="951519464698391" type="Function">
-                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;当前版本错误无法进入游戏！！&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -152,13 +105,13 @@
                 <condition id="-14" name="Compare variable" sid="756823323373822" type="System">
                     <param id="0" name="Variable">loadCompleted</param>
                     <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
+                    <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="-9" name="Set value" sid="408477303420135" type="System">
                     <param id="0" name="Variable">loadCompleted</param>
-                    <param id="1" name="Value">2</param>
+                    <param id="1" name="Value">1</param>
                 </action>
                 <action behavior="Timer" id="2" name="Start" sid="765794722781103" type="loadLogo">
                     <param id="0" name="Time">2</param>
@@ -218,7 +171,7 @@
                     <actions>
                         <action id="-9" name="Set value" sid="818493200977606" type="System">
                             <param id="0" name="Variable">loadCompleted</param>
-                            <param id="1" name="Value">3</param>
+                            <param id="1" name="Value">2</param>
                         </action>
                         <action behavior="Timer" id="2" name="Start" sid="838759243839731" type="loadLogo">
                             <param id="0" name="Time">1</param>
@@ -275,7 +228,7 @@
                         <condition id="-14" name="Compare variable" sid="931487934082924" type="System">
                             <param id="0" name="Variable">loadCompleted</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">3</param>
+                            <param id="2" name="Value">2</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="416955047768972" type="System">
                             <param id="0" name="Variable">update</param>
@@ -289,9 +242,11 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="575606146761089" type="Function">
-                            <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
+                        <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
+                            <param id="0" name="Tag">&quot;checkV&quot;</param>
+                            <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
+                            <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
+                            <param id="3" name="Method">&quot;POST&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -301,6 +256,51 @@
                     </conditions>
                     <actions>
                         <action id="9" name="Reload" sid="850525951285371" type="Browser" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="408558698994186">
+            <conditions>
+                <condition id="0" name="On completed" sid="195292980571438" type="AJAX">
+                    <param id="0" name="Tag">&quot;checkV&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="294565210017825" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">&quot;版本信息返回：&quot;&amp;AJAX.LastData</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="971155772454830">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="471206992255420" type="System">
+                            <param id="0" name="First value">AJAX.LastData</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">&quot;version_completed&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="595017483405172" type="Function">
+                            <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="375395888972600">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="542222376391919" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="951519464698391" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;当前版本错误无法进入游戏！5秒后重新启动游戏&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="294461427308942" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="9" name="Reload" sid="658398461761601" type="Browser" />
                     </actions>
                 </event-block>
             </sub-events>
