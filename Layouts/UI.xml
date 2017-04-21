@@ -140,8 +140,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>67</x>
-                        <y>109</y>
+                        <x>68</x>
+                        <y>108</y>
                         <z>0</z>
                         <width>96</width>
                         <height>89</height>
@@ -476,10 +476,10 @@
                         <x>932</x>
                         <y>568</y>
                         <z>0</z>
-                        <width>120</width>
+                        <width>97</width>
                         <height>100</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.50515461</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -497,7 +497,7 @@
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-15</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
@@ -506,8 +506,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>128</x>
-                        <y>52</y>
+                        <x>204</x>
+                        <y>56</y>
                         <z>0</z>
                         <width>163</width>
                         <height>61</height>
@@ -530,7 +530,7 @@
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-15</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
@@ -539,8 +539,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>68</x>
-                        <y>112</y>
+                        <x>60</x>
+                        <y>165</y>
                         <z>0</z>
                         <width>163</width>
                         <height>61</height>
@@ -563,7 +563,7 @@
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>0</character-spacing>
+                        <character-spacing>-15</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <instance-variables>
@@ -572,8 +572,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>140</x>
-                        <y>144</y>
+                        <x>220</x>
+                        <y>140</y>
                         <z>0</z>
                         <width>163</width>
                         <height>61</height>

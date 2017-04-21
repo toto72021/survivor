@@ -172,46 +172,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="attack" uid="36">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <instance-variables>
-                        <atk>0</atk>
-                        <target></target>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>Yes</active-at-start>
-                                <fade-in-time>0.2</fade-in-time>
-                                <wait-time>0.8</wait-time>
-                                <fade-out-time>0.3</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Timer">
-                            <properties>
-                                <sync-timescale>Yes</sync-timescale>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>94</x>
-                        <y>458</y>
-                        <z>0</z>
-                        <width>122</width>
-                        <height>192</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="P_hp" uid="41">
                     <properties>
                         <rate>8</rate>
@@ -438,61 +398,6 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
-                    </world>
-                </instance>
-                <instance type="itemBg" uid="51">
-                    <properties>
-                        <left-margin>8</left-margin>
-                        <right-margin>8</right-margin>
-                        <top-margin>8</top-margin>
-                        <bottom-margin>8</bottom-margin>
-                        <edges>Stretch</edges>
-                        <fill>Stretch</fill>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                        <seams>Overlap</seams>
-                    </properties>
-                    <instance-variables>
-                        <Puid>0</Puid>
-                        <groupID></groupID>
-                        <actionID></actionID>
-                        <diyStrValue></diyStrValue>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Timer">
-                            <properties>
-                                <sync-timescale>Yes</sync-timescale>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>Yes</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>0</wait-time>
-                                <fade-out-time>1</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Flash" />
-                        <behavior-instance type="DragDrop">
-                            <properties>
-                                <axes>Vertical only</axes>
-                                <initial-state>Disabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>927</x>
-                        <y>532</y>
-                        <z>0</z>
-                        <width>75</width>
-                        <height>80</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <opacity>1</opacity>
                     </world>
                 </instance>
                 <instance type="bg_drag" uid="55">
@@ -779,6 +684,8 @@
                         <randRate>70</randRate>
                         <itemCount>3</itemCount>
                         <isSearch>0</isSearch>
+                        <pY>0</pY>
+                        <pass>0</pass>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
@@ -879,6 +786,8 @@
                         <groupID></groupID>
                         <atkTime>0</atkTime>
                         <name></name>
+                        <pY>0</pY>
+                        <pass>0</pass>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="FSM">
@@ -932,11 +841,11 @@
                         <x>-178</x>
                         <y>537</y>
                         <z>0</z>
-                        <width>271</width>
-                        <height>150</height>
+                        <width>109</width>
+                        <height>103</height>
                         <depth>0</depth>
-                        <hotspotX>0.501845002</hotspotX>
-                        <hotspotY>1</hotspotY>
+                        <hotspotX>0.504587173</hotspotX>
+                        <hotspotY>0.504854381</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -970,10 +879,10 @@
                         <x>232</x>
                         <y>30</y>
                         <z>0</z>
-                        <width>8</width>
-                        <height>12</height>
+                        <width>35</width>
+                        <height>46</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
+                        <hotspotX>0.514285743</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -1101,6 +1010,32 @@
                         <height>200</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="atkEffect" uid="45">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <atk>0</atk>
+                        <target></target>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-135</x>
+                        <y>277</y>
+                        <z>0</z>
+                        <width>235</width>
+                        <height>236</height>
+                        <depth>0</depth>
+                        <hotspotX>0.502127647</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>

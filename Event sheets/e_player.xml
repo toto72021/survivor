@@ -14,6 +14,10 @@
                             <param id="0" name="X">player_proxy.X</param>
                             <param id="1" name="Y">player_proxy.Y</param>
                         </action>
+                        <action id="-10" name="Set value" sid="671963166272260" type="player_skin">
+                            <param id="0" name="Instance variable">pY</param>
+                            <param id="1" name="Value">Self.ImagePointY(&quot;sort&quot;)</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="388755745639879">

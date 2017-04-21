@@ -495,7 +495,7 @@
                             <param id="0" name="Object to create">item</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">random(470,640)</param>
+                            <param id="3" name="Y">random(470,600)</param>
                         </action>
                         <action id="4" name="Set animation" sid="732895526669729" type="item">
                             <param id="0" name="Animation">&quot;item&quot;&amp;str(int(random(2,itemCount+1)))</param>
@@ -507,6 +507,10 @@
                         </action>
                         <action id="9" name="Set scale" sid="752286489713612" type="item">
                             <param id="0" name="Scale">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="594432760123055" type="item">
+                            <param id="0" name="Instance variable">pY</param>
+                            <param id="1" name="Value">Self.ImagePointY(&quot;sort&quot;)</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -666,8 +670,15 @@
                         <event-block sid="183397166629048">
                             <conditions />
                             <actions>
-                                <action id="0" name="Sort all Objects in layer by Y" sid="824499155509265" type="ZSorter">
+                                <action disabled="1" id="0" name="Sort all Objects in layer by Y" sid="824499155509265" type="ZSorter">
                                     <param id="0" name="Layer">&quot;game&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="724880152169152" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-50" name="Sort Z order" sid="740807841039287" type="System">
+                                    <param id="0" name="Object">gamelayer</param>
+                                    <param id="1" name="Instance variable">gamelayer|pY</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -941,7 +952,7 @@
         </event-group>
         <event-group description="" sid="447957881580328" title="inFight">
             <sub-events>
-                <variable constant="0" name="createEnemyTime" sid="230996028921090" static="0" type="number">15</variable>
+                <variable constant="0" name="createEnemyTime" sid="230996028921090" static="0" type="number">7</variable>
                 <event-block sid="143176244632508">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="345008276933571" type="player_proxy">
@@ -1007,6 +1018,11 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;enemy&quot;</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="690585323173131" type="enemy">
+                                    <param id="0" name="Instance variable">pass</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -1023,7 +1039,7 @@
                                                 <condition id="-8" name="Compare two values" sid="995079455973898" type="System">
                                                     <param id="0" name="First value">distance(enemy.X,enemy.Y,player_proxy.X,player_proxy.Y)</param>
                                                     <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Second value">300</param>
+                                                    <param id="2" name="Second value">230</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -1068,6 +1084,10 @@
                                                                 <condition id="-22" name="Else" sid="465487381884242" type="System" />
                                                             </conditions>
                                                             <actions>
+                                                                <action id="-10" name="Set value" sid="862607827619766" type="enemy">
+                                                                    <param id="0" name="Instance variable">pass</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
                                                                 <action id="0" name="Call function" sid="777755603006918" type="Function">
                                                                     <param id="0" name="Name">&quot;playerMove&quot;</param>
                                                                     <param id="1" name="Parameter {n}">0</param>
@@ -1226,7 +1246,7 @@
                             <param id="0" name="Frame number">0</param>
                         </action>
                         <action id="9" name="Set scale" sid="369931383359311" type="countTime">
-                            <param id="0" name="Scale">10</param>
+                            <param id="0" name="Scale">4</param>
                         </action>
                         <action behavior="Fade" id="1" name="Start fade" sid="220832758401957" type="countTime" />
                     </actions>

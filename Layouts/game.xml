@@ -307,6 +307,10 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <pY>0</pY>
+                        <pass>0</pass>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
                         <behavior-instance type="PinToImagePoint" />
@@ -322,11 +326,11 @@
                         <x>452</x>
                         <y>444</y>
                         <z>0</z>
-                        <width>225</width>
-                        <height>256</height>
+                        <width>227</width>
+                        <height>255</height>
                         <depth>0</depth>
-                        <hotspotX>0.50222224</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.50220263</hotspotX>
+                        <hotspotY>0.501960814</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

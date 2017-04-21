@@ -126,7 +126,7 @@
                                 </action>
                                 <action id="-9" name="Set value" sid="490954408923187" type="System">
                                     <param id="0" name="Variable">objY</param>
-                                    <param id="1" name="Value">enemy.Y-enemy.Height/2</param>
+                                    <param id="1" name="Value">enemy.Y</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="786746112711161" type="System">
                                     <param id="0" name="Variable">atk</param>
@@ -186,62 +186,76 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="382054773211049">
+                        <event-block sid="112362223868052">
                             <conditions />
                             <actions>
-                                <action id="-3" name="Create object" sid="323237538362656" type="System">
-                                    <param id="0" name="Object to create">attack</param>
+                                <action id="-3" name="Create object" sid="343602380985910" type="System">
+                                    <param id="0" name="Object to create">atkEffect</param>
                                     <param id="1" name="Layer">&quot;fx&quot;</param>
                                     <param id="2" name="X">objX</param>
                                     <param id="3" name="Y">objY</param>
                                 </action>
-                                <action id="-7" name="Set size" sid="143702210180610" type="attack">
-                                    <param id="0" name="Width">120</param>
-                                    <param id="1" name="Height">200</param>
-                                </action>
-                                <action id="-8" name="Set angle" sid="490911667995034" type="attack">
-                                    <param id="0" name="Angle">45</param>
-                                </action>
-                                <action behavior="Timer" id="2" name="Start" sid="859330693796908" type="attack">
-                                    <param id="0" name="Time">0.2</param>
-                                    <param id="1" name="Timer">&quot;_attack&quot;</param>
-                                    <param id="2" name="Repeat">1</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="712287852482999" type="attack">
+                                <action id="-10" name="Set value" sid="557737319327368" type="atkEffect">
                                     <param id="0" name="Instance variable">atk</param>
                                     <param id="1" name="Value">atk</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="149283224422550" type="attack">
+                                <action id="-10" name="Set value" sid="945839629325976" type="atkEffect">
                                     <param id="0" name="Instance variable">target</param>
                                     <param id="1" name="Value">Function.Param(0)</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="530634301293882">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="506807089920766" type="System">
+                                            <param id="0" name="First value">Function.Param(0)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;player&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="374232696137645" type="atkEffect">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="969321672196216">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="363032839132954" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="175961657347118" type="atkEffect">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="392393698470681">
+                <event-block sid="719979483563553">
                     <conditions>
-                        <condition behavior="Timer" id="0" name="Is timer running" sid="544575552466904" type="attack">
-                            <param id="0" name="Timer">&quot;_attack&quot;</param>
+                        <condition id="4" name="On finished" sid="754819974512802" type="atkEffect">
+                            <param id="0" name="Animation">&quot;ef&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-6" name="Set height" sid="964218381355639" type="attack">
-                            <param id="0" name="Height">200*Self.Timer.ElapsedPercent(&quot;_attack&quot;)</param>
-                        </action>
+                        <action id="-9" name="Destroy" sid="428432480165755" type="atkEffect" />
                     </actions>
-                </event-block>
-                <event-block sid="719979483563553">
-                    <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="754819974512802" type="attack">
-                            <param id="0" name="Timer">&quot;_attack&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
                     <sub-events>
+                        <variable constant="0" name="atk" sid="158290912918203" static="0" type="number">0</variable>
+                        <event-block sid="399431754375980">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="291900483467742" type="System">
+                                    <param id="0" name="Variable">atk</param>
+                                    <param id="1" name="Value">atkEffect.atk</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="957693235481121">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="251313747344557" type="attack">
+                                <condition id="-7" name="Compare instance variable" sid="251313747344557" type="atkEffect">
                                     <param id="0" name="Instance variable">target</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;enemy&quot;</param>
@@ -263,7 +277,7 @@
                                         </action>
                                         <action id="-12" name="Subtract from" sid="620472481076451" type="enemy">
                                             <param id="0" name="Instance variable">hp</param>
-                                            <param id="1" name="Value">attack.atk</param>
+                                            <param id="1" name="Value">atk</param>
                                         </action>
                                         <action id="-3" name="Create object" sid="513278298451467" type="System">
                                             <param id="0" name="Object to create">txt_center</param>
@@ -283,7 +297,7 @@
                                             <param id="0" name="Color">rgb(255,0,0)</param>
                                         </action>
                                         <action id="0" name="Set text" sid="353358687453588" type="txt_center">
-                                            <param id="0" name="Text">&quot;-&quot;&amp;attack.atk</param>
+                                            <param id="0" name="Text">&quot;-&quot;&amp;atk</param>
                                         </action>
                                         <action id="-7" name="Set size" sid="977983954830916" type="txt_center">
                                             <param id="0" name="Width">100</param>
@@ -365,7 +379,7 @@
                         <event-block sid="510724853884208">
                             <conditions>
                                 <condition id="-22" name="Else" sid="167124569816591" type="System" />
-                                <condition id="-7" name="Compare instance variable" sid="321806662732980" type="attack">
+                                <condition id="-7" name="Compare instance variable" sid="321806662732980" type="atkEffect">
                                     <param id="0" name="Instance variable">target</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;player&quot;</param>
@@ -400,7 +414,7 @@
                                         </action>
                                         <action id="0" name="Call function" sid="692898525038321" type="Function">
                                             <param id="0" name="Name">&quot;adjustPlayer&quot;</param>
-                                            <param id="1" name="Parameter {n}">-attack.atk{###}0{###}0</param>
+                                            <param id="1" name="Parameter {n}">-atk{###}0{###}0</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="823985229786242" type="System">
                                             <param id="0" name="Seconds">0</param>
@@ -690,7 +704,7 @@
                             </conditions>
                             <actions>
                                 <action id="9" name="Set scale" sid="282049177477252" type="countTime">
-                                    <param id="0" name="Scale">1+25*player_proxy.Timer.RemainderPercent(&quot;_combatTime&quot;)</param>
+                                    <param id="0" name="Scale">1+20*player_proxy.Timer.RemainderPercent(&quot;_combatTime&quot;)</param>
                                 </action>
                                 <action id="-16" name="Set opacity" sid="535702222595094" type="countTime">
                                     <param id="0" name="Opacity">100*player_proxy.Timer.RemainderPercent(&quot;_combatTime&quot;)</param>
@@ -903,7 +917,7 @@
                                     <actions>
                                         <action id="-9" name="Set value" sid="165467185274781" type="System">
                                             <param id="0" name="Variable">enemyAtk</param>
-                                            <param id="1" name="Value">2</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="628853382475554" type="System">
                                             <param id="0" name="Variable">enemyHp</param>
@@ -911,7 +925,7 @@
                                         </action>
                                         <action id="-9" name="Set value" sid="387735804878130" type="System">
                                             <param id="0" name="Variable">enemyAT</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">1.5</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -927,7 +941,7 @@
                                     <actions>
                                         <action id="-9" name="Set value" sid="933930560606633" type="System">
                                             <param id="0" name="Variable">enemyAtk</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">2</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="891222036869246" type="System">
                                             <param id="0" name="Variable">enemyHp</param>
@@ -935,7 +949,7 @@
                                         </action>
                                         <action id="-9" name="Set value" sid="771092238184728" type="System">
                                             <param id="0" name="Variable">enemyAT</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -979,7 +993,7 @@
                                         </action>
                                         <action id="-9" name="Set value" sid="430908435910353" type="System">
                                             <param id="0" name="Variable">enemyHp</param>
-                                            <param id="1" name="Value">20</param>
+                                            <param id="1" name="Value">30</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="643461285992236" type="System">
                                             <param id="0" name="Variable">enemyAT</param>
@@ -1040,6 +1054,10 @@
                         <action id="-10" name="Set value" sid="937805325792748" type="enemy">
                             <param id="0" name="Instance variable">atkTime</param>
                             <param id="1" name="Value">Function.Param(3)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="391350610590580" type="enemy">
+                            <param id="0" name="Instance variable">pY</param>
+                            <param id="1" name="Value">Self.ImagePointY(&quot;sort&quot;)</param>
                         </action>
                         <action behavior="FSM" id="11" name="Go to state" sid="438879279543844" type="enemy">
                             <param id="0" name="Name">&quot;idle&quot;</param>
