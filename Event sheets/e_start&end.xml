@@ -51,13 +51,26 @@
                 <event-block sid="777560912165687">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="289238321489833" type="Keyboard">
-                            <param id="0" name="Key">49 (1)</param>
+                            <param id="0" name="Key">80 (P)</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="266005080440904" type="Function">
                             <param id="0" name="Name">&quot;getItem&quot;</param>
                             <param id="1" name="Parameter {n}">choose(&quot;rawMeat&quot;,&quot;wood&quot;,&quot;stone&quot;,&quot;water&quot;,&quot;egg&quot;,&quot;fruits&quot;,&quot;coconut&quot;){###}3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="642346596603075">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="870452126048101" type="Keyboard">
+                            <param id="0" name="Key">79 (O)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="932963290950588" type="Function">
+                            <param id="0" name="Name">&quot;getItem&quot;</param>
+                            <param id="1" name="Parameter {n}">choose(&quot;stone&quot;,&quot;wood&quot;,&quot;rawMeat&quot;){###}3</param>
                         </action>
                     </actions>
                 </event-block>
@@ -205,7 +218,7 @@
                             <actions>
                                 <action id="0" name="Call function" sid="954305281068450" type="Function">
                                     <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;game&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;loading&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

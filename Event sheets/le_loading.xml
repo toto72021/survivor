@@ -9,7 +9,7 @@
         <event-group description="" sid="288895613313474" title="loading">
             <sub-events>
                 <variable constant="0" name="loadCompleted" sid="188075732612864" static="1" type="number">0</variable>
-                <variable constant="0" name="update" sid="754195661449998" static="1" type="number">0</variable>
+                <variable comment="999 直接进入" constant="0" name="update" sid="754195661449998" static="1" type="number">0</variable>
                 <event-block sid="202411284113889">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="446401017014441" type="System" />
@@ -55,37 +55,77 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="234553506473791">
+                            <conditions />
+                            <actions>
+                                <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
+                                    <param id="0" name="Tag">&quot;checkV&quot;</param>
+                                    <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
+                                    <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
+                                    <param id="3" name="Method">&quot;POST&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
-                <comment>这里有问题</comment>
-                <event-block sid="814181069642227">
+                <event-block sid="408558698994186">
                     <conditions>
-                        <condition id="19" name="On update found" sid="427057495416612" type="Browser" />
+                        <condition id="0" name="On completed" sid="195292980571438" type="AJAX">
+                            <param id="0" name="Tag">&quot;checkV&quot;</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="460294121459455" type="System">
-                            <param id="0" name="Variable">update</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="14" name="Log" sid="101422371271206" type="Browser">
+                        <action id="14" name="Log" sid="294565210017825" type="Browser">
                             <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;正在更新文件！！！&quot;</param>
+                            <param id="1" name="Message">&quot;版本信息返回：&quot;&amp;AJAX.LastData</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="290161578387302">
+                        <event-block sid="971155772454830">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="552732148841937" type="txt_center">
-                                    <param id="0" name="Instance variable">actionID</param>
+                                <condition id="-8" name="Compare two values" sid="471206992255420" type="System">
+                                    <param id="0" name="First value">AJAX.LastData</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;ver&quot;</param>
+                                    <param id="2" name="Second value">&quot;version_completed&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Set text" sid="918653109565391" type="txt_center">
-                                    <param id="0" name="Text">&quot;检测到更新，正在更新中。。。&quot;</param>
+                                <action id="-9" name="Set value" sid="479712052042208" type="System">
+                                    <param id="0" name="Variable">update</param>
+                                    <param id="1" name="Value">999</param>
                                 </action>
                             </actions>
+                        </event-block>
+                        <event-block sid="375395888972600">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="542222376391919" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="927747215906568" type="System">
+                                    <param id="0" name="Variable">update</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="951519464698391" type="Function">
+                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;检测到新版本，启动自动更新。。。&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="290161578387302">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="552732148841937" type="txt_center">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;ver&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="918653109565391" type="txt_center">
+                                            <param id="0" name="Text">&quot;版本正在更新中。。。&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -94,11 +134,7 @@
                         <condition id="6" name="On update ready" sid="488308680418258" type="Browser" />
                     </conditions>
                     <actions>
-                        <action behavior="Timer" id="2" name="Start" sid="523980331403504" type="loadLogo">
-                            <param id="0" name="Time">1</param>
-                            <param id="1" name="Timer">&quot;_start&quot;</param>
-                            <param id="2" name="Repeat">1</param>
-                        </action>
+                        <action id="9" name="Reload" sid="850525951285371" type="Browser" />
                     </actions>
                 </event-block>
                 <event-block sid="278916269155556">
@@ -169,6 +205,11 @@
                         <event-block sid="633549606238721">
                             <conditions>
                                 <condition id="-22" name="Else" sid="933974075100864" type="System" />
+                                <condition id="-14" name="Compare variable" sid="338779242912338" type="System">
+                                    <param id="0" name="Variable">update</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">999</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="818493200977606" type="System">
@@ -180,6 +221,21 @@
                                     <param id="1" name="Timer">&quot;_start&quot;</param>
                                     <param id="2" name="Repeat">1</param>
                                 </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="650449642343108">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="751987823101375" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="513924866670033" type="Function">
+                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;版本出现不可描述问题=，=，将在3秒后重新加载&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="587358227146405" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="9" name="Reload" sid="505501174226546" type="Browser" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -208,7 +264,7 @@
                     <actions>
                         <action id="0" name="Call function" sid="986876385850903" type="Function">
                             <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;发现新版本！正在更新中。。。&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;再等一下下！快更新好了。。。&quot;</param>
                         </action>
                         <action id="3" name="Start" sid="179850678934204" type="TimeLine">
                             <param id="0" name="Name">&quot;update&quot;</param>
@@ -229,88 +285,6 @@
                             <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block sid="496141147701228">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="931487934082924" type="System">
-                                    <param id="0" name="Variable">loadCompleted</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="416955047768972" type="System">
-                                    <param id="0" name="Variable">update</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="195698100954072" type="System">
-                                    <param id="0" name="First value">loadingprogress</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
-                                    <param id="0" name="Tag">&quot;checkV&quot;</param>
-                                    <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
-                                    <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
-                                    <param id="3" name="Method">&quot;POST&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="325611681933716">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="780870737246444" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="9" name="Reload" sid="850525951285371" type="Browser" />
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="408558698994186">
-                    <conditions>
-                        <condition id="0" name="On completed" sid="195292980571438" type="AJAX">
-                            <param id="0" name="Tag">&quot;checkV&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="14" name="Log" sid="294565210017825" type="Browser">
-                            <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;版本信息返回：&quot;&amp;AJAX.LastData</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="971155772454830">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="471206992255420" type="System">
-                                    <param id="0" name="First value">AJAX.LastData</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">&quot;version_completed&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="595017483405172" type="Function">
-                                    <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;plot&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="375395888972600">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="542222376391919" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="951519464698391" type="Function">
-                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;当前版本错误无法进入游戏！5秒后重新启动游戏&quot;</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="294461427308942" type="System">
-                                    <param id="0" name="Seconds">5</param>
-                                </action>
-                                <action id="9" name="Reload" sid="658398461761601" type="Browser" />
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

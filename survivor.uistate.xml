@@ -11,7 +11,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">UI</layout>
-        <layout active="1" order="1">game</layout>
+        <layout order="1">game</layout>
         <layout order="3">obj</layout>
         <layout order="7">plot</layout>
         <layout order="10">loading</layout>
@@ -22,6 +22,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet order="8">le_plot</event-sheet>
         <event-sheet order="9">le_loading</event-sheet>
         <event-sheet order="11">e_fight</event-sheet>
+        <event-sheet order="12">e_item</event-sheet>
+        <event-sheet order="13">e_createItem</event-sheet>
+        <event-sheet active="1" order="14">e_bubbleImformation</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -36,7 +39,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="items" />
         <family expanded="1" name="bgs9p" />
         <family expanded="0" name="enemys" />
-        <family expanded="0" name="UI" />
+        <family expanded="1" name="UI" />
         <family expanded="0" name="particle" />
         <family expanded="0" name="txtboxs" />
         <family expanded="1" name="gamelayer" />

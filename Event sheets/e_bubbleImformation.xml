@@ -5,6 +5,18 @@
     <events>
         <event-group description="" sid="672327062322576" title="bubble information">
             <sub-events>
+                <event-block sid="965238117575560">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="208707740469843" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set size" sid="411223207717164" type="Array_info">
+                            <param id="0" name="Width">0</param>
+                            <param id="1" name="Height">2</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="284428936540522">
                     <conditions>
                         <condition id="0" name="On function" sid="909372891396797" type="Function">
@@ -12,62 +24,206 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Create object" sid="912295781372076" type="System">
-                            <param id="0" name="Object to create">bg_tips</param>
-                            <param id="1" name="Layer">&quot;tips&quot;</param>
-                            <param id="2" name="X">388</param>
-                            <param id="3" name="Y">160</param>
+                        <action id="5" name="Push" sid="545663395843003" type="Array_info">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">0</param>
+                            <param id="2" name="Axis">0</param>
                         </action>
-                        <action id="-10" name="Set value" sid="725524600942017" type="bg_tips">
-                            <param id="0" name="Instance variable">groupID</param>
-                            <param id="1" name="Value">&quot;tips&quot;</param>
+                        <action id="3" name="Set at XY" sid="576784985829393" type="Array_info">
+                            <param id="0" name="X">Array_info.Width-1</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
                         </action>
-                        <action id="-7" name="Set size" sid="693408315249552" type="bg_tips">
-                            <param id="0" name="Width">360</param>
-                            <param id="1" name="Height">120</param>
+                        <action id="3" name="Set at XY" sid="108518969744311" type="Array_info">
+                            <param id="0" name="X">Array_info.Width-1</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">Function.Param(1)</param>
                         </action>
-                        <action behavior="Fade" id="2" name="Set fade-in time" sid="145771318033274" type="bg_tips">
-                            <param id="0" name="Fade-in time">0.3</param>
-                        </action>
-                        <action behavior="Fade" id="3" name="Set wait time" sid="732440201300795" type="bg_tips">
-                            <param id="0" name="Wait time">1</param>
-                        </action>
-                        <action behavior="Fade" id="4" name="Set fade-out time" sid="361475749517569" type="bg_tips">
-                            <param id="0" name="Fade-out time">0.5</param>
-                        </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="535521328202585" type="bg_tips" />
-                        <action id="-3" name="Create object" sid="858382281666041" type="System">
-                            <param id="0" name="Object to create">txt_center</param>
-                            <param id="1" name="Layer">bg_tips.LayerName</param>
-                            <param id="2" name="X">bg_tips.x+bg_tips.Width/2</param>
-                            <param id="3" name="Y">bg_tips.y+bg_tips.Height/2</param>
-                        </action>
-                        <action id="-7" name="Set size" sid="606582487942008" type="txt_center">
-                            <param id="0" name="Width">bg_tips.Width</param>
-                            <param id="1" name="Height">bg_tips.Height</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="802438536859140" type="txt_center">
-                            <param id="0" name="Instance variable">groupID</param>
-                            <param id="1" name="Value">&quot;tips&quot;</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="531808317792005" type="txt_center">
-                            <param id="0" name="Instance variable">actionID</param>
-                            <param id="1" name="Value">&quot;information&quot;</param>
-                        </action>
-                        <action id="0" name="Set text" sid="533671850562393" type="txt_center">
-                            <param id="0" name="Text">Function.Param(0)</param>
-                        </action>
-                        <action behavior="Fade" id="2" name="Set fade-in time" sid="627147026157384" type="txt_center">
-                            <param id="0" name="Fade-in time">0.3</param>
-                        </action>
-                        <action behavior="Fade" id="3" name="Set wait time" sid="401566671388292" type="txt_center">
-                            <param id="0" name="Wait time">1</param>
-                        </action>
-                        <action behavior="Fade" id="4" name="Set fade-out time" sid="632980292637578" type="txt_center">
-                            <param id="0" name="Fade-out time">0.5</param>
-                        </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="807186694244162" type="txt_center" />
                     </actions>
+                </event-block>
+                <event-block sid="608091917477191">
+                    <conditions>
+                        <condition id="7" name="Compare size" sid="919899458343611" type="Array_info">
+                            <param id="0" name="Axis">0</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="194281382673538" type="Array_info">
+                            <param id="0" name="Instance variable">note</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="268675066554868" type="Array_info">
+                            <param id="0" name="Instance variable">note</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="234903669508079" type="Function">
+                            <param id="0" name="Name">&quot;displayInfo&quot;</param>
+                            <param id="1" name="Parameter {n}">Array_info.At(0,0){###}Array_info.At(0,1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="870336333822760">
+                    <conditions>
+                        <condition behavior="Fade" id="0" name="On fade-out finished" sid="669826397618897" type="bg_tips" />
+                        <condition id="-7" name="Compare instance variable" sid="253876011265385" type="bg_tips">
+                            <param id="0" name="Instance variable">actionID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;tipsUI&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="915826308937618" type="Array_info">
+                            <param id="0" name="Instance variable">note</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="157957209912457">
+                    <conditions>
+                        <condition id="0" name="On function" sid="601713314424566" type="Function">
+                            <param id="0" name="Name">&quot;displayInfo&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="448524499623927">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="673107100564497" type="bg_tips">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;tipsUI&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="446982534936308">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="763399996452050" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="912295781372076" type="System">
+                                    <param id="0" name="Object to create">bg_tips</param>
+                                    <param id="1" name="Layer">&quot;tips&quot;</param>
+                                    <param id="2" name="X">388</param>
+                                    <param id="3" name="Y">160</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="725524600942017" type="bg_tips">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;tips&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="765294431711853" type="bg_tips">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;tipsUI&quot;</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="693408315249552" type="bg_tips">
+                                    <param id="0" name="Width">360</param>
+                                    <param id="1" name="Height">120</param>
+                                </action>
+                                <action behavior="Fade" id="2" name="Set fade-in time" sid="145771318033274" type="bg_tips">
+                                    <param id="0" name="Fade-in time">0.3</param>
+                                </action>
+                                <action behavior="Fade" id="3" name="Set wait time" sid="732440201300795" type="bg_tips">
+                                    <param id="0" name="Wait time">1</param>
+                                </action>
+                                <action behavior="Fade" id="4" name="Set fade-out time" sid="361475749517569" type="bg_tips">
+                                    <param id="0" name="Fade-out time">0.5</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="535521328202585" type="bg_tips" />
+                                <action id="-3" name="Create object" sid="858382281666041" type="System">
+                                    <param id="0" name="Object to create">txt_center</param>
+                                    <param id="1" name="Layer">bg_tips.LayerName</param>
+                                    <param id="2" name="X">bg_tips.x+bg_tips.Width/2</param>
+                                    <param id="3" name="Y">bg_tips.y+bg_tips.Height/2</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="606582487942008" type="txt_center">
+                                    <param id="0" name="Width">bg_tips.Width</param>
+                                    <param id="1" name="Height">bg_tips.Height</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="802438536859140" type="txt_center">
+                                    <param id="0" name="Instance variable">groupID</param>
+                                    <param id="1" name="Value">&quot;tips&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="531808317792005" type="txt_center">
+                                    <param id="0" name="Instance variable">actionID</param>
+                                    <param id="1" name="Value">&quot;information&quot;</param>
+                                </action>
+                                <action id="0" name="Set text" sid="533671850562393" type="txt_center">
+                                    <param id="0" name="Text">Function.Param(0)</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="792895893940407" type="txt_center">
+                                    <param id="0" name="Color">rgb(0, 0, 0)</param>
+                                </action>
+                                <action behavior="Fade" id="2" name="Set fade-in time" sid="627147026157384" type="txt_center">
+                                    <param id="0" name="Fade-in time">0.3</param>
+                                </action>
+                                <action behavior="Fade" id="3" name="Set wait time" sid="401566671388292" type="txt_center">
+                                    <param id="0" name="Wait time">1</param>
+                                </action>
+                                <action behavior="Fade" id="4" name="Set fade-out time" sid="632980292637578" type="txt_center">
+                                    <param id="0" name="Fade-out time">0.5</param>
+                                </action>
+                                <action behavior="Fade" id="1" name="Start fade" sid="807186694244162" type="txt_center" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="815406586290857">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="533204970488568" type="System">
+                                            <param id="0" name="First value">Function.Param(1)</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-7" name="Set size" sid="171086186546088" type="bg_tips">
+                                            <param id="0" name="Width">360</param>
+                                            <param id="1" name="Height">150</param>
+                                        </action>
+                                        <action id="-2" name="Set Y" sid="400827695745322" type="txt_center">
+                                            <param id="0" name="Y">bg_tips.y+bg_tips.Height/3</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="823984578301183" type="System">
+                                            <param id="0" name="Object to create">ui_item</param>
+                                            <param id="1" name="Layer">&quot;tips&quot;</param>
+                                            <param id="2" name="X">bg_tips.Width+bg_tips.Width/1.7</param>
+                                            <param id="3" name="Y">bg_tips.y+bg_tips.Height/1.5</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="751330271157536" type="ui_item">
+                                            <param id="0" name="Instance variable">groupID</param>
+                                            <param id="1" name="Value">&quot;tips&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="513255902308607" type="ui_item">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Value">&quot;tipsUI&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="170385658868922" type="ui_item">
+                                            <param id="0" name="Animation">Function.Param(1)</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="2" name="Set fade-in time" sid="394189428636806" type="ui_item">
+                                            <param id="0" name="Fade-in time">0.3</param>
+                                        </action>
+                                        <action behavior="Fade" id="3" name="Set wait time" sid="218286236258882" type="ui_item">
+                                            <param id="0" name="Wait time">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="4" name="Set fade-out time" sid="556007924488430" type="ui_item">
+                                            <param id="0" name="Fade-out time">0.5</param>
+                                        </action>
+                                        <action behavior="Fade" id="1" name="Start fade" sid="678278259302003" type="ui_item" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="799175150219132">
+                            <conditions />
+                            <actions>
+                                <action id="6" name="Pop" sid="942440300031523" type="Array_info">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Axis">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

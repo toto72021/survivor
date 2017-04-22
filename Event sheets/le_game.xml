@@ -479,7 +479,35 @@
         </event-group>
         <event-group description="" sid="828169281532222" title="search">
             <sub-events>
-                <variable constant="0" name="itemCount" sid="936463988997133" static="0" type="number">6</variable>
+                <comment>生成物资</comment>
+                <variable constant="0" name="createItemTime" sid="349492969715706" static="0" type="number">7</variable>
+                <event-block sid="113605935947698">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="122105833157247" type="player_proxy">
+                            <param id="0" name="Instance variable">hp</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="167538691668216" type="player_proxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="212292999013885" type="player_proxy">
+                            <param id="0" name="Instance variable">getItem</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="778465336597545" type="player_proxy">
+                            <param id="0" name="Time">int(random(createItemTime-3,createItemTime+3))</param>
+                            <param id="1" name="Timer">&quot;getItem&quot;</param>
+                            <param id="2" name="Repeat">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>所有物资总数</comment>
+                <variable constant="0" name="itemsCount" sid="936463988997133" static="0" type="number">6</variable>
                 <event-block sid="134402125834962">
                     <conditions>
                         <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_proxy">
@@ -495,10 +523,10 @@
                             <param id="0" name="Object to create">item</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">random(470,600)</param>
+                            <param id="3" name="Y">random(470,630)</param>
                         </action>
                         <action id="4" name="Set animation" sid="732895526669729" type="item">
-                            <param id="0" name="Animation">&quot;item&quot;&amp;str(int(random(2,itemCount+1)))</param>
+                            <param id="0" name="Animation">&quot;item&quot;&amp;str(int(random(1,itemsCount+1)))</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="-10" name="Set value" sid="849888177488642" type="item">
@@ -921,38 +949,11 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment></comment>
-                <variable constant="0" name="createItemTime" sid="349492969715706" static="0" type="number">9</variable>
-                <event-block sid="113605935947698">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="122105833157247" type="player_proxy">
-                            <param id="0" name="Instance variable">hp</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="167538691668216" type="player_proxy">
-                            <param id="0" name="Instance variable">getItem</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="212292999013885" type="player_proxy">
-                            <param id="0" name="Instance variable">getItem</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action behavior="Timer" id="2" name="Start" sid="778465336597545" type="player_proxy">
-                            <param id="0" name="Time">int(random(createItemTime-3,createItemTime+3))</param>
-                            <param id="1" name="Timer">&quot;getItem&quot;</param>
-                            <param id="2" name="Repeat">1</param>
-                        </action>
-                    </actions>
-                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="447957881580328" title="inFight">
             <sub-events>
-                <variable constant="0" name="createEnemyTime" sid="230996028921090" static="0" type="number">7</variable>
+                <variable constant="0" name="createEnemyTime" sid="230996028921090" static="0" type="number">13</variable>
                 <event-block sid="143176244632508">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="345008276933571" type="player_proxy">
@@ -1018,11 +1019,6 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;enemy&quot;</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="690585323173131" type="enemy">
-                                    <param id="0" name="Instance variable">pass</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -1040,6 +1036,11 @@
                                                     <param id="0" name="First value">distance(enemy.X,enemy.Y,player_proxy.X,player_proxy.Y)</param>
                                                     <param id="1" name="Comparison">3</param>
                                                     <param id="2" name="Second value">230</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="690585323173131" type="enemy">
+                                                    <param id="0" name="Instance variable">pass</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
                                                 </condition>
                                             </conditions>
                                             <actions />
@@ -1162,7 +1163,9 @@
                             <param id="2" name="Value">&quot;inCombat&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-9" name="Destroy" sid="272744526207562" type="btn_pause" />
+                    </actions>
                     <sub-events>
                         <event-block sid="394469266079021">
                             <conditions>
@@ -1276,7 +1279,7 @@
         </event-group>
         <event-group description="" sid="421412782927476" title="shadow">
             <sub-events>
-                <variable constant="0" name="shadowTime" sid="821413027833569" static="0" type="number">30</variable>
+                <variable constant="0" name="shadowTime" sid="821413027833569" static="0" type="number">60</variable>
                 <event-block sid="569368584195750">
                     <conditions>
                         <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="692949206698650" type="player_proxy">
@@ -1339,7 +1342,7 @@
                         <action id="-9" name="Destroy" sid="537292331802741" type="enemy" />
                         <action id="-11" name="Add to" sid="881117822591235" type="player_proxy">
                             <param id="0" name="Instance variable">vsBoss</param>
-                            <param id="1" name="Value">10</param>
+                            <param id="1" name="Value">5</param>
                         </action>
                         <action id="0" name="Add key" sid="615720643313522" type="Dictionary">
                             <param id="0" name="Key">&quot;bossEnemy&quot;</param>

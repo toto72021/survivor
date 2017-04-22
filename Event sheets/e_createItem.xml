@@ -18,7 +18,12 @@
                         <condition id="-7" name="Compare instance variable" sid="995035517002159" type="ui_item">
                             <param id="0" name="Instance variable">itemName</param>
                             <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">&quot;knife&quot;</param>
+                            <param id="2" name="Value">&quot;adKnife&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="263647644122670" type="ui_item">
+                            <param id="0" name="Instance variable">itemName</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;adWater&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -168,29 +173,25 @@
                         <variable constant="0" name="material1" sid="941555049756575" static="0" type="text"></variable>
                         <variable constant="0" name="material2" sid="990596178030683" static="0" type="text"></variable>
                         <variable constant="0" name="material3" sid="404996770384989" static="0" type="text"></variable>
+                        <variable constant="0" name="material4" sid="522304941565368" static="0" type="text"></variable>
                         <event-block sid="624302833386872">
                             <conditions>
                                 <condition id="-11" name="For Each" sid="511170579440513" type="System">
                                     <param id="0" name="Object">selectbox</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="721084899520236" type="Function">
-                                    <param id="0" name="Name">&quot;useItem&quot;</param>
-                                    <param id="1" name="Parameter {n}">selectbox.diyStrValue{###}1{###}&quot;no&quot;</param>
-                                </action>
-                            </actions>
+                            <actions />
                             <sub-events>
-                                <event-block sid="274517136004265">
+                                <event-block sid="711929803352402">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="271283810018704" type="selectbox">
+                                        <condition id="-7" name="Compare instance variable" sid="270737249081401" type="selectbox">
                                             <param id="0" name="Instance variable">diyStrValue</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;stone&quot;</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="629069115246691" type="System">
+                                        <action id="-9" name="Set value" sid="626081551132193" type="System">
                                             <param id="0" name="Variable">material1</param>
                                             <param id="1" name="Value">&quot;stone&quot;</param>
                                         </action>
@@ -211,21 +212,6 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="623685444981160">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="985973848290411" type="selectbox">
-                                            <param id="0" name="Instance variable">diyStrValue</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;fire&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="585147608711866" type="System">
-                                            <param id="0" name="Variable">material1</param>
-                                            <param id="1" name="Value">&quot;fire&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                                 <event-block sid="749301539466188">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="322294868576464" type="selectbox">
@@ -238,6 +224,71 @@
                                         <action id="-9" name="Set value" sid="882527597361523" type="System">
                                             <param id="0" name="Variable">material2</param>
                                             <param id="1" name="Value">&quot;rawMeat&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="274517136004265">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="271283810018704" type="selectbox">
+                                            <param id="0" name="Instance variable">diyStrValue</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;knife&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="629069115246691" type="System">
+                                            <param id="0" name="Variable">material3</param>
+                                            <param id="1" name="Value">&quot;knife&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="586639680634846">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="264488028110537" type="selectbox">
+                                            <param id="0" name="Instance variable">diyStrValue</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;water&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="964060666464450" type="System">
+                                            <param id="0" name="Variable">material3</param>
+                                            <param id="1" name="Value">&quot;water&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="623685444981160">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="985973848290411" type="selectbox">
+                                            <param id="0" name="Instance variable">diyStrValue</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;fire&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="585147608711866" type="System">
+                                            <param id="0" name="Variable">material4</param>
+                                            <param id="1" name="Value">&quot;fire&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="805590289811790">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="341855940207478" type="selectbox">
+                                            <param id="0" name="Instance variable">diyStrValue</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;knife&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="293294974111465" type="selectbox">
+                                            <param id="0" name="Instance variable">diyStrValue</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">&quot;water&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="721084899520236" type="Function">
+                                            <param id="0" name="Name">&quot;useItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">selectbox.diyStrValue{###}1{###}&quot;no&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -255,6 +306,16 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;wood&quot;</param>
                                 </condition>
+                                <condition id="-14" name="Compare variable" sid="950923714240624" type="System">
+                                    <param id="0" name="Variable">material3</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="171035732410895" type="System">
+                                    <param id="0" name="Variable">material4</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="296003680039074" type="System">
@@ -265,21 +326,105 @@
                         </event-block>
                         <event-block sid="206569640710003">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="776497583129203" type="System">
-                                    <param id="0" name="Variable">material1</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;fire&quot;</param>
-                                </condition>
+                                <condition id="-22" name="Else" sid="628592223537149" type="System" />
                                 <condition id="-14" name="Compare variable" sid="325372075380937" type="System">
                                     <param id="0" name="Variable">material2</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;rawMeat&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="776497583129203" type="System">
+                                    <param id="0" name="Variable">material4</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;fire&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="187834013358010" type="System">
+                                    <param id="0" name="Variable">material3</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="766815101408130" type="System">
+                                    <param id="0" name="Variable">material4</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="860732150428010" type="System">
                                     <param id="0" name="Variable">createItem</param>
                                     <param id="1" name="Value">&quot;cookedMeat&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="223853945516504">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="321817785189720" type="System" />
+                                <condition id="-14" name="Compare variable" sid="710981159318179" type="System">
+                                    <param id="0" name="Variable">material1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;stone&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="602365650691130" type="System">
+                                    <param id="0" name="Variable">material2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;wood&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="481345662668439" type="System">
+                                    <param id="0" name="Variable">material3</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;knife&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="535687947365472" type="System">
+                                    <param id="0" name="Variable">material4</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;fire&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="200109000634559" type="System">
+                                    <param id="0" name="Variable">createItem</param>
+                                    <param id="1" name="Value">&quot;adKnife&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="495452609803775">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="639571501861463" type="System" />
+                                <condition id="-14" name="Compare variable" sid="499184907341109" type="System">
+                                    <param id="0" name="Variable">material1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;stone&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="179427655869258" type="System">
+                                    <param id="0" name="Variable">material2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;wood&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="964713792955452" type="System">
+                                    <param id="0" name="Variable">material3</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;water&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="951835936202444" type="System">
+                                    <param id="0" name="Variable">material4</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;fire&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="701162034825962" type="System">
+                                    <param id="0" name="Variable">createItem</param>
+                                    <param id="1" name="Value">&quot;adWater&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="817388551462952">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="996596799446593" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="523306349514619" type="System">
+                                    <param id="0" name="Variable">createItem</param>
+                                    <param id="1" name="Value">&quot;rubbish&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
