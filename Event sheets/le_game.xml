@@ -506,8 +506,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>所有物资总数</comment>
-                <variable constant="0" name="itemsCount" sid="936463988997133" static="0" type="number">6</variable>
+                <comment>按份数物资随机选 ：item1石  item2椰  item3果  item4蛋  item5水  item6木  </comment>
                 <event-block sid="134402125834962">
                     <conditions>
                         <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_proxy">
@@ -526,7 +525,7 @@
                             <param id="3" name="Y">random(470,630)</param>
                         </action>
                         <action id="4" name="Set animation" sid="732895526669729" type="item">
-                            <param id="0" name="Animation">&quot;item&quot;&amp;str(int(random(1,itemsCount+1)))</param>
+                            <param id="0" name="Animation">choose(&quot;item1&quot;,&quot;item2&quot;,&quot;item3&quot;,&quot;item4&quot;,&quot;item5&quot;,&quot;item6&quot;,&quot;item1&quot;,&quot;item1&quot;,&quot;item6&quot;)</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="-10" name="Set value" sid="849888177488642" type="item">
