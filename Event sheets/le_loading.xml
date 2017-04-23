@@ -3,8 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>le_loading</name>
     <events>
-        <include>e_fadeInOut</include>
         <include>e_bubbleImformation</include>
+        <include>e_fadeInOut</include>
         <include>e_sound</include>
         <event-group description="" sid="288895613313474" title="loading">
             <sub-events>
@@ -39,6 +39,12 @@
                         <action id="4" name="Preload" sid="137530871720381" type="Audio">
                             <param id="0" name="Audio file">getItem</param>
                         </action>
+                        <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
+                            <param id="0" name="Tag">&quot;checkV&quot;</param>
+                            <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
+                            <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
+                            <param id="3" name="Method">&quot;POST&quot;</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="158496065904455">
@@ -55,18 +61,23 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="234553506473791">
-                            <conditions />
-                            <actions>
-                                <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
-                                    <param id="0" name="Tag">&quot;checkV&quot;</param>
-                                    <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
-                                    <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
-                                    <param id="3" name="Method">&quot;POST&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="278916269155556">
+                    <conditions>
+                        <condition id="1" name="Preloads complete" sid="600889837463598" type="Audio" />
+                        <condition id="-14" name="Compare variable" sid="756823323373822" type="System">
+                            <param id="0" name="Variable">loadCompleted</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="408477303420135" type="System">
+                            <param id="0" name="Variable">loadCompleted</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="408558698994186">
                     <conditions>
@@ -77,7 +88,12 @@
                     <actions>
                         <action id="14" name="Log" sid="294565210017825" type="Browser">
                             <param id="0" name="Type">0</param>
-                            <param id="1" name="Message">&quot;版本信息返回：&quot;&amp;AJAX.LastData</param>
+                            <param id="1" name="Message">&quot;&gt;&gt;&gt;版本信息返回：&quot;&amp;AJAX.LastData</param>
+                        </action>
+                        <action behavior="Timer" id="2" name="Start" sid="765794722781103" type="loadLogo">
+                            <param id="0" name="Time">3</param>
+                            <param id="1" name="Timer">&quot;_load&quot;</param>
+                            <param id="2" name="Repeat">1</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -86,7 +102,7 @@
                                 <condition id="-8" name="Compare two values" sid="471206992255420" type="System">
                                     <param id="0" name="First value">AJAX.LastData</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">&quot;version_completed&quot;</param>
+                                    <param id="2" name="Second value">&quot;version_confirm&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -129,33 +145,29 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="675426603178703">
+                    <conditions>
+                        <condition id="1" name="On error" sid="466568242656832" type="AJAX">
+                            <param id="0" name="Tag">&quot;checkV&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="806655263937343" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;&gt;&gt;&gt;网络故障！！！&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="623326382786820" type="Function">
+                            <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;网络故障。。。&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="414541683908536">
                     <conditions>
                         <condition id="6" name="On update ready" sid="488308680418258" type="Browser" />
                     </conditions>
                     <actions>
                         <action id="9" name="Reload" sid="850525951285371" type="Browser" />
-                    </actions>
-                </event-block>
-                <event-block sid="278916269155556">
-                    <conditions>
-                        <condition id="1" name="Preloads complete" sid="600889837463598" type="Audio" />
-                        <condition id="-14" name="Compare variable" sid="756823323373822" type="System">
-                            <param id="0" name="Variable">loadCompleted</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="408477303420135" type="System">
-                            <param id="0" name="Variable">loadCompleted</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action behavior="Timer" id="2" name="Start" sid="765794722781103" type="loadLogo">
-                            <param id="0" name="Time">2</param>
-                            <param id="1" name="Timer">&quot;_load&quot;</param>
-                            <param id="2" name="Repeat">1</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="743866421199785">
@@ -233,7 +245,7 @@
                                     <param id="1" name="Parameter {n}">&quot;版本出现不可描述问题=，=，将在3秒后重新加载&quot;</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="587358227146405" type="System">
-                                    <param id="0" name="Seconds">3</param>
+                                    <param id="0" name="Seconds">5</param>
                                 </action>
                                 <action id="9" name="Reload" sid="505501174226546" type="Browser" />
                             </actions>
@@ -268,7 +280,7 @@
                         </action>
                         <action id="3" name="Start" sid="179850678934204" type="TimeLine">
                             <param id="0" name="Name">&quot;update&quot;</param>
-                            <param id="1" name="Time">3</param>
+                            <param id="1" name="Time">5</param>
                             <param id="2" name="Repeat">1</param>
                         </action>
                     </actions>

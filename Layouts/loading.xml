@@ -64,7 +64,7 @@
                 </instance>
                 <instance type="txt_center" uid="40">
                     <properties>
-                        <text>Text</text>
+                        <text>版本正在更新中。。。</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16,400,0</font>
                         <color>255,255,255</color>
@@ -299,7 +299,7 @@
         <instance type="Array_info" uid="36">
             <properties>
                 <width>0</width>
-                <height>3</height>
+                <height>2</height>
                 <depth>1</depth>
             </properties>
             <instance-variables>

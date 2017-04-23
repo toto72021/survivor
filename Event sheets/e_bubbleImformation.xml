@@ -5,18 +5,6 @@
     <events>
         <event-group description="" sid="672327062322576" title="bubble information">
             <sub-events>
-                <event-block sid="965238117575560">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="208707740469843" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="1" name="Set size" sid="411223207717164" type="Array_info">
-                            <param id="0" name="Width">0</param>
-                            <param id="1" name="Height">2</param>
-                            <param id="2" name="Depth">1</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="284428936540522">
                     <conditions>
                         <condition id="0" name="On function" sid="909372891396797" type="Function">

@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.04221622</version>
+    <version>1.0.0.04231620</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -58,7 +58,7 @@
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
     <first-layout>loading</first-layout>
-    <use-loader-layout>1</use-loader-layout>
+    <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
         <prop name="Downscaling">Medium quality</prop>
