@@ -137,7 +137,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set text" sid="918653109565391" type="txt_center">
-                                            <param id="0" name="Text">&quot;版本正在更新中。。。&quot;</param>
+                                            <param id="0" name="Text">&quot;当前为旧版本：&quot;&amp;projectversion&amp;&quot;    正在更新中。。。&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
