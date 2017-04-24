@@ -621,6 +621,10 @@
                         <event-block sid="782747593044127">
                             <conditions />
                             <actions>
+                                <action id="0" name="Call function" sid="770838521195209" type="Function">
+                                    <param id="0" name="Name">&quot;playBgMusic&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;alone&quot;</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="625157547518351" type="player_proxy">
                                     <param id="0" name="Instance variable">Euid</param>
                                     <param id="1" name="Value">0</param>

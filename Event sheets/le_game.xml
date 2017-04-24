@@ -779,6 +779,11 @@
                             <param id="0" name="Object">btn_pause</param>
                         </condition>
                         <condition id="-7" name="Compare instance variable" sid="632928021308194" type="btn_pause">
+                            <param id="0" name="Instance variable">groupID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;item&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="174922894513714" type="btn_pause">
                             <param id="0" name="Instance variable">actionID</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;search&quot;</param>
@@ -952,7 +957,7 @@
         </event-group>
         <event-group description="" sid="447957881580328" title="inFight">
             <sub-events>
-                <variable constant="0" name="createEnemyTime" sid="230996028921090" static="0" type="number">13</variable>
+                <variable constant="0" name="createEnemyTime" sid="230996028921090" static="0" type="number">15</variable>
                 <event-block sid="143176244632508">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="345008276933571" type="player_proxy">
@@ -1213,6 +1218,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Call function" sid="975646191450693" type="Function">
+                            <param id="0" name="Name">&quot;playBgMusic&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;combat&quot;</param>
+                        </action>
                         <action behavior="FSM" id="11" name="Go to state" sid="227559859037589" type="enemy">
                             <param id="0" name="Name">&quot;prepare&quot;</param>
                         </action>
