@@ -61,6 +61,10 @@
                             <param id="0" name="Instance variable">vsBoss</param>
                             <param id="1" name="Value">0</param>
                         </action>
+                        <action id="-10" name="Set value" sid="859748694868588" type="player_proxy">
+                            <param id="0" name="Instance variable">mapIndex</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="458793353960623">

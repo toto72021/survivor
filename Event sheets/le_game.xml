@@ -305,28 +305,40 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="371126363486503">
+                        <variable constant="0" name="i" sid="874593664886265" static="0" type="number">0</variable>
+                        <event-block sid="323774656463983">
                             <conditions>
-                                <condition id="-11" name="For Each" sid="328596642252529" type="System">
-                                    <param id="0" name="Object">bg_1</param>
+                                <condition id="-11" name="For Each" sid="587311714422118" type="System">
+                                    <param id="0" name="Object">bg_2</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-1" name="Set X" sid="278349996396260" type="bg_1">
+                                <action id="-9" name="Set value" sid="911793688054474" type="System">
+                                    <param id="0" name="Variable">i</param>
+                                    <param id="1" name="Value">player_proxy.mapIndex</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="470458690892325" type="bg_2">
                                     <param id="0" name="X">Self.X-60*dt </param>
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="193675963963449">
+                                <event-block sid="866374181627489">
                                     <conditions>
-                                        <condition id="-1" name="Compare X" sid="995985812361873" type="bg_1">
+                                        <condition id="-1" name="Compare X" sid="311248747550831" type="bg_2">
                                             <param id="0" name="Comparison">3</param>
                                             <param id="1" name="X co-ordinate">-Self.Width</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-1" name="Set X" sid="851866427931559" type="bg_1">
-                                            <param id="0" name="X">self.Width</param>
+                                        <action id="-1" name="Set X" sid="485742385912206" type="bg_2">
+                                            <param id="0" name="X">Self.Width-60*dt </param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="402442913226344" type="bg_2">
+                                            <param id="0" name="Frame number">i-int(i/Self.AnimationFrameCount)*Self.AnimationFrameCount</param>
+                                        </action>
+                                        <action id="-11" name="Add to" sid="750720729040597" type="player_proxy">
+                                            <param id="0" name="Instance variable">mapIndex</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -480,7 +492,7 @@
         <event-group description="" sid="828169281532222" title="search">
             <sub-events>
                 <comment>生成物资</comment>
-                <variable constant="0" name="createItemTime" sid="349492969715706" static="0" type="number">7</variable>
+                <variable constant="0" name="createItemTime" sid="349492969715706" static="0" type="number">12</variable>
                 <event-block sid="113605935947698">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="122105833157247" type="player_proxy">
@@ -957,7 +969,7 @@
         </event-group>
         <event-group description="" sid="447957881580328" title="inFight">
             <sub-events>
-                <variable constant="0" name="createEnemyTime" sid="230996028921090" static="0" type="number">15</variable>
+                <variable constant="0" name="createEnemyTime" sid="230996028921090" static="0" type="number">17</variable>
                 <event-block sid="143176244632508">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="345008276933571" type="player_proxy">
@@ -1287,7 +1299,7 @@
         </event-group>
         <event-group description="" sid="421412782927476" title="shadow">
             <sub-events>
-                <variable constant="0" name="shadowTime" sid="821413027833569" static="0" type="number">60</variable>
+                <variable constant="0" name="shadowTime" sid="821413027833569" static="0" type="number">70</variable>
                 <event-block sid="569368584195750">
                     <conditions>
                         <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="692949206698650" type="player_proxy">

@@ -126,10 +126,6 @@
             </object-type>
         </object-folder>
         <object-folder name="bg">
-            <object-type name="bg_1" sid="792114711608954">
-                <plugin id="TiledBg" />
-                <texture original-source="C:\Users\Administrator\Desktop\resource\res\map.png" />
-            </object-type>
             <object-type name="bg_mask" sid="740781980721511">
                 <plugin id="TiledBg" />
                 <texture original-source="C:\Users\totoyan\Desktop\bg2.png" />
@@ -186,6 +182,22 @@
                 <plugin id="TiledBg" />
                 <texture original-source="C:\Users\totoyan\Desktop\bg2.png" />
             </object-type>
+            <object-type name="bg_2" sid="611611030700264">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="9" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="744645783519675" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m1.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m2.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m3.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m4.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m5.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m6.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m7.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m8.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m9.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="particle">
             <object-type name="P_energy" sid="360192560883541">
@@ -223,6 +235,7 @@
                     <instance-variable name="vsBoss" sid="458967737310218" type="number" />
                     <instance-variable name="combatTime" sid="468386516713398" type="number" />
                     <instance-variable name="Euid" sid="689674375108296" type="number" />
+                    <instance-variable name="mapIndex" sid="899782194698374" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="actionFSM" sid="153148587235937">
@@ -1054,7 +1067,6 @@
         </family>
         <family name="bgs" plugin-id="TiledBg" sid="679559079734112">
             <members>
-                <member>bg_1</member>
                 <member>bg_mask</member>
                 <member>bg_mask2</member>
                 <member>bg_tween</member>
