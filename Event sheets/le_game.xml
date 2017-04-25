@@ -331,7 +331,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-1" name="Set X" sid="485742385912206" type="bg_2">
-                                            <param id="0" name="X">Self.Width-60*dt </param>
+                                            <param id="0" name="X">Self.Width-2</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="402442913226344" type="bg_2">
                                             <param id="0" name="Frame number">i-int(i/Self.AnimationFrameCount)*Self.AnimationFrameCount</param>

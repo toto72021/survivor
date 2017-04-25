@@ -1,7 +1,7 @@
 ﻿<?php 
 
 $Ver = $_POST[ver];  
-$CVer = "1.0.0.04242310";
+$CVer = "1.0.0.0425";
 
 if ($Ver == $CVer) {
 	echo "version_confirm" ;
