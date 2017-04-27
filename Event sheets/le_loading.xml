@@ -23,7 +23,7 @@
                             <param id="0" name="Variable">loadCompleted</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-9" name="Set value" sid="900586373272485" type="System">
+                        <action id="-9" name="Set value" sid="385380246061081" type="System">
                             <param id="0" name="Variable">update</param>
                             <param id="1" name="Value">0</param>
                         </action>
@@ -41,6 +41,15 @@
                             <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
                             <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
                             <param id="3" name="Method">&quot;POST&quot;</param>
+                        </action>
+                        <action disabled="1" id="-9" name="Set value" sid="900586373272485" type="System">
+                            <param id="0" name="Variable">update</param>
+                            <param id="1" name="Value">999</param>
+                        </action>
+                        <action behavior="Timer" disabled="1" id="2" name="Start" sid="566602865671245" type="loadLogo">
+                            <param id="0" name="Time">5</param>
+                            <param id="1" name="Timer">&quot;_load&quot;</param>
+                            <param id="2" name="Repeat">1</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -88,7 +97,7 @@
                             <param id="1" name="Message">&quot;&gt;&gt;&gt;版本信息返回：&quot;&amp;AJAX.LastData</param>
                         </action>
                         <action behavior="Timer" id="2" name="Start" sid="765794722781103" type="loadLogo">
-                            <param id="0" name="Time">3</param>
+                            <param id="0" name="Time">5</param>
                             <param id="1" name="Timer">&quot;_load&quot;</param>
                             <param id="2" name="Repeat">1</param>
                         </action>

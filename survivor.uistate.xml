@@ -11,8 +11,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">game</layout>
-        <layout order="3">loading</layout>
-        <event-sheet active="1" order="1">le_game</event-sheet>
+        <layout active="1" order="3">loading</layout>
+        <event-sheet order="1">le_game</event-sheet>
         <event-sheet order="2">le_loading</event-sheet>
         <event-sheet order="4">e_bubbleImformation</event-sheet>
         <event-sheet order="5">e_sound</event-sheet>
@@ -65,6 +65,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/item/" />
         <folder expanded="1" path="animation-folder/mainUI/" />
         <folder expanded="1" path="animation-folder/loadLogo/" />
+        <folder expanded="1" path="animation-folder/credit/" />
+        <folder expanded="1" path="animation-folder/title/" />
         <folder expanded="1" path="animation-folder/enemy/" />
         <folder expanded="1" path="animation-folder/camera/" />
         <folder expanded="1" path="animation-folder/countTime/" />

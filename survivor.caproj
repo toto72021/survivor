@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.04242310</version>
+    <version>1.0.0.04271320</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/demo/survivor</author-website>
@@ -653,6 +653,42 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="121939660708184" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Administrator\Desktop\resource\icon-96.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="credit" sid="658731279666560">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="173993226239501" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\totoyan\Desktop\credit.png">
+                            <collision-poly>
+                                <point x="0.0191122" y="0.0504065" />
+                                <point x="0.5" y="0.121951" />
+                                <point x="0.958693" y="0.108943" />
+                                <point x="0.992602" y="0.499187" />
+                                <point x="0.980271" y="0.947967" />
+                                <point x="0.5" y="0.508943" />
+                                <point x="0.0178792" y="0.952846" />
+                                <point x="0.444513" y="0.499187" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="title" sid="507974523496204">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="329666405770061" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.50365" original-source="C:\Users\totoyan\Desktop\title.png">
+                            <collision-poly>
+                                <point x="0.0187519" y="0.261803" />
+                                <point x="0.588995" y="0.280401" />
+                                <point x="0.980326" y="0.499285" />
+                                <point x="0.588995" y="0.761087" />
+                                <point x="0.0307409" y="0.680973" />
+                                <point x="0.013526" y="0.499285" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
