@@ -11,13 +11,18 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">game</layout>
-        <layout active="1" order="3">loading</layout>
+        <layout order="3">loading</layout>
+        <layout order="11">UI</layout>
         <event-sheet order="1">le_game</event-sheet>
-        <event-sheet order="2">le_loading</event-sheet>
+        <event-sheet active="1" order="2">le_loading</event-sheet>
         <event-sheet order="4">e_bubbleImformation</event-sheet>
         <event-sheet order="5">e_sound</event-sheet>
         <event-sheet order="6">e_fight</event-sheet>
         <event-sheet order="7">e_player</event-sheet>
+        <event-sheet order="8">e_start&amp;end</event-sheet>
+        <event-sheet order="9">e_item</event-sheet>
+        <event-sheet order="10">e_createItem</event-sheet>
+        <event-sheet order="12">e_fadeInOut</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

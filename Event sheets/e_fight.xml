@@ -349,11 +349,17 @@
                                             <sub-events>
                                                 <event-block sid="845712051465596">
                                                     <conditions>
-                                                        <condition id="2" name="Is playing" sid="474002442024348" type="enemy">
-                                                            <param id="0" name="Animation">&quot;enemy_4&quot;</param>
+                                                        <condition id="-7" name="Compare instance variable" sid="474002442024348" type="enemy">
+                                                            <param id="0" name="Instance variable">name</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">&quot;enemy_4&quot;</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
+                                                        <action id="0" name="Call function" sid="488798282542466" type="Function">
+                                                            <param id="0" name="Name">&quot;setVictory&quot;</param>
+                                                            <param id="1" name="Parameter {n}"></param>
+                                                        </action>
                                                         <action id="0" name="Call function" sid="670257975185609" type="Function">
                                                             <param id="0" name="Name">&quot;gameOver&quot;</param>
                                                             <param id="1" name="Parameter {n}">1</param>
@@ -444,34 +450,12 @@
                                             <conditions>
                                                 <condition id="-22" name="Else" sid="759140497570086" type="System" />
                                             </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="596892009054251">
-                                                    <conditions>
-                                                        <condition behavior="animationFSM" id="7" name="Compare current state" sid="750064028013289" type="player_proxy">
-                                                            <param id="0" name="Name">&quot;escape&quot;</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action behavior="Timer" id="2" name="Start" sid="554846829569036" type="player_proxy">
-                                                            <param id="0" name="Time">1</param>
-                                                            <param id="1" name="Timer">&quot;_escape&quot;</param>
-                                                            <param id="2" name="Repeat">1</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="398794560371771">
-                                                    <conditions>
-                                                        <condition id="-22" name="Else" sid="113658024686983" type="System" />
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Call function" sid="527396952658061" type="Function">
-                                                            <param id="0" name="Name">&quot;endTurn&quot;</param>
-                                                            <param id="1" name="Parameter {n}"></param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="527396952658061" type="Function">
+                                                    <param id="0" name="Name">&quot;endTurn&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -480,6 +464,9 @@
                         <event-block sid="421959445406470">
                             <conditions />
                             <actions>
+                                <action id="-16" name="Wait" sid="702385098903781" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
                                 <action id="0" name="Call function" sid="254844161610985" type="Function">
                                     <param id="0" name="Name">&quot;displayPlayerUI&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
@@ -511,46 +498,6 @@
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="473844164477644">
-                    <conditions>
-                        <condition behavior="Timer" id="1" name="On time-out" sid="715371679134122" type="player_proxy">
-                            <param id="0" name="Timer">&quot;_escape&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="176452166809566">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="333245431179476" type="System">
-                                    <param id="0" name="First value">int(random(1)+0.5)</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="581186992731171" type="Function">
-                                    <param id="0" name="Name">&quot;endCombat&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="692556466908030">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="752692282374394" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="544684682679638" type="Function">
-                                    <param id="0" name="Name">&quot;bubbleInformation&quot;</param>
-                                    <param id="1" name="Parameter {n}">&quot;逃跑失败！&quot;</param>
-                                </action>
-                                <action id="0" name="Call function" sid="860545024875781" type="Function">
-                                    <param id="0" name="Name">&quot;endTurn&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="195832436439972">
                     <conditions>

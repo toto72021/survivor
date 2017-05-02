@@ -74,6 +74,20 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>召唤dalao</comment>
+                <event-block sid="657497847287291">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="889358349647020" type="Keyboard">
+                            <param id="0" name="Key">73 (I)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="633451691917663" type="Function">
+                            <param id="0" name="Name">&quot;createEnemy&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;enemy_4&quot;{###}7{###}1{###}3</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="909323005712838">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="403186661023788" type="Keyboard">
@@ -216,7 +230,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="954305281068450" type="Function">
+                                <action id="0" name="Call function" sid="584776432354796" type="Function">
                                     <param id="0" name="Name">&quot;fadeOutLayout&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;loading&quot;</param>
                                 </action>
@@ -341,6 +355,30 @@
                                             <param id="0" name="Instance variable">actionID</param>
                                             <param id="1" name="Value">&quot;failed&quot;</param>
                                         </action>
+                                        <action id="-3" name="Create object" sid="405794398853153" type="System">
+                                            <param id="0" name="Object to create">bg_Black</param>
+                                            <param id="1" name="Layer">mainUI.LayerName</param>
+                                            <param id="2" name="X">0</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="201843593013444" type="bg_Black">
+                                            <param id="0" name="Width">1136</param>
+                                            <param id="1" name="Height">640</param>
+                                        </action>
+                                        <action id="-29" name="Move to object" sid="984723469234506" type="bg_Black">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Object">mainUI</param>
+                                        </action>
+                                        <action behavior="Fade" id="2" name="Set fade-in time" sid="505474482806323" type="bg_Black">
+                                            <param id="0" name="Fade-in time">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="3" name="Set wait time" sid="673624207513627" type="bg_Black">
+                                            <param id="0" name="Wait time">0</param>
+                                        </action>
+                                        <action behavior="Fade" id="4" name="Set fade-out time" sid="757403260798335" type="bg_Black">
+                                            <param id="0" name="Fade-out time">0</param>
+                                        </action>
+                                        <action behavior="Fade" id="1" name="Start fade" sid="271351530308739" type="bg_Black" />
                                     </actions>
                                 </event-block>
                             </sub-events>

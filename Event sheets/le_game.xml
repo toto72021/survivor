@@ -331,7 +331,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-1" name="Set X" sid="485742385912206" type="bg_2">
-                                            <param id="0" name="X">Self.Width-2</param>
+                                            <param id="0" name="X">Self.X+Self.Width*2</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="402442913226344" type="bg_2">
                                             <param id="0" name="Frame number">i-int(i/Self.AnimationFrameCount)*Self.AnimationFrameCount</param>
@@ -492,7 +492,7 @@
         <event-group description="" sid="828169281532222" title="search">
             <sub-events>
                 <comment>生成物资</comment>
-                <variable constant="0" name="createItemTime" sid="349492969715706" static="0" type="number">12</variable>
+                <variable constant="0" name="createItemTime" sid="349492969715706" static="0" type="number">11</variable>
                 <event-block sid="113605935947698">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="122105833157247" type="player_proxy">
@@ -537,7 +537,7 @@
                             <param id="3" name="Y">random(470,630)</param>
                         </action>
                         <action id="4" name="Set animation" sid="732895526669729" type="item">
-                            <param id="0" name="Animation">choose(&quot;item1&quot;,&quot;item2&quot;,&quot;item3&quot;,&quot;item4&quot;,&quot;item5&quot;,&quot;item6&quot;,&quot;item1&quot;,&quot;item1&quot;,&quot;item6&quot;)</param>
+                            <param id="0" name="Animation">choose(&quot;item1&quot;,&quot;item2&quot;,&quot;item3&quot;,&quot;item4&quot;,&quot;item5&quot;,&quot;item6&quot;,&quot;item1&quot;,&quot;item1&quot;,&quot;item6&quot;,&quot;item1&quot;)</param>
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="-10" name="Set value" sid="849888177488642" type="item">

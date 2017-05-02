@@ -36,21 +36,6 @@
                         <action id="4" name="Preload" sid="137530871720381" type="Audio">
                             <param id="0" name="Audio file">getItem</param>
                         </action>
-                        <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
-                            <param id="0" name="Tag">&quot;checkV&quot;</param>
-                            <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
-                            <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
-                            <param id="3" name="Method">&quot;POST&quot;</param>
-                        </action>
-                        <action disabled="1" id="-9" name="Set value" sid="900586373272485" type="System">
-                            <param id="0" name="Variable">update</param>
-                            <param id="1" name="Value">999</param>
-                        </action>
-                        <action behavior="Timer" disabled="1" id="2" name="Start" sid="566602865671245" type="loadLogo">
-                            <param id="0" name="Time">5</param>
-                            <param id="1" name="Timer">&quot;_load&quot;</param>
-                            <param id="2" name="Repeat">1</param>
-                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="158496065904455">
@@ -64,6 +49,61 @@
                             <actions>
                                 <action id="0" name="Set text" sid="314496371571073" type="txt_center">
                                     <param id="0" name="Text">&quot;当前版本：&quot;&amp;projectversion</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="416774579152093">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="681053036860557" type="System">
+                                    <param id="0" name="First value">Function.Call(&quot;returnVictory&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="241837895488061" type="loadLogo">
+                                    <param id="0" name="X">860</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="491197496637351" type="item_progress">
+                                    <param id="0" name="Width">600</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="735588372015255">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="950758536437590" type="txt_center">
+                                            <param id="0" name="Instance variable">actionID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;ver&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="147268692235910" type="txt_center">
+                                            <param id="0" name="Text">&quot;恭喜你通关游戏！&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="421266518046135">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="859168618225255" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
+                                    <param id="0" name="Tag">&quot;checkV&quot;</param>
+                                    <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
+                                    <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
+                                    <param id="3" name="Method">&quot;POST&quot;</param>
+                                </action>
+                                <action disabled="1" id="-9" name="Set value" sid="900586373272485" type="System">
+                                    <param id="0" name="Variable">update</param>
+                                    <param id="1" name="Value">999</param>
+                                </action>
+                                <action behavior="Timer" disabled="1" id="2" name="Start" sid="566602865671245" type="loadLogo">
+                                    <param id="0" name="Time">5</param>
+                                    <param id="1" name="Timer">&quot;_load&quot;</param>
+                                    <param id="2" name="Repeat">1</param>
                                 </action>
                             </actions>
                         </event-block>
