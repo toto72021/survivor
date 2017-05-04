@@ -1299,7 +1299,7 @@
         </event-group>
         <event-group description="" sid="421412782927476" title="shadow">
             <sub-events>
-                <variable constant="0" name="shadowTime" sid="821413027833569" static="0" type="number">70</variable>
+                <variable constant="0" name="shadowTime" sid="821413027833569" static="0" type="number">90</variable>
                 <event-block sid="569368584195750">
                     <conditions>
                         <condition behavior="Timer" id="0" inverted="1" name="Is timer running" sid="692949206698650" type="player_proxy">
@@ -1360,15 +1360,34 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="537292331802741" type="enemy" />
-                        <action id="-11" name="Add to" sid="881117822591235" type="player_proxy">
-                            <param id="0" name="Instance variable">vsBoss</param>
-                            <param id="1" name="Value">5</param>
-                        </action>
-                        <action id="0" name="Add key" sid="615720643313522" type="Dictionary">
-                            <param id="0" name="Key">&quot;bossEnemy&quot;</param>
-                            <param id="1" name="Value">player_proxy.vsBoss</param>
-                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="440664785280636">
+                            <conditions>
+                                <condition id="0" name="Compare value" sid="969568437979476" type="Dictionary">
+                                    <param id="0" name="Key">&quot;bossEnemy&quot;</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">30</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="557290793863611">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="461943124613233" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="881117822591235" type="player_proxy">
+                                    <param id="0" name="Instance variable">vsBoss</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="0" name="Add key" sid="615720643313522" type="Dictionary">
+                                    <param id="0" name="Key">&quot;bossEnemy&quot;</param>
+                                    <param id="1" name="Value">player_proxy.vsBoss</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="280080159619838">
                     <conditions>

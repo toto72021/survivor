@@ -90,12 +90,6 @@
                                 <condition id="-22" name="Else" sid="859168618225255" type="System" />
                             </conditions>
                             <actions>
-                                <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
-                                    <param id="0" name="Tag">&quot;checkV&quot;</param>
-                                    <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
-                                    <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
-                                    <param id="3" name="Method">&quot;POST&quot;</param>
-                                </action>
                                 <action disabled="1" id="-9" name="Set value" sid="900586373272485" type="System">
                                     <param id="0" name="Variable">update</param>
                                     <param id="1" name="Value">999</param>
@@ -104,6 +98,12 @@
                                     <param id="0" name="Time">5</param>
                                     <param id="1" name="Timer">&quot;_load&quot;</param>
                                     <param id="2" name="Repeat">1</param>
+                                </action>
+                                <action id="2" name="Post to URL" sid="657744140352725" type="AJAX">
+                                    <param id="0" name="Tag">&quot;checkV&quot;</param>
+                                    <param id="1" name="URL">&quot;http://imssr.cn/survivor/lb/checkV.php&quot;</param>
+                                    <param id="2" name="Data">&quot;ver=&quot;&amp;projectversion</param>
+                                    <param id="3" name="Method">&quot;POST&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

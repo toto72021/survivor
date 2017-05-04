@@ -2,10 +2,10 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.050215</version>
+    <version>1.0.0.0504</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
-    <author-website>http://imssr.cn/demo/survivor</author-website>
+    <author-website>http://imssr.cn/survivor</author-website>
     <app-id>cn.imssr.survivor</app-id>
     <unique-id>314ocrib9g874</unique-id>
     <saved-with-version>24400</saved-with-version>
