@@ -2,7 +2,7 @@
 <c2project>
     <name>survivor</name>
     <description>survivor game</description>
-    <version>1.0.0.0504</version>
+    <version>1.0.0.05082227</version>
     <author>totoyan</author>
     <author-email>toto72021@163.com</author-email>
     <author-website>http://imssr.cn/survivor</author-website>
@@ -178,23 +178,29 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="bg_mask2" sid="198001034581860">
-                <plugin id="TiledBg" />
-                <texture original-source="C:\Users\totoyan\Desktop\bg2.png" />
-            </object-type>
             <object-type name="bg_2" sid="611611030700264">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="9" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="744645783519675" speed="0">
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m1.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m2.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m3.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m4.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m5.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m6.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m7.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m8.png" />
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\totoyan\Desktop\Smusice\JPG\角色\images\m9.png" />
+                    <animation framecount="10" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="744645783519675" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_01.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_02.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_03.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_04.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_05.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_06.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_07.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_08.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_09.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\bg00_10.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="bg_3" sid="559442930367003">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="282936160263950" speed="0">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\1.png" />
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Administrator\Desktop\bj\images\2.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -615,7 +621,7 @@
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="item6" pingpong="0" repeatcount="1" repeatto="0" sid="197088983712706" speed="5">
-                        <frame duration="1" hotspotX="0.450704" hotspotY="0.793333" original-source="C:\Users\Administrator\Desktop\resource\res\tree.png">
+                        <frame duration="1" hotspotX="0.577465" hotspotY="0.88" original-source="C:\Users\Administrator\Desktop\resource\res\tree.png">
                             <image-point name="search" x="0.56338" y="0.32" />
                             <image-point name="pY" x="0.549296" y="0.866667" />
                         </frame>
@@ -698,303 +704,303 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="15" loop="1" name="enemy_1_idle" pingpong="1" repeatcount="1" repeatto="0" sid="215148671448984" speed="6">
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
                     </animation>
                     <animation framecount="14" loop="0" name="enemy_1_atk" pingpong="0" repeatcount="1" repeatto="0" sid="496533021605257" speed="10">
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
-                        <frame duration="1" hotspotX="0.504587" hotspotY="0.504854">
+                        <frame duration="1" hotspotX="0.504587" hotspotY="0.970874">
                             <image-point name="pY" x="0.623853" y="0.951456" />
                         </frame>
                     </animation>
                     <animation framecount="9" loop="1" name="enemy_2_idle" pingpong="1" repeatcount="1" repeatto="0" sid="269743772245146" speed="6">
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
                     </animation>
                     <animation framecount="10" loop="0" name="enemy_2_atk" pingpong="0" repeatcount="1" repeatto="0" sid="280972346999881" speed="8">
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="1">
                             <image-point name="pY" x="0.625551" y="0.95283" />
                         </frame>
                     </animation>
                     <animation framecount="10" loop="1" name="enemy_3_idle" pingpong="1" repeatcount="1" repeatto="0" sid="794579399437323" speed="6">
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.594714" y="0.791045" />
                         </frame>
                     </animation>
                     <animation framecount="12" loop="0" name="enemy_3_atk" pingpong="0" repeatcount="1" repeatto="0" sid="271218106097459" speed="8">
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
-                        <frame duration="1" hotspotX="0.502203" hotspotY="0.502488">
+                        <frame duration="1" hotspotX="0.502203" hotspotY="0.995025">
                             <image-point name="pY" x="0.625551" y="0.79602" />
                         </frame>
                     </animation>
                     <animation framecount="11" loop="1" name="enemy_4_idle" pingpong="0" repeatcount="1" repeatto="0" sid="825518962992872" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
                     </animation>
                     <animation framecount="14" loop="0" name="enemy_4_atk" pingpong="0" repeatcount="1" repeatto="0" sid="767744254742502" speed="10">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.501945">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.972763">
                             <image-point name="pY" x="0.623894" y="0.953307" />
                         </frame>
                     </animation>
@@ -1104,7 +1110,6 @@
         <family name="bgs" plugin-id="TiledBg" sid="679559079734112">
             <members>
                 <member>bg_mask</member>
-                <member>bg_mask2</member>
                 <member>bg_tween</member>
             </members>
             <instance-variables>

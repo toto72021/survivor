@@ -344,6 +344,33 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="781975213035473">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="856012539805004" type="System">
+                                    <param id="0" name="Object">bg_3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="809414438889010" type="bg_3">
+                                    <param id="0" name="X">Self.X-30*dt </param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="475814006061422">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="903950840836352" type="bg_3">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="815492133645338" type="bg_3">
+                                            <param id="0" name="X">Self.X+Self.Width*2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
@@ -534,7 +561,7 @@
                             <param id="0" name="Object to create">item</param>
                             <param id="1" name="Layer">&quot;game&quot;</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">random(470,630)</param>
+                            <param id="3" name="Y">player_proxy.Y-50</param>
                         </action>
                         <action id="4" name="Set animation" sid="732895526669729" type="item">
                             <param id="0" name="Animation">choose(&quot;item1&quot;,&quot;item2&quot;,&quot;item3&quot;,&quot;item4&quot;,&quot;item5&quot;,&quot;item6&quot;,&quot;item1&quot;,&quot;item1&quot;,&quot;item6&quot;,&quot;item1&quot;)</param>
@@ -709,9 +736,6 @@
                         <event-block sid="183397166629048">
                             <conditions />
                             <actions>
-                                <action disabled="1" id="0" name="Sort all Objects in layer by Y" sid="824499155509265" type="ZSorter">
-                                    <param id="0" name="Layer">&quot;game&quot;</param>
-                                </action>
                                 <action id="-16" name="Wait" sid="724880152169152" type="System">
                                     <param id="0" name="Seconds">0</param>
                                 </action>
