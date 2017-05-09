@@ -130,27 +130,6 @@
                     <actions>
                         <action id="-9" name="Destroy" sid="213916320784134" type="bg_Black" />
                     </actions>
-                    <sub-events>
-                        <event-block sid="129313046234866">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="738740658712624" type="System">
-                                    <param id="0" name="First value">LayoutName</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">&quot;combat&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="MoveTo" id="4" name="Move to XY" sid="910718559948378" type="enemy">
-                                    <param id="0" name="X">Self.X+1100</param>
-                                    <param id="1" name="Y">Self.Y</param>
-                                </action>
-                                <action behavior="MoveTo" id="4" name="Move to XY" sid="776471733261296" type="player_proxy">
-                                    <param id="0" name="X">Self.X-1100</param>
-                                    <param id="1" name="Y">Self.Y</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

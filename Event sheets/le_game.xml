@@ -519,43 +519,49 @@
         <event-group description="" sid="828169281532222" title="search">
             <sub-events>
                 <comment>生成物资</comment>
-                <variable constant="0" name="createItemTime" sid="349492969715706" static="0" type="number">11</variable>
-                <event-block sid="113605935947698">
+                <variable constant="0" name="createItemDistance" sid="349492969715706" static="0" type="number">11</variable>
+                <event-block sid="996266481475793">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="122105833157247" type="player_proxy">
+                        <condition id="-7" name="Compare instance variable" sid="416552446398349" type="player_proxy">
                             <param id="0" name="Instance variable">hp</param>
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="167538691668216" type="player_proxy">
-                            <param id="0" name="Instance variable">getItem</param>
-                            <param id="1" name="Comparison">0</param>
+                        <condition id="-7" name="Compare instance variable" sid="149382269476838" type="player_proxy">
+                            <param id="0" name="Instance variable">moveDistance</param>
+                            <param id="1" name="Comparison">5</param>
                             <param id="2" name="Value">1</param>
                         </condition>
+                        <condition id="-8" name="Compare two values" sid="511043002422519" type="System">
+                            <param id="0" name="First value">int(player_proxy.moveDistance)%createItemDistance</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="535486890969943" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="212292999013885" type="player_proxy">
-                            <param id="0" name="Instance variable">getItem</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                         <action behavior="Timer" id="2" name="Start" sid="778465336597545" type="player_proxy">
-                            <param id="0" name="Time">int(random(createItemTime-3,createItemTime+3))</param>
+                            <param id="0" name="Time">random(0,3)</param>
                             <param id="1" name="Timer">&quot;getItem&quot;</param>
                             <param id="2" name="Repeat">1</param>
+                        </action>
+                        <action id="14" name="Log" sid="991723590359139" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;CCC  II  11&quot;</param>
                         </action>
                     </actions>
                 </event-block>
                 <comment>按份数物资随机选 ：item1石  item2椰  item3果  item4蛋  item5水  item6木  </comment>
-                <event-block sid="134402125834962">
+                <event-block any="1" sid="134402125834962">
                     <conditions>
                         <condition behavior="Timer" id="1" name="On time-out" sid="236599352654811" type="player_proxy">
                             <param id="0" name="Timer">&quot;getItem&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="533454811417940" type="player_proxy">
-                            <param id="0" name="Instance variable">getItem</param>
-                            <param id="1" name="Value">1</param>
+                        <action id="14" name="Log" sid="558657120874927" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;CCC  II  22 &quot;</param>
                         </action>
                         <action id="-3" name="Create object" sid="327012752372787" type="System">
                             <param id="0" name="Object to create">item</param>
@@ -620,11 +626,11 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="656316486182441" type="item">
                                     <param id="0" name="Instance variable">randRate</param>
-                                    <param id="1" name="Value">60</param>
+                                    <param id="1" name="Value">90</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="804244404513240" type="item">
                                     <param id="0" name="Instance variable">itemCount</param>
-                                    <param id="1" name="Value">int(random(1,4))</param>
+                                    <param id="1" name="Value">int(random(3,7))</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -729,7 +735,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="344890577027911" type="item">
                                     <param id="0" name="Instance variable">itemCount</param>
-                                    <param id="1" name="Value">int(random(1,4))</param>
+                                    <param id="1" name="Value">int(random(2,5))</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -993,7 +999,7 @@
         </event-group>
         <event-group description="" sid="447957881580328" title="inFight">
             <sub-events>
-                <variable constant="0" name="createEnemyTime" sid="230996028921090" static="0" type="number">17</variable>
+                <variable constant="0" name="createEnemyDistance" sid="230996028921090" static="0" type="number">17</variable>
                 <event-block sid="143176244632508">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="345008276933571" type="player_proxy">
@@ -1001,21 +1007,27 @@
                             <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="899282636462002" type="player_proxy">
-                            <param id="0" name="Instance variable">getEnemy</param>
-                            <param id="1" name="Comparison">0</param>
+                        <condition id="-7" name="Compare instance variable" sid="869275149680033" type="player_proxy">
+                            <param id="0" name="Instance variable">moveDistance</param>
+                            <param id="1" name="Comparison">5</param>
                             <param id="2" name="Value">1</param>
                         </condition>
+                        <condition id="-8" name="Compare two values" sid="460378448020875" type="System">
+                            <param id="0" name="First value">int(player_proxy.moveDistance)%createEnemyDistance</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="892993205496264" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="680236435740173" type="player_proxy">
-                            <param id="0" name="Instance variable">getEnemy</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                         <action behavior="Timer" id="2" name="Start" sid="645045844761747" type="player_proxy">
-                            <param id="0" name="Time">int(random(createEnemyTime-3,createEnemyTime+3))</param>
+                            <param id="0" name="Time">random(0,3)</param>
                             <param id="1" name="Timer">&quot;getEnemy&quot;</param>
                             <param id="2" name="Repeat">1</param>
+                        </action>
+                        <action id="14" name="Log" sid="903342715105234" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;CCC  EE  11&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1026,9 +1038,9 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="340756547573323" type="player_proxy">
-                            <param id="0" name="Instance variable">getEnemy</param>
-                            <param id="1" name="Value">1</param>
+                        <action id="14" name="Log" sid="714912723037389" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;CCC  EE  22&quot;</param>
                         </action>
                         <action id="0" name="Call function" sid="712029551687353" type="Function">
                             <param id="0" name="Name">&quot;randomEnemy&quot;</param>
